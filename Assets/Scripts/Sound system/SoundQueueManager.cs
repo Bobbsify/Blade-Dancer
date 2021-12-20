@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class SoundQueueManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    SoundPacket[] loopAudioList;
+    SoundPacket[] delayAudioList;
+    SoundPacket[] playOnceAudioList;
+
     void Start()
     {
         
