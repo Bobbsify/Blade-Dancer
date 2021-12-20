@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class SoundPacket : MonoBehaviour
 {
-    // Start is called before the first frame update
+    AudioSource audio;
+    Transform playPos;
+    AudioType soundType;
+    float playDelay;
+
     void Start()
     {
         
