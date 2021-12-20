@@ -21,7 +21,6 @@ public class RuleObjects : ScriptableObject
 [System.Serializable]
 public class RuleObject 
 {
-
     public string name;
     public GameObject ruleObjPrefab;
     public PositionType pos;
