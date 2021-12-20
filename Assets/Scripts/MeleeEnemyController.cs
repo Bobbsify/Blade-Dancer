@@ -2,17 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MeleeEnemyController : MonoBehaviour
+public class MeleeEnemyController : MonoBehaviour,IEnemy
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    private float speed;
+
+    private GameObject player;
+
+    public bool Act;
+
+    private string playerTag = "Player";
+
+    private void Update()
     {
-        
+        if (Act)
+        {
+            Chase(player);
+        }     
     }
 
-    // Update is called once per frame
-    void Update()
+    public void GetPlayer()
     {
-        
+        this.player = GameObject.FindGameObjectWithTag(playerTag);
+    }
+
+    public void Chase(GameObject obj)
+    {
+        this.gameObject.transform.position = Vector3.MoveTowards(this.gameObject.transform.position, obj.transform.position, this.speed * Time.deltaTime);
+    }
+
+    public void FleeFrom(GameObject obj)
+    {
+
     }
 }
