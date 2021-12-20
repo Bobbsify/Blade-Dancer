@@ -2,17 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class IAbility : MonoBehaviour
+public interface IAbility
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    void Trigger(GameObject obj);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void SendActionToGameManager();
 }
