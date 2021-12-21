@@ -4,5 +4,5 @@ using UnityEngine;
 
 public interface IInputReceiverShoot
 {
-	void ReceiveInputRangedAttack();
+	void ReceiveInputShoot();
 }
