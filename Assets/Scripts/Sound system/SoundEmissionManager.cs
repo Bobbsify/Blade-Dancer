@@ -9,7 +9,7 @@ public class SoundEmissionManager : MonoBehaviour
 
     public void play()
     {
-
+        //soundToPlay = GetComponent<SoundPacket>();
     }   
     public void Stop()
     {
