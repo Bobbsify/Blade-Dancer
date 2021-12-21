@@ -2,21 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundPacket : MonoBehaviour
+public class SoundPacket
 {
-    AudioSource audio;
-    Transform playPos;
-    AudioType soundType;
-    float playDelay;
+    private AudioSource audio;
+    private Transform playPos;
+    private AudioType soundType;
+    private float playDelay;
 
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

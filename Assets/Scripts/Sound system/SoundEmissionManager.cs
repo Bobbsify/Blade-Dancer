@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundEmissionManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private SoundPacket soundToPlay;
     void Start()
     {
         

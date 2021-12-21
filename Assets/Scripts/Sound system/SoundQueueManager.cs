@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class SoundQueueManager : MonoBehaviour
 {
-    SoundPacket[] loopAudioList;
-    SoundPacket[] delayAudioList;
-    SoundPacket[] playOnceAudioList;
+    private SoundPacket[] loopAudioList;
+    private SoundPacket[] delayAudioList;
+    private SoundPacket[] playOnceAudioList;
 
     void Start()
     {
