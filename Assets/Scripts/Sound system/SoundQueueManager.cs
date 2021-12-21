@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundQueueManager : MonoBehaviour
+public class SoundQueueManager
 {
     private SoundPacket[] loopAudioList;
     private SoundPacket[] delayAudioList;
