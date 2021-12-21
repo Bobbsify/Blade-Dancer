@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dash : MonoBehaviour
+public class Dash : MonoBehaviour, IAbility
 {
     private bool canDash;
 
@@ -12,7 +12,7 @@ public class Dash : MonoBehaviour
     [SerializeField]
     private float DashCountdown;
 
-    public IEnumerator CountdownDash()
+    public IEnumerator CooldownDash()
     {
         yield return new WaitForSeconds(this.DashCountdown);
         this.canDash = true;
@@ -25,7 +25,7 @@ public class Dash : MonoBehaviour
         {
             // TODO dash character
             this.canDash = false;
-            StartCoroutine(CountdownDash());
+            StartCoroutine(CooldownDash());
         }
     }
 

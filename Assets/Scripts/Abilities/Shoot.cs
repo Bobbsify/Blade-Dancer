@@ -9,7 +9,7 @@ public class Shoot : MonoBehaviour, IAbility
     [SerializeField]
     private float shootCountdown;
 
-    public IEnumerator CountdownShooting()
+    public IEnumerator CooldownShooting()
     {
         yield return new WaitForSeconds(this.shootCountdown);
         this.canShooting = true;
@@ -20,9 +20,9 @@ public class Shoot : MonoBehaviour, IAbility
     {
         if (this.canShooting)
         {
-            //TODO spara il proiettile
+            //TODO spara il
             this.canShooting = false;
-            StartCoroutine(CountdownShooting());
+            StartCoroutine(CooldownShooting());
         }
     }
 
