@@ -9,18 +9,23 @@ public class Shoot : MonoBehaviour, IAbility
     [SerializeField]
     private float shootCountdown;
 
+    [SerializeField]
+    GameObject projectile;
+
+    [SerializeField]
+    Transform projectileSpawnPosition;
+
     public IEnumerator CooldownShooting()
     {
         yield return new WaitForSeconds(this.shootCountdown);
         this.canShooting = true;
-
     }
 
     public void Trigger(GameObject obj)
     {
         if (this.canShooting)
         {
-            //TODO spara il
+            Instantiate(this.projectile, this.projectileSpawnPosition);
             this.canShooting = false;
             StartCoroutine(CooldownShooting());
         }
