@@ -33,4 +33,9 @@ public class PlayerController : MonoBehaviour, IInputEntity, IInputReceiverMove,
     {
         dashAbility.Trigger(gameObject);
     }
+
+    public void ReceiveInputShoot()
+    {
+       
+    }
 }

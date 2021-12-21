@@ -23,7 +23,7 @@ public class Dash : MonoBehaviour, IAbility
     {
         if (this.canDash)
         {
-            // TODO dash character
+            obj.transform.position = obj.transform.position * speed * Time.deltaTime;
             this.canDash = false;
             StartCoroutine(CooldownDash());
         }
