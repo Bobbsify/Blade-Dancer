@@ -8,14 +8,18 @@ public class SoundQueueManager : MonoBehaviour
     private SoundPacket[] delayAudioList;
     private SoundPacket[] playOnceAudioList;
 
-    void Start()
+    void AddSound(SoundPacket sound, bool fade)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void RemoveSound(SoundPacket sound, bool fade)
     {
-        
+
+    }
+
+    void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade)
+    {
+
     }
 }

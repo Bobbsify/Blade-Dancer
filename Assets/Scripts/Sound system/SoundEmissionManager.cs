@@ -5,14 +5,21 @@ using UnityEngine;
 public class SoundEmissionManager : MonoBehaviour
 {
     private SoundPacket soundToPlay;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    void play()
     {
-        
+
+    }   
+    void Stop()
+    {
+
+    }
+    void FadeIn(float fadeDuration=1)
+    {
+
+    }
+    void FadeOut(float fadeduration=1)
+    {
+
     }
 }
