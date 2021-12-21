@@ -7,11 +7,16 @@ public class PlayerController : MonoBehaviour, IInputEntity, IInputReceiverMove,
     List<IAbility> abilities = new List<IAbility>();
     IInputManager inputManager;
 
+    Dash dashAbility = new Dash();
+    Shoot shootAbility = new Shoot();
+
     [SerializeField]
     private float speed = 5.0f;
 
     private void Awake()
     {
+        abilities.Add(dashAbility);
+        abilities.Add(shootAbility);
     }
 
     public void ReceiveInputMove(Vector3 direction)
@@ -26,6 +31,6 @@ public class PlayerController : MonoBehaviour, IInputEntity, IInputReceiverMove,
 
     public void ReceiveInputRangedAttack()
     {
-        throw new System.NotImplementedException();
+        dashAbility.Trigger(gameObject);
     }
 }
