@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface IInputReceiverRangedAttack
+public interface IInputReceiverShoot
 {
 	void ReceiveInputRangedAttack();
 }

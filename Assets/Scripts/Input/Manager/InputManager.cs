@@ -25,4 +25,9 @@ public class InputManager : MonoBehaviour, IInputManager
 	{
 		this.gameObject.SetActive(enabled);
 	}
+
+    public GameObject GetRoot()
+    {
+        return this.searchRoot;
+    }
 }
