@@ -34,7 +34,7 @@ public class InputSystemShoot : MonoBehaviour
 			for (int i = 0; i < this.receivers.Length; i++)
 			{
 				IInputReceiverShoot receiver = this.receivers[i];
-				receiver.ReceiveInputRangedAttack();
+				receiver.ReceiveInputShoot();
 			}
 		}
 	}
