@@ -5,11 +5,11 @@ using UnityEngine.Audio;
 
 public class SoundEmissionManager : MonoBehaviour
 {
-    private SoundPacket soundToPlay;
+    private SoundPacket soundToPlay;//= new SoundPacket();
 
     public void play()
     {
-        //soundToPlay = GetComponent<SoundPacket>();
+
     }   
     public void Stop()
     {

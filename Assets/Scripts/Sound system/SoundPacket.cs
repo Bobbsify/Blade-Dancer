@@ -10,13 +10,14 @@ public class SoundPacket
     private SoundType audioType;
     private float playDelay;
 
-    SoundPacket(AudioSource audio, Transform playPos, SoundType audioType, float playDelay = 0)
+    public SoundPacket(AudioSource audio, Transform playPos, SoundType audioType, float playDelay = 0)
     {
         this.audio = audio;
         this.playPos = playPos;
         this.audioType = audioType;
         this.playDelay = playDelay;
     }
+
 
     public AudioSource GetAudio()
     {
