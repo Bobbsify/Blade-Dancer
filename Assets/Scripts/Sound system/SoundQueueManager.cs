@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundQueueManager : MonoBehaviour
+public class SoundQueueManager
 {
     private SoundPacket[] loopAudioList;
     private SoundPacket[] delayAudioList;
     private SoundPacket[] playOnceAudioList;
 
-    void Start()
+    public void AddSound(SoundPacket sound, bool fade)
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RemoveSound(SoundPacket sound, bool fade)
     {
-        
+
+    }
+
+    public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade)
+    {
+
     }
 }
