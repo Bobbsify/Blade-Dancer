@@ -6,19 +6,19 @@ public class SoundEmissionManager : MonoBehaviour
 {
     private SoundPacket soundToPlay;
 
-    void play()
+    public void play()
     {
 
     }   
-    void Stop()
+    public void Stop()
     {
 
     }
-    void FadeIn(float fadeDuration=1)
+    public void FadeIn(float fadeDuration=1)
     {
 
     }
-    void FadeOut(float fadeduration=1)
+    public void FadeOut(float fadeduration=1)
     {
 
     }
