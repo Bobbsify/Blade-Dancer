@@ -9,16 +9,33 @@ public class MoveRule : Rule, IRule
     private const float MERCY = 1.0f;
 
     [SerializeField]
-    private int minDuration, maxDuration;
+    [Range(2,5)]
+    private int minDuration = 2;
 
-    private int duration;
+    [SerializeField]
+    [Range(5, 10)]
+    private int maxDuration = 10;
+
+    private int durationOfMove;
     private float moveTimer = 0;
+
+    private float durationModFormula => durationOfMove + MERCY;
 
     public MoveRule()
     {
-        this.appliedActions.Add(Actions.Move);
-        duration = new System.Random().Next(minDuration, maxDuration);
-        durationModifier = duration + MERCY;
+        durationOfMove = new System.Random().Next(minDuration, maxDuration);
+
+        switch (GetDurationModType())
+        {
+            case DurationModType.RuleDependant:
+                SetDurationMod(durationModFormula);
+                break;
+            case DurationModType.FixedAmount:
+                //Duration is already set in inspector
+                break;
+            default:
+                throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
+        }
     }
 
     public bool CheckAction(Actions executedAction)
@@ -28,7 +45,7 @@ public class MoveRule : Rule, IRule
             if (action == executedAction)
             {
                 this.moveTimer += Time.deltaTime;
-                return moveTimer >= duration;
+                return moveTimer >= durationOfMove;
             }
         }
         return false;
@@ -36,19 +53,11 @@ public class MoveRule : Rule, IRule
 
     public bool IsRuleComplete()
     {
-        return moveTimer >= duration;
+        return moveTimer >= durationOfMove;
     }
 
     public override string ToString()
     {
-        return "Move (" + Mathf.Max(duration - moveTimer,0) + ")";
+        return "Move (" + Mathf.Max(durationOfMove - moveTimer,0) + ")";
     }
-}
-
-public enum Actions
-{
-    Move,
-    Dash,
-    Dance,
-    Ring,
 }
