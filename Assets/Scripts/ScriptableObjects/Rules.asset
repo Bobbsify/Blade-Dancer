@@ -13,12 +13,29 @@ MonoBehaviour:
   m_Name: Rules
   m_EditorClassIdentifier: 
   moveRule:
+    durationModType: 0
     durationModifier: 10
+    appliedActions: 00000000
+    ruleRelatedObjects: []
     minDuration: 2
     maxDuration: 10
   doNotMoveRule:
+    durationModType: 1
     durationModifier: -2
+    appliedActions: 0000000001000000
+    ruleRelatedObjects: []
   shootRule:
+    durationModType: 0
+    durationModifier: 1
+    appliedActions: 04000000
+    ruleRelatedObjects: []
+    durationModDivider: 3
+    minAmount: 2
+    maxAmount: 8
+  doNotShootRule:
+    durationModType: 1
     durationModifier: 0
+    appliedActions: 04000000
+    ruleRelatedObjects: []
     minAmount: 0
-    maxAmount: 0
+    maxAmount: 6
