@@ -12,3 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f085921b7f77b41b9e40121aa75292, type: 3}
   m_Name: Rules
   m_EditorClassIdentifier: 
+  moveRule:
+    durationModifier: 10
+    minDuration: 2
+    maxDuration: 10
+  doNotMoveRule:
+    durationModifier: -2
+  shootRule:
+    durationModifier: 0
+    minAmount: 0
+    maxAmount: 0
