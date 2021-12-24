@@ -27,10 +27,11 @@ public class RuleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKey(KeyCode.E))
         {
             Debug.Log("Generated:");
             rulesToApply = factory.GetRandomRuleset(Random.Range(minAmount,maxAmount));
+            PrintRules();
         }
     }
 
@@ -38,7 +39,8 @@ public class RuleManager : MonoBehaviour
     {
         foreach (Rule rule in rulesToApply)
         {
-            Debug.Log(rule.ToString());
+            string color = rule.GetRuleName().ToString().ToLower().Contains("not") ? "blue" : "red";
+            Debug.Log("<color=" + color + ">"+ rule.ToString() + "</color>");
         }
     }
 }

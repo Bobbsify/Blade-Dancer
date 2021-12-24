@@ -21,16 +21,19 @@ public class RuleFactory
     public List<Rule> GetRandomRuleset(int amount)
     {
         List<Rule> selectedRules = new List<Rule>();
-        int allRulesLength = rules.getAll().Count;
+        List<Rule> rulePool = rules.getAll();
+
+        int rulePoolLength = rulePool.Count;
         for (int i = 0; i < amount; i++)
         {
+            int allRulesLength = rulePool.Count;
             int randomElement = Random.Range(0, allRulesLength);
-            Rule randomRule = rules.getAll()[randomElement];
+            Rule randomRule = rulePool[randomElement];
 
             bool exclusive = false;
             foreach (Rule rule in selectedRules)
             {
-                if (rule.IsMutuallyExclusive(randomRule.GetRuleName()))
+                if (randomRule.IsMutuallyExclusive(rule.GetRuleName()))
                 {
                     exclusive = true;
                 }
@@ -38,6 +41,7 @@ public class RuleFactory
             if (!exclusive)
             {
                 selectedRules.Add(randomRule);
+                rulePool.Remove(randomRule);
             }
             else
             {
