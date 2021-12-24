@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Rule
+public abstract class Rule : IRule
 {
+    [SerializeField]
+    private AllRules ruleName;
+
     [SerializeField]
     [Tooltip("Defines wether or not the amount written in the \"Duration Modifier\" Box affects the duration of the rule or if it is calculated by the rule itself")]
     private DurationModType durationModType;
@@ -17,7 +20,8 @@ public abstract class Rule
     [SerializeField]
     protected List<RuleObject> ruleRelatedObjects = new List<RuleObject>(); // (Can Be Empty) eventual objects that are correlated to the rule
 
-    protected List<IRule> mutuallyExclusives = new List<IRule>(); // rules this rule cannot be associated with
+    [SerializeField]
+    protected List<AllRules> mutuallyExclusives = new List<AllRules>(); // (Can Be Empty) eventual objects that are correlated to the rule
 
     public virtual void SetDurationMod(float amount)
     {
@@ -28,6 +32,58 @@ public abstract class Rule
     {
         return this.durationModType;
     }
+
+    public virtual bool IsMutuallyExclusive(AllRules r)
+    {
+        foreach (AllRules rule in mutuallyExclusives)
+        {
+            if (rule == r)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public virtual AllRules GetRuleName()
+    {
+        return this.ruleName;
+    }
+
+    public virtual bool CheckAction(Actions executedAction)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public virtual bool IsRuleComplete()
+    {
+        throw new System.NotImplementedException();
+    }
+}
+
+[System.Serializable]
+public class RuleObject
+{
+    public string name;
+    public GameObject ruleObjPrefab;
+    public PositionType pos;
+}
+
+public enum PositionType
+{
+    Random,
+    AnyCorner,
+    TopLeftCorner,
+    TopCenter,
+    TopRightCorner,
+    CenterLeft,
+    Center,
+    CenterRight,
+    BotLeftCorner,
+    BotCenter,
+    BotRightCorner,
+    AnyLeft,
+    AnyRight,
 }
 
 //Defines wether or not the amount written in the "Duration Modifier" Box affects the duration of the rule or if it is calculated by the rule itself
@@ -40,13 +96,50 @@ public enum DurationModType
 public enum Actions
 {
     Move,
+    Shoot,
     Dash,
     Dance,
     Ring,
-    Shoot,
     Left,
     Right,
-    Score,
-    Reach,
+    Break,
     Gather,
+    Kill,
+    Score,
+    Trap,
+    Survive,
+    Reach
+}
+
+public enum AllRules
+{
+    Move,
+    Shoot,
+    Dash,
+    Dance,
+    Ring,
+    Left,
+    Right,
+    Break,
+    Gather,
+    Kill,
+    Score,
+    Trap,
+    Survive,
+    Reach,
+    //Negatives
+    NotMove,
+    NotShoot,
+    NotDash,
+    NotDance,
+    NotRing,
+    NotLeft,
+    NotRight,
+    NotBreak,
+    NotGather,
+    NotKill,
+    NotScore,
+    NotTrap,
+    NotSurvive,
+    NotReach
 }
