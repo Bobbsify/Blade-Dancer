@@ -45,6 +45,11 @@ public abstract class Rule : IRule
         return false;
     }
 
+    public virtual List<RuleObject> GetRuleRelatedObjects()
+    {
+        return this.ruleRelatedObjects;
+    }
+
     public virtual bool IsReverse()
     {
         return this.ruleName.ToString().ToLower().Contains("not");
@@ -75,10 +80,15 @@ public class RuleObject
     public PositionType pos;
 }
 
+// 0 Any Random
+// 1, 2, 3 Limited Random
+// 4, 5, 6... Fixed Positions
 public enum PositionType
 {
-    Random,
+    Random = 0,
     AnyCorner,
+    AnyLeft,
+    AnyRight,
     TopLeftCorner,
     TopCenter,
     TopRightCorner,
@@ -88,8 +98,6 @@ public enum PositionType
     BotLeftCorner,
     BotCenter,
     BotRightCorner,
-    AnyLeft,
-    AnyRight,
 }
 
 //Defines wether or not the amount written in the "Duration Modifier" Box affects the duration of the rule or if it is calculated by the rule itself
