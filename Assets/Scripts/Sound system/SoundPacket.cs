@@ -1,16 +1,20 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class SoundPacket
 {
-    private AudioSource audio;
+    private AudioClip audio;
+
     private Transform playPos;
+
     private SoundType audioType;
+
     private float playDelay;
 
-    public SoundPacket(AudioSource audio, Transform playPos, SoundType audioType, float playDelay = 0)
+    public SoundPacket(AudioClip audio, Transform playPos, SoundType audioType, float playDelay = 0)
     {
         this.audio = audio;
         this.playPos = playPos;
@@ -19,7 +23,7 @@ public class SoundPacket
     }
 
 
-    public AudioSource GetAudio()
+    public AudioClip GetAudio()
     {
         return audio;
     }
@@ -29,7 +33,7 @@ public class SoundPacket
         return playPos;
     }
 
-    public SoundType GetType()
+    public SoundType GetAudioType()
     {
         return audioType;
     }
