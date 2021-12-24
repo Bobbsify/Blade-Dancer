@@ -14,28 +14,44 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveRule:
     durationModType: 0
-    durationModifier: 10
+    durationModifier: 7
     appliedActions: 00000000
     ruleRelatedObjects: []
+    mutuallyExclusives: 000000000e000000
     minDuration: 2
     maxDuration: 10
   doNotMoveRule:
-    durationModType: 1
+    durationModType: 0
     durationModifier: -2
-    appliedActions: 0000000001000000
+    appliedActions: 0000000002000000
     ruleRelatedObjects: []
+    mutuallyExclusives: 000000000e0000000200000005000000130000000600000014000000080000000b0000000d000000
   shootRule:
     durationModType: 0
     durationModifier: 1
-    appliedActions: 04000000
+    appliedActions: 
     ruleRelatedObjects: []
+    mutuallyExclusives: 
     durationModDivider: 3
-    minAmount: 2
-    maxAmount: 8
+    minAmount: 1
+    maxAmount: 6
   doNotShootRule:
     durationModType: 1
-    durationModifier: 0
-    appliedActions: 04000000
+    durationModifier: 1
+    appliedActions: 
     ruleRelatedObjects: []
+    mutuallyExclusives: 
     minAmount: 0
     maxAmount: 6
+  danceRule:
+    durationModType: 1
+    durationModifier: 1
+    appliedActions: 
+    ruleRelatedObjects: []
+    mutuallyExclusives: 
+  doNotDanceRule:
+    durationModType: 1
+    durationModifier: 1
+    appliedActions: 
+    ruleRelatedObjects: []
+    mutuallyExclusives: 
