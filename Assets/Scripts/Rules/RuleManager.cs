@@ -5,6 +5,9 @@ using UnityEngine;
 public class RuleManager : MonoBehaviour
 {
     [SerializeField]
+    GameManager gm;
+
+    [SerializeField]
     private AllRulesObject rules;
 
     [SerializeField]
@@ -27,7 +30,7 @@ public class RuleManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E))
         {
             Debug.Log("Generated:");
             rulesToApply = factory.GetRandomRuleset(Random.Range(minAmount,maxAmount));
@@ -39,8 +42,42 @@ public class RuleManager : MonoBehaviour
     {
         foreach (Rule rule in rulesToApply)
         {
-            string color = rule.GetRuleName().ToString().ToLower().Contains("not") ? "blue" : "red";
+            string color = rule.IsReverse() ? "cyan" : "red";
             Debug.Log("<color=" + color + ">"+ rule.ToString() + "</color>");
         }
+    }
+
+    public void ApplyRule(Actions actionDone)
+    {
+        foreach (Rule rule in rulesToApply)
+        {
+            rule.CheckAction(actionDone);
+        }
+
+        CheckIfAllCompleted();
+    }
+
+    private void CheckIfAllCompleted()
+    {
+        bool completed = true;
+        foreach (Rule rule in rulesToApply)
+        {
+            completed = completed && rule.IsRuleComplete();
+
+            //If a reverse rule has been failed kill player
+            if (rule.IsReverse() && !rule.IsRuleComplete())
+            {
+                gm.KillPlayer();
+            }
+        }
+        if (completed)
+        {
+            RulesCompleted();
+        }
+    }
+
+    private void RulesCompleted()
+    {
+
     }
 }

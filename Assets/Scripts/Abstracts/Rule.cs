@@ -45,6 +45,11 @@ public abstract class Rule : IRule
         return false;
     }
 
+    public virtual bool IsReverse()
+    {
+        return this.ruleName.ToString().ToLower().Contains("not");
+    }
+
     public virtual AllRules GetRuleName()
     {
         return this.ruleName;
@@ -59,6 +64,7 @@ public abstract class Rule : IRule
     {
         throw new System.NotImplementedException();
     }
+
 }
 
 [System.Serializable]

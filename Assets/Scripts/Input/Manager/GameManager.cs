@@ -38,4 +38,9 @@ public class GameManager : MonoBehaviour
 		this.PlayerPawn = GameObject.Instantiate(this.playerPrefab, this.spawnPoint.position, Quaternion.identity);
 		this.PlayerPawn.transform.SetParent(this.inputReceiversTransform);
 	}
+
+    public void KillPlayer()
+    {
+        PlayerPawn.GetComponent<Animator>().SetTrigger("die");
+    }
 }
