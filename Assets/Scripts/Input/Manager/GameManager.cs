@@ -41,6 +41,7 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer()
     {
-        PlayerPawn.GetComponent<Animator>().SetTrigger("die");
+        PlayerPawn.GetComponent<PlayerController>().DoDeath();
     }
+    
 }

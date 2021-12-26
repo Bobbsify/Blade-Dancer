@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Rules
   m_EditorClassIdentifier: 
   moveRule:
+    ruleName: 0
     durationModType: 0
     durationModifier: 7
     appliedActions: 00000000
@@ -21,12 +22,14 @@ MonoBehaviour:
     minDuration: 2
     maxDuration: 10
   doNotMoveRule:
+    ruleName: 14
     durationModType: 0
     durationModifier: -2
     appliedActions: 0000000002000000
     ruleRelatedObjects: []
     mutuallyExclusives: 000000000e0000000200000005000000130000000600000014000000080000000b0000000d000000
   shootRule:
+    ruleName: 0
     durationModType: 0
     durationModifier: 1
     appliedActions: 
@@ -36,6 +39,7 @@ MonoBehaviour:
     minAmount: 1
     maxAmount: 6
   doNotShootRule:
+    ruleName: 15
     durationModType: 1
     durationModifier: 1
     appliedActions: 
@@ -43,13 +47,35 @@ MonoBehaviour:
     mutuallyExclusives: 
     minAmount: 0
     maxAmount: 6
+  dashRule:
+    ruleName: 2
+    durationModType: 0
+    durationModifier: 1
+    appliedActions: 
+    ruleRelatedObjects: []
+    mutuallyExclusives: 
+    durationModDivider: 3
+    minAmount: 1
+    maxAmount: 6
+  doNotDashRule:
+    ruleName: 16
+    durationModType: 0
+    durationModifier: 1
+    appliedActions: 
+    ruleRelatedObjects: []
+    mutuallyExclusives: 
+    durationModDivider: 3
+    minAmount: 1
+    maxAmount: 6
   danceRule:
+    ruleName: 3
     durationModType: 1
     durationModifier: 1
     appliedActions: 
     ruleRelatedObjects: []
     mutuallyExclusives: 
   doNotDanceRule:
+    ruleName: 17
     durationModType: 1
     durationModifier: 1
     appliedActions: 

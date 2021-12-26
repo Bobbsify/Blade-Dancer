@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RuleManager : MonoBehaviour
+public class RuleManager : MonoBehaviour, IGameEntity
 {
     [SerializeField]
-    GameManager gm;
+    GameManager gameManagerObject;
 
     [SerializeField]
     private AllRulesObject rules;
@@ -67,7 +67,7 @@ public class RuleManager : MonoBehaviour
             //If a reverse rule has been failed kill player
             if (rule.IsReverse() && !rule.IsRuleComplete())
             {
-                gm.KillPlayer();
+                gameManagerObject.KillPlayer();
             }
         }
         if (completed)
@@ -79,5 +79,10 @@ public class RuleManager : MonoBehaviour
     private void RulesCompleted()
     {
 
+    }
+
+    void IGameEntity.Init(GameManager gameManager)
+    {
+        gameManagerObject = gameManager;
     }
 }
