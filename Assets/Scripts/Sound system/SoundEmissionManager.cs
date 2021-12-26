@@ -5,15 +5,17 @@ using UnityEngine.Audio;
 
 public class SoundEmissionManager : MonoBehaviour
 {
-    private SoundPacket soundToPlay;//= new SoundPacket();
+    //private SoundPacket soundToPlay;
 
-    public void play()
+    public void PlayAudio(SoundPacket soundToPlay)
     {
-
+        AudioSource audio = soundToPlay.GetAudio();
+        audio.Play();
     }   
-    public void Stop()
+    public void StopAudio(SoundPacket soundToStop)
     {
-
+        AudioSource audio = soundToStop.GetAudio();
+        audio.Stop();
     }
     public void FadeIn(float fadeDuration=1)
     {
