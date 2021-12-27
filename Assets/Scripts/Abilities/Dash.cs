@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class Dash : MonoBehaviour, IAbility
+public class Dash : MonoBehaviour, IAbility, IInputReceiverDash
 {
     private bool canDash;
 
@@ -33,5 +33,10 @@ public class Dash : MonoBehaviour, IAbility
     public void SendActionToGameManager()
     {
 
+    }
+
+    public void ReceiveInputDash()
+    {
+        
     }
 }

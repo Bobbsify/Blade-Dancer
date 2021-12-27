@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class Shoot : MonoBehaviour, IAbility
+public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
 {
     private bool canShooting;
 
@@ -35,5 +35,10 @@ public class Shoot : MonoBehaviour, IAbility
     public void SendActionToGameManager()
     {
 
-    } 
+    }
+
+    public void ReceiveInputShoot()
+    {
+       
+    }
 }
