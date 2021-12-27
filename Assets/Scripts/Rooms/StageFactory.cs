@@ -20,7 +20,7 @@ public class StageFactory
         List<Rule> submittedRules = new List<Rule>();
         foreach (Rule r in ruleSet)
         {
-            submittedRules.Add(r.GetNewInstance());
+            submittedRules.Add(r);
         }
         return new Stage(randomRoom,submittedRules);
     }
