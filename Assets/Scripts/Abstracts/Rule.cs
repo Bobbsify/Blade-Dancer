@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class Rule : IRule
 {
+    [Header("Duration Tweaking")]
     [SerializeField]
     private AllRules ruleName;
 
@@ -14,6 +15,7 @@ public abstract class Rule : IRule
     [SerializeField]
     private float durationModifier; // modificatore che definisce la quantità in secondi di cui deve aumentare la durata in presenza di questa regola
 
+    [Header("Rule Functionality Tweaking")]
     [SerializeField]
     protected List<Actions> appliedActions = new List<Actions>(); // actions that cause the rule to be completed
 
@@ -22,6 +24,8 @@ public abstract class Rule : IRule
 
     [SerializeField]
     protected List<AllRules> mutuallyExclusives = new List<AllRules>(); // (Can Be Empty) eventual objects that are correlated to the rule
+
+    public abstract void Init();
 
     public virtual void SetDurationMod(float amount)
     {
