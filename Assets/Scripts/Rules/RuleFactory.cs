@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class RuleFactory
 {
-    private AllRulesObject rules;
+    private List<RuleSetting> rulesSettings;
 
-    public RuleFactory(AllRulesObject rules)
+    public RuleFactory(AllRulesObject ruleSettings)
     {
-        this.rules = rules;
+        this.rulesSettings = ruleSettings.getAll();
     }
 
     public Rule GetRandomRule()
     {
-        int allRulesLength = rules.getAll().Count;
+        int allRulesLength = rulesSettings.Count;
         int element = Random.Range(0,allRulesLength);
-        return rules.getAll()[element];
+        return rulesSettings[element].GetRule();
     }
 
     public List<Rule> GetRandomRuleset(int amount)
     {
         List<Rule> selectedRules = new List<Rule>();
-        List<Rule> rulePool = rules.getAll();
+        List<RuleSetting> rulePool = rulesSettings;
 
         int rulePoolLength = rulePool.Count;
 
@@ -30,7 +30,8 @@ public class RuleFactory
         {
             int allRulesLength = rulePool.Count;
             int randomElement = Random.Range(0, allRulesLength);
-            Rule randomRule = rulePool[randomElement];
+            RuleSetting randomRuleSetting = rulePool[randomElement];
+            Rule randomRule = randomRuleSetting.GetRule();
             if (!randomRule.IsReverse())
             {
                 selectedRules.Add(randomRule);
@@ -42,7 +43,8 @@ public class RuleFactory
         {
             int allRulesLength = rulePool.Count;
             int randomElement = Random.Range(0, allRulesLength);
-            Rule randomRule = rulePool[randomElement];
+            RuleSetting randomRuleSetting = rulePool[randomElement];
+            Rule randomRule = randomRuleSetting.GetRule();
 
             bool exclusive = false;
             foreach (Rule rule in selectedRules)
@@ -55,7 +57,7 @@ public class RuleFactory
             if (!exclusive)
             {
                 selectedRules.Add(randomRule);
-                rulePool.Remove(randomRule);
+                rulePool.Remove(randomRuleSetting);
             }
             else
             {
