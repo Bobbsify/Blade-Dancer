@@ -29,12 +29,12 @@ MonoBehaviour:
     ruleRelatedObjects: []
     mutuallyExclusives: 000000000e0000000200000005000000130000000600000014000000080000000b0000000d000000
   shootRule:
-    ruleName: 0
+    ruleName: 1
     durationModType: 0
     durationModifier: 1
-    appliedActions: 
+    appliedActions: 01000000
     ruleRelatedObjects: []
-    mutuallyExclusives: 
+    mutuallyExclusives: 010000000f000000
     durationModDivider: 3
     minAmount: 1
     maxAmount: 6
@@ -42,18 +42,18 @@ MonoBehaviour:
     ruleName: 15
     durationModType: 1
     durationModifier: 1
-    appliedActions: 
+    appliedActions: 01000000
     ruleRelatedObjects: []
-    mutuallyExclusives: 
+    mutuallyExclusives: 010000000f0000000700000009000000
     minAmount: 0
     maxAmount: 6
   dashRule:
     ruleName: 2
     durationModType: 0
     durationModifier: 1
-    appliedActions: 
+    appliedActions: 02000000
     ruleRelatedObjects: []
-    mutuallyExclusives: 
+    mutuallyExclusives: 02000000100000000e000000
     durationModDivider: 3
     minAmount: 1
     maxAmount: 6
@@ -61,9 +61,9 @@ MonoBehaviour:
     ruleName: 16
     durationModType: 0
     durationModifier: 1
-    appliedActions: 
+    appliedActions: 02000000
     ruleRelatedObjects: []
-    mutuallyExclusives: 
+    mutuallyExclusives: 0200000010000000
     durationModDivider: 3
     minAmount: 1
     maxAmount: 6
@@ -71,13 +71,13 @@ MonoBehaviour:
     ruleName: 3
     durationModType: 1
     durationModifier: 1
-    appliedActions: 
+    appliedActions: 00000000
     ruleRelatedObjects: []
-    mutuallyExclusives: 
+    mutuallyExclusives: 0300000011000000
   doNotDanceRule:
     ruleName: 17
     durationModType: 1
     durationModifier: 1
-    appliedActions: 
+    appliedActions: 03000000
     ruleRelatedObjects: []
-    mutuallyExclusives: 
+    mutuallyExclusives: 0300000011000000
