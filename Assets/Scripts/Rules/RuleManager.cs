@@ -1,22 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class RuleManager : MonoBehaviour, IGameEntity
 {
     [SerializeField]
-    GameManager gameManagerObject;
+    private GameManager gameManagerObject;
+
+    [SerializeField]
+    [Tooltip("!! TEMPORARY TREAD AS TEXT FIELD OBJECT INSIDE GAMEOBJECT !! (May be permanent)")]
+    private GameObject ruleInformationContainer;
+
+    private Text ruleContainer;
 
     [SerializeField]
     private AllRulesObject rules;
-
-    [SerializeField]
-    [Range(1, 3)]
-    private int minAmount = 1;
-
-    [SerializeField]
-    [Range(4, 8)]
-    private int maxAmount = 4;
 
     List<Rule> rulesToApply = new List<Rule>();
 
@@ -25,26 +24,13 @@ public class RuleManager : MonoBehaviour, IGameEntity
     private void Awake()
     {
         factory = new RuleFactory(rules);
+        ruleContainer = ruleInformationContainer.GetComponent<Text>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetNewRuleset(List<Rule> newRuleset)
     {
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            Debug.Log("Generated:");
-            rulesToApply = factory.GetRandomRuleset(Random.Range(minAmount,maxAmount));
-            PrintRules();
-        }
-    }
-
-    private void PrintRules()
-    {
-        foreach (Rule rule in rulesToApply)
-        {
-            string color = rule.IsReverse() ? "cyan" : "red";
-            Debug.Log("<color=" + color + ">"+ rule.ToString() + "</color>");
-        }
+        rulesToApply = newRuleset;
+        UpdateRulesOnScreen();
     }
 
     public void ApplyRule(Actions actionDone)
@@ -55,6 +41,16 @@ public class RuleManager : MonoBehaviour, IGameEntity
         }
 
         CheckIfAllCompleted();
+    }
+
+    private void UpdateRulesOnScreen()
+    {
+        string rules = "Rules: \n";
+        foreach (Rule r in rulesToApply)
+        {
+            rules += r.ToString() + "\n";
+        }
+        ruleContainer.text = rules;
     }
 
     private void CheckIfAllCompleted()
@@ -78,7 +74,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void RulesCompleted()
     {
-
+        gameManagerObject.EndOfStage();
     }
 
     void IGameEntity.Init(GameManager gameManager)

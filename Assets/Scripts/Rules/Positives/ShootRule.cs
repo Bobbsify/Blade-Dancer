@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class ShootRule : Rule, IRule
+public class ShootRule : Rule
 {
     [SerializeField]
     [Tooltip("Amount to divide from 'Amount To Shoot' to define time")]
@@ -26,7 +26,11 @@ public class ShootRule : Rule, IRule
 
     public ShootRule()
     {
+        Init();
+    }
 
+    public override void Init()
+    {
         amountToShoot = new System.Random().Next(minAmount, maxAmount);
 
         switch (GetDurationModType())
@@ -38,9 +42,8 @@ public class ShootRule : Rule, IRule
                 //Duration is already set in inspector
                 break;
             default:
-                throw new System.InvalidOperationException("Unkown durationModType: "+ GetDurationModType());
+                throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
-
     }
 
     public override bool CheckAction(Actions executedAction)

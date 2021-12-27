@@ -26,7 +26,12 @@ public class NotDashRule : Rule
 
     public NotDashRule()
     {
+        Init();
 
+    }
+
+    public override void Init()
+    {
         targetAmountOfDashes = new System.Random().Next(minAmount, maxAmount);
 
         switch (GetDurationModType())
@@ -40,7 +45,6 @@ public class NotDashRule : Rule
             default:
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
-
     }
 
     public override bool CheckAction(Actions executedAction)

@@ -21,6 +21,11 @@ public class NotShootRule : Rule
     
     public NotShootRule()
     {
+        Init();
+    }
+
+    public override void Init()
+    {
         amountNotToShoot = new System.Random().Next(minAmount, maxAmount);
 
         switch (GetDurationModType())
@@ -34,7 +39,6 @@ public class NotShootRule : Rule
             default:
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
-
     }
 
     public override bool CheckAction(Actions executedAction)

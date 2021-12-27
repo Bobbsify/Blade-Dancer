@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class DashRule : Rule, IRule
+public class DashRule : Rule
 {
     [SerializeField]
     [Tooltip("Amount to divide from 'Amount of dashes' to define time")]
@@ -26,7 +26,11 @@ public class DashRule : Rule, IRule
 
     public DashRule()
     {
+        Init();
+    }
 
+    public override void Init()
+    {
         targetAmountOfDashes = new System.Random().Next(minAmount, maxAmount);
 
         switch (GetDurationModType())
@@ -40,7 +44,6 @@ public class DashRule : Rule, IRule
             default:
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
-
     }
 
     public override bool CheckAction(Actions executedAction)

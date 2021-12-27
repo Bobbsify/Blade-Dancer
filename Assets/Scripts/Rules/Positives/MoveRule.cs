@@ -23,6 +23,11 @@ public class MoveRule : Rule
 
     public MoveRule()
     {
+        Init();
+    }
+
+    public override void Init()
+    {
         durationOfMove = new System.Random().Next(minDuration, maxDuration);
 
         switch (GetDurationModType())

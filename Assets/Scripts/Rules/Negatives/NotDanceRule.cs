@@ -12,7 +12,11 @@ public class NotDanceRule : Rule
 
     public NotDanceRule()
     {
+        Init();
+    }
 
+    public override void Init()
+    {
         switch (GetDurationModType())
         {
             case DurationModType.RuleDependant:
@@ -25,7 +29,6 @@ public class NotDanceRule : Rule
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
     }
-
 
     public override bool CheckAction(Actions executedAction)
     {

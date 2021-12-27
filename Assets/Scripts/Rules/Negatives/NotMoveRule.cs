@@ -12,7 +12,11 @@ public class NotMoveRule : Rule
 
     public NotMoveRule()
     {
+        Init();
+    }
 
+    public override void Init()
+    {
         switch (GetDurationModType())
         {
             case DurationModType.RuleDependant:
