@@ -8,18 +8,34 @@ public class SoundQueueManager
     private List<SoundPacket> loopAudioList= new List<SoundPacket>();
     private List<SoundPacket> delayAudioList= new List<SoundPacket>();
     private List<SoundPacket> playOnceAudioList=new List<SoundPacket>();
-    private SoundEmissionManager sem;
+    private SoundEmissionManager emission;
 
     public void AddSound(SoundPacket sound, bool fade=false)
     {
-        playOnceAudioList.Add(sound);
-        sem.PlayAudio(sound);
+        if(fade==false)
+        {
+            playOnceAudioList.Add(sound);
+            emission.PlayAudio(sound);
+        }
+        else
+        {
+            playOnceAudioList.Add(sound);
+            emission.FadeIn(sound);
+        }
     }
 
     public void RemoveSound(SoundPacket sound, bool fade=false)
     {
-        playOnceAudioList.Remove(sound);
-        sem.StopAudio(sound);
+        if(fade==false)
+        {
+            playOnceAudioList.Remove(sound);
+            emission.StopAudio(sound);
+        }
+        else
+        {
+            playOnceAudioList.Add(sound);
+            emission.FadeOut(sound);
+        }
     }
 
     public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
