@@ -58,6 +58,8 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
+    private const float roomUnderminingValue = 10.0f;
+
     private void Awake()
 	{
 		this.GeneratePlayerPawn();
@@ -84,14 +86,26 @@ public class GameManager : MonoBehaviour
             Stage currentStage = currentStreak.GetCurrentStage();
             if (currentStage != null)
             {
-                ruleManager.SetNewRuleset(currentStage.GetRules());
-                currentArena = Instantiate(currentStage.GetRoom());
+                GoToNextStage(currentStage);
             }
             else
             {
                 StreakEnded();
             }
         }
+    }
+
+    private void GoToNextStage(Stage currentStage)
+    {
+        ruleManager.SetNewRuleset(currentStage.GetRules());
+        currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity);
+    }
+
+    private Vector3 RoomPosition()
+    {
+        Vector3 playerPos = PlayerPawn.transform.position;
+        playerPos.y -= roomUnderminingValue;
+        return playerPos;
     }
 
     public void ActionEventTrigger(Actions action)
@@ -107,8 +121,9 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
-        ruleManager.SetNewRuleset(currentStreak.NextStage().GetRules());
+        Stage nextStage = currentStreak.NextStage();
         Destroy(currentArena);
+        GoToNextStage(nextStage);
     }
 
     private void GenerateNewStreak()
@@ -119,7 +134,7 @@ public class GameManager : MonoBehaviour
 
     private void GeneratePlayerPawn()
 	{
-		this.PlayerPawn = GameObject.Instantiate(this.playerPrefab, this.spawnPoint.position, Quaternion.identity);
+		this.PlayerPawn = Instantiate(this.playerPrefab, this.spawnPoint.position, Quaternion.identity);
 		this.PlayerPawn.transform.SetParent(this.inputReceiversTransform);
 	}
 
