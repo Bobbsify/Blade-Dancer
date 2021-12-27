@@ -13,9 +13,9 @@ public class ActionTester : MonoBehaviour, IGameEntity
 
     GameManager manager;
 
-    private void Update()
+    private void FixedUpdate()
     {
-        if (Input.GetKeyUp(submitKeycode))
+        if (Input.GetKey(submitKeycode))
         {
             manager.ActionEventTrigger(actionToSubmit);
         }

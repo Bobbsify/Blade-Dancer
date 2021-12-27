@@ -65,6 +65,6 @@ public class DashRule : Rule
 
     public override string ToString()
     {
-        return "Dash (" + targetAmountOfDashes + ")";
+        return "Dash (" + Mathf.Max(targetAmountOfDashes - dashAmount, 0) + ")";
     }
 }

@@ -7,7 +7,7 @@ using UnityEngine;
 public class ShootRule : Rule
 {
     [SerializeField]
-    [Tooltip("Amount to divide from 'Amount To Shoot' to define time")]
+    [Tooltip("Amount to divide from 'Amount To Shoot' to define time (works only on Duration Mod Type Rule Dependant)")]
     [Range(1,5)]
     private int durationModDivider = 3;
 
@@ -65,6 +65,6 @@ public class ShootRule : Rule
 
     public override string ToString()
     {
-        return "Shoot (" + amountToShoot + ")";
+        return "Shoot (" + Mathf.Max(amountToShoot - amountShot,0) + ")";
     }
 }

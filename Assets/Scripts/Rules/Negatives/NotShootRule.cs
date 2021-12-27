@@ -60,6 +60,6 @@ public class NotShootRule : Rule
 
     public override string ToString()
     {
-        return "Shoot (" + amountNotToShoot + ")"; 
+        return "Shoot (" + Mathf.Max(amountNotToShoot - amountShot, 0) + ")"; 
     }
 }

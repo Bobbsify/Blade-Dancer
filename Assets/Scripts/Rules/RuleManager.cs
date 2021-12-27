@@ -39,7 +39,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
         {
             rule.CheckAction(actionDone);
         }
-
+        UpdateRulesOnScreen();
         CheckIfAllCompleted();
     }
 
@@ -48,7 +48,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
         string rules = "Rules: \n";
         foreach (Rule r in rulesToApply)
         {
-            rules += r.ToString() + "\n";
+            rules += (r.IsReverse() ? " X " : " V ") + r.ToString() + "\n";
         }
         ruleContainer.text = rules;
     }
