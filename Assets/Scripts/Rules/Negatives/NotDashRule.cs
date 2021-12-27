@@ -19,13 +19,15 @@ public class NotDashRule : Rule
     [Range(5, 10)]
     private int maxAmount = 6;
 
-    private int targetAmountOfDashes;
+    private int targetAmountOfDashes = 3;
     private float dashAmount = 0;
 
     private float durationModFormula => targetAmountOfDashes / durationModDivider;
 
     public override void Init()
     {
+        dashAmount = 0;
+
         targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
 
         switch (GetDurationModType())
@@ -39,6 +41,13 @@ public class NotDashRule : Rule
             default:
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
+    }
+
+    public override Rule GetNewInstance()
+    {
+        NotDashRule ruleToSend = new NotDashRule();
+        ruleToSend.Init();
+        return ruleToSend;
     }
 
     public override bool CheckAction(Actions executedAction)

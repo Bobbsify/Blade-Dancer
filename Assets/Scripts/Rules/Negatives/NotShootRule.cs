@@ -14,13 +14,15 @@ public class NotShootRule : Rule
     [Range(5, 8)]
     private int maxAmount = 6;
 
-    private int amountNotToShoot;
+    private int amountNotToShoot = 3;
     private float amountShot = 0;
 
     private float durationModFormula => 1.0f;
 
     public override void Init()
     {
+        amountShot = 0;
+
         amountNotToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
 
         switch (GetDurationModType())
@@ -34,6 +36,13 @@ public class NotShootRule : Rule
             default:
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
+    }
+
+    public override Rule GetNewInstance()
+    {
+        NotShootRule ruleToSend = new NotShootRule();
+        ruleToSend.Init();
+        return ruleToSend;
     }
 
     public override bool CheckAction(Actions executedAction)

@@ -19,13 +19,15 @@ public class ShootRule : Rule
     [Range(5,10)]
     private int maxAmount = 6;
 
-    private int amountToShoot;
+    private int amountToShoot = 3;
     private float amountShot = 0;
 
     private float durationModFormula => amountToShoot / durationModDivider;
 
     public override void Init()
     {
+        amountShot = 0;
+
         amountToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
 
         switch (GetDurationModType())
@@ -41,8 +43,17 @@ public class ShootRule : Rule
         }
     }
 
+    public override Rule GetNewInstance()
+    {
+        ShootRule ruleToSend = new ShootRule();
+        ruleToSend.Init();
+        return ruleToSend;
+    }
+
     public override bool CheckAction(Actions executedAction)
     {
+        Debug.Log("Check Shooting");
+        Debug.Log(executedAction + " == " + Actions.Shoot + " ? ");
         foreach (Actions action in appliedActions)
         {
             if (action == executedAction)
@@ -60,6 +71,7 @@ public class ShootRule : Rule
 
     public override string ToString()
     {
+        Debug.Log(amountToShoot);
         return "Shoot (" + Mathf.Max(amountToShoot - amountShot,0) + ")";
     }
 }

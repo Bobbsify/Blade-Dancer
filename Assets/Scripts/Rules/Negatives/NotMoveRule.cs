@@ -25,6 +25,13 @@ public class NotMoveRule : Rule
         }
     }
 
+    public override Rule GetNewInstance()
+    {
+        NotMoveRule ruleToSend = new NotMoveRule();
+        ruleToSend.Init();
+        return ruleToSend;
+    }
+
     public override bool CheckAction(Actions exectuedAction)
     {
         foreach (Actions action in appliedActions)

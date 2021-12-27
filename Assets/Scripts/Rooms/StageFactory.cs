@@ -17,7 +17,12 @@ public class StageFactory
     {
         GameObject randomRoom = room != null ? room : defaultRooms[Random.Range(0, defaultRooms.Length)]; //If room is passed the random room is the room else it is a random room
         List<Rule> ruleSet = factory.GetRandomRuleset(difficulty);
-        return new Stage(randomRoom,ruleSet);
+        List<Rule> submittedRules = new List<Rule>();
+        foreach (Rule r in ruleSet)
+        {
+            submittedRules.Add(r.GetNewInstance());
+        }
+        return new Stage(randomRoom,submittedRules);
     }
 
 }

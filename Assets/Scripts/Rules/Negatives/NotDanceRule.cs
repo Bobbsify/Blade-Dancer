@@ -25,6 +25,13 @@ public class NotDanceRule : Rule
         }
     }
 
+    public override Rule GetNewInstance()
+    {
+        NotDanceRule ruleToSend = new NotDanceRule();
+        ruleToSend.Init();
+        return ruleToSend;
+    }
+
     public override bool CheckAction(Actions executedAction)
     {
         foreach (Actions action in appliedActions)

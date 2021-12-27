@@ -12,6 +12,8 @@ public class DanceRule : Rule
 
     public override void Init()
     {
+        complete = false;
+
         switch (GetDurationModType())
         {
             case DurationModType.RuleDependant:
@@ -23,6 +25,13 @@ public class DanceRule : Rule
             default:
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
+    }
+
+    public override Rule GetNewInstance()
+    {
+        DanceRule ruleToSend = new DanceRule();
+        ruleToSend.Init();
+        return ruleToSend;
     }
 
     public override bool CheckAction(Actions executedAction)

@@ -27,6 +27,8 @@ public abstract class Rule : IRule
 
     public abstract void Init();
 
+    public abstract Rule GetNewInstance();
+
     public virtual void SetDurationMod(float amount)
     {
         durationModifier = amount;

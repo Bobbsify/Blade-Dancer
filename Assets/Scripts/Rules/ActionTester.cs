@@ -5,13 +5,13 @@ using UnityEngine;
 public class ActionTester : MonoBehaviour, IGameEntity
 {
     [SerializeField]
-    Actions actionToSubmit;
+    private Actions actionToSubmit;
 
     [Header("Press To Submit")]
     [SerializeField]
-    KeyCode submitKeycode = KeyCode.Break;
+    private KeyCode submitKeycode = KeyCode.Break;
 
-    GameManager manager;
+    private GameManager manager;
 
     private void FixedUpdate()
     {

@@ -54,7 +54,6 @@ public class RuleFactory
             }
             if (!exclusive)
             {
-                randomRule.Init();
                 selectedRules.Add(randomRule);
                 rulePool.Remove(randomRule);
             }

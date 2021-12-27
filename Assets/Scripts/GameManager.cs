@@ -110,6 +110,7 @@ public class GameManager : MonoBehaviour
 
     public void ActionEventTrigger(Actions action)
     {
+        Debug.Log("Action triggered " + action);
         ruleManager.ApplyRule(action);
     }
 

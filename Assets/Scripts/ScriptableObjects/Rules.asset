@@ -15,7 +15,7 @@ MonoBehaviour:
   moveRule:
     ruleName: 0
     durationModType: 0
-    durationModifier: 7
+    durationModifier: 9
     appliedActions: 00000000
     ruleRelatedObjects: []
     mutuallyExclusives: 000000000e000000
@@ -71,7 +71,7 @@ MonoBehaviour:
     ruleName: 3
     durationModType: 1
     durationModifier: 1
-    appliedActions: 00000000
+    appliedActions: 03000000
     ruleRelatedObjects: []
     mutuallyExclusives: 0300000011000000
   doNotDanceRule:

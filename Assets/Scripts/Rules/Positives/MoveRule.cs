@@ -16,13 +16,15 @@ public class MoveRule : Rule
     [Range(5, 10)]
     private int maxDuration = 10;
 
-    private int durationOfMove;
+    private int durationOfMove = 3;
     private float moveTimer = 0;
 
     private float durationModFormula => durationOfMove + MERCY;
 
     public override void Init()
     {
+        moveTimer = 0;
+
         durationOfMove = UnityEngine.Random.Range(minDuration, maxDuration);
 
         switch (GetDurationModType())
@@ -36,6 +38,13 @@ public class MoveRule : Rule
             default:
                 throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
         }
+    }
+
+    public override Rule GetNewInstance()
+    {
+        MoveRule ruleToSend = new MoveRule();
+        ruleToSend.Init();
+        return ruleToSend;
     }
 
     public override bool CheckAction(Actions executedAction)
