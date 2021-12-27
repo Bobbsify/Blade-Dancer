@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 
 public class SoundPacket
 {
-    private AudioClip audio;
+    private AudioSource audio;
 
     private Transform playPos;
 
@@ -14,7 +14,7 @@ public class SoundPacket
 
     private float playDelay;
 
-    public SoundPacket(AudioClip audio, Transform playPos, SoundType audioType, float playDelay = 0)
+    public SoundPacket(AudioSource audio, Transform playPos, SoundType audioType, float playDelay = 0)
     {
         this.audio = audio;
         this.playPos = playPos;
@@ -23,7 +23,7 @@ public class SoundPacket
     }
 
 
-    public AudioClip GetAudio()
+    public AudioSource GetAudio()
     {
         return audio;
     }

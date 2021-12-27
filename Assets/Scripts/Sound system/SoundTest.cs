@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class SoundTest : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip audio;
+    private AudioSource audio;
 
     [SerializeField]
     private Transform playPos;
