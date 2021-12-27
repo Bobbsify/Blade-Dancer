@@ -5,10 +5,12 @@ using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
-    DialoguePacket currentDialogue;
+    Dialogue currentDialogue;
 
-    public void DoDialogue()
+    public void DoDialogue(DialoguePacket dialoguePerformed)
     {
-
+        currentDialogue = dialoguePerformed.getNextLine();
+        Debug.Log(dialoguePerformed);
+        //FindObjectOfType<DialoguePacket>().StartDialogue(currentDialogue);
     }
 }
