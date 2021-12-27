@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class RoomController : MonoBehaviour
 {
-    [Header("Set them as same length to allow dictionary compilation (Element 0 is associated to Element 0 of Type Of Position Rleative To Transform and so on..)")]
+    [Header("Set them as same length to allow dictionary compilation")]
 
     [SerializeField]
-    [Tooltip("(Element 0 is associated to Element 0 and so on..)")]
+    [Tooltip("(Element 0 is associated to Element 0 of typeOfPositionRelativeToTransform and so on..)")]
     private List<Transform> transformsOfPositionType;
 
     [SerializeField]
     [Tooltip("(Element 0 is associated to Element 0 of Transforms Of Position Type and so on..)")]
     private List<PositionType> typeOfPositionRelativeToTransform;
 
-    private Dictionary<PositionType, Vector3> associatedPositions;
+    private Dictionary<PositionType, Vector3> associatedPositions = new Dictionary<PositionType, Vector3>();
 
     private List<Vector3> corners = new List<Vector3>();
 

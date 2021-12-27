@@ -15,11 +15,25 @@ public class Streak
 
     public Stage GetCurrentStage()
     {
-        return this.stages[currentStage];
+        try
+        {
+            return this.stages[currentStage];
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            return null;
+        }
     }
 
     public Stage NextStage()
     {
-        return this.stages[++currentStage];
+        try
+        {
+            return this.stages[++currentStage];
+        }
+        catch (System.IndexOutOfRangeException)
+        {
+            return null;
+        }
     }
 }
