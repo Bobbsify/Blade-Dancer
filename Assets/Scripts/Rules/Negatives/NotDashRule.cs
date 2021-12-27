@@ -24,15 +24,9 @@ public class NotDashRule : Rule
 
     private float durationModFormula => targetAmountOfDashes / durationModDivider;
 
-    public NotDashRule()
-    {
-        Init();
-
-    }
-
     public override void Init()
     {
-        targetAmountOfDashes = new System.Random().Next(minAmount, maxAmount);
+        targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
 
         switch (GetDurationModType())
         {

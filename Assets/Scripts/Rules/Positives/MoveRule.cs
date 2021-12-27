@@ -21,14 +21,9 @@ public class MoveRule : Rule
 
     private float durationModFormula => durationOfMove + MERCY;
 
-    public MoveRule()
-    {
-        Init();
-    }
-
     public override void Init()
     {
-        durationOfMove = new System.Random().Next(minDuration, maxDuration);
+        durationOfMove = UnityEngine.Random.Range(minDuration, maxDuration);
 
         switch (GetDurationModType())
         {

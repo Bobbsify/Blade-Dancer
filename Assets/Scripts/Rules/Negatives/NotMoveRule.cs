@@ -10,11 +10,6 @@ public class NotMoveRule : Rule
 
     private float durationModFormula => -2f;
 
-    public NotMoveRule()
-    {
-        Init();
-    }
-
     public override void Init()
     {
         switch (GetDurationModType())

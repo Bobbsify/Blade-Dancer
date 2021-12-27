@@ -18,15 +18,10 @@ public class NotShootRule : Rule
     private float amountShot = 0;
 
     private float durationModFormula => 1.0f;
-    
-    public NotShootRule()
-    {
-        Init();
-    }
 
     public override void Init()
     {
-        amountNotToShoot = new System.Random().Next(minAmount, maxAmount);
+        amountNotToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
 
         switch (GetDurationModType())
         {

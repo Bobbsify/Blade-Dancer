@@ -10,11 +10,6 @@ public class NotDanceRule : Rule
 
     private bool complete = true;
 
-    public NotDanceRule()
-    {
-        Init();
-    }
-
     public override void Init()
     {
         switch (GetDurationModType())

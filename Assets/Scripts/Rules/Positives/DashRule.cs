@@ -19,19 +19,14 @@ public class DashRule : Rule
     [Range(5, 10)]
     private int maxAmount = 6;
 
-    private int targetAmountOfDashes;
+    private int targetAmountOfDashes = 0;
     private float dashAmount = 0;
 
     private float durationModFormula => targetAmountOfDashes / durationModDivider;
 
-    public DashRule()
-    {
-        Init();
-    }
-
     public override void Init()
     {
-        targetAmountOfDashes = new System.Random().Next(minAmount, maxAmount);
+        targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
 
         switch (GetDurationModType())
         {

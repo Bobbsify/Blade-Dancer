@@ -10,11 +10,6 @@ public class DanceRule : Rule
 
     private bool complete = false;
 
-    public DanceRule()
-    {
-        Init();
-    }
-
     public override void Init()
     {
         switch (GetDurationModType())

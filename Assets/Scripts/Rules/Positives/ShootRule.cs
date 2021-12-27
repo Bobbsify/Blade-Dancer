@@ -24,14 +24,9 @@ public class ShootRule : Rule
 
     private float durationModFormula => amountToShoot / durationModDivider;
 
-    public ShootRule()
-    {
-        Init();
-    }
-
     public override void Init()
     {
-        amountToShoot = new System.Random().Next(minAmount, maxAmount);
+        amountToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
 
         switch (GetDurationModType())
         {

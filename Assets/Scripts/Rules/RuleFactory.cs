@@ -24,7 +24,21 @@ public class RuleFactory
         List<Rule> rulePool = rules.getAll();
 
         int rulePoolLength = rulePool.Count;
-        for (int i = 0; i < amount; i++)
+
+        //At least one rule must not be reverse so the first rule is always normal
+        do
+        {
+            int allRulesLength = rulePool.Count;
+            int randomElement = Random.Range(0, allRulesLength);
+            Rule randomRule = rulePool[randomElement];
+            if (!randomRule.IsReverse())
+            {
+                selectedRules.Add(randomRule);
+            }
+        } while (selectedRules.Count == 0);
+
+        //All other rules are completely randomized
+        for (int i = 1; i < amount; i++)
         {
             int allRulesLength = rulePool.Count;
             int randomElement = Random.Range(0, allRulesLength);
@@ -40,6 +54,7 @@ public class RuleFactory
             }
             if (!exclusive)
             {
+                randomRule.Init();
                 selectedRules.Add(randomRule);
                 rulePool.Remove(randomRule);
             }
