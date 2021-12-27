@@ -19,6 +19,7 @@ public class Stage
                 clone.transform.position = FetchObjectPosition(obj.pos);
             }
         }
+        this.stageRules = stageRules;
     }
 
     private Vector3 FetchObjectPosition(PositionType pos)
