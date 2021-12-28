@@ -19,18 +19,22 @@ public class PlayerController : MonoBehaviour
 
     Dash dash;
 
+    Dance dance;
+
+    Shoot shoot;
+
     private Animator animPlayer;
 
     IAbility[] abilities;
 
     private void OnValidate()
     {
-        this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
+       this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
     }
 
     private void Start()
     {
-       // this.abilities = searchRoot.GetComponentInChildren<IAbility>(true);
+       this.abilities = this.searchRoot.GetComponentsInChildren<IAbility>(true);
     }
 
     void TryTriggerAbility(string name)
@@ -38,7 +42,17 @@ public class PlayerController : MonoBehaviour
         if (Input.GetButtonDown(this.DashInput))
         {
             this.dash.Trigger(this.gameObject);
-        }    
+        }
+
+        if (Input.GetButtonDown(this.DanceInput))
+        {
+            this.dance.Trigger(this.gameObject);
+        }
+
+        if (Input.GetButtonDown(this.ShootInput))
+        {
+            this.shoot.Trigger(this.gameObject);
+        }
     }
 
     public void DoDeath()

@@ -17,11 +17,11 @@ public class SoundEmissionManager : MonoBehaviour
         AudioSource audio = soundToStop.GetAudio();
         audio.Stop();
     }
-    public void FadeIn(float fadeDuration=1)
+    public void FadeIn(SoundPacket soundToFadeIn, float fadeDuration=1)
     {
 
     }
-    public void FadeOut(float fadeduration=1)
+    public void FadeOut(SoundPacket soundToFadeOut, float fadeduration=1)
     {
 
     }
