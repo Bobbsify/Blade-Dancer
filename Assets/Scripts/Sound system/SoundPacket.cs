@@ -6,12 +6,16 @@ using UnityEngine.Audio;
 
 public class SoundPacket
 {
+    [SerializeField]
     private AudioSource audio;
 
+    [SerializeField]
     private Transform playPos;
 
+    [SerializeField]
     private SoundType audioType;
 
+    [SerializeField]
     private float playDelay;
 
     public SoundPacket(AudioSource audio, Transform playPos, SoundType audioType, float playDelay = 0)
