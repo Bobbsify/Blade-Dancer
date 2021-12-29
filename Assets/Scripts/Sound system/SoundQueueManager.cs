@@ -5,9 +5,9 @@ using UnityEngine.Audio;
 
 public class SoundQueueManager
 {
-    private List<SoundPacket> loopAudioList= new List<SoundPacket>();
-    private List<SoundPacket> delayAudioList= new List<SoundPacket>();
-    private List<SoundPacket> playOnceAudioList=new List<SoundPacket>();
+    public List<SoundPacket> loopAudioList= new List<SoundPacket>();
+    public List<SoundPacket> delayAudioList= new List<SoundPacket>();
+    public List<SoundPacket> playOnceAudioList=new List<SoundPacket>();
     private SoundEmissionManager emission;
 
     public void AddSound(SoundPacket sound, bool fade=false)
