@@ -67,6 +67,19 @@ public class RuleFactory
         return selectedRules;
     }
 
+    public Rule GetRule(AllRules ruleName)
+    {
+        foreach(RuleSetting setting in rulesSettings)
+        {
+            Rule r = setting.GetRule();
+            if (r.GetRuleName() == ruleName)
+            {
+                return r;
+            }
+        }
+        throw new System.Exception("Could not find rule " + ruleName);
+    }
+
     private List<RuleSetting> CompileRulePool()
     {
         List<RuleSetting> rulePool = new List<RuleSetting>();
