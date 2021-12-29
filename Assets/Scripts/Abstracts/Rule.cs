@@ -4,15 +4,10 @@ using UnityEngine;
 
 public abstract class Rule : IRule
 {
-    [Header("Duration Tweaking")]
-    [SerializeField]
-    private AllRules ruleName;
-
-    [SerializeField]
-    [Tooltip("Defines wether or not the amount written in the \"Duration Modifier\" Box affects the duration of the rule or if it is calculated by the rule itself")]
-    private DurationModType durationModType;
-
-    [SerializeField]
+    protected AllRules RuleName { get; set; }
+    
+    private DurationModType DurationModType { get; set; }
+    
     private float durationModifier; // modificatore che definisce la quantità in secondi di cui deve aumentare la durata in presenza di questa regola
 
     [Header("Rule Functionality Tweaking")]
@@ -25,16 +20,9 @@ public abstract class Rule : IRule
     [SerializeField]
     protected List<AllRules> mutuallyExclusives = new List<AllRules>(); // (Can Be Empty) eventual objects that are correlated to the rule
 
-    public abstract void Init();
-
     public virtual void SetDurationMod(float amount)
     {
-        durationModifier = amount;
-    }
-
-    public virtual DurationModType GetDurationModType()
-    {
-        return this.durationModType;
+        this.durationModifier = amount;
     }
 
     public virtual bool IsMutuallyExclusive(AllRules r)
@@ -56,12 +44,12 @@ public abstract class Rule : IRule
 
     public virtual bool IsReverse()
     {
-        return this.ruleName.ToString().ToLower().Contains("not");
+        return this.RuleName.ToString().ToLower().Contains("not");
     }
 
     public virtual AllRules GetRuleName()
     {
-        return this.ruleName;
+        return this.RuleName;
     }
 
     public virtual bool CheckAction(Actions executedAction)

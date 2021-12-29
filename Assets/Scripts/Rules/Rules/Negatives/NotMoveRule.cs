@@ -8,23 +8,15 @@ public class NotMoveRule : Rule
 {
     bool hasNotMoved = true;
 
-    private float durationModFormula => -2f;
-
-    public override void Init()
+    public NotMoveRule(AllRules ruleName, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
-        switch (GetDurationModType())
-        {
-            case DurationModType.RuleDependant:
-                SetDurationMod(durationModFormula);
-                break;
-            case DurationModType.FixedAmount:
-                //Duration is already set in inspector
-                break;
-            default:
-                throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
-        }
+        this.RuleName = ruleName;
+        this.SetDurationMod(durationMod);
+        this.appliedActions = appliedActions;
+        this.mutuallyExclusives = mutuallyExclusives;
+        this.ruleRelatedObjects = ruleRelatedObjects;
     }
-
+    
     public override bool CheckAction(Actions exectuedAction)
     {
         foreach (Actions action in appliedActions)
@@ -32,10 +24,10 @@ public class NotMoveRule : Rule
             if (action == exectuedAction)
             {
                 hasNotMoved = false;
-                return false;
+                return hasNotMoved;
             }
         }
-        return true;
+        return hasNotMoved;
     }
 
     public override bool IsRuleComplete()

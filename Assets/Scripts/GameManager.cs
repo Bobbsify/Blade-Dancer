@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     [Header("Room Generation")]
 
     [SerializeField]
-    private AllRulesObject allRules;
+    private List<RuleSetting> allRules = new List<RuleSetting>();
 
     [SerializeField]
     private GameObject[] defaultRoomsPrefabs;
@@ -95,21 +95,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void GoToNextStage(Stage currentStage)
-    {
-        ruleManager.SetNewRuleset(currentStage.GetRules());
-        currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity);
-    }
-
-    private Vector3 RoomPosition()
-    {
-        Vector3 playerPos = PlayerPawn.transform.position;
-        playerPos.y -= roomUnderminingValue;
-        return playerPos;
-    }
-
     public void ActionEventTrigger(Actions action)
     {
+        Debug.Log("Action triggered " + action);
         ruleManager.ApplyRule(action);
     }
 
@@ -124,6 +112,24 @@ public class GameManager : MonoBehaviour
         Stage nextStage = currentStreak.NextStage();
         Destroy(currentArena);
         GoToNextStage(nextStage);
+    }
+
+    public List<RuleSetting> GetRuleSettings()
+    {
+        return this.allRules;
+    }
+
+    private void GoToNextStage(Stage currentStage)
+    {
+        ruleManager.SetNewRuleset(currentStage.GetRules());
+        currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity);
+    }
+
+    private Vector3 RoomPosition()
+    {
+        Vector3 playerPos = PlayerPawn.transform.position;
+        playerPos.y -= roomUnderminingValue;
+        return playerPos;
     }
 
     private void GenerateNewStreak()

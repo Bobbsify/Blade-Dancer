@@ -3,28 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
 public class NotDanceRule : Rule
 {
     private float durationModFormula => 1.0f;
 
     private bool complete = true;
 
-    public override void Init()
+    public NotDanceRule(AllRules ruleName, float duration, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
-        switch (GetDurationModType())
-        {
-            case DurationModType.RuleDependant:
-                SetDurationMod(durationModFormula);
-                break;
-            case DurationModType.FixedAmount:
-                //Duration is already set in inspector
-                break;
-            default:
-                throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
-        }
+        this.RuleName = ruleName;
+        SetDurationMod(duration);
+        this.appliedActions = appliedActions;
+        this.mutuallyExclusives = mutuallyExclusives;
+        this.ruleRelatedObjects = ruleRelatedObjects;
     }
-
     public override bool CheckAction(Actions executedAction)
     {
         foreach (Actions action in appliedActions)
@@ -35,7 +27,7 @@ public class NotDanceRule : Rule
                 return complete;
             }
         }
-        return true;
+        return complete;
     }
 
     public override bool IsRuleComplete()

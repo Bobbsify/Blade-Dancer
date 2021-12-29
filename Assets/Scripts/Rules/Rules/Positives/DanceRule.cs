@@ -10,19 +10,13 @@ public class DanceRule : Rule
 
     private bool complete = false;
 
-    public override void Init()
+    public DanceRule(AllRules ruleName, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
-        switch (GetDurationModType())
-        {
-            case DurationModType.RuleDependant:
-                SetDurationMod(durationModFormula);
-                break;
-            case DurationModType.FixedAmount:
-                //Duration is already set in inspector
-                break;
-            default:
-                throw new System.InvalidOperationException("Unkown durationModType: " + GetDurationModType());
-        }
+        this.RuleName = ruleName;
+        SetDurationMod(durationMod);
+        this.appliedActions = appliedActions;
+        this.mutuallyExclusives = mutuallyExclusives;
+        this.ruleRelatedObjects = ruleRelatedObjects;
     }
 
     public override bool CheckAction(Actions executedAction)

@@ -12,72 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f085921b7f77b41b9e40121aa75292, type: 3}
   m_Name: Rules
   m_EditorClassIdentifier: 
-  moveRule:
-    ruleName: 0
-    durationModType: 0
-    durationModifier: 7
-    appliedActions: 00000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 000000000e000000
-    minDuration: 2
-    maxDuration: 10
-  doNotMoveRule:
-    ruleName: 14
-    durationModType: 0
-    durationModifier: -2
-    appliedActions: 0000000002000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 000000000e0000000200000005000000130000000600000014000000080000000b0000000d000000
-  shootRule:
-    ruleName: 1
-    durationModType: 0
-    durationModifier: 1
-    appliedActions: 01000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 010000000f000000
-    durationModDivider: 3
-    minAmount: 1
-    maxAmount: 6
-  doNotShootRule:
-    ruleName: 15
-    durationModType: 1
-    durationModifier: 1
-    appliedActions: 01000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 010000000f0000000700000009000000
-    minAmount: 0
-    maxAmount: 6
-  dashRule:
-    ruleName: 2
-    durationModType: 0
-    durationModifier: 1
-    appliedActions: 02000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 02000000100000000e000000
-    durationModDivider: 3
-    minAmount: 1
-    maxAmount: 6
-  doNotDashRule:
-    ruleName: 16
-    durationModType: 0
-    durationModifier: 1
-    appliedActions: 02000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 0200000010000000
-    durationModDivider: 3
-    minAmount: 1
-    maxAmount: 6
-  danceRule:
-    ruleName: 3
-    durationModType: 1
-    durationModifier: 1
-    appliedActions: 00000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 0300000011000000
-  doNotDanceRule:
-    ruleName: 17
-    durationModType: 1
-    durationModifier: 1
-    appliedActions: 03000000
-    ruleRelatedObjects: []
-    mutuallyExclusives: 0300000011000000
+  allRuleSettings:
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
+  - {fileID: 11400000, guid: b3fd93dccc7608640ab5af50a14d2a84, type: 2}
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
