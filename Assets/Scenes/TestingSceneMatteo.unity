@@ -358,7 +358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManagerObject: {fileID: 0}
   ruleInformationContainer: {fileID: 1016289412}
-  rules: {fileID: 11400000, guid: 03e67b1588895254fa27164d20c7cc4a, type: 2}
 --- !u!1 &775131071
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +691,15 @@ MonoBehaviour:
   spawnPoint: {fileID: 1144692546}
   playerPrefab: {fileID: 8797037534487982121, guid: 522626dacc4a0fa4f968d852d6dacfc9,
     type: 3}
-  allRules: {fileID: 11400000, guid: 03e67b1588895254fa27164d20c7cc4a, type: 2}
+  allRules:
+  - {fileID: 11400000, guid: 7680b40ede1282c4aade29a2b2e7ab7e, type: 2}
+  - {fileID: 11400000, guid: b3fd93dccc7608640ab5af50a14d2a84, type: 2}
+  - {fileID: 11400000, guid: 1c1501a9244babe4e8e1c418ae45f862, type: 2}
+  - {fileID: 11400000, guid: ca17f733cf066f0468c513040a114220, type: 2}
+  - {fileID: 11400000, guid: c62aaf760908010428e784dd3f47b177, type: 2}
+  - {fileID: 11400000, guid: 79264cb53b4c0d640a8b2df4eda95536, type: 2}
+  - {fileID: 11400000, guid: 3f5eb9e775af0bf4c816ed3a286aeffc, type: 2}
+  - {fileID: 11400000, guid: 9116a0ae87370c94a986be7e67a2191f, type: 2}
   defaultRoomsPrefabs:
   - {fileID: 1087953974824055179, guid: ceb4e07a4ba13354ab100666b3432602, type: 3}
   ruleManagerLocation: {fileID: 565435773}
