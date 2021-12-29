@@ -6,23 +6,14 @@ using UnityEngine.Audio;
 public class SoundTest : MonoBehaviour
 {
     [SerializeField]
-    private AudioSource audio;
-
-    [SerializeField]
-    private Transform playPos;
-
-    [SerializeField]
-    private SoundType audioType;
-
-    [SerializeField]
-    private float playDelay;
+    private SoundPacket sound;
 
     private SoundQueueManager sqm=new SoundQueueManager();
     private void Update()
     {
         if(Input.GetKey(KeyCode.K))
         {
-            sqm.AddSound(new SoundPacket(audio, playPos, audioType, playDelay));
+            sqm.AddSound(sound);
         }
     }
 }
