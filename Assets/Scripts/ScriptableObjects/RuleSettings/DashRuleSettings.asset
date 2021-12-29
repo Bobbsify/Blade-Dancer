@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 1
-  appliedActions: 
+  appliedActions: 02000000
   ruleRelatedObjects: []
-  mutuallyExclusives: 
+  mutuallyExclusives: 0200000010000000
   durationModDivider: 3
   minAmount: 1
   maxAmount: 6
