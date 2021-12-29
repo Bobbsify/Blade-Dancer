@@ -59,6 +59,7 @@ public class GameManager : MonoBehaviour
     private GameObject currentArena;
 
     private const float roomUnderminingValue = 10.0f;
+    private bool startStreak = false;
 
     private void Awake()
 	{
@@ -80,9 +81,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.E))
+        if (startStreak)
         {
-            GenerateNewStreak();
             Stage currentStage = currentStreak.GetCurrentStage();
             if (currentStage != null)
             {
@@ -95,9 +95,14 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void StartStreak()
+    {
+        GenerateNewStreak();
+        startStreak = true;
+    }
+
     public void ActionEventTrigger(Actions action)
     {
-        Debug.Log("Action triggered " + action);
         ruleManager.ApplyRule(action);
     }
 
@@ -132,9 +137,9 @@ public class GameManager : MonoBehaviour
         return playerPos;
     }
 
-    private void GenerateNewStreak()
+    private void GenerateNewStreak(int fixedDifficulty = 0)
     {
-        int difficulty = Random.Range(minDifficulty, maxDifficulty);
+        int difficulty = fixedDifficulty == 0 ? Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty,maxDifficulty),minDifficulty); //If difficulty is preset make sure it is between the two max values
         currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
     }
 

@@ -20,8 +20,6 @@ public class ShootRule : Rule
 
     public override bool CheckAction(Actions executedAction)
     {
-        Debug.Log("Check Shooting");
-        Debug.Log(executedAction + " == " + Actions.Shoot + " ? ");
         foreach (Actions action in appliedActions)
         {
             if (action == executedAction)
@@ -39,7 +37,6 @@ public class ShootRule : Rule
 
     public override string ToString()
     {
-        Debug.Log(amountToShoot);
         return "Shoot (" + Mathf.Max(amountToShoot - amountShot,0) + ")";
     }
 }

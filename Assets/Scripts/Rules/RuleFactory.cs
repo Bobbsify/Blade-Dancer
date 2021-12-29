@@ -21,7 +21,7 @@ public class RuleFactory
     public List<Rule> GetRandomRuleset(int amount)
     {
         List<Rule> selectedRules = new List<Rule>();
-        List<RuleSetting> rulePool = rulesSettings;
+        List<RuleSetting> rulePool = CompileRulePool();
 
         int rulePoolLength = rulePool.Count;
 
@@ -39,8 +39,6 @@ public class RuleFactory
         } while (selectedRules.Count == 0);
 
         //All other rules are completely randomized
-        int debug_escape = 0;
-        Debug.LogWarning(this + " contains debug_escape, Remove after debug is complete");
         for (int i = 1; i < amount; i++)
         {
             int allRulesLength = rulePool.Count;
@@ -59,14 +57,23 @@ public class RuleFactory
             if (!exclusive)
             {
                 selectedRules.Add(randomRule);
-                rulePool.Remove(randomRuleSetting);
+                rulePool.Remove(randomRuleSetting); //Todo add back after completion
             }
             else
             {
                 i--;
             }
-            if (++debug_escape > 50000) break;
         }
         return selectedRules;
+    }
+
+    private List<RuleSetting> CompileRulePool()
+    {
+        List<RuleSetting> rulePool = new List<RuleSetting>();
+        foreach (RuleSetting r in rulesSettings)
+        {
+            rulePool.Add(r);
+        }
+        return rulePool;
     }
 }

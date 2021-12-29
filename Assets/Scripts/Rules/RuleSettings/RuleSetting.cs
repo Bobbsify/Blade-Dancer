@@ -13,13 +13,13 @@ public abstract class RuleSetting : ScriptableObject
     
     [Header("Rule Functionality Tweaking")]
     [SerializeField]
-    protected List<Actions> appliedActions = new List<Actions>(); // actions that cause the rule to be completed
+    protected List<Actions> appliedActions; // actions that cause the rule to be completed
 
     [SerializeField]
-    protected List<RuleObject> ruleRelatedObjects = new List<RuleObject>(); // (Can Be Empty) eventual objects that are correlated to the rule
+    protected List<RuleObject> ruleRelatedObjects; // (Can Be Empty) eventual objects that are correlated to the rule
 
     [SerializeField]
-    protected List<AllRules> mutuallyExclusives = new List<AllRules>(); // Rules this rule cannot be paired with
+    protected List<AllRules> mutuallyExclusives; // Rules this rule cannot be paired with
 
     public abstract Rule GetRule();
 }
