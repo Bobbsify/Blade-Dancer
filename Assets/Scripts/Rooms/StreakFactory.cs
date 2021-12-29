@@ -29,6 +29,24 @@ public class StreakFactory
         return new Streak(stages);
     }
 
+    public Streak GetTutorialStreak()
+    {
+        List<Stage> tutorialStages = new List<Stage>();
+
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Move)); //Stage 1
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Shoot)); //Stage 2
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Dash)); //Stage 3
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Dance)); //Stage 4
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Move, AllRules.Shoot)); //Stage 5
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Move, AllRules.NotShoot)); //Stage 6
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Move, AllRules.NotDash)); //Stage 7
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Dash, AllRules.NotShoot)); //Stage 8
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Kill)); //Stage 9
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Kill, AllRules.NotDash, AllRules.NotDance)); //Stage 10
+
+        return new Streak(tutorialStages);
+    }
+
     private int compileDifficulty(ref float difficulty, float increaseAmount)
     {
         difficulty += increaseAmount;

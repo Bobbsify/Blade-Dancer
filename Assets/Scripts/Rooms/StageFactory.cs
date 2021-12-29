@@ -25,4 +25,25 @@ public class StageFactory
         return new Stage(randomRoom,submittedRules);
     }
 
+    public Stage GetFixedStage(GameObject room = null, params AllRules[] rules)
+    {
+        GameObject randomRoom = room;
+        List<Rule> ruleSet = new List<Rule>();
+        foreach (AllRules rule in rules)
+        {
+            ruleSet.Add(factory.GetRule(rule));
+        }
+        return new Stage(randomRoom, ruleSet);
+    }
+
+    public Stage GetFixedStage(params AllRules[] rules)
+    {
+        GameObject randomRoom = defaultRooms[Random.Range(0, defaultRooms.Length)];
+        List<Rule> ruleSet = new List<Rule>();
+        foreach (AllRules rule in rules)
+        {
+            ruleSet.Add(factory.GetRule(rule));
+        }
+        return new Stage(randomRoom, ruleSet);
+    }
 }
