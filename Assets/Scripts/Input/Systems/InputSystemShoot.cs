@@ -5,11 +5,20 @@ using UnityEngine;
 [RequireComponent(typeof(InputManager))]
 public class InputSystemShoot : MonoBehaviour
 {
+	private enum InputType
+	{
+		Update,
+		FixedUpdate
+	}
+
+	[SerializeField]
+	private InputType inputType = InputType.FixedUpdate;
+
 	[SerializeField]
 	private GameObject searchRoot;
 
 	[SerializeField]
-	private string axisName = "Fire2";
+	private string axisName;
 
 	private IInputReceiverShoot[] receivers;
 
@@ -29,7 +38,19 @@ public class InputSystemShoot : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetAxisRaw(this.axisName) > 0f)
+		if (this.inputType == InputType.Update)
+			this.SendInput();
+	}
+
+	private void FixedUpdate()
+	{
+		if (this.inputType == InputType.FixedUpdate)
+			this.SendInput();
+	}
+
+	private void SendInput()
+	{
+		if (Input.GetButtonDown(this.axisName))
 		{
 			for (int i = 0; i < this.receivers.Length; i++)
 			{
