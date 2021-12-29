@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
-public class SoundQueueManager 
+public class SoundQueueManager
 {
     public List<SoundPacket> loopAudioList= new List<SoundPacket>();
     public List<SoundPacket> delayAudioList= new List<SoundPacket>();
