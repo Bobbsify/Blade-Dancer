@@ -6,9 +6,9 @@ public class RuleFactory
 {
     private List<RuleSetting> rulesSettings;
 
-    public RuleFactory(AllRulesObject ruleSettings)
+    public RuleFactory(List<RuleSetting> ruleSettings)
     {
-        this.rulesSettings = ruleSettings.getAll();
+        this.rulesSettings = ruleSettings;
     }
 
     public Rule GetRandomRule()
@@ -39,6 +39,8 @@ public class RuleFactory
         } while (selectedRules.Count == 0);
 
         //All other rules are completely randomized
+        int debug_escape = 0;
+        Debug.LogWarning(this + " contains debug_escape, Remove after debug is complete");
         for (int i = 1; i < amount; i++)
         {
             int allRulesLength = rulePool.Count;
@@ -63,6 +65,7 @@ public class RuleFactory
             {
                 i--;
             }
+            if (++debug_escape > 50000) break;
         }
         return selectedRules;
     }

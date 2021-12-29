@@ -13,9 +13,8 @@ public class RuleManager : MonoBehaviour, IGameEntity
     private GameObject ruleInformationContainer;
 
     private Text ruleContainer;
-
-    [SerializeField]
-    private AllRulesObject rules;
+    
+    private List<RuleSetting> rules;
 
     List<Rule> rulesToApply = new List<Rule>();
 
@@ -80,5 +79,6 @@ public class RuleManager : MonoBehaviour, IGameEntity
     void IGameEntity.Init(GameManager gameManager)
     {
         gameManagerObject = gameManager;
+        rules = gameManager.GetRuleSettings();
     }
 }

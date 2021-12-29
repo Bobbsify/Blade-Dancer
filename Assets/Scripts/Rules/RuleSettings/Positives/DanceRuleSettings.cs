@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NotMoveRuleSettings", menuName = "ScriptableObjects/RuleSettings/DanceRuleSettings", order = 6)]
+[CreateAssetMenu(fileName = "DanceRuleSettings", menuName = "ScriptableObjects/RuleSettings/DanceRuleSettings", order = 6)]
 public class DanceRuleSettings : RuleSetting
 {
     private float durationModFormula => 1.0f;
