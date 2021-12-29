@@ -303,10 +303,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15fca0f00fda75442a679151c0ff8b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audio: {fileID: 545141197}
-  playPos: {fileID: 545141194}
-  audioType: 1
-  playDelay: 0
 --- !u!82 &545141197
 AudioSource:
   m_ObjectHideFlags: 0
