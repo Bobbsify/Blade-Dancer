@@ -8,21 +8,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject searchRoot;
 
-    [SerializeField]
-    private string DashInput;
-
-    [SerializeField]
-    private string DanceInput;
-
-    [SerializeField]
-    private string ShootInput;
-
-    Dash dash;
-
-    Dance dance;
-
-    Shoot shoot;
-
     private Animator animPlayer;
 
     IAbility[] abilities;
@@ -37,22 +22,9 @@ public class PlayerController : MonoBehaviour
        this.abilities = this.searchRoot.GetComponentsInChildren<IAbility>(true);
     }
 
-    void TryTriggerAbility(string name)
+    void TryTriggerAbility()
     {
-        if (Input.GetButtonDown(this.DashInput))
-        {
-            this.dash.Trigger(this.gameObject);
-        }
-
-        if (Input.GetButtonDown(this.DanceInput))
-        {
-            this.dance.Trigger(this.gameObject);
-        }
-
-        if (Input.GetButtonDown(this.ShootInput))
-        {
-            this.shoot.Trigger(this.gameObject);
-        }
+        
     }
 
     public void DoDeath()
