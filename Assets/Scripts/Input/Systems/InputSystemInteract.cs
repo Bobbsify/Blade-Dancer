@@ -5,6 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(InputManager))]
 public class InputSystemInteract : MonoBehaviour
 {
+    private enum InputType
+    {
+        Update,
+        FixedUpdate
+    }
+
+    [SerializeField]
+    private InputType inputType = InputType.FixedUpdate;
+
     [SerializeField]
     private GameObject searchRoot;
 
@@ -28,6 +37,18 @@ public class InputSystemInteract : MonoBehaviour
     }
 
     private void Update()
+    {
+        if (this.inputType == InputType.Update)
+            this.SendInput();
+    }
+
+    private void FixedUpdate()
+    {
+        if (this.inputType == InputType.FixedUpdate)
+            this.SendInput();
+    }
+
+    private void SendInput()
     {
         if (Input.GetAxisRaw(interactAxisName) > 0f)
         {

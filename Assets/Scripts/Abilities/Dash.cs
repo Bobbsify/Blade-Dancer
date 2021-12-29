@@ -4,39 +4,46 @@ using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
 public class Dash : MonoBehaviour, IAbility, IInputReceiverDash
-{
-    private bool canDash;
-
+{ 
     [SerializeField]
     private float speed;
 
     [SerializeField]
     private float DashCountdown;
 
+    private bool canDash;
+
+    GameManager gameManager;
+
+    private void Start()
+    {
+        canDash = true;
+    }
+
     public IEnumerator CooldownDash()
     {
         yield return new WaitForSeconds(this.DashCountdown);
         this.canDash = true;
-
     }
 
     public void Trigger(GameObject obj)
     {
         if (this.canDash)
         {
-            obj.transform.position = obj.transform.position * speed * Time.deltaTime;
-            this.canDash = false;
+            // TODO correggere
+            Vector3 direction = obj.transform.localPosition * speed * Time.deltaTime;
+            obj.transform.localPosition += direction;
             StartCoroutine(CooldownDash());
         }
     }
 
     public void SendActionToGameManager()
     {
-
+        this.gameManager.ActionEventTrigger(Actions.Dash);
     }
 
-    public void ReceiveInputDash()
+    void IInputReceiverDash.ReceiveInputDash()
     {
-        
+        this.Trigger(this.gameObject);
     }
 }

@@ -14,8 +14,14 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
     GameObject projectile;
 
     [SerializeField]
-    Transform projectileSpawnPosition;
+    Transform objSpawnPos;
 
+    GameManager gameManager;
+
+    private void Start()
+    {
+        this.canShooting = true;
+    }
     public IEnumerator CooldownShooting()
     {
         yield return new WaitForSeconds(this.shootCountdown);
@@ -26,19 +32,18 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
     {
         if (this.canShooting)
         {
-            Instantiate(this.projectile, this.projectileSpawnPosition);
-            this.canShooting = false;
+            Instantiate(obj, this.objSpawnPos);
             StartCoroutine(CooldownShooting());
         }
     }
 
     public void SendActionToGameManager()
     {
-
+        this.gameManager.ActionEventTrigger(Actions.Shoot);
     }
 
-    public void ReceiveInputShoot()
+    void IInputReceiverShoot.ReceiveInputShoot()
     {
-       
+        this.Trigger(projectile);
     }
 }

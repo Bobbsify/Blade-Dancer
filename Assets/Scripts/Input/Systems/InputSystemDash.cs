@@ -5,7 +5,16 @@ using UnityEngine;
 [RequireComponent(typeof(InputManager))]
 public class InputSystemDash : MonoBehaviour
 {
-	[SerializeField]
+    private enum InputType
+    {
+        Update,
+        FixedUpdate
+    }
+
+    [SerializeField]
+    private InputType inputType = InputType.FixedUpdate;
+
+    [SerializeField]
 	private GameObject searchRoot;
 
     [SerializeField]
@@ -29,7 +38,20 @@ public class InputSystemDash : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetAxisRaw(dashAxisName) > 0f)
+        if (this.inputType == InputType.Update)
+            this.SendInput();
+    }
+
+    private void FixedUpdate()
+    {
+        if (this.inputType == InputType.FixedUpdate)
+            this.SendInput();
+    }
+
+    private void SendInput()
+    {
+       
+        if (Input.GetAxisRaw(this.dashAxisName) > 0f)
         {
             for (int i = 0; i < this.receivers.Length; i++)
             {
