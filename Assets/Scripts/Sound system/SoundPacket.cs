@@ -20,10 +20,6 @@ public class SoundPacket
 
     public SoundPacket(AudioSource audio, Transform playPos, SoundType audioType, float playDelay = 0)
     {
-        //audio = this.audio;
-        //playPos = this.playPos;
-        //audioType = this.audioType;
-        //playDelay = this.playDelay;
         this.audio = audio;
         this.playPos = playPos;
         this.audioType = audioType;

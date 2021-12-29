@@ -20,7 +20,7 @@ public class SoundTest : MonoBehaviour
     private SoundQueueManager sqm=new SoundQueueManager();
     private void Update()
     {
-        if(Input.GetKey(KeyCode.E))
+        if(Input.GetKey(KeyCode.K))
         {
             sqm.AddSound(new SoundPacket(audio, playPos, audioType, playDelay));
         }
