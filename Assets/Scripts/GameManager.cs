@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
 	{
 		this.GeneratePlayerPawn();
-        streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules));
+        streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules), this);
 	}
 
 	private void Start()

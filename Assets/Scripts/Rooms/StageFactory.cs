@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class StageFactory
 {
-    GameObject[] defaultRooms;
-    RuleFactory factory;
+    private GameObject[] defaultRooms;
+    private RuleFactory factory;
+    private GameManager gm;
 
-    public StageFactory(GameObject[] defaultRooms, RuleFactory factory)
+    public StageFactory(GameObject[] defaultRooms, RuleFactory factory, GameManager gm)
     {
         this.defaultRooms = defaultRooms;
         this.factory = factory;
+        this.gm = gm;
     }
 
     public Stage GetRandomStage(int difficulty,GameObject room = null)
@@ -22,7 +24,7 @@ public class StageFactory
         {
             submittedRules.Add(r);
         }
-        return new Stage(randomRoom,submittedRules);
+        return new Stage(randomRoom,submittedRules,gm);
     }
 
     public Stage GetFixedStage(GameObject room = null, params AllRules[] rules)
@@ -33,7 +35,7 @@ public class StageFactory
         {
             ruleSet.Add(factory.GetRule(rule));
         }
-        return new Stage(randomRoom, ruleSet);
+        return new Stage(randomRoom, ruleSet,gm);
     }
 
     public Stage GetFixedStage(params AllRules[] rules)
@@ -44,6 +46,6 @@ public class StageFactory
         {
             ruleSet.Add(factory.GetRule(rule));
         }
-        return new Stage(randomRoom, ruleSet);
+        return new Stage(randomRoom, ruleSet,gm);
     }
 }

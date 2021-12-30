@@ -67,9 +67,29 @@ public abstract class Rule : IRule
 [System.Serializable]
 public class RuleObject
 {
-    public string name;
-    public GameObject ruleObjPrefab;
-    public PositionType pos;
+    [SerializeField]
+    private string name;
+
+    [SerializeField]
+    private GameObject ruleObjPrefab;
+
+    [SerializeField]
+    private PositionType pos;
+
+    public string GetName()
+    {
+        return this.name;
+    }
+
+    public GameObject GetRuleObj()
+    {
+        return this.ruleObjPrefab;
+    }
+
+    public PositionType GetPositionType()
+    {
+        return this.pos;
+    }
 }
 
 // 0 Any Random

@@ -14,9 +14,9 @@ public class StreakFactory
         this.factory = factory;
     }
 
-    public StreakFactory(GameObject[] defaultRooms, RuleFactory factory)
+    public StreakFactory(GameObject[] defaultRooms, RuleFactory factory, GameManager gm)
     {
-        this.factory = new StageFactory(defaultRooms, factory);
+        this.factory = new StageFactory(defaultRooms, factory, gm);
     }
 
     public Streak GetRandomStreak(float difficulty,float difficultyIncreaseAmount, int streakLength = streakDefaultLength)
