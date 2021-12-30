@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StateAttack : FSMState
+public class EnemyFollowStateAttack : FSMState
 {
 	[SerializeField]
 	[Range(0f, 2f)]
@@ -13,13 +13,13 @@ public class StateAttack : FSMState
 	private float maxReactionTime = 2f;
 
 	[SerializeField]
-	private StateChase stateChase;
+	private EnemyFollowStateChase stateChase;
 
 	private float reactionTime;
 
 	private void OnValidate()
 	{
-		this.stateChase = this.GetComponent<StateChase>();
+		this.stateChase = this.GetComponent<EnemyFollowStateChase>();
 	}
 
 	private void Update()

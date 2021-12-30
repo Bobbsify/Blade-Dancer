@@ -32,6 +32,7 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
     {
         if (this.canShooting)
         {
+            //TODO mettere la variabile canShooting false 
             Instantiate(obj, this.objSpawnPos);
             StartCoroutine(CooldownShooting());
         }
