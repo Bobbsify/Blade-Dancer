@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class StateChase : FSMState, IGameEntity
+public class EnemyFollowStateChase : FSMState, IGameEntity
 {
 	[SerializeField]
 	private NavMeshAgent agent;
@@ -17,10 +17,10 @@ public class StateChase : FSMState, IGameEntity
 	private float attackDistance = 1f;
 
 	[SerializeField]
-	private StateIdle stateIdle;
+	private EnemyFollowStateIdle stateIdle;
 
 	[SerializeField]
-	private StateAttack stateAttack;
+	private EnemyFollowStateAttack stateAttack;
 
 	private Transform target;
 
@@ -31,8 +31,8 @@ public class StateChase : FSMState, IGameEntity
 	private void OnValidate()
 	{
 		this.agent = this.GetComponentInChildren<NavMeshAgent>();
-		this.stateIdle = this.GetComponentInChildren<StateIdle>();
-		this.stateAttack = this.GetComponentInChildren<StateAttack>();
+		this.stateIdle = this.GetComponentInChildren<EnemyFollowStateIdle>();
+		this.stateAttack = this.GetComponentInChildren<EnemyFollowStateAttack>();
 	}
 
 	private void Update()

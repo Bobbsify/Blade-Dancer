@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AIMoveSystem : MonoBehaviour
+public class AIFollowMoveSystem : MonoBehaviour
 {
     [SerializeField]
     private NavMeshAgent agent;

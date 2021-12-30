@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 
-public class StateIdle : FSMState, IGameEntity
+public class EnemyFollowStateIdle : FSMState, IGameEntity
 {
 	[SerializeField]
 	private float activationDistance = 3f;
 
 	[SerializeField]
-	private StateChase stateChase;
+	private EnemyFollowStateChase stateChase;
 
 	private Transform target;
 
 	private void OnValidate()
 	{
-		this.stateChase = this.GetComponentInChildren<StateChase>();
+		this.stateChase = this.GetComponentInChildren<EnemyFollowStateChase>();
 	}
 
 	private void Update()
