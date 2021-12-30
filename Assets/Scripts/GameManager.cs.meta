@@ -9,7 +9,7 @@ MonoImporter:
   - spawnPoint: {instanceID: 0}
   - playerPrefab: {fileID: 8797037534487982121, guid: 522626dacc4a0fa4f968d852d6dacfc9,
       type: 3}
-  - allRules: {fileID: 11400000, guid: 03e67b1588895254fa27164d20c7cc4a, type: 2}
+  - allRules: {fileID: 11400000, guid: 7777011190532b1439ebd64dd18581a2, type: 2}
   - ruleManagerLocation: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
