@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -76,6 +77,13 @@ public class RuleObject
     [SerializeField]
     private PositionType pos;
 
+    public RuleObject(string name, GameObject ruleObjPrefab, PositionType pos)
+    {
+        this.name = name;
+        this.ruleObjPrefab = ruleObjPrefab;
+        this.pos = pos;
+    }
+
     public string GetName()
     {
         return this.name;
@@ -151,7 +159,7 @@ public enum AllRules
     Kill,
     Score,
     Trap,
-    Survive,
+    TakeDamage,
     Reach,
     //Negatives
     NotMove,
@@ -166,6 +174,6 @@ public enum AllRules
     NotKill,
     NotScore,
     NotTrap,
-    NotSurvive,
+    NotTakeDamage,
     NotReach
 }

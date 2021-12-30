@@ -3,12 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NotRingRuleSettings", menuName = "ScriptableObjects/RuleSettings/NotRingRuleSettings", order = 9)]
-public class NotRingRuleSettings : RuleSetting
+[CreateAssetMenu(fileName = "NotTrapRuleSettings", menuName = "ScriptableObjects/RuleSettings/NotTrapRuleSettings", order = 23)]
+public class NotTrapRuleSettings : RuleSetting
 {
     private float durationModFormula => 1.0f;
 
-    public NotRingRuleSettings()
+    public NotTrapRuleSettings()
     {
         switch (durationType)
         {
@@ -25,7 +25,7 @@ public class NotRingRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotRingRule returnedRule = new NotRingRule(AllRules.Ring, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotTrapRule returnedRule = new NotTrapRule(AllRules.NotTrap, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

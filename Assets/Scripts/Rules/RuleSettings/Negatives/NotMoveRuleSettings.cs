@@ -19,7 +19,7 @@ public class NotMoveRuleSettings : RuleSetting
                 //Duration is already set in inspector
                 break;
             default:
-                throw new System.InvalidOperationException("Unkown durationModType: " + durationType);
+                throw new System.InvalidOperationException("Unknown durationModType: " + durationType);
         }
     }
 

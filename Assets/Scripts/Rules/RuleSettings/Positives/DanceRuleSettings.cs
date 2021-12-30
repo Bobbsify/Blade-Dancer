@@ -19,7 +19,7 @@ public class DanceRuleSettings : RuleSetting
                 //Duration is already set in inspector
                 break;
             default:
-                throw new System.InvalidOperationException("Unkown Duration Mod Type: " + durationMod);
+                throw new System.InvalidOperationException("Unknown durationModType: " + durationType);
         }
     }
 

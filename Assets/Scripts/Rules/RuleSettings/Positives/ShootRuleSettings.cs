@@ -41,6 +41,7 @@ public class ShootRuleSettings : RuleSetting
     public override Rule GetRule()
     {
         amountToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
+        durationMod = durationModFormula;
         ShootRule ruleReturned = new ShootRule(AllRules.Shoot, amountToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return ruleReturned;
     }

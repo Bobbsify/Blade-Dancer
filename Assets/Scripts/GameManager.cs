@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     [Header("Room Generation")]
 
     [SerializeField]
-    private List<RuleSetting> allRules = new List<RuleSetting>();
+    private RuleSettingsContainer allRules;
 
     [SerializeField]
     private GameObject[] defaultRoomsPrefabs;
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
 	{
 		this.GeneratePlayerPawn();
-        streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules), this);
+        streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules.getAll()), this);
 	}
 
 	private void Start()
@@ -121,7 +121,7 @@ public class GameManager : MonoBehaviour
 
     public List<RuleSetting> GetRuleSettings()
     {
-        return this.allRules;
+        return this.allRules.getAll();
     }
 
     private void GoToNextStage(Stage currentStage)
