@@ -6,15 +6,25 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(AudioSource))]
 public class SoundEmissionManager : MonoBehaviour
 {
-    public void PlayAudio(SoundPacket soundToPlay)
+    
+    private AudioSource audio;
+    private void Awake()
     {
-        AudioSource audio = soundToPlay.GetAudio();
+        TryGetComponent(out audio);
+    }
+    public void PlayAudio()
+    {
         audio.Play();
     }   
 
-    public void StopAudio(SoundPacket soundToStop)
+    public void PlayAudioOnce()
     {
-        AudioSource audio = soundToStop.GetAudio();
+        audio.Play();
+        Destroy(gameObject);
+    }
+
+    public void StopAudio()
+    {
         audio.Stop();
     }
 
@@ -30,7 +40,6 @@ public class SoundEmissionManager : MonoBehaviour
 
     private IEnumerator FadeInTime(SoundPacket sound, float fadeDuration)
     {
-        AudioSource audio = sound.GetAudio();
         fadeDuration = sound.GetDelay();
         float startVolume = audio.volume;
         audio.Play();
@@ -44,7 +53,6 @@ public class SoundEmissionManager : MonoBehaviour
 
     private IEnumerator FadeOutTime(SoundPacket sound, float fadeDuration)
     {
-        AudioSource audio = sound.GetAudio();
         fadeDuration = sound.GetDelay();
         float startVolume = audio.volume;
         while(audio.volume>0)
@@ -54,5 +62,6 @@ public class SoundEmissionManager : MonoBehaviour
         }
         audio.Stop();
         audio.volume = startVolume;
+        Destroy(gameObject);
     }
 }

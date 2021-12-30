@@ -5,32 +5,42 @@ using UnityEngine.Audio;
 
 public class SoundQueueManager
 {
-    public List<SoundPacket> loopAudioList= new List<SoundPacket>();
-    public List<SoundPacket> delayAudioList= new List<SoundPacket>();
-    public List<SoundPacket> playOnceAudioList=new List<SoundPacket>();
+    public Dictionary<SoundPacket, GameObject> loopAudioList= new Dictionary<SoundPacket, GameObject>();
+    public Dictionary<SoundPacket, GameObject> delayAudioList= new Dictionary<SoundPacket, GameObject>();
+    public Dictionary<SoundPacket, GameObject> playOnceAudioList=new Dictionary<SoundPacket, GameObject>();
     private SoundEmissionManager emission;
 
     public void AddSound(SoundPacket sound, bool fade=false)
     {
-        SoundType type= sound.GetAudioType();
+        GameObject soundObject = new GameObject();
+        AudioSource audioToAttach = new AudioSource();
+        audioToAttach.clip = sound.GetAudio();
+        soundObject.AddComponent<AudioSource>();
+        SoundType type = sound.GetAudioType();
+
         switch (type)
         {
             case SoundType.Loop:
-                loopAudioList.Add(sound);
+                loopAudioList.Add(sound, soundObject);
                 break;
 
             case SoundType.PlayOnce:
-                playOnceAudioList.Add(sound);
+                playOnceAudioList.Add(sound, soundObject);
                 break;
 
             case SoundType.ReplayAfterSeconds:
-                delayAudioList.Add(sound);
+                delayAudioList.Add(sound, soundObject);
                 break;
         }
 
-        if (fade==false)
+        if (fade==false && type == SoundType.PlayOnce)
         {
-            emission.PlayAudio(sound);
+            emission.PlayAudioOnce();
+        }
+
+        else if(fade==false && type !=SoundType.PlayOnce)
+        {
+            emission.PlayAudio();
         }
 
         else
@@ -60,7 +70,7 @@ public class SoundQueueManager
 
         if (fade==false)
         {
-            emission.StopAudio(sound);
+            emission.StopAudio();
         }
 
         else
@@ -72,34 +82,7 @@ public class SoundQueueManager
 
     public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
     {
-        SoundType type = oldSound.GetAudioType();
-        switch (type)
-        {
-            case SoundType.Loop:
-                loopAudioList.Remove(oldSound);
-                loopAudioList.Add(newSound);
-                break;
-
-            case SoundType.PlayOnce:
-                playOnceAudioList.Remove(oldSound);
-                playOnceAudioList.Add(newSound);
-                break;
-
-            case SoundType.ReplayAfterSeconds:
-                delayAudioList.Remove(oldSound);
-                delayAudioList.Add(newSound);
-                break;
-        }
-
-        if (fade == false)
-        {
-            emission.PlayAudio(newSound);
-        }
-
-        else
-
-        {
-            emission.FadeIn(newSound);
-        }
+        RemoveSound(oldSound, fade);
+        AddSound(newSound, fade);
     }
 }

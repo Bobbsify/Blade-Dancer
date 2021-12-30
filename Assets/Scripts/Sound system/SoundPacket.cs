@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+[Serializable]
 public class SoundPacket
 {
     [SerializeField]
-    private AudioSource audio;
+    private AudioClip audio;
 
     [SerializeField]
     private Transform playPos;
@@ -18,7 +19,7 @@ public class SoundPacket
     [SerializeField]
     private float playDelay;
 
-    public SoundPacket(AudioSource audio, Transform playPos, SoundType audioType, float playDelay = 0)
+    public SoundPacket(AudioClip audio, Transform playPos, SoundType audioType, float playDelay = 0)
     {
         this.audio = audio;
         this.playPos = playPos;
@@ -27,7 +28,7 @@ public class SoundPacket
     }
 
 
-    public AudioSource GetAudio()
+    public AudioClip GetAudio()
     {
         return audio;
     }
