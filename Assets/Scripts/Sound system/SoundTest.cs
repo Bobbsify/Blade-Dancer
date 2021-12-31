@@ -9,7 +9,6 @@ public class SoundTest : MonoBehaviour
     private SoundPacket sound;
 
     private SoundQueueManager sqm=new SoundQueueManager();
-    private SoundEmissionManager emission = new SoundEmissionManager();
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.K))
