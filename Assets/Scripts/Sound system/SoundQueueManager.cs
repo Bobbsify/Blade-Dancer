@@ -43,7 +43,7 @@ public class SoundQueueManager
         if (fade==false && type == SoundType.PlayOnce)
         {
             emission.PlayAudioOnce();
-            emission.EliminateGameObject();
+            emission.EliminateGameObject(soundObject);
         }
 
         else if(fade==false && type !=SoundType.PlayOnce)
@@ -88,7 +88,7 @@ public class SoundQueueManager
                 break;
         }
 
-        emission.EliminateGameObject();
+        //emission.EliminateGameObject();
     }
 
     public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
