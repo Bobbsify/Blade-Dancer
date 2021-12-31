@@ -5,9 +5,10 @@ using UnityEngine.Audio;
 
 public class SoundQueueManager
 {
-    public Dictionary<SoundPacket, GameObject> loopAudioList= new Dictionary<SoundPacket, GameObject>();
-    public Dictionary<SoundPacket, GameObject> delayAudioList= new Dictionary<SoundPacket, GameObject>();
-    public Dictionary<SoundPacket, GameObject> playOnceAudioList=new Dictionary<SoundPacket, GameObject>();
+    private Dictionary<SoundPacket, GameObject> loopAudioList= new Dictionary<SoundPacket, GameObject>();
+    private Dictionary<SoundPacket, GameObject> delayAudioList= new Dictionary<SoundPacket, GameObject>();
+    private Dictionary<SoundPacket, GameObject> playOnceAudioList=new Dictionary<SoundPacket, GameObject>();
+
     private SoundEmissionManager emission;
 
     public void AddSound(SoundPacket sound, bool fade=false)
@@ -15,13 +16,11 @@ public class SoundQueueManager
         SoundType type = sound.GetAudioType();
         Transform position = sound.GetPlayPosition();
 
-        GameObject soundObject = new GameObject();
 
+        GameObject soundObject = new GameObject();
         soundObject.AddComponent<AudioSource>();
         soundObject.AddComponent<SoundEmissionManager>();
-
-        AudioSource audioToAttach = new AudioSource();
-        audioToAttach.clip = sound.GetAudio();
+        soundObject.GetComponent<AudioSource>().clip = sound.GetAudio();
 
         emission.InstantiateGameObject(soundObject, position);
 
@@ -88,7 +87,7 @@ public class SoundQueueManager
                 break;
         }
 
-        //emission.EliminateGameObject();
+        //emission.EliminateGameObject(soundObject);
     }
 
     public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
