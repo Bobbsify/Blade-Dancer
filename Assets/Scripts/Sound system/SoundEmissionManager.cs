@@ -6,6 +6,8 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(AudioSource))]
 public class SoundEmissionManager : MonoBehaviour
 {
+    [SerializeField]
+    private float timeToDestruction;
     
     private AudioSource audio;
     private void Awake()
@@ -20,7 +22,6 @@ public class SoundEmissionManager : MonoBehaviour
     public void PlayAudioOnce()
     {
         audio.Play();
-        Destroy(gameObject);
     }
 
     public void StopAudio()
@@ -62,6 +63,15 @@ public class SoundEmissionManager : MonoBehaviour
         }
         audio.Stop();
         audio.volume = startVolume;
-        Destroy(gameObject);
+    }
+
+    public void InstantiateGameObject(GameObject soundObject, Transform position)
+    {
+        Instantiate(soundObject, position);
+    }
+
+    public void EliminateGameObject(GameObject soundObject)
+    {
+        Destroy(soundObject);
     }
 }

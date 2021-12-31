@@ -12,11 +12,18 @@ public class SoundQueueManager
 
     public void AddSound(SoundPacket sound, bool fade=false)
     {
+        SoundType type = sound.GetAudioType();
+        Transform position = sound.GetPlayPosition();
+
         GameObject soundObject = new GameObject();
+
+        soundObject.AddComponent<AudioSource>();
+        soundObject.AddComponent<SoundEmissionManager>();
+
         AudioSource audioToAttach = new AudioSource();
         audioToAttach.clip = sound.GetAudio();
-        soundObject.AddComponent<AudioSource>();
-        SoundType type = sound.GetAudioType();
+
+        emission.InstantiateGameObject(soundObject, position);
 
         switch (type)
         {
@@ -36,6 +43,7 @@ public class SoundQueueManager
         if (fade==false && type == SoundType.PlayOnce)
         {
             emission.PlayAudioOnce();
+            emission.EliminateGameObject();
         }
 
         else if(fade==false && type !=SoundType.PlayOnce)
@@ -52,7 +60,19 @@ public class SoundQueueManager
 
     public void RemoveSound(SoundPacket sound, bool fade=false)
     {
+        if (fade == false)
+        {
+            emission.StopAudio();
+        }
+
+        else
+
+        {
+            emission.FadeOut(sound);
+        }
+
         SoundType type = sound.GetAudioType();
+
         switch (type)
         {
             case SoundType.Loop:
@@ -68,16 +88,7 @@ public class SoundQueueManager
                 break;
         }
 
-        if (fade==false)
-        {
-            emission.StopAudio();
-        }
-
-        else
-
-        {
-            emission.FadeOut(sound);
-        }
+        emission.EliminateGameObject();
     }
 
     public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
