@@ -17,11 +17,8 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
 
     private Vector3 lastDirection;
 
-    private Rigidbody body;
-
     private void Start()
     {
-        body = GetComponent<Rigidbody>();
         canDash = true;
     }
 
@@ -36,7 +33,7 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
         if (this.canDash)
         {
             canDash = false;
-            body.AddForce(lastDirection*dashForce); //Add time.deltaTime?
+            this.transform.position += lastDirection * dashForce * Time.deltaTime;
             SendActionToGameManager();
             StartCoroutine(CooldownDash());
         }
