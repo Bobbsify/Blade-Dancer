@@ -3,17 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class Dash : MonoBehaviour, IAbility, IInputReceiverDash
+public class Dash : MonoBehaviour, IAbility, IInputReceiverDash, IInputReceiverMove
 { 
     [SerializeField]
-    private float speed;
+    private float dashForce;
 
     [SerializeField]
-    private float DashCountdown;
+    private float dashCooldown;
 
     private bool canDash;
 
-    GameManager gameManager;
+    private GameManager gameManager;
+
+    private Vector3 lastDirection;
 
     private void Start()
     {
@@ -22,17 +24,17 @@ public class Dash : MonoBehaviour, IAbility, IInputReceiverDash
 
     public IEnumerator CooldownDash()
     {
-        yield return new WaitForSeconds(this.DashCountdown);
+        yield return new WaitForSeconds(this.dashCooldown);
         this.canDash = true;
     }
 
-    public void Trigger(GameObject obj)
+    public void Trigger()
     {
         if (this.canDash)
         {
-            // TODO correggere
-            Vector3 direction = obj.transform.localPosition * speed * Time.deltaTime;
-            obj.transform.localPosition += direction;
+            canDash = false;
+            this.transform.position += lastDirection*dashForce; //Add time.deltaTime?
+            SendActionToGameManager();
             StartCoroutine(CooldownDash());
         }
     }
@@ -41,9 +43,22 @@ public class Dash : MonoBehaviour, IAbility, IInputReceiverDash
     {
         this.gameManager.ActionEventTrigger(Actions.Dash);
     }
+    void IInputReceiverMove.ReceiveInputMove(Vector3 direction)
+    {
+        this.lastDirection = direction.normalized;
+    }
 
     void IInputReceiverDash.ReceiveInputDash()
     {
-        this.Trigger(this.gameObject);
+        this.Trigger();
+    }
+    void IAbility.Enable()
+    {
+        this.enabled = true;
+    }
+
+    void IAbility.Disable()
+    {
+        this.enabled = false;
     }
 }

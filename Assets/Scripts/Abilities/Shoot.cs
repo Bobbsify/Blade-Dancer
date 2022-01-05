@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
+public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 {
-    private bool canShooting;
+    private bool canShoot;
 
     [SerializeField]
-    private float shootCountdown;
+    private float shootCooldown;
 
     [SerializeField]
     GameObject projectile;
@@ -16,25 +16,26 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
     [SerializeField]
     Transform objSpawnPos;
 
-    GameManager gameManager;
+    private GameManager gameManager;
 
     private void Start()
     {
-        this.canShooting = true;
+        this.canShoot = true;
     }
-    public IEnumerator CooldownShooting()
+    public IEnumerator CooldownShoot()
     {
-        yield return new WaitForSeconds(this.shootCountdown);
-        this.canShooting = true;
+        yield return new WaitForSeconds(this.shootCooldown);
+        this.canShoot = true;
     }
 
-    public void Trigger(GameObject obj)
+    public void Trigger()
     {
-        if (this.canShooting)
+        if (this.canShoot)
         {
-            //TODO mettere la variabile canShooting false 
-            Instantiate(obj, this.objSpawnPos);
-            StartCoroutine(CooldownShooting());
+            canShoot = false;
+            Instantiate(projectile, this.objSpawnPos); //Create projectile
+            SendActionToGameManager();  //Tell the Game Manager that a projectile has been shot
+            StartCoroutine(CooldownShoot());    //Start Projectile cooldown
         }
     }
 
@@ -45,6 +46,21 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
 
     void IInputReceiverShoot.ReceiveInputShoot()
     {
-        this.Trigger(projectile);
+        this.Trigger();
+    }
+
+    void IGameEntity.Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
+    }
+
+    void IAbility.Enable()
+    {
+        this.enabled = true;
+    }
+
+    void IAbility.Disable()
+    {
+        this.enabled = false;
     }
 }

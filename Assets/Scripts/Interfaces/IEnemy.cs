@@ -7,5 +7,7 @@ public interface IEnemy
     void Chase(GameObject obj);
 
     void FleeFrom(GameObject obj);
-   
+
+    void Dance();
+
 }
