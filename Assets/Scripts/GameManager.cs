@@ -103,7 +103,10 @@ public class GameManager : MonoBehaviour
 
     public void ActionEventTrigger(Actions action)
     {
-        ruleManager.ApplyRule(action);
+        if (currentStreak != null) 
+        { 
+            ruleManager.ApplyRule(action);
+        }
     }
 
     public void KillPlayer()
