@@ -76,7 +76,7 @@ public class GameManager : MonoBehaviour
             entity.Init(this);
         }
 
-        ruleManager = this.GameEntitiesSearchRoot.GetComponentInChildren<RuleManager>();
+        ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
     }
 
     private void Update()
