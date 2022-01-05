@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class Dash : MonoBehaviour, IAbility, IInputReceiverDash, IInputReceiverMove
+public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, IInputReceiverMove
 { 
     [SerializeField]
     private float dashForce;
@@ -60,5 +60,10 @@ public class Dash : MonoBehaviour, IAbility, IInputReceiverDash, IInputReceiverM
     void IAbility.Disable()
     {
         this.enabled = false;
+    }
+
+    void IGameEntity.Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 }
