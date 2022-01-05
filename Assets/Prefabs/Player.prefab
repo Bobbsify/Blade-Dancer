@@ -14,6 +14,10 @@ GameObject:
   - component: {fileID: 8797037534487982132}
   - component: {fileID: 8797037534487982135}
   - component: {fileID: 8797037534487982123}
+  - component: {fileID: 771581947546238164}
+  - component: {fileID: 3375901162422043412}
+  - component: {fileID: 7626479644181122424}
+  - component: {fileID: 9012375419417087643}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -118,12 +122,67 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8797037534487982121}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7849bf257208f6b4ab624dee212b60c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  searchRoot: {fileID: 0}
-  DashInput: 
-  DanceInput: 
-  ShootInput: 
+--- !u!114 &771581947546238164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797037534487982121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f0f5f5dc25b459eb2d85c34fc376bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+--- !u!114 &3375901162422043412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797037534487982121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a47f5a6a6a37a46cda92b3b7ba7d20e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashForce: 20
+  dashCooldown: 0.8
+--- !u!114 &7626479644181122424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797037534487982121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 680cd4f9e50a04f5bb6202195f641b44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootCooldown: 0.2
+  projectile: {fileID: 0}
+  objSpawnPos: {fileID: 0}
+--- !u!114 &9012375419417087643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8797037534487982121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8c21d4cac2b4702ac7011fb28d3f9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charge: 1
+  minCharge: 1
+  maxCharge: 5
+  minSphereWidth: 1
+  maxSphereWidth: 10
