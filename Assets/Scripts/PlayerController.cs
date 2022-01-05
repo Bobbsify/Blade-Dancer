@@ -5,9 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject searchRoot;
-
     private Animator animPlayer;
 
     IAbility[] abilities;
@@ -29,6 +26,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-       this.abilities = this.searchRoot.GetComponentsInChildren<IAbility>(true);
+       this.abilities = GetComponentsInChildren<IAbility>(true);
     }
 }
