@@ -5,60 +5,56 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
 {
-    private bool canDance;
-
-    private bool CanBeStunned;
-
     [SerializeField]
-    private float enemyCountdown;
-
+    private int charge = 1;
     [SerializeField]
-    private string enemy = "Enemy";
+    private int minCharge = 1;
+    [SerializeField]
+    private int maxCharge = 5;
+
+    [Header("Dance Ability Area Defining")]
+    [SerializeField]
+    private float minSphereWidth = 1.0f;
+    [SerializeField]
+    private float maxSphereWidth = 10.0f;
 
     GameManager gameManager;
 
-    private void OnTriggerEnter(Collider other)
+    public void Trigger()
     {
-        if (other.CompareTag(enemy))
+        float radius = (maxCharge / maxSphereWidth) * (charge / minSphereWidth);
+        RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, radius, Vector3.zero);
+        foreach (RaycastHit hit in hits) 
         {
-            CanBeStunned = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag(enemy))
-        {
-            CanBeStunned = false;
-        }
-    }
-
-    public IEnumerator CooldownEnemy(GameObject obj)
-    {
-        yield return new WaitForSeconds(enemyCountdown);
-        obj.GetComponent<Rigidbody>().isKinematic = false;
-
-    }
-
-    public void Trigger(GameObject obj)
-    {
-        if (this.canDance)
-        {
-            if (this.CanBeStunned)
+            if (hit.collider.TryGetComponent(out IEnemy enemy)) 
             {
-                obj.GetComponent<Rigidbody>().isKinematic = true;
-                StartCoroutine(CooldownEnemy(obj));
+                enemy.Dance();
             }
         }
+        this.charge = minCharge;
+    }
+
+    public void Charge(int amount) 
+    {
+        this.charge += Mathf.Max(Mathf.Min(charge + amount, maxCharge),minCharge);
+    }
+
+    public void SendActionToGameManager()
+    {
+        this.gameManager.ActionEventTrigger(Actions.Dance);
     }
 
     void IInputReceiverDance.ReceiveInputDance()
     {
       //TODO inserire il collider nemico 
     }
-
-    public void SendActionToGameManager()
+    void IAbility.Enable()
     {
-        this.gameManager.ActionEventTrigger(Actions.Dance);
+        this.enabled = true;
+    }
+
+    void IAbility.Disable()
+    {
+        this.enabled = false;
     }
 }

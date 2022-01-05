@@ -1,26 +1,45 @@
 ﻿using UnityEngine;
 
-public class PhysicsMovement : MonoBehaviour, IInputReceiverMove
+public class PhysicsMovement : MonoBehaviour, IAbility, IInputReceiverMove, IGameEntity
 {
-	[SerializeField]
-	private new Rigidbody rigidbody;
-	
 	[SerializeField]
 	private float speed = 5f;
 
-	private void OnValidate()
-	{
-		this.rigidbody = this.GetComponentInChildren<Rigidbody>();
-	}
+	private GameManager gameManager;
 
 	private void Move(Vector3 direction)
 	{
 		Vector3 vel = direction * speed;
-		this.rigidbody.transform.position += vel * Time.fixedDeltaTime;
+		this.transform.position += vel * Time.fixedDeltaTime;
+		SendActionToGameManager();
+	}
+	public void Trigger()
+	{
+		throw new System.Exception("Trigger not available for "+this);
+	}
+
+	public void SendActionToGameManager()
+	{
+		this.gameManager.ActionEventTrigger(Actions.Shoot);
 	}
 
 	void IInputReceiverMove.ReceiveInputMove(Vector3 direction)
 	{
 		this.Move(direction);
 	}
+
+    void IGameEntity.Init(GameManager gameManager)
+    {
+		this.gameManager = gameManager;
+    }
+
+    void IAbility.Enable()
+    {
+		this.enabled = true;
+    }
+
+    void IAbility.Disable()
+    {
+		this.enabled = false;
+    }
 }
