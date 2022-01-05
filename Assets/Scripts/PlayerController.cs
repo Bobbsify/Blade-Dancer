@@ -12,6 +12,16 @@ public class PlayerController : MonoBehaviour
 
     IAbility[] abilities;
 
+    public void DoDeath()
+    {
+        //Call animator and then die and respawn
+    }
+
+    public void Reset()
+    {
+
+    }
+
     private void OnValidate()
     {
        this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
@@ -20,15 +30,5 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
        this.abilities = this.searchRoot.GetComponentsInChildren<IAbility>(true);
-    }
-
-    void TryTriggerAbility()
-    {
-        // per le animazioni
-    }
-
-    public void DoDeath()
-    {
-        //Call animator and then die and respawn
     }
 }
