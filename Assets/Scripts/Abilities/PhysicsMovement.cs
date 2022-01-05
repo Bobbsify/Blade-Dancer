@@ -20,7 +20,7 @@ public class PhysicsMovement : MonoBehaviour, IAbility, IInputReceiverMove, IGam
 
 	public void SendActionToGameManager()
 	{
-		this.gameManager.ActionEventTrigger(Actions.Shoot);
+		this.gameManager.ActionEventTrigger(Actions.Move);
 	}
 
 	void IInputReceiverMove.ReceiveInputMove(Vector3 direction)
