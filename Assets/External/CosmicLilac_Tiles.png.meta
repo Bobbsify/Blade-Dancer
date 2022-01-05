@@ -1,307 +1,319 @@
 fileFormatVersion: 2
-guid: 2d0444cba57f32c43901fbfafb6a509d
+guid: 69dc8e4f340eb2c47bbea46a00e86a34
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3786115476455808955
-    second: Dungeon_Tileset_0
+      213: 7082039976070679621
+    second: CosmicLilac_Tiles_0
   - first:
-      213: -3590207636862898149
-    second: Dungeon_Tileset_1
+      213: -6269297316018739895
+    second: CosmicLilac_Tiles_1
   - first:
-      213: -6941422852762540485
-    second: Dungeon_Tileset_2
+      213: -6588066974356512059
+    second: CosmicLilac_Tiles_2
   - first:
-      213: -6419999111262848172
-    second: Dungeon_Tileset_3
+      213: -2818795264402672058
+    second: CosmicLilac_Tiles_3
   - first:
-      213: 5094737752361063794
-    second: Dungeon_Tileset_4
+      213: -3527614062409639159
+    second: CosmicLilac_Tiles_4
   - first:
-      213: 4023018930920339469
-    second: Dungeon_Tileset_5
+      213: -4927299260873395047
+    second: CosmicLilac_Tiles_5
   - first:
-      213: -8120323925528636241
-    second: Dungeon_Tileset_6
+      213: -6484433922000232535
+    second: CosmicLilac_Tiles_6
   - first:
-      213: 8938356945095094423
-    second: Dungeon_Tileset_7
+      213: 6895184369099591732
+    second: CosmicLilac_Tiles_7
   - first:
-      213: 2818063909598327431
-    second: Dungeon_Tileset_8
+      213: 7412288424726502511
+    second: CosmicLilac_Tiles_8
   - first:
-      213: -778764822399169897
-    second: Dungeon_Tileset_9
+      213: 3457255522166742483
+    second: CosmicLilac_Tiles_9
   - first:
-      213: -8474740879727053552
-    second: Dungeon_Tileset_10
+      213: -624702450117240669
+    second: CosmicLilac_Tiles_10
   - first:
-      213: 4521207776522067839
-    second: Dungeon_Tileset_11
+      213: -4486082940999508131
+    second: CosmicLilac_Tiles_11
   - first:
-      213: 1558959487191823921
-    second: Dungeon_Tileset_12
+      213: 8632754864866332214
+    second: CosmicLilac_Tiles_12
   - first:
-      213: 595508747133529673
-    second: Dungeon_Tileset_13
+      213: 2673545478376147582
+    second: CosmicLilac_Tiles_13
   - first:
-      213: -1474506998622769691
-    second: Dungeon_Tileset_14
+      213: 3688716447547241377
+    second: CosmicLilac_Tiles_14
   - first:
-      213: -3624728776038038798
-    second: Dungeon_Tileset_15
+      213: -6439093368032447242
+    second: CosmicLilac_Tiles_15
   - first:
-      213: -7606234629451901924
-    second: Dungeon_Tileset_16
+      213: 925313766944672312
+    second: CosmicLilac_Tiles_16
   - first:
-      213: -7657094741939605724
-    second: Dungeon_Tileset_17
+      213: -4555415144738332232
+    second: CosmicLilac_Tiles_17
   - first:
-      213: -9000362276992120081
-    second: Dungeon_Tileset_18
+      213: 2081418188318047782
+    second: CosmicLilac_Tiles_18
   - first:
-      213: -3317108722525156635
-    second: Dungeon_Tileset_19
+      213: 1622681247791612339
+    second: CosmicLilac_Tiles_19
   - first:
-      213: -8355083117788888566
-    second: Dungeon_Tileset_20
+      213: 3289425289527110587
+    second: CosmicLilac_Tiles_20
   - first:
-      213: -5918354282546245974
-    second: Dungeon_Tileset_21
+      213: 2476097318820788647
+    second: CosmicLilac_Tiles_21
   - first:
-      213: -8139105514105801121
-    second: Dungeon_Tileset_22
+      213: -5059141267132436655
+    second: CosmicLilac_Tiles_22
   - first:
-      213: -4582401877760778594
-    second: Dungeon_Tileset_23
+      213: -4530746283334096022
+    second: CosmicLilac_Tiles_23
   - first:
-      213: -3211815418825281083
-    second: Dungeon_Tileset_24
+      213: -8859207420116603567
+    second: CosmicLilac_Tiles_24
   - first:
-      213: -1866338419035408968
-    second: Dungeon_Tileset_25
+      213: 5982699102459608666
+    second: CosmicLilac_Tiles_25
   - first:
-      213: -5052320489504722407
-    second: Dungeon_Tileset_26
+      213: 7166768591807222525
+    second: CosmicLilac_Tiles_26
   - first:
-      213: 1114646796741094055
-    second: Dungeon_Tileset_27
+      213: -1839434463822581878
+    second: CosmicLilac_Tiles_27
   - first:
-      213: -9048192641222686197
-    second: Dungeon_Tileset_28
+      213: -6872881214345286063
+    second: CosmicLilac_Tiles_28
   - first:
-      213: 5211745164843661978
-    second: Dungeon_Tileset_29
+      213: 4996957821868547963
+    second: CosmicLilac_Tiles_29
   - first:
-      213: -3684562326207342857
-    second: Dungeon_Tileset_30
+      213: -4980540849693524512
+    second: CosmicLilac_Tiles_30
   - first:
-      213: 91974681427787221
-    second: Dungeon_Tileset_31
+      213: -3608795765651118363
+    second: CosmicLilac_Tiles_31
   - first:
-      213: 8049239735045566497
-    second: Dungeon_Tileset_32
+      213: 3487221702634746004
+    second: CosmicLilac_Tiles_32
   - first:
-      213: -113996178595609863
-    second: Dungeon_Tileset_33
+      213: 8943431766218437443
+    second: CosmicLilac_Tiles_33
   - first:
-      213: -305168554068363993
-    second: Dungeon_Tileset_34
+      213: 2858059696513969237
+    second: CosmicLilac_Tiles_34
   - first:
-      213: -1745049011280948865
-    second: Dungeon_Tileset_35
+      213: -3943366517413232263
+    second: CosmicLilac_Tiles_35
   - first:
-      213: 6505958660565071534
-    second: Dungeon_Tileset_36
+      213: -5033121839858474365
+    second: CosmicLilac_Tiles_36
   - first:
-      213: 1042098557448713531
-    second: Dungeon_Tileset_37
+      213: 2375004781986474112
+    second: CosmicLilac_Tiles_37
   - first:
-      213: -6580451823669508612
-    second: Dungeon_Tileset_38
+      213: 4048638018336167622
+    second: CosmicLilac_Tiles_38
   - first:
-      213: 9119029785525494671
-    second: Dungeon_Tileset_39
+      213: 2748910301307202257
+    second: CosmicLilac_Tiles_39
   - first:
-      213: 814100358431600263
-    second: Dungeon_Tileset_40
+      213: -5338602876894547512
+    second: CosmicLilac_Tiles_40
   - first:
-      213: -931493284425913039
-    second: Dungeon_Tileset_41
+      213: -7636677236702609591
+    second: CosmicLilac_Tiles_41
   - first:
-      213: 8501229379153569890
-    second: Dungeon_Tileset_42
+      213: 6018356188910787665
+    second: CosmicLilac_Tiles_42
   - first:
-      213: 5769662111529959046
-    second: Dungeon_Tileset_43
+      213: 1999617827005052850
+    second: CosmicLilac_Tiles_43
   - first:
-      213: -9148341807223554030
-    second: Dungeon_Tileset_44
+      213: -693394268990400837
+    second: CosmicLilac_Tiles_44
   - first:
-      213: -6208134848360472016
-    second: Dungeon_Tileset_45
+      213: 2965004264743583660
+    second: CosmicLilac_Tiles_45
   - first:
-      213: -2680935109507513731
-    second: Dungeon_Tileset_46
+      213: -6063472020716509453
+    second: CosmicLilac_Tiles_46
   - first:
-      213: 8185415898879777628
-    second: Dungeon_Tileset_47
+      213: -458246348358201829
+    second: CosmicLilac_Tiles_47
   - first:
-      213: 2869445173234102217
-    second: Dungeon_Tileset_48
+      213: -6010455675803791622
+    second: CosmicLilac_Tiles_48
   - first:
-      213: -5338643416407846498
-    second: Dungeon_Tileset_49
+      213: 4759345194796491513
+    second: CosmicLilac_Tiles_49
   - first:
-      213: 2203797919881089718
-    second: Dungeon_Tileset_50
+      213: -7342799732171953832
+    second: CosmicLilac_Tiles_50
   - first:
-      213: 8673527630790295319
-    second: Dungeon_Tileset_51
+      213: 3093506082295937486
+    second: CosmicLilac_Tiles_51
   - first:
-      213: 8854592227059702305
-    second: Dungeon_Tileset_52
+      213: 7458789018320992425
+    second: CosmicLilac_Tiles_52
   - first:
-      213: -224872910991652484
-    second: Dungeon_Tileset_53
+      213: -2222312616124885969
+    second: CosmicLilac_Tiles_53
   - first:
-      213: 1421881976529914242
-    second: Dungeon_Tileset_54
+      213: -6325556278267606032
+    second: CosmicLilac_Tiles_54
   - first:
-      213: 252558984209222252
-    second: Dungeon_Tileset_55
+      213: 972303360184402739
+    second: CosmicLilac_Tiles_55
   - first:
-      213: -2097155515530198684
-    second: Dungeon_Tileset_56
+      213: -7337605849573879473
+    second: CosmicLilac_Tiles_56
   - first:
-      213: -7197758672315654437
-    second: Dungeon_Tileset_57
+      213: 2514356044421439161
+    second: CosmicLilac_Tiles_57
   - first:
-      213: 6069686093187096410
-    second: Dungeon_Tileset_58
+      213: 3167902502208503404
+    second: CosmicLilac_Tiles_58
   - first:
-      213: -3192858651156017326
-    second: Dungeon_Tileset_59
+      213: 8012189675307010935
+    second: CosmicLilac_Tiles_59
   - first:
-      213: 824959492066083578
-    second: Dungeon_Tileset_60
+      213: 7961177310707006989
+    second: CosmicLilac_Tiles_60
   - first:
-      213: -5892618101177633896
-    second: Dungeon_Tileset_61
+      213: -3143111636962311840
+    second: CosmicLilac_Tiles_61
   - first:
-      213: 8901531028996712117
-    second: Dungeon_Tileset_62
+      213: 7239992398902122284
+    second: CosmicLilac_Tiles_62
   - first:
-      213: 356223449659879753
-    second: Dungeon_Tileset_63
+      213: -7991321053997368441
+    second: CosmicLilac_Tiles_63
   - first:
-      213: 1053006213846151300
-    second: Dungeon_Tileset_64
+      213: 5381976863928375246
+    second: CosmicLilac_Tiles_64
   - first:
-      213: 8741352430255876377
-    second: Dungeon_Tileset_65
+      213: 8551906303370657913
+    second: CosmicLilac_Tiles_65
   - first:
-      213: -4695309399070934062
-    second: Dungeon_Tileset_66
+      213: 1243323411034998047
+    second: CosmicLilac_Tiles_66
   - first:
-      213: -4765653632507054551
-    second: Dungeon_Tileset_67
+      213: 5445956786581711640
+    second: CosmicLilac_Tiles_67
   - first:
-      213: 8042273296376651466
-    second: Dungeon_Tileset_68
+      213: -8626982637779011439
+    second: CosmicLilac_Tiles_68
   - first:
-      213: 5945357789820212794
-    second: Dungeon_Tileset_69
+      213: 4364144845717427339
+    second: CosmicLilac_Tiles_69
   - first:
-      213: -3497689606471582950
-    second: Dungeon_Tileset_70
+      213: -4758721063294455966
+    second: CosmicLilac_Tiles_70
   - first:
-      213: -4819012328685627586
-    second: Dungeon_Tileset_71
+      213: -1703068498387072479
+    second: CosmicLilac_Tiles_71
   - first:
-      213: -408396846168208039
-    second: Dungeon_Tileset_72
+      213: -9213492281451189013
+    second: CosmicLilac_Tiles_72
   - first:
-      213: -7781352479309441268
-    second: Dungeon_Tileset_73
+      213: 1517215458154304387
+    second: CosmicLilac_Tiles_73
   - first:
-      213: -818659787113659478
-    second: Dungeon_Tileset_74
+      213: -8493604930554688187
+    second: CosmicLilac_Tiles_74
   - first:
-      213: 6047853239188639983
-    second: Dungeon_Tileset_75
+      213: 1738096427127995123
+    second: CosmicLilac_Tiles_75
   - first:
-      213: -4388531849041413033
-    second: Dungeon_Tileset_76
+      213: -1166744219366195722
+    second: CosmicLilac_Tiles_76
   - first:
-      213: 1369372634922183146
-    second: Dungeon_Tileset_77
+      213: -6773037978890113749
+    second: CosmicLilac_Tiles_77
   - first:
-      213: 1339269231420215825
-    second: Dungeon_Tileset_78
+      213: 4914069311028362061
+    second: CosmicLilac_Tiles_78
   - first:
-      213: -8269629686364622043
-    second: Dungeon_Tileset_79
+      213: 3192794932475964581
+    second: CosmicLilac_Tiles_79
   - first:
-      213: 6801152492180024973
-    second: Dungeon_Tileset_80
+      213: -714908187839899718
+    second: CosmicLilac_Tiles_80
   - first:
-      213: 6683501223357894596
-    second: Dungeon_Tileset_81
+      213: 2720619518081580491
+    second: CosmicLilac_Tiles_81
   - first:
-      213: 7325720009749220995
-    second: Dungeon_Tileset_82
+      213: 4452719770711638354
+    second: CosmicLilac_Tiles_82
   - first:
-      213: -1034604436700536505
-    second: Dungeon_Tileset_83
+      213: -8233280605551655412
+    second: CosmicLilac_Tiles_83
   - first:
-      213: -589316354031001511
-    second: Dungeon_Tileset_84
+      213: -371020158475646502
+    second: CosmicLilac_Tiles_84
   - first:
-      213: 5719594033305679040
-    second: Dungeon_Tileset_85
+      213: 5235102292434471283
+    second: CosmicLilac_Tiles_85
   - first:
-      213: 3136550281646277714
-    second: Dungeon_Tileset_86
+      213: -542199654976383281
+    second: CosmicLilac_Tiles_86
   - first:
-      213: 5550302956442217801
-    second: Dungeon_Tileset_87
+      213: 911112508869097608
+    second: CosmicLilac_Tiles_87
   - first:
-      213: -357649465742773655
-    second: Dungeon_Tileset_88
+      213: 1050065556000622730
+    second: CosmicLilac_Tiles_88
   - first:
-      213: -3679828817949995438
-    second: Dungeon_Tileset_89
+      213: -1806546665559423368
+    second: CosmicLilac_Tiles_89
   - first:
-      213: -7443312225144014202
-    second: Dungeon_Tileset_90
+      213: -6006180398211387025
+    second: CosmicLilac_Tiles_90
   - first:
-      213: -1808025220374361088
-    second: Dungeon_Tileset_91
+      213: 8047477122440806957
+    second: CosmicLilac_Tiles_91
   - first:
-      213: 2829099832771946518
-    second: Dungeon_Tileset_92
+      213: 3899769485256385485
+    second: CosmicLilac_Tiles_92
   - first:
-      213: 5860325458425312261
-    second: Dungeon_Tileset_93
+      213: -3189131188685441202
+    second: CosmicLilac_Tiles_93
   - first:
-      213: -4812822056404770797
-    second: Dungeon_Tileset_94
+      213: -287674244471434022
+    second: CosmicLilac_Tiles_94
   - first:
-      213: 5877983500951366135
-    second: Dungeon_Tileset_95
+      213: -6866219646489624544
+    second: CosmicLilac_Tiles_95
   - first:
-      213: -4218565217482104407
-    second: Dungeon_Tileset_96
+      213: 4431397162770233028
+    second: CosmicLilac_Tiles_96
   - first:
-      213: -6821306102546672784
-    second: Dungeon_Tileset_97
+      213: -8293613401715983758
+    second: CosmicLilac_Tiles_97
   - first:
-      213: -8258698053525156362
-    second: Dungeon_Tileset_98
+      213: -3855292943943444665
+    second: CosmicLilac_Tiles_98
   - first:
-      213: -2978260595890351725
-    second: Dungeon_Tileset_99
+      213: -7166961838456316842
+    second: CosmicLilac_Tiles_99
+  - first:
+      213: -4526939823239547353
+    second: CosmicLilac_Tiles_100
+  - first:
+      213: 4120705562924794430
+    second: CosmicLilac_Tiles_101
+  - first:
+      213: 7532390397782279504
+    second: CosmicLilac_Tiles_102
+  - first:
+      213: -1439037287870539793
+    second: CosmicLilac_Tiles_103
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -387,427 +399,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dungeon_Tileset_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5402e3ba804057bc0800000000000000
-      internalID: -3786115476455808955
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_1
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b1074ee0d250d2ec0800000000000000
-      internalID: -3590207636862898149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_2
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b366f4151bc1baf90800000000000000
-      internalID: -6941422852762540485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_3
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 45bbadaa2d497e6a0800000000000000
-      internalID: -6419999111262848172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_4
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 275d0412ef424b640800000000000000
-      internalID: 5094737752361063794
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_5
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d08bd2e1762a4d730800000000000000
-      internalID: 4023018930920339469
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_6
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa492cdb960de4f80800000000000000
-      internalID: -8120323925528636241
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_7
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 790f90cb84c6b0c70800000000000000
-      internalID: 8938356945095094423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_8
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 782f4fde136cb1720800000000000000
-      internalID: 2818063909598327431
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_9
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 144
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 79ac35525854135f0800000000000000
-      internalID: -778764822399169897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_10
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 015336c221ca36a80800000000000000
-      internalID: -8474740879727053552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_11
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7fd453b48e8ebe30800000000000000
-      internalID: 4521207776522067839
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_12
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1363b45d46982a510800000000000000
-      internalID: 1558959487191823921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_13
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 94e2885ec0ca34800800000000000000
-      internalID: 595508747133529673
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_14
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ed234072bf798be0800000000000000
-      internalID: -1474506998622769691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_15
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f2cd11026062bdc0800000000000000
-      internalID: -3624728776038038798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_16
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c149e3177e9317690800000000000000
-      internalID: -7606234629451901924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_17
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 42fad27b6e88cb590800000000000000
-      internalID: -7657094741939605724
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_18
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fea0f0ee13a481380800000000000000
-      internalID: -9000362276992120081
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_19
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 128
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5eac980113347f1d0800000000000000
-      internalID: -3317108722525156635
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dungeon_Tileset_20
+      name: CosmicLilac_Tiles_0
       rect:
         serializedVersion: 2
         x: 0
@@ -821,14 +413,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a028457eb28cc0c80800000000000000
-      internalID: -8355083117788888566
+      spriteID: 54c0fc206d5784260800000000000000
+      internalID: 7082039976070679621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_21
+      name: CosmicLilac_Tiles_1
       rect:
         serializedVersion: 2
         x: 16
@@ -842,14 +434,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aae4be50328cddda0800000000000000
-      internalID: -5918354282546245974
+      spriteID: 945a467ae4bfef8a0800000000000000
+      internalID: -6269297316018739895
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_22
+      name: CosmicLilac_Tiles_2
       rect:
         serializedVersion: 2
         x: 32
@@ -863,14 +455,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f56fc4268a61c0f80800000000000000
-      internalID: -8139105514105801121
+      spriteID: 5c26ffcedfb7294a0800000000000000
+      internalID: -6588066974356512059
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_23
+      name: CosmicLilac_Tiles_3
       rect:
         serializedVersion: 2
         x: 48
@@ -884,14 +476,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9e5cf155c90860c0800000000000000
-      internalID: -4582401877760778594
+      spriteID: 646b9b244a0a1e8d0800000000000000
+      internalID: -2818795264402672058
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_24
+      name: CosmicLilac_Tiles_4
       rect:
         serializedVersion: 2
         x: 64
@@ -905,14 +497,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5c1fbccb4e65d63d0800000000000000
-      internalID: -3211815418825281083
+      spriteID: 90b966943b56b0fc0800000000000000
+      internalID: -3527614062409639159
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_25
+      name: CosmicLilac_Tiles_5
       rect:
         serializedVersion: 2
         x: 80
@@ -926,14 +518,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b5fabe981f6916e0800000000000000
-      internalID: -1866338419035408968
+      spriteID: 994b89d9d67be9bb0800000000000000
+      internalID: -4927299260873395047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_26
+      name: CosmicLilac_Tiles_6
       rect:
         serializedVersion: 2
         x: 96
@@ -947,14 +539,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 912b4ab784d82e9b0800000000000000
-      internalID: -5052320489504722407
+      spriteID: 9afdea534b9a206a0800000000000000
+      internalID: -6484433922000232535
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_27
+      name: CosmicLilac_Tiles_7
       rect:
         serializedVersion: 2
         x: 112
@@ -968,14 +560,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7aaa7c12b55087f00800000000000000
-      internalID: 1114646796741094055
+      spriteID: 430d105c6ad90bf50800000000000000
+      internalID: 6895184369099591732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_28
+      name: CosmicLilac_Tiles_8
       rect:
         serializedVersion: 2
         x: 128
@@ -989,14 +581,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b0a4e907bbc5e6280800000000000000
-      internalID: -9048192641222686197
+      spriteID: f6c1090ec0dbdd660800000000000000
+      internalID: 7412288424726502511
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_29
+      name: CosmicLilac_Tiles_9
       rect:
         serializedVersion: 2
         x: 144
@@ -1010,14 +602,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a9abd5a4d96d35840800000000000000
-      internalID: 5211745164843661978
+      spriteID: 3dd91808493aaff20800000000000000
+      internalID: 3457255522166742483
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_30
+      name: CosmicLilac_Tiles_10
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a812727e6c9457f0800000000000000
+      internalID: -624702450117240669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_11
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5fd8cc555b3eb1c0800000000000000
+      internalID: -4486082940999508131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_12
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e0261bfc4bdc770800000000000000
+      internalID: 8632754864866332214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_13
       rect:
         serializedVersion: 2
         x: 0
@@ -1031,14 +686,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f6df91061ecddcc0800000000000000
-      internalID: -3684562326207342857
+      spriteID: e7a467192775a1520800000000000000
+      internalID: 2673545478376147582
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_31
+      name: CosmicLilac_Tiles_14
       rect:
         serializedVersion: 2
         x: 16
@@ -1052,14 +707,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5dd35d64c72c64100800000000000000
-      internalID: 91974681427787221
+      spriteID: 1a3b13db014f03330800000000000000
+      internalID: 3688716447547241377
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_32
+      name: CosmicLilac_Tiles_15
       rect:
         serializedVersion: 2
         x: 32
@@ -1073,14 +728,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 120b95f64e4a4bf60800000000000000
-      internalID: 8049239735045566497
+      spriteID: 6f43ad292beb3a6a0800000000000000
+      internalID: -6439093368032447242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_33
+      name: CosmicLilac_Tiles_16
       rect:
         serializedVersion: 2
         x: 48
@@ -1094,14 +749,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f28e0d54110b6ef0800000000000000
-      internalID: -113996178595609863
+      spriteID: 83a0480f7ff57dc00800000000000000
+      internalID: 925313766944672312
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_34
+      name: CosmicLilac_Tiles_17
       rect:
         serializedVersion: 2
         x: 64
@@ -1115,14 +770,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 725b22221d2d3cbf0800000000000000
-      internalID: -305168554068363993
+      spriteID: 8b1ef6dbf0ae7c0c0800000000000000
+      internalID: -4555415144738332232
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_35
+      name: CosmicLilac_Tiles_18
       rect:
         serializedVersion: 2
         x: 80
@@ -1136,14 +791,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f71d3fe7b2758c7e0800000000000000
-      internalID: -1745049011280948865
+      spriteID: 62efbbf70dea2ec10800000000000000
+      internalID: 2081418188318047782
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_36
+      name: CosmicLilac_Tiles_19
       rect:
         serializedVersion: 2
         x: 96
@@ -1157,14 +812,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ea67b568eeec94a50800000000000000
-      internalID: 6505958660565071534
+      spriteID: 3b18e4e5ffbe48610800000000000000
+      internalID: 1622681247791612339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_37
+      name: CosmicLilac_Tiles_20
       rect:
         serializedVersion: 2
         x: 112
@@ -1178,14 +833,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b357da1ed17467e00800000000000000
-      internalID: 1042098557448713531
+      spriteID: bbb23796fd266ad20800000000000000
+      internalID: 3289425289527110587
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_38
+      name: CosmicLilac_Tiles_21
       rect:
         serializedVersion: 2
         x: 128
@@ -1199,14 +854,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf58b9c5ee98da4a0800000000000000
-      internalID: -6580451823669508612
+      spriteID: 7a93c9d746ddc5220800000000000000
+      internalID: 2476097318820788647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_39
+      name: CosmicLilac_Tiles_22
       rect:
         serializedVersion: 2
         x: 144
@@ -1220,14 +875,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f832476764d4d8e70800000000000000
-      internalID: 9119029785525494671
+      spriteID: 15f2d0072d15ac9b0800000000000000
+      internalID: -5059141267132436655
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_40
+      name: CosmicLilac_Tiles_23
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6b237e924e8f11c0800000000000000
+      internalID: -4530746283334096022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_24
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15de17c1ac5cd0580800000000000000
+      internalID: -8859207420116603567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_25
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5e3720d221d60350800000000000000
+      internalID: 5982699102459608666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_26
       rect:
         serializedVersion: 2
         x: 0
@@ -1241,14 +959,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 78e65d376f34c4b00800000000000000
-      internalID: 814100358431600263
+      spriteID: df29816201a757360800000000000000
+      internalID: 7166768591807222525
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_41
+      name: CosmicLilac_Tiles_27
       rect:
         serializedVersion: 2
         x: 16
@@ -1262,14 +980,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 13da1270bcba213f0800000000000000
-      internalID: -931493284425913039
+      spriteID: a8f6e34d9140976e0800000000000000
+      internalID: -1839434463822581878
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_42
+      name: CosmicLilac_Tiles_28
       rect:
         serializedVersion: 2
         x: 32
@@ -1283,14 +1001,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2682092341f6af570800000000000000
-      internalID: 8501229379153569890
+      spriteID: 15e6e7b13fe9e90a0800000000000000
+      internalID: -6872881214345286063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_43
+      name: CosmicLilac_Tiles_29
       rect:
         serializedVersion: 2
         x: 48
@@ -1304,14 +1022,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68ef5c71f15f11050800000000000000
-      internalID: 5769662111529959046
+      spriteID: b7f951af9a2c85540800000000000000
+      internalID: 4996957821868547963
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_44
+      name: CosmicLilac_Tiles_30
       rect:
         serializedVersion: 2
         x: 64
@@ -1325,14 +1043,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 210c598a89f8a0180800000000000000
-      internalID: -9148341807223554030
+      spriteID: 0edf1b83c7091eab0800000000000000
+      internalID: -4980540849693524512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_45
+      name: CosmicLilac_Tiles_31
       rect:
         serializedVersion: 2
         x: 80
@@ -1346,14 +1064,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 03220cd5f3648d9a0800000000000000
-      internalID: -6208134848360472016
+      spriteID: 5e66e611f5bfaedc0800000000000000
+      internalID: -3608795765651118363
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_46
+      name: CosmicLilac_Tiles_32
       rect:
         serializedVersion: 2
         x: 96
@@ -1367,14 +1085,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d728eebd8b76bcad0800000000000000
-      internalID: -2680935109507513731
+      spriteID: 490b39699a9156030800000000000000
+      internalID: 3487221702634746004
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_47
+      name: CosmicLilac_Tiles_33
       rect:
         serializedVersion: 2
         x: 112
@@ -1388,14 +1106,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5b509f4460789170800000000000000
-      internalID: 8185415898879777628
+      spriteID: 343f46a9ec37d1c70800000000000000
+      internalID: 8943431766218437443
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_48
+      name: CosmicLilac_Tiles_34
       rect:
         serializedVersion: 2
         x: 128
@@ -1409,14 +1127,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9cfe31d9e2152d720800000000000000
-      internalID: 2869445173234102217
+      spriteID: 55c639db62ed9a720800000000000000
+      internalID: 2858059696513969237
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_49
+      name: CosmicLilac_Tiles_35
       rect:
         serializedVersion: 2
         x: 144
@@ -1430,14 +1148,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e91588e191459e5b0800000000000000
-      internalID: -5338643416407846498
+      spriteID: 9714a669b095649c0800000000000000
+      internalID: -3943366517413232263
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_50
+      name: CosmicLilac_Tiles_36
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 382a9ff6a52c62ab0800000000000000
+      internalID: -5033121839858474365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_37
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08868221446b5f020800000000000000
+      internalID: 2375004781986474112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_38
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c6911bb3d6af2830800000000000000
+      internalID: 4048638018336167622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_39
       rect:
         serializedVersion: 2
         x: 0
@@ -1451,14 +1232,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b2d14b2886759e10800000000000000
-      internalID: 2203797919881089718
+      spriteID: 1dae3dcca57162620800000000000000
+      internalID: 2748910301307202257
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_51
+      name: CosmicLilac_Tiles_40
       rect:
         serializedVersion: 2
         x: 16
@@ -1472,14 +1253,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 71f7ac60d6f8e5870800000000000000
-      internalID: 8673527630790295319
+      spriteID: 8c172d5f7f879e5b0800000000000000
+      internalID: -5338602876894547512
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_52
+      name: CosmicLilac_Tiles_41
       rect:
         serializedVersion: 2
         x: 32
@@ -1493,14 +1274,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12a14d487b4d1ea70800000000000000
-      internalID: 8854592227059702305
+      spriteID: 94f770a9382150690800000000000000
+      internalID: -7636677236702609591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_53
+      name: CosmicLilac_Tiles_42
       rect:
         serializedVersion: 2
         x: 48
@@ -1514,14 +1295,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c790cb4674711ecf0800000000000000
-      internalID: -224872910991652484
+      spriteID: 15c1dc3311f758350800000000000000
+      internalID: 6018356188910787665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_54
+      name: CosmicLilac_Tiles_43
       rect:
         serializedVersion: 2
         x: 64
@@ -1535,14 +1316,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 289889bcf1a8bb310800000000000000
-      internalID: 1421881976529914242
+      spriteID: 2b7bc29b1d110cb10800000000000000
+      internalID: 1999617827005052850
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_55
+      name: CosmicLilac_Tiles_44
       rect:
         serializedVersion: 2
         x: 80
@@ -1556,14 +1337,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6acf9ade05418300800000000000000
-      internalID: 252558984209222252
+      spriteID: bb6198b06919066f0800000000000000
+      internalID: -693394268990400837
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_56
+      name: CosmicLilac_Tiles_45
       rect:
         serializedVersion: 2
         x: 96
@@ -1577,14 +1358,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 461421a7b2865e2e0800000000000000
-      internalID: -2097155515530198684
+      spriteID: caf3f856bafc52920800000000000000
+      internalID: 2965004264743583660
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_57
+      name: CosmicLilac_Tiles_46
       rect:
         serializedVersion: 2
         x: 112
@@ -1598,14 +1379,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bde53a57f9c6c1c90800000000000000
-      internalID: -7197758672315654437
+      spriteID: 3f62ca3a2583adba0800000000000000
+      internalID: -6063472020716509453
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_58
+      name: CosmicLilac_Tiles_47
       rect:
         serializedVersion: 2
         x: 128
@@ -1619,14 +1400,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5f9b8ad75bdb3450800000000000000
-      internalID: 6069686093187096410
+      spriteID: b1e4d72cf5bf3a9f0800000000000000
+      internalID: -458246348358201829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_59
+      name: CosmicLilac_Tiles_48
       rect:
         serializedVersion: 2
         x: 144
@@ -1640,14 +1421,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25f00d729ffa0b3d0800000000000000
-      internalID: -3192858651156017326
+      spriteID: afe0c795862969ca0800000000000000
+      internalID: -6010455675803791622
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_60
+      name: CosmicLilac_Tiles_49
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f2ae431d379c0240800000000000000
+      internalID: 4759345194796491513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_50
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 859ae032c82291a90800000000000000
+      internalID: -7342799732171953832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_51
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec972c944675eea20800000000000000
+      internalID: 3093506082295937486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_52
       rect:
         serializedVersion: 2
         x: 0
@@ -1661,14 +1505,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: af28fa68948d27b00800000000000000
-      internalID: 824959492066083578
+      spriteID: 9a87b930811f28760800000000000000
+      internalID: 7458789018320992425
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_61
+      name: CosmicLilac_Tiles_53
       rect:
         serializedVersion: 2
         x: 16
@@ -1682,14 +1526,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8933542be07393ea0800000000000000
-      internalID: -5892618101177633896
+      spriteID: f24d1003372c821e0800000000000000
+      internalID: -2222312616124885969
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_62
+      name: CosmicLilac_Tiles_54
       rect:
         serializedVersion: 2
         x: 32
@@ -1703,14 +1547,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5b6677cfe47988b70800000000000000
-      internalID: 8901531028996712117
+      spriteID: 0fb0e13441c1738a0800000000000000
+      internalID: -6325556278267606032
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_63
+      name: CosmicLilac_Tiles_55
       rect:
         serializedVersion: 2
         x: 48
@@ -1724,14 +1568,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94134a1175f81f400800000000000000
-      internalID: 356223449659879753
+      spriteID: 333c5bd21c05e7d00800000000000000
+      internalID: 972303360184402739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_64
+      name: CosmicLilac_Tiles_56
       rect:
         serializedVersion: 2
         x: 64
@@ -1745,14 +1589,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 480349a82970d9e00800000000000000
-      internalID: 1053006213846151300
+      spriteID: f41125a2b569b2a90800000000000000
+      internalID: -7337605849573879473
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_65
+      name: CosmicLilac_Tiles_57
       rect:
         serializedVersion: 2
         x: 80
@@ -1766,14 +1610,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 91926edb8b58f4970800000000000000
-      internalID: 8741352430255876377
+      spriteID: 9be98923089c4e220800000000000000
+      internalID: 2514356044421439161
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_66
+      name: CosmicLilac_Tiles_58
       rect:
         serializedVersion: 2
         x: 96
@@ -1787,14 +1631,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dbf2d57af8e6deb0800000000000000
-      internalID: -4695309399070934062
+      spriteID: c6e753f9a86a6fb20800000000000000
+      internalID: 3167902502208503404
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_67
+      name: CosmicLilac_Tiles_59
       rect:
         serializedVersion: 2
         x: 112
@@ -1808,14 +1652,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926fddf454ffcddb0800000000000000
-      internalID: -4765653632507054551
+      spriteID: 77b0abd2f04013f60800000000000000
+      internalID: 8012189675307010935
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_68
+      name: CosmicLilac_Tiles_60
       rect:
         serializedVersion: 2
         x: 128
@@ -1829,14 +1673,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aced32904f4eb9f60800000000000000
-      internalID: 8042273296376651466
+      spriteID: d0e379e7598cb7e60800000000000000
+      internalID: 7961177310707006989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_69
+      name: CosmicLilac_Tiles_61
       rect:
         serializedVersion: 2
         x: 144
@@ -1850,14 +1694,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a36d5d4f867228250800000000000000
-      internalID: 5945357789820212794
+      spriteID: 061077d7e9c6164d0800000000000000
+      internalID: -3143111636962311840
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_70
+      name: CosmicLilac_Tiles_62
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c27d6194abe997460800000000000000
+      internalID: 7239992398902122284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_63
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78bf26a57df191190800000000000000
+      internalID: -7991321053997368441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_64
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec752db517f90ba40800000000000000
+      internalID: 5381976863928375246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_65
       rect:
         serializedVersion: 2
         x: 0
@@ -1871,14 +1778,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a1b7faf95d5b57fc0800000000000000
-      internalID: -3497689606471582950
+      spriteID: 97005d419797ea670800000000000000
+      internalID: 8551906303370657913
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_71
+      name: CosmicLilac_Tiles_66
       rect:
         serializedVersion: 2
         x: 16
@@ -1892,14 +1799,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e37177cb1dd6f1db0800000000000000
-      internalID: -4819012328685627586
+      spriteID: f150baf0e0c214110800000000000000
+      internalID: 1243323411034998047
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_72
+      name: CosmicLilac_Tiles_67
       rect:
         serializedVersion: 2
         x: 32
@@ -1913,14 +1820,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95d01c07b35155af0800000000000000
-      internalID: -408396846168208039
+      spriteID: 81ba45ee7dce39b40800000000000000
+      internalID: 5445956786581711640
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_73
+      name: CosmicLilac_Tiles_68
       rect:
         serializedVersion: 2
         x: 48
@@ -1934,14 +1841,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c07d7aeb525130490800000000000000
-      internalID: -7781352479309441268
+      spriteID: 19838b7affcc64880800000000000000
+      internalID: -8626982637779011439
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_74
+      name: CosmicLilac_Tiles_69
       rect:
         serializedVersion: 2
         x: 64
@@ -1955,14 +1862,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aa38135d24983a4f0800000000000000
-      internalID: -818659787113659478
+      spriteID: b84d65d6d9e809c30800000000000000
+      internalID: 4364144845717427339
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_75
+      name: CosmicLilac_Tiles_70
       rect:
         serializedVersion: 2
         x: 80
@@ -1976,14 +1883,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe0d8876a7a4ee350800000000000000
-      internalID: 6047853239188639983
+      spriteID: 26f2a2dd760a5fdb0800000000000000
+      internalID: -4758721063294455966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_76
+      name: CosmicLilac_Tiles_71
       rect:
         serializedVersion: 2
         x: 96
@@ -1997,14 +1904,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75cf564e88dc813c0800000000000000
-      internalID: -4388531849041413033
+      spriteID: 12a0b75593c7d58e0800000000000000
+      internalID: -1703068498387072479
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_77
+      name: CosmicLilac_Tiles_72
       rect:
         serializedVersion: 2
         x: 112
@@ -2018,14 +1925,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ae96dadf72df00310800000000000000
-      internalID: 1369372634922183146
+      spriteID: bec6c4fc599132080800000000000000
+      internalID: -9213492281451189013
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_78
+      name: CosmicLilac_Tiles_73
       rect:
         serializedVersion: 2
         x: 128
@@ -2039,14 +1946,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 112996d254a069210800000000000000
-      internalID: 1339269231420215825
+      spriteID: 383d40fab6b3e0510800000000000000
+      internalID: 1517215458154304387
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_79
+      name: CosmicLilac_Tiles_74
       rect:
         serializedVersion: 2
         x: 144
@@ -2060,14 +1967,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 52336385d9f5c3d80800000000000000
-      internalID: -8269629686364622043
+      spriteID: 54d08c31157a02a80800000000000000
+      internalID: -8493604930554688187
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_80
+      name: CosmicLilac_Tiles_75
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3faf65cdd75fe1810800000000000000
+      internalID: 1738096427127995123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_76
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdffec6054eecfe0800000000000000
+      internalID: -1166744219366195722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_77
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2d6602e7d55102a0800000000000000
+      internalID: -6773037978890113749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_78
       rect:
         serializedVersion: 2
         x: 0
@@ -2081,14 +2051,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8e27a7582c826e50800000000000000
-      internalID: 6801152492180024973
+      spriteID: d4b7e75a008423440800000000000000
+      internalID: 4914069311028362061
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_81
+      name: CosmicLilac_Tiles_79
       rect:
         serializedVersion: 2
         x: 16
@@ -2102,14 +2072,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4cfc222b3f090cc50800000000000000
-      internalID: 6683501223357894596
+      spriteID: 5aca5ee23161f4c20800000000000000
+      internalID: 3192794932475964581
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_82
+      name: CosmicLilac_Tiles_80
       rect:
         serializedVersion: 2
         x: 32
@@ -2123,14 +2093,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 38ec219198f2aa560800000000000000
-      internalID: 7325720009749220995
+      spriteID: ab7d8c87ac22416f0800000000000000
+      internalID: -714908187839899718
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_83
+      name: CosmicLilac_Tiles_81
       rect:
         serializedVersion: 2
         x: 48
@@ -2144,14 +2114,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 741eb631fb854a1f0800000000000000
-      internalID: -1034604436700536505
+      spriteID: bcd3f38890591c520800000000000000
+      internalID: 2720619518081580491
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_84
+      name: CosmicLilac_Tiles_82
       rect:
         serializedVersion: 2
         x: 64
@@ -2165,14 +2135,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95067a9f5e352d7f0800000000000000
-      internalID: -589316354031001511
+      spriteID: 25140a93a0d3bcd30800000000000000
+      internalID: 4452719770711638354
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_85
+      name: CosmicLilac_Tiles_83
       rect:
         serializedVersion: 2
         x: 80
@@ -2186,14 +2156,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0c4f0a63874106f40800000000000000
-      internalID: 5719594033305679040
+      spriteID: c060bf939e28dbd80800000000000000
+      internalID: -8233280605551655412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_86
+      name: CosmicLilac_Tiles_84
       rect:
         serializedVersion: 2
         x: 96
@@ -2207,14 +2177,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2548dadecd3478b20800000000000000
-      internalID: 3136550281646277714
+      spriteID: ad9cc81b12fd9daf0800000000000000
+      internalID: -371020158475646502
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_87
+      name: CosmicLilac_Tiles_85
       rect:
         serializedVersion: 2
         x: 112
@@ -2228,14 +2198,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94de982d123a60d40800000000000000
-      internalID: 5550302956442217801
+      spriteID: 379c3675cc1d6a840800000000000000
+      internalID: 5235102292434471283
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_88
+      name: CosmicLilac_Tiles_86
       rect:
         serializedVersion: 2
         x: 128
@@ -2249,14 +2219,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9623b40b4bf590bf0800000000000000
-      internalID: -357649465742773655
+      spriteID: fc61bc75948b978f0800000000000000
+      internalID: -542199654976383281
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_89
+      name: CosmicLilac_Tiles_87
       rect:
         serializedVersion: 2
         x: 144
@@ -2270,14 +2240,77 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 25e48d7cf2f9eecc0800000000000000
-      internalID: -3679828817949995438
+      spriteID: 888be81effbe4ac00800000000000000
+      internalID: 911112508869097608
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_90
+      name: CosmicLilac_Tiles_88
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a884a484f05929e00800000000000000
+      internalID: 1050065556000622730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_89
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8760a21116bdde6e0800000000000000
+      internalID: -1806546665559423368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_90
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6132bbffb2c5aca0800000000000000
+      internalID: -6006180398211387025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_91
       rect:
         serializedVersion: 2
         x: 0
@@ -2291,14 +2324,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 68af7f3b7fa04b890800000000000000
-      internalID: -7443312225144014202
+      spriteID: d22ca253ec16eaf60800000000000000
+      internalID: 8047477122440806957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_91
+      name: CosmicLilac_Tiles_92
       rect:
         serializedVersion: 2
         x: 16
@@ -2312,14 +2345,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 00c83a234aa98e6e0800000000000000
-      internalID: -1808025220374361088
+      spriteID: dc36d9a5fa3ce1630800000000000000
+      internalID: 3899769485256385485
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_92
+      name: CosmicLilac_Tiles_93
       rect:
         serializedVersion: 2
         x: 32
@@ -2333,14 +2366,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6182d760f4bf24720800000000000000
-      internalID: 2829099832771946518
+      spriteID: e47f844a41eedb3d0800000000000000
+      internalID: -3189131188685441202
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_93
+      name: CosmicLilac_Tiles_94
       rect:
         serializedVersion: 2
         x: 48
@@ -2354,14 +2387,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5047e9184fe045150800000000000000
-      internalID: 5860325458425312261
+      spriteID: ad4504f7cc9f10cf0800000000000000
+      internalID: -287674244471434022
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_94
+      name: CosmicLilac_Tiles_95
       rect:
         serializedVersion: 2
         x: 64
@@ -2375,14 +2408,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 31024d0d6db653db0800000000000000
-      internalID: -4812822056404770797
+      spriteID: 0208d2d3c9946b0a0800000000000000
+      internalID: -6866219646489624544
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_95
+      name: CosmicLilac_Tiles_96
       rect:
         serializedVersion: 2
         x: 80
@@ -2396,14 +2429,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7f920d9e9dac29150800000000000000
-      internalID: 5877983500951366135
+      spriteID: 4c6f791bd3c7f7d30800000000000000
+      internalID: 4431397162770233028
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_96
+      name: CosmicLilac_Tiles_97
       rect:
         serializedVersion: 2
         x: 96
@@ -2417,14 +2450,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9a1292e1945a475c0800000000000000
-      internalID: -4218565217482104407
+      spriteID: 27abc467d8a27ec80800000000000000
+      internalID: -8293613401715983758
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_97
+      name: CosmicLilac_Tiles_98
       rect:
         serializedVersion: 2
         x: 112
@@ -2438,14 +2471,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07350859d3ad551a0800000000000000
-      internalID: -6821306102546672784
+      spriteID: 7475e236e7f3f7ac0800000000000000
+      internalID: -3855292943943444665
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_98
+      name: CosmicLilac_Tiles_99
       rect:
         serializedVersion: 2
         x: 128
@@ -2459,14 +2492,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6fd4c6470e5336d80800000000000000
-      internalID: -8258698053525156362
+      spriteID: 65cd70c1e26d98c90800000000000000
+      internalID: -7166961838456316842
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dungeon_Tileset_99
+      name: CosmicLilac_Tiles_100
       rect:
         serializedVersion: 2
         x: 144
@@ -2480,8 +2513,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 391996d74c71ba6d0800000000000000
-      internalID: -2978260595890351725
+      spriteID: 726bc3c27341d21c0800000000000000
+      internalID: -4526939823239547353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_101
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e32cb1680efaf2930800000000000000
+      internalID: 4120705562924794430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_102
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0554061982d688860800000000000000
+      internalID: 7532390397782279504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CosmicLilac_Tiles_103
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe75fe50633870ce0800000000000000
+      internalID: -1439037287870539793
       vertices: []
       indices: 
       edges: []
@@ -2489,7 +2585,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 5e5120c4243f44641a14e24f7c7891e6
     internalID: 0
     vertices: []
     indices: 
