@@ -50,7 +50,10 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
 
     void IInputReceiverDash.ReceiveInputDash()
     {
-        this.Trigger();
+        if (this.enabled)
+        {
+            this.Trigger();
+        }
     }
     void IAbility.Enable()
     {

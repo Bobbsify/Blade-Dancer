@@ -58,7 +58,10 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
     void IInputReceiverShoot.ReceiveInputShoot()
     {
-        this.Trigger();
+        if (this.enabled)
+        {
+            this.Trigger();
+        }
     }
 
     void IGameEntity.Init(GameManager gameManager)

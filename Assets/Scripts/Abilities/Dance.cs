@@ -60,7 +60,10 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
 
     void IInputReceiverDance.ReceiveInputDance()
     {
-      //TODO inserire il collider nemico 
+        if (this.enabled)
+        {
+            this.Trigger();
+        }
     }
     void IAbility.Enable()
     {

@@ -7,7 +7,7 @@ public class PhysicsMovement : MonoBehaviour, IAbility, IInputReceiverMove, IGam
 
 	private GameManager gameManager;
 
-	private void Move(Vector3 direction)
+    private void Move(Vector3 direction)
 	{
 		Vector3 vel = direction * speed;
 		this.transform.position += vel * Time.fixedDeltaTime;
@@ -25,7 +25,10 @@ public class PhysicsMovement : MonoBehaviour, IAbility, IInputReceiverMove, IGam
 
 	void IInputReceiverMove.ReceiveInputMove(Vector3 direction)
 	{
-		this.Move(direction);
+		if (this.enabled)
+		{ 
+			this.Move(direction);
+		}
 	}
 
     void IGameEntity.Init(GameManager gameManager)

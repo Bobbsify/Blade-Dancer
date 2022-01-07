@@ -14,10 +14,18 @@ public class PlayerController : MonoBehaviour
 
     IAbility[] abilities;
 
-    private void Awake()
+    PhysicsMovement movement;
+
+    private void OnValidate()
+    {
+        movement = GetComponent<PhysicsMovement>();
+        this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
+    }
+
+    private void Start()
     {
         currentHealth = maxHealth;
-        abilities = GetComponentsInChildren<IAbility>();
+        this.abilities = GetComponentsInChildren<IAbility>(true);
     }
 
     public void TakeDamage(int amount) 
@@ -31,7 +39,7 @@ public class PlayerController : MonoBehaviour
 
     private void DoDeath()
     {
-        //Call animator and then die and respawn
+        //Call animator and then die, animator will call Reset at the end of death animation
     }
 
     public void Reset()
@@ -39,14 +47,9 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnValidate()
+    public void ToggleMovement(bool state = true) 
     {
-       this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
-    }
-
-    private void Start()
-    {
-       this.abilities = GetComponentsInChildren<IAbility>(true);
+        this.movement.enabled = state;
     }
 
     public void EnableAbility<T>() where T : IAbility
