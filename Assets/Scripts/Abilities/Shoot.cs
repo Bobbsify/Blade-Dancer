@@ -85,17 +85,14 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
         if (worldPosition == Vector3.zero) //No input through the joystick axis 
         {
-            Plane plane = new Plane(Vector3.up, 0); //create screen to cast ray from camera
             Vector3 mousePos = Input.mousePosition;
-            Ray mouseRay = Camera.main.ScreenPointToRay(mousePos); //shoot ray from mouse to plane
-            if (plane.Raycast(mouseRay, out float distance)) //where ray hits plane get position
-            {
-                worldPosition = mouseRay.GetPoint(distance);
-            }
-            worldPosition.y = 0; //remove y since there is no height
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(objSpawnPos.position);
+            Vector3 dir = mousePos - screenPos; //Find direction vector between the mouse and the objspawner
+            float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg; //Get tangent (Conver to degrees, Atan2 returns radians)
+            return Quaternion.AngleAxis(angle, Vector3.up);
         }
 
-        return Quaternion.LookRotation(worldPosition);
+        return Quaternion.LookRotation(worldPosition,Vector3.forward);
     }
 
     public void SetProjectilesRoot(Transform projectilesRoot) 
