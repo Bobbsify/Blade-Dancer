@@ -5,11 +5,30 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private int maxHealth;
+
+    private int currentHealth;
+
     private Animator animPlayer;
 
     IAbility[] abilities;
 
-    public void DoDeath()
+    private void Awake()
+    {
+        currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(int amount) 
+    {
+        currentHealth = Mathf.Max(0, currentHealth - amount);
+        if (currentHealth == 0) 
+        {
+            DoDeath();
+        }
+    }
+
+    private void DoDeath()
     {
         //Call animator and then die and respawn
     }
