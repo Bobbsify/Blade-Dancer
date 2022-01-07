@@ -85,12 +85,14 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
         if (worldPosition == Vector3.zero) //No input through the joystick axis 
         {
+            Plane plane = new Plane(Vector3.up, 0); //create screen to cast ray from camera
             Vector3 mousePos = Input.mousePosition;
-            mousePos.z = Camera.main.nearClipPlane;
-            worldPosition = Camera.main.ScreenToWorldPoint(mousePos); //Get mouse world position
-            Debug.Log(worldPosition);
-            worldPosition.x = worldPosition.y;
-            worldPosition.y = 0;
+            Ray mouseRay = Camera.main.ScreenPointToRay(mousePos); //shoot ray from mouse to plane
+            if (plane.Raycast(mouseRay, out float distance)) //where ray hits plane get position
+            {
+                worldPosition = mouseRay.GetPoint(distance);
+            }
+            worldPosition.y = 0; //remove y since there is no height
         }
 
         return Quaternion.LookRotation(worldPosition);
