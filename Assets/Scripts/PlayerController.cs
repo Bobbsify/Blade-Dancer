@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         currentHealth = maxHealth;
+        abilities = GetComponentsInChildren<IAbility>();
     }
 
     public void TakeDamage(int amount) 
@@ -46,5 +47,65 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
        this.abilities = GetComponentsInChildren<IAbility>(true);
+    }
+
+    public void EnableAbility<T>() where T : IAbility
+    {
+        foreach (IAbility ability in abilities)
+        {
+            if (ability is T)
+            {
+                ability.Enable();
+            }
+        }
+    }
+
+    public void DisableAbility<T>() where T : IAbility
+    {
+        foreach (IAbility ability in abilities)
+        {
+            if (ability is T)
+            {
+                ability.Disable();
+            }
+        }
+    }
+
+    public void EnableOtherAbilities<T>() where T : IAbility
+    {
+        foreach (IAbility ability in abilities)
+        {
+            if (!(ability is T))
+            {
+                ability.Enable();
+            }
+        }
+    }
+
+    public void DisableOtherAbilities<T>() where T : IAbility
+    {
+        foreach (IAbility ability in abilities)
+        {
+            if (!(ability is T))
+            {
+                ability.Disable();
+            }
+        }
+    }
+
+    public void EnableAllAbilities()
+    {
+        foreach (IAbility ability in abilities)
+        {
+            ability.Enable();
+        }
+    }
+
+    public void DisableAllAbilities()
+    {
+        foreach (IAbility ability in abilities)
+        {
+            ability.Disable();
+        }
     }
 }
