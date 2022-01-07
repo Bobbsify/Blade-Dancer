@@ -18,10 +18,24 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
     [SerializeField]
     private float maxSphereWidth = 10.0f;
 
-    GameManager gameManager;
+    private GameManager gameManager;
+
+    private PlayerController playerController;
+
+    private void OnValidate()
+    {
+        playerController = GetComponent<PlayerController>();
+    }
+
+    private void Awake()
+    {
+        if(playerController == null)
+        playerController = GetComponent<PlayerController>();
+    }
 
     public void Trigger()
     {
+        playerController.DisableOtherAbilities<Dance>();
         float radius = (maxCharge / maxSphereWidth) * (charge / minSphereWidth);
         RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, radius, Vector3.zero);
         foreach (RaycastHit hit in hits) 
