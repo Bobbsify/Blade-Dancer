@@ -66,8 +66,8 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
 	{
-        playerPrefab.GetComponent<Shoot>().SetProjectilesRoot(projectilesRoot);
 		this.GeneratePlayerPawn();
+        PlayerPawn.GetComponent<Shoot>().SetProjectilesRoot(this.projectilesRoot);
         streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules.getAll()), this);
 	}
 

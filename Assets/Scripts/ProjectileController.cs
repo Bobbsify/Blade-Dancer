@@ -6,15 +6,26 @@ using UnityEngine;
 public class ProjectileController : MonoBehaviour
 {
     [SerializeField]
-    float projectileSpeed = 10.0f;
+    private float projectileSpeed = 10.0f;
+
+    [SerializeField]
+    [Tooltip("Seconds the projectile stays alive for (Set to 0 for infinite lifetime)")]
+    [Range(0,30)]
+    private int projectileLifetime = 5;
 
     [SerializeField]
     [Range(1, 3)]
-    int projectileDamage = 1;
+    private int projectileDamage = 1;
+
+    private Team projectileTeam;
 
     private void Awake()
     {
         GetComponent<Collider>().isTrigger = true;
+        if (projectileLifetime != 0) 
+        {
+            StartCoroutine(LifeTime());
+        }
     }
 
     void Update()
@@ -24,14 +35,48 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out IEnemy enemy))
+        switch (projectileTeam) 
         {
-            Destroy(other.gameObject);
+                case Team.Player:
+                if (other.TryGetComponent(out IEnemy enemy))
+                {
+                    Destroy(other.gameObject);
+                }
+                if (other.tag != "Player")
+                {
+                    Destroy(this.gameObject);
+                }
+                break;
+                case Team.Enemy:
+                if (other.TryGetComponent(out PlayerController pc)) 
+                {
+                    pc.TakeDamage(projectileDamage);
+                    Destroy(this.gameObject);
+                }
+                if (!other.TryGetComponent(out IEnemy e))
+                {
+                    Destroy(this.gameObject);
+                }
+                break;
         }
-        else if (other.TryGetComponent(out PlayerController pc)) 
-        {
-            pc.TakeDamage(projectileDamage);
-        }
-        Destroy(this.gameObject);
     }
+
+    public void SetTeam(Team team) 
+    {
+        this.projectileTeam = team;
+    }
+
+    private IEnumerator LifeTime() 
+    {
+        yield return new WaitForSeconds(projectileLifetime);
+        if (gameObject != null) { 
+            Destroy(this.gameObject);
+        }
+    }
+}
+
+public enum Team 
+{ 
+    Player,
+    Enemy
 }

@@ -42,11 +42,13 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
     {
         if (this.canShoot)
         {
+            canShoot = false;
             objSpawnPos.rotation = GetRotationToShootAt();
             GameObject projInstantiated = Instantiate(projectile, this.objSpawnPos); //Create projectile
+            projInstantiated.GetComponent<ProjectileController>().SetTeam(Team.Player);
             projInstantiated.transform.parent = projectilesRoot;
             SendActionToGameManager();  //Tell the Game Manager that a projectile has been shot
-            //StartCoroutine(CooldownShoot());    //Start Projectile cooldown
+            StartCoroutine(CooldownShoot());    //Start Projectile cooldown
         }
     }
     public void SendActionToGameManager()
@@ -83,7 +85,11 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
         if (worldPosition == Vector3.zero) //No input through the joystick axis 
         {
-            worldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); //Get mouse world position
+            Vector3 mousePos = Input.mousePosition;
+            mousePos.z = Camera.main.nearClipPlane;
+            worldPosition = Camera.main.ScreenToWorldPoint(mousePos); //Get mouse world position
+            Debug.Log(worldPosition);
+            worldPosition.x = worldPosition.y;
             worldPosition.y = 0;
         }
 

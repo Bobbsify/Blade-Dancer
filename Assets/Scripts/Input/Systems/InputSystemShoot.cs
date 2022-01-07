@@ -50,7 +50,7 @@ public class InputSystemShoot : MonoBehaviour
 
 	private void SendInput()
 	{
-		if (Input.GetButtonDown(this.axisName))
+		if (Input.GetAxis(this.axisName) != 0)
 		{
 			for (int i = 0; i < this.receivers.Length; i++)
 			{
