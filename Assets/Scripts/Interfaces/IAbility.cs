@@ -4,7 +4,8 @@ using UnityEngine;
 
 public interface IAbility
 {
-    void Trigger(GameObject obj);
-
+    void Trigger();
     void SendActionToGameManager();
+    void Enable();
+    void Disable();
 }

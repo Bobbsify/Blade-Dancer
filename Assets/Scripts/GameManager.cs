@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour
 	[SerializeField]
 	private Transform inputReceiversTransform;
 
+    [SerializeField]
+    private Transform projectilesRoot;
+
 	[SerializeField]
 	private Transform spawnPoint;
 
@@ -64,6 +67,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
 	{
 		this.GeneratePlayerPawn();
+        PlayerPawn.GetComponent<Shoot>().SetProjectilesRoot(this.projectilesRoot);
         streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules.getAll()), this);
 	}
 
@@ -76,7 +80,7 @@ public class GameManager : MonoBehaviour
             entity.Init(this);
         }
 
-        ruleManager = this.GameEntitiesSearchRoot.GetComponentInChildren<RuleManager>();
+        ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
     }
 
     private void Update()
@@ -103,12 +107,15 @@ public class GameManager : MonoBehaviour
 
     public void ActionEventTrigger(Actions action)
     {
-        ruleManager.ApplyRule(action);
+        if (currentStreak != null) 
+        { 
+            ruleManager.ApplyRule(action);
+        }
     }
 
     public void KillPlayer()
     {
-        PlayerPawn.GetComponent<PlayerController>().DoDeath();
+        PlayerPawn.GetComponent<PlayerController>().TakeDamage(500);
         GenerateNewStreak();
     }
 

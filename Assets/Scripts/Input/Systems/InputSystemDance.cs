@@ -50,7 +50,7 @@ public class InputSystemDance : MonoBehaviour
 
     private void SendInput()
     {
-        if (Input.GetAxisRaw(danceAxisName) > 0f)
+        if (Input.GetButtonUp(danceAxisName))
         {
             for (int i = 0; i < this.receivers.Length; i++)
             {

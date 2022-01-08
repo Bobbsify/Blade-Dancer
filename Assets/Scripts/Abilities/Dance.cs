@@ -5,60 +5,73 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
 {
-    private bool canDance;
-
-    private bool CanBeStunned;
-
     [SerializeField]
-    private float enemyCountdown;
-
+    private int charge = 1;
     [SerializeField]
-    private string enemy = "Enemy";
+    private int minCharge = 1;
+    [SerializeField]
+    private int maxCharge = 5;
 
-    GameManager gameManager;
+    [Header("Dance Ability Area Defining")]
+    [SerializeField]
+    private float minSphereWidth = 1.0f;
+    [SerializeField]
+    private float maxSphereWidth = 10.0f;
 
-    private void OnTriggerEnter(Collider other)
+    private GameManager gameManager;
+
+    private PlayerController playerController;
+
+    private void OnValidate()
     {
-        if (other.CompareTag(enemy))
-        {
-            CanBeStunned = true;
-        }
+        playerController = GetComponent<PlayerController>();
     }
 
-    private void OnTriggerExit(Collider other)
+    private void Awake()
     {
-        if (other.CompareTag(enemy))
-        {
-            CanBeStunned = false;
-        }
+        if(playerController == null)
+        playerController = GetComponent<PlayerController>();
     }
 
-    public IEnumerator CooldownEnemy(GameObject obj)
+    public void Trigger()
     {
-        yield return new WaitForSeconds(enemyCountdown);
-        obj.GetComponent<Rigidbody>().isKinematic = false;
-
-    }
-
-    public void Trigger(GameObject obj)
-    {
-        if (this.canDance)
+        playerController.DisableOtherAbilities<Dance>();
+        float radius = (maxCharge / maxSphereWidth) * (charge / minSphereWidth);
+        RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, radius, Vector3.zero);
+        foreach (RaycastHit hit in hits) 
         {
-            if (this.CanBeStunned)
+            if (hit.collider.TryGetComponent(out IEnemy enemy)) 
             {
-                obj.GetComponent<Rigidbody>().isKinematic = true;
-                StartCoroutine(CooldownEnemy(obj));
+                enemy.Dance();
             }
         }
+        this.charge = minCharge;
     }
 
-    void IInputReceiverDance.ReceiveInputDance()
+    public void Charge(int amount) 
     {
-      //TODO inserire il collider nemico 
+        this.charge += Mathf.Max(Mathf.Min(charge + amount, maxCharge),minCharge);
     }
 
     public void SendActionToGameManager()
     {
         this.gameManager.ActionEventTrigger(Actions.Dance);
+    }
+
+    void IInputReceiverDance.ReceiveInputDance()
+    {
+        if (this.enabled)
+        {
+            this.Trigger();
+        }
+    }
+    void IAbility.Enable()
+    {
+        this.enabled = true;
+    }
+
+    void IAbility.Disable()
+    {
+        this.enabled = false;
     }
 }

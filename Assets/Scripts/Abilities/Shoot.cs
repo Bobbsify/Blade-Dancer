@@ -3,41 +3,54 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
+public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 {
-    private bool canShooting;
+    private bool canShoot;
+
+    [Header("Shooting settings")]
+    [SerializeField]
+    private float shootCooldown;
 
     [SerializeField]
-    private float shootCountdown;
+    private GameObject projectile;
 
     [SerializeField]
-    GameObject projectile;
+    private Transform objSpawnPos;
+
+    private Transform projectilesRoot;
+
+    [Header("Shoot Direction Axis")]
+    [SerializeField]
+    private string horizontalLeftJoyName = "Horizontal-RightStick";
 
     [SerializeField]
-    Transform objSpawnPos;
+    private string verticalLeftJoyName = "Vertical-RightStick";
 
-    GameManager gameManager;
+    private GameManager gameManager;
 
     private void Start()
     {
-        this.canShooting = true;
+        this.canShoot = true;
     }
-    public IEnumerator CooldownShooting()
+    public IEnumerator CooldownShoot()
     {
-        yield return new WaitForSeconds(this.shootCountdown);
-        this.canShooting = true;
+        yield return new WaitForSeconds(this.shootCooldown);
+        this.canShoot = true;
     }
 
-    public void Trigger(GameObject obj)
+    public void Trigger()
     {
-        if (this.canShooting)
+        if (this.canShoot)
         {
-            //TODO mettere la variabile canShooting false 
-            Instantiate(obj, this.objSpawnPos);
-            StartCoroutine(CooldownShooting());
+            canShoot = false;
+            objSpawnPos.rotation = GetRotationToShootAt();
+            GameObject projInstantiated = Instantiate(projectile, this.objSpawnPos); //Create projectile
+            projInstantiated.GetComponent<ProjectileController>().SetTeam(Team.Player);
+            projInstantiated.transform.parent = projectilesRoot;
+            SendActionToGameManager();  //Tell the Game Manager that a projectile has been shot
+            StartCoroutine(CooldownShoot());    //Start Projectile cooldown
         }
     }
-
     public void SendActionToGameManager()
     {
         this.gameManager.ActionEventTrigger(Actions.Shoot);
@@ -45,6 +58,48 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot
 
     void IInputReceiverShoot.ReceiveInputShoot()
     {
-        this.Trigger(projectile);
+        if (this.enabled)
+        {
+            this.Trigger();
+        }
+    }
+
+    void IGameEntity.Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
+    }
+
+    void IAbility.Enable()
+    {
+        this.enabled = true;
+    }
+
+    void IAbility.Disable()
+    {
+        this.enabled = false;
+    }
+
+    private Quaternion GetRotationToShootAt()
+    {
+        float horizontalInput = Input.GetAxis(horizontalLeftJoyName);
+        float verticalInput = Input.GetAxis(verticalLeftJoyName);
+
+        Vector3 worldPosition = new Vector3(horizontalInput, 0, -verticalInput); //-vertical input necessary
+
+        if (worldPosition == Vector3.zero) //No input through the joystick axis 
+        {
+            Vector3 mousePos = Input.mousePosition;
+            Vector3 screenPos = Camera.main.WorldToScreenPoint(objSpawnPos.position);
+            Vector3 dir = mousePos - screenPos; //Find direction vector between the mouse and the objspawner
+            float angle = Mathf.Atan2(dir.x, dir.y) * Mathf.Rad2Deg; //Get tangent (Conver to degrees, Atan2 returns radians)
+            return Quaternion.AngleAxis(angle, Vector3.up);
+        }
+
+        return Quaternion.LookRotation(worldPosition,Vector3.forward);
+    }
+
+    public void SetProjectilesRoot(Transform projectilesRoot) 
+    {
+        this.projectilesRoot = projectilesRoot;
     }
 }
