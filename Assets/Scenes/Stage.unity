@@ -4111,7 +4111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e925c6c6c6e0d45c3abb32d164d8fc13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputType: 1
+  inputType: 0
   searchRoot: {fileID: 1414208419}
   danceAxisName: Fire3
 --- !u!114 &1889872721
