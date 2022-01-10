@@ -19,7 +19,7 @@ public abstract class Rule : IRule
     protected List<RuleObject> ruleRelatedObjects = new List<RuleObject>(); // (Can Be Empty) eventual objects that are correlated to the rule
 
     [SerializeField]
-    protected List<AllRules> mutuallyExclusives = new List<AllRules>(); // (Can Be Empty) eventual objects that are correlated to the rule
+    protected List<AllRules> mutuallyExclusives = new List<AllRules>(); // Other rules which can't be paired with this one
 
     public virtual void SetDurationMod(float amount)
     {
@@ -141,7 +141,7 @@ public enum Actions
     Kill,
     Score,
     Trap,
-    Survive,
+    TakeDamage,
     Reach
 }
 
