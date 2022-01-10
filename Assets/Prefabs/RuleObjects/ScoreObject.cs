@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class ScoreObject : MonoBehaviour
+public class ScoreObject : MonoBehaviour, IGameEntity
 {
     private GameManager gameManager;
 

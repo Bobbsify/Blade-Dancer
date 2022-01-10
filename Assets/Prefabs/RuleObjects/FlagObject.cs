@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class GatherObjects : MonoBehaviour,IGameEntity
+public class FlagObject : MonoBehaviour,IGameEntity
 {
     private GameManager gameManager;
 
@@ -14,15 +14,25 @@ public class GatherObjects : MonoBehaviour,IGameEntity
             SendActionToGameManager();
             Destroy(this.gameObject);
         }
+
+        else if (collision.collider.GetComponentInChildren<EnemyFollowStateChase>(true))
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     public void SendActionToGameManager()
     {
-        this.gameManager.ActionEventTrigger(Actions.Gather);
+        this.gameManager.ActionEventTrigger(Actions.Reach);
     }
 
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
+    }
+
+    public Vector3 GetFlagPosition()
+    {
+        return this.gameObject.transform.position;
     }
 }

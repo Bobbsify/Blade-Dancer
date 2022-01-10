@@ -26,7 +26,7 @@ public class EnemyFollowStateChase : FSMState, IGameEntity
 
 	private bool goToFlag;
 
-	private Transform objTarget;
+	private Vector3 flagPosition;
 
 	private void OnValidate()
 	{
@@ -37,6 +37,7 @@ public class EnemyFollowStateChase : FSMState, IGameEntity
 
 	private void Update()
 	{
+
 		if (this.agent.isActiveAndEnabled)
 		{
 			this.agent.SetDestination(this.target.position);
@@ -61,7 +62,7 @@ public class EnemyFollowStateChase : FSMState, IGameEntity
 
 		if (goToFlag)
         {
-			this.agent.SetDestination(this.objTarget.position);
+			this.agent.SetDestination(this.flagPosition);
         }
 	}
 
@@ -72,8 +73,9 @@ public class EnemyFollowStateChase : FSMState, IGameEntity
 
 	void IGameEntity.Init(GameManager gameManager)
 	{
+		FlagObject flagObject = new FlagObject();
 		this.target = gameManager.PlayerPawn.transform;
-		//TODO dire la posizione dell oggetto this.objTarget =
+		this.flagPosition = flagObject.GetFlagPosition();
 	}
 
 	public override string ToString()
