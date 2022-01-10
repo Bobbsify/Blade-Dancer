@@ -1,0 +1,968 @@
+fileFormatVersion: 2
+guid: e464466b71a618a4fa88f2f826c5d5dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7114408930559123257
+    second: rotatingDiscoBall_0
+  - first:
+      213: -3014017571039547728
+    second: rotatingDiscoBall_1
+  - first:
+      213: 2049621690152673459
+    second: rotatingDiscoBall_2
+  - first:
+      213: 6416791100953996477
+    second: rotatingDiscoBall_3
+  - first:
+      213: 6937359179559013375
+    second: rotatingDiscoBall_4
+  - first:
+      213: 441957148158003351
+    second: rotatingDiscoBall_5
+  - first:
+      213: -4192416087394409235
+    second: rotatingDiscoBall_6
+  - first:
+      213: -1104480430085959699
+    second: rotatingDiscoBall_7
+  - first:
+      213: 5628725088571428276
+    second: rotatingDiscoBall_8
+  - first:
+      213: -2189448833091177674
+    second: rotatingDiscoBall_9
+  - first:
+      213: -34883743119561025
+    second: rotatingDiscoBall_10
+  - first:
+      213: 1642572139456301655
+    second: rotatingDiscoBall_11
+  - first:
+      213: 7740468473683014793
+    second: rotatingDiscoBall_12
+  - first:
+      213: 3127423270668558187
+    second: rotatingDiscoBall_13
+  - first:
+      213: -8285421701503314345
+    second: rotatingDiscoBall_14
+  - first:
+      213: 4542349057891384149
+    second: rotatingDiscoBall_15
+  - first:
+      213: -3387903900436667878
+    second: rotatingDiscoBall_16
+  - first:
+      213: -8603397173821330931
+    second: rotatingDiscoBall_17
+  - first:
+      213: -1856642184122003667
+    second: rotatingDiscoBall_18
+  - first:
+      213: 7193815221393202486
+    second: rotatingDiscoBall_19
+  - first:
+      213: -8767240415365531684
+    second: rotatingDiscoBall_20
+  - first:
+      213: 7673021179606858743
+    second: rotatingDiscoBall_21
+  - first:
+      213: 8510477092153628839
+    second: rotatingDiscoBall_22
+  - first:
+      213: 8108489628790689313
+    second: rotatingDiscoBall_23
+  - first:
+      213: 966925464403430406
+    second: rotatingDiscoBall_24
+  - first:
+      213: -4702445844480550961
+    second: rotatingDiscoBall_25
+  - first:
+      213: 7708424712697001194
+    second: rotatingDiscoBall_26
+  - first:
+      213: 6104785491965039659
+    second: rotatingDiscoBall_27
+  - first:
+      213: 4635731422545171608
+    second: rotatingDiscoBall_28
+  - first:
+      213: -2928682510401627493
+    second: rotatingDiscoBall_29
+  - first:
+      213: -4323936242267434405
+    second: rotatingDiscoBall_30
+  - first:
+      213: 4166713668131933755
+    second: rotatingDiscoBall_31
+  - first:
+      213: -7476786559056234665
+    second: rotatingDiscoBall_32
+  - first:
+      213: 4050631252947868915
+    second: rotatingDiscoBall_33
+  - first:
+      213: -6348986569809027007
+    second: rotatingDiscoBall_34
+  - first:
+      213: -5270794378899518463
+    second: rotatingDiscoBall_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 1
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: rotatingDiscoBall_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 704
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93fd7d48a357bb260800000000000000
+      internalID: 7114408930559123257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_1
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 704
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bee663fcfe0c26d0800000000000000
+      internalID: -3014017571039547728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_2
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 704
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b06c7d5118b17c10800000000000000
+      internalID: 2049621690152673459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_3
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 704
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc204a32850d0950800000000000000
+      internalID: 6416791100953996477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_4
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 704
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb09e80b63764060800000000000000
+      internalID: 6937359179559013375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 604
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79807e54fa5222600800000000000000
+      internalID: 441957148158003351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_6
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 604
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de42938e7cb81d5c0800000000000000
+      internalID: -4192416087394409235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_7
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 604
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def0b5f86e81ca0f0800000000000000
+      internalID: -1104480430085959699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_8
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 604
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd01a255af3d1e40800000000000000
+      internalID: 5628725088571428276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_9
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 604
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633f4b1f2e38d91e0800000000000000
+      internalID: -2189448833091177674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 504
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe2ce2ab61148ff0800000000000000
+      internalID: -34883743119561025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_11
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 504
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75a0f3a78a69bc610800000000000000
+      internalID: 1642572139456301655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_12
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 504
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9847cf8e01bab6b60800000000000000
+      internalID: 7740468473683014793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_13
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 504
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6f5d7615e6d66b20800000000000000
+      internalID: 3127423270668558187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_14
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 504
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 756159b4cd4440d80800000000000000
+      internalID: -8285421701503314345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 404
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55b3279d66aa90f30800000000000000
+      internalID: 4542349057891384149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_16
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 404
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a12ef493a5fbbf0d0800000000000000
+      internalID: -3387903900436667878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_17
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 404
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0aa7c86ad79a9880800000000000000
+      internalID: -8603397173821330931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_18
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 404
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2f076c35c1eb36e0800000000000000
+      internalID: -1856642184122003667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_19
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 404
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63d90f254d095d360800000000000000
+      internalID: 7193815221393202486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_20
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 304
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd770b50b41845680800000000000000
+      internalID: -8767240415365531684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_21
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 304
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fbf3840c1c0c7a60800000000000000
+      internalID: 7673021179606858743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_22
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 304
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a89aea23d94b1670800000000000000
+      internalID: 8510477092153628839
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_23
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 304
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12e02055b54278070800000000000000
+      internalID: 8108489628790689313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_24
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 304
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60ccb0e36953b6d00800000000000000
+      internalID: 966925464403430406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_25
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 204
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc799384b6e8dbeb0800000000000000
+      internalID: -4702445844480550961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_26
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 204
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4b52a6f63d9fa60800000000000000
+      internalID: 7708424712697001194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_27
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 204
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b24d8867f0e88b450800000000000000
+      internalID: 6104785491965039659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_28
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 204
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 894dbeaea2d655040800000000000000
+      internalID: 4635731422545171608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_29
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 204
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9a9c9b06ca3b57d0800000000000000
+      internalID: -2928682510401627493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_30
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 104
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b52563895ea4ef3c0800000000000000
+      internalID: -4323936242267434405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_31
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 104
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ec4c5410423d930800000000000000
+      internalID: 4166713668131933755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_32
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 104
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757b90efc3e1d3890800000000000000
+      internalID: -7476786559056234665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_33
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 104
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fc9d04d9abb63830800000000000000
+      internalID: 4050631252947868915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_34
+      rect:
+        serializedVersion: 2
+        x: 411
+        y: 104
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 140aec66a5ed3e7a0800000000000000
+      internalID: -6348986569809027007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: rotatingDiscoBall_35
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 4
+        width: 79
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10c819130706ad6b0800000000000000
+      internalID: -5270794378899518463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9bf8e73a8b36606429392fb413e7991c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
