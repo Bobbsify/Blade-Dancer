@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 1
-  appliedActions: 
-  ruleRelatedObjects: []
-  mutuallyExclusives: 
+  appliedActions: 05000000
+  ruleRelatedObjects:
+  - name: CentralLine
+    ruleObjPrefab: {fileID: 0}
+    pos: 8
+  mutuallyExclusives: 06000000050000001300000014000000

@@ -14,9 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 0
-  appliedActions: 
-  ruleRelatedObjects: []
-  mutuallyExclusives: 
+  appliedActions: 09000000
+  ruleRelatedObjects:
+  - name: EnemyMoving
+    ruleObjPrefab: {fileID: 0}
+    pos: 0
+  - name: EnemyShooting
+    ruleObjPrefab: {fileID: 0}
+    pos: 0
+  mutuallyExclusives: 010000000900000017000000
   durationModMultiplier: 2
   minAmountOfEnemies: 1
   maxAmountOfEnemies: 7

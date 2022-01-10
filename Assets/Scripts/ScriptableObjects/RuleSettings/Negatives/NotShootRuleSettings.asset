@@ -16,6 +16,6 @@ MonoBehaviour:
   durationMod: 1
   appliedActions: 01000000
   ruleRelatedObjects: []
-  mutuallyExclusives: 010000000f000000
+  mutuallyExclusives: 010000000f0000000900000007000000
   minAmount: 0
   maxAmount: 6

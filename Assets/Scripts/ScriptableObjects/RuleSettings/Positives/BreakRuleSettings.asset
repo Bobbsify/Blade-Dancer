@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 1
-  appliedActions: 
-  ruleRelatedObjects: []
-  mutuallyExclusives: 
+  appliedActions: 07000000
+  ruleRelatedObjects:
+  - name: BreakbaleObject
+    ruleObjPrefab: {fileID: 0}
+    pos: 0
+  mutuallyExclusives: 0700000015000000

@@ -14,6 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 1
-  appliedActions: 
-  ruleRelatedObjects: []
-  mutuallyExclusives: 
+  appliedActions: 0a000000
+  ruleRelatedObjects:
+  - name: Ball
+    ruleObjPrefab: {fileID: 0}
+    pos: 0
+  - name: Goal
+    ruleObjPrefab: {fileID: 0}
+    pos: 5
+  mutuallyExclusives: 0a00000018000000

@@ -14,9 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 0
-  appliedActions: 
-  ruleRelatedObjects: []
-  mutuallyExclusives: 
+  appliedActions: 08000000
+  ruleRelatedObjects:
+  - name: Collectible
+    ruleObjPrefab: {fileID: 0}
+    pos: 0
+  mutuallyExclusives: 05000000060000000800000016000000
   durationModMultiplier: 2
   minAmountToGather: 1
   maxAmountToGather: 4
