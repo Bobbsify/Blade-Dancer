@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSM : MonoBehaviour
+public class FSM : MonoBehaviour, IGameEntity
 {
 	[Header("Debug")]
 
@@ -20,6 +20,8 @@ public class FSM : MonoBehaviour
 
 	private FSMState currentState;
 
+	private GameManager gameManager;
+
 	private void OnValidate()
 	{
 		this.states = this.GetComponentsInChildren<FSMState>();
@@ -34,6 +36,20 @@ public class FSM : MonoBehaviour
 		}
 
 		this.ChangeState(this.initialState);
+	}
+
+    public void OnCollisionEnter(Collision collision)
+    {
+		if (collision.collider.GetComponentInChildren<ProjectileController>(true))
+        {
+			SendActionToGameManager();
+			Destroy(this.gameObject);
+		}
+	}
+
+	public void SendActionToGameManager()
+	{
+		this.gameManager.ActionEventTrigger(Actions.Kill);
 	}
 
 	public void ChangeState(FSMState newState)
@@ -52,4 +68,9 @@ public class FSM : MonoBehaviour
 
 		this.debug_CurrentState = this.currentState != null ? this.currentState.ToString() : "NULL";
 	}
+
+    public void Init(GameManager gameManager)
+    {
+		this.gameManager = gameManager;
+    }
 }
