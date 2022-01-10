@@ -141,7 +141,7 @@ public enum Actions
     Kill,
     Score,
     Trap,
-    Survive,
+    TakeDamage,
     Reach
 }
 
