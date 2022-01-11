@@ -19,7 +19,7 @@ MonoBehaviour:
   - name: Collectible
     ruleObjPrefab: {fileID: 0}
     pos: 0
-  mutuallyExclusives: 05000000060000000800000016000000
+  mutuallyExclusives: 050000000600000008000000160000000e0000001400000013000000
   durationModMultiplier: 2
   minAmountToGather: 1
   maxAmountToGather: 4

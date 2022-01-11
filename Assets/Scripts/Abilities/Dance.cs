@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
-public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
+public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
 {
     [SerializeField]
     private int charge = 1;
@@ -36,6 +36,7 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
     public void Trigger()
     {
         playerController.DisableOtherAbilities<Dance>();
+        playerController.Animate("dance");
         float radius = (maxCharge / maxSphereWidth) * (charge / minSphereWidth);
         RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, radius, Vector3.zero);
         foreach (RaycastHit hit in hits) 
@@ -45,6 +46,7 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
                 enemy.Dance();
             }
         }
+        SendActionToGameManager();
         this.charge = minCharge;
     }
 
@@ -73,5 +75,10 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance
     void IAbility.Disable()
     {
         this.enabled = false;
+    }
+
+    public void Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 }

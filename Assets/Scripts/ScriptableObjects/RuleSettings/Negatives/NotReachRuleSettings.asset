@@ -25,4 +25,4 @@ MonoBehaviour:
   - name: Flag
     ruleObjPrefab: {fileID: 0}
     pos: 0
-  mutuallyExclusives: 0d0000001b00000006000000050000001400000013000000
+  mutuallyExclusives: 0d0000001b0000000e000000

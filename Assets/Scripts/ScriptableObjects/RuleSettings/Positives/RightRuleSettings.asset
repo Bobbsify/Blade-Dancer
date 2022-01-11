@@ -19,4 +19,4 @@ MonoBehaviour:
   - name: CentralLine
     ruleObjPrefab: {fileID: 0}
     pos: 8
-  mutuallyExclusives: 05000000060000001400000013000000
+  mutuallyExclusives: 050000000600000014000000130000000a0000000e000000

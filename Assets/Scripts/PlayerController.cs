@@ -12,13 +12,12 @@ public class PlayerController : MonoBehaviour
 
     private Animator animPlayer;
 
-    IAbility[] abilities;
+    private IAbility[] abilities;
 
-    PhysicsMovement movement;
+    private PhysicsMovement movement;
 
     private void OnValidate()
     {
-        movement = GetComponent<PhysicsMovement>();
         this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
     }
 
@@ -26,6 +25,8 @@ public class PlayerController : MonoBehaviour
     {
         currentHealth = maxHealth;
         this.abilities = GetComponentsInChildren<IAbility>(true);
+        movement = GetComponent<PhysicsMovement>();
+        TryGetComponent(out animPlayer);
     }
 
     public void TakeDamage(int amount) 
@@ -37,10 +38,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void DoDeath()
+    #region Animation
+
+    public void Animate(string name, int amount)
     {
-        //Call animator and then die, animator will call Reset at the end of death animation
+        animPlayer.SetInteger(name, amount);
     }
+    public void Animate(string name, bool state = true)
+    {
+        animPlayer.SetBool(name,state);
+    }
+    public void Animate(string name, float amount)
+    {
+        animPlayer.SetFloat(name, amount);
+    }
+    public void Animate(string name)
+    {
+        animPlayer.SetTrigger(name);
+    }
+
+    #endregion
 
     public void Reset()
     {
@@ -102,6 +119,7 @@ public class PlayerController : MonoBehaviour
         {
             ability.Enable();
         }
+        movement.enabled = true;
     }
 
     public void DisableAllAbilities()
@@ -110,5 +128,11 @@ public class PlayerController : MonoBehaviour
         {
             ability.Disable();
         }
+        movement.enabled = false;
+    }
+
+    private void DoDeath()
+    {
+        //Call animator and then die, animator will call Reset at the end of death animation
     }
 }
