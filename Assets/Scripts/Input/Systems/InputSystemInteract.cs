@@ -20,12 +20,15 @@ public class InputSystemInteract : MonoBehaviour
     [SerializeField]
     private string interactAxisName;
 
+    [SerializeField]
+    private bool GetFromInputManager = true;
+
     private IInputReceiverInteract[] receivers;
 
     private void OnValidate()
     {
         InputManager manager;
-        if (TryGetComponent(out manager))
+        if (TryGetComponent(out manager) && GetFromInputManager)
         {
             this.searchRoot = manager.GetRoot();
         }
@@ -50,7 +53,7 @@ public class InputSystemInteract : MonoBehaviour
 
     private void SendInput()
     {
-        if (Input.GetAxisRaw(interactAxisName) > 0f)
+        if (Input.GetButtonUp(interactAxisName))
         {
             for (int i = 0; i < this.receivers.Length; i++)
             {
