@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("For entities that require to know of the Game Manager Object")]
-    private GameObject GameEntitiesSearchRoot;
+    private GameObject[] GameEntitiesRoots;
 
     [Header("Player Generation")]
 
@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
 	public GameObject PlayerPawn { get; private set; }
 
     [Header("Room Generation")]
+
+    [SerializeField]
+    private GameObject startingRoom;
 
     [SerializeField]
     private RuleSettingsContainer allRules;
@@ -75,7 +78,7 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
-    private bool startStreak = false;
+    private bool firstRun = true;
 
     private void Awake()
 	{
@@ -86,31 +89,16 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
     {
-        IGameEntity[] entities = this.GameEntitiesSearchRoot.GetComponentsInChildren<IGameEntity>();
-        for (int i = 0; i < entities.Length; i++)
-        {
-            var entity = entities[i];
-            entity.Init(this);
+        foreach (GameObject root in this.GameEntitiesRoots) {
+            IGameEntity[] entitiesToCall = root.GetComponentsInChildren<IGameEntity>();
+            foreach (IGameEntity entity in entitiesToCall)
+            {
+                entity.Init(this);
+            }
         }
-
         ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
     }
 
-    private void Update()
-    {
-        if (startStreak)
-        {
-            Stage currentStage = currentStreak.GetCurrentStage();
-            if (currentStage != null)
-            {
-                GoToNextStage(currentStage);
-            }
-            else
-            {
-                StreakEnded();
-            }
-        }
-    }
     public List<RuleSetting> GetRuleSettings()
     {
         return this.allRules.getAll();
@@ -129,15 +117,24 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        Destroy(startingRoom);
         GenerateNewStreak();
-        startStreak = true;
+        Stage currentStage = currentStreak.GetCurrentStage();
+        GoToNextStage(currentStage);
     }
 
     public void EndOfStage()
     {
         Stage nextStage = currentStreak.NextStage();
-        Destroy(currentArena);
-        GoToNextStage(nextStage);
+        if (nextStage != null)
+        {
+            Destroy(currentArena);
+            GoToNextStage(nextStage);
+        }
+        else
+        {
+            StreakEnded();
+        }
     }
 
     private void GoToNextStage(Stage currentStage)
@@ -155,16 +152,23 @@ public class GameManager : MonoBehaviour
 
     private void GenerateNewStreak(int fixedDifficulty = 0)
     {
-        int difficulty = fixedDifficulty == 0 ? Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
-        currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
+        if (firstRun)
+        {
+            currentStreak = streakFactory.GetTutorialStreak();
+        }
+        else { 
+            int difficulty = fixedDifficulty == 0 ? Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
+            currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
+        }
     }
 
     private void StreakEnded()
     {
         Debug.Log("End Of Streak");
         currentBreakroom++;
-        Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity);
-        startStreak = false;
+        firstRun = false;
+        Instantiate(defaultRoomsPrefabs[0], RoomPosition(), Quaternion.identity); // temporary
+        //Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity); actual
     }
 
     #endregion
