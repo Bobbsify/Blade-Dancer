@@ -48,6 +48,7 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
         }
         SendActionToGameManager();
         this.charge = minCharge;
+        this.enabled = false; //Deactivate after use;
     }
 
     public void Charge(int amount) 
