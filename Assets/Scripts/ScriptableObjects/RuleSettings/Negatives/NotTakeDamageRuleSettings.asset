@@ -22,4 +22,4 @@ MonoBehaviour:
   - name: EnemyShooting
     ruleObjPrefab: {fileID: 0}
     pos: 0
-  mutuallyExclusives: 0c0000001a000000
+  mutuallyExclusives: 0c0000001a0000000e000000

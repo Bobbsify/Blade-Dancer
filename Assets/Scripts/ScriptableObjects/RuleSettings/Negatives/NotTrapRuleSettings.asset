@@ -25,4 +25,4 @@ MonoBehaviour:
   - name: Cage
     ruleObjPrefab: {fileID: 0}
     pos: 0
-  mutuallyExclusives: 0b00000019000000
+  mutuallyExclusives: 0b000000190000000e000000
