@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -322,7 +322,7 @@ MonoBehaviour:
   spawnPoint: {fileID: 1518922273}
   playerPrefab: {fileID: 8797037534487982121, guid: 522626dacc4a0fa4f968d852d6dacfc9,
     type: 3}
-  startingRoom: {fileID: 0}
+  startingRoom: {fileID: 449640812}
   allRules: {fileID: 11400000, guid: 7777011190532b1439ebd64dd18581a2, type: 2}
   defaultRoomsPrefabs:
   - {fileID: 5522282984504969493, guid: 69c226fd5ae9990449a39dd785f128f4, type: 3}
@@ -520,6 +520,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 449435536}
   m_CullTransparentMesh: 0
+--- !u!1 &449640812 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24,
+    type: 3}
+  m_PrefabInstance: {fileID: 908874689}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &724670945
 GameObject:
   m_ObjectHideFlags: 0
