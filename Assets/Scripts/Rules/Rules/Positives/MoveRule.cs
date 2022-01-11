@@ -6,7 +6,7 @@ using UnityEngine;
 public class MoveRule : Rule
 {
     private int durationOfMove = 3;
-    private float moveTimer = 0;
+    private float moveTimer = 0.0f;
 
     public MoveRule(AllRules ruleName, int durationOfMove, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
@@ -39,6 +39,8 @@ public class MoveRule : Rule
 
     public override string ToString()
     {
-        return "Move (" + Mathf.Max(durationOfMove - moveTimer,0) + ")";
+        float time = durationOfMove - moveTimer;
+        float truncatedTime = (float)Math.Round(time * 100f) / 100f;
+        return "Move (" + Mathf.Max(truncatedTime, 0) + ")";
     }
 }
