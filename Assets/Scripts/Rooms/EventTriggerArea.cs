@@ -10,7 +10,10 @@ public class EventTriggerArea : MonoBehaviour
     private TriggerMode triggerMode;
 
     [SerializeField]
-    private UnityEvent eventsToTrigger;
+    private UnityEvent eventsToTriggerOnEnter;
+
+    [SerializeField]
+    private UnityEvent eventsToTriggerOnExit;
 
     private Collider col;
     private void Awake()
@@ -21,13 +24,25 @@ public class EventTriggerArea : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent(out PlayerController pc)) 
+        if (other.TryGetComponent(out PlayerController pc))
         {
             if (triggerMode == TriggerMode.TriggerOnce)
-            { 
+            {
                 this.enabled = false;
             }
-            eventsToTrigger.Invoke();
+            eventsToTriggerOnEnter.Invoke();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out PlayerController pc))
+        {
+            if (triggerMode == TriggerMode.TriggerOnce)
+            {
+                this.enabled = false;
+            }
+            eventsToTriggerOnExit.Invoke();
         }
     }
 }
