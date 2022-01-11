@@ -11,7 +11,10 @@ public class PhysicsMovement : MonoBehaviour, IAbility, IInputReceiverMove, IGam
 	{
 		Vector3 vel = direction * speed;
 		this.transform.position += vel * Time.fixedDeltaTime;
-		SendActionToGameManager();
+		if (direction != Vector3.zero) 
+		{ 
+			SendActionToGameManager();
+		}
 	}
 	public void Trigger()
 	{
