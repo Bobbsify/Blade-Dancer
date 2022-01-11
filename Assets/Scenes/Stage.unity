@@ -793,7 +793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2094567303}
   m_Layer: 0
-  m_Name: STAGES
+  m_Name: _STAGES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -892,6 +892,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: _STAGE
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848316814638692296, guid: 3e58502907722bf46a284ac033deac24,
+        type: 3}
+      propertyPath: m_Icon
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 8848316814638692298, guid: 3e58502907722bf46a284ac033deac24,
         type: 3}
