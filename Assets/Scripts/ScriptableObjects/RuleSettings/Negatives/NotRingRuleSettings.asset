@@ -17,6 +17,7 @@ MonoBehaviour:
   appliedActions: 04000000
   ruleRelatedObjects:
   - name: Bell
-    ruleObjPrefab: {fileID: 0}
+    ruleObjPrefab: {fileID: 4072430416109815961, guid: 1fbeb67b7cac740558906c3b735ebb44,
+      type: 3}
     pos: 1
   mutuallyExclusives: 0400000012000000
