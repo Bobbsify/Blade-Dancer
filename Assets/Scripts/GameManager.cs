@@ -36,6 +36,10 @@ public class GameManager : MonoBehaviour
     [Tooltip("Location of the rule manager in the scene")]
     private GameObject ruleManagerLocation;
 
+    [SerializeField]
+    [Tooltip("The amount of units the next room is generated below the character")]
+    private const float roomUnderminingValue = 10.0f;
+
     [Header("Rule Management")]
 
     [SerializeField]
@@ -53,6 +57,16 @@ public class GameManager : MonoBehaviour
     [Tooltip("Determines how much the difficulty is increased inbetween stages")]
     private float difficultyIncreaseMod = 0.15f;
 
+    [Header("Break Rooms")]
+
+    [SerializeField]
+    private List<GameObject> breakRooms;
+
+    [SerializeField]
+    private int currentBreakroom = 0;
+
+    //--------------------------------------------------
+
     private RuleManager ruleManager;
 
     private StreakFactory streakFactory;
@@ -61,7 +75,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
-    private const float roomUnderminingValue = 10.0f;
     private bool startStreak = false;
 
     private void Awake()
@@ -98,6 +111,21 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    public List<RuleSetting> GetRuleSettings()
+    {
+        return this.allRules.getAll();
+    }
+
+    public void ActionEventTrigger(Actions action)
+    {
+        Debug.Log(action);
+        if (currentStreak != null)
+        {
+            ruleManager.ApplyRule(action);
+        }
+    }
+
+    #region StreakManagement
 
     public void StartStreak()
     {
@@ -105,30 +133,11 @@ public class GameManager : MonoBehaviour
         startStreak = true;
     }
 
-    public void ActionEventTrigger(Actions action)
-    {
-        if (currentStreak != null) 
-        { 
-            ruleManager.ApplyRule(action);
-        }
-    }
-
-    public void KillPlayer()
-    {
-        PlayerPawn.GetComponent<PlayerController>().TakeDamage(500);
-        GenerateNewStreak();
-    }
-
     public void EndOfStage()
     {
         Stage nextStage = currentStreak.NextStage();
         Destroy(currentArena);
         GoToNextStage(nextStage);
-    }
-
-    public List<RuleSetting> GetRuleSettings()
-    {
-        return this.allRules.getAll();
     }
 
     private void GoToNextStage(Stage currentStage)
@@ -146,16 +155,31 @@ public class GameManager : MonoBehaviour
 
     private void GenerateNewStreak(int fixedDifficulty = 0)
     {
-        int difficulty = fixedDifficulty == 0 ? Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty,maxDifficulty),minDifficulty); //If difficulty is preset make sure it is between the two max values
+        int difficulty = fixedDifficulty == 0 ? Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
         currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
     }
+
+    private void StreakEnded()
+    {
+        Debug.Log("End Of Streak");
+        currentBreakroom++;
+        Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity);
+        startStreak = false;
+    }
+
+    #endregion
+
+    public void KillPlayer()
+    {
+        PlayerPawn.GetComponent<PlayerController>().TakeDamage(500);
+        GenerateNewStreak();
+    }
+
 
     private void GeneratePlayerPawn()
 	{
 		this.PlayerPawn = Instantiate(this.playerPrefab, this.spawnPoint.position, Quaternion.identity);
 		this.PlayerPawn.transform.SetParent(this.inputReceiversTransform);
 	}
-
-    private void StreakEnded() { Debug.Log("End Of Streak"); }
     
 }
