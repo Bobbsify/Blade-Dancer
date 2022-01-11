@@ -5,19 +5,23 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class TrapObject : MonoBehaviour, IGameEntity
 {
+    [SerializeField]
     private GameManager gameManager;
+
+    [SerializeField]
+    private GameObject trapCollider;
 
     private void Start()
     {
-        this.gameObject.GetComponent<Collider>().enabled = false;
+        trapCollider.GetComponent<Collider>().enabled = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.GetComponentInChildren<EnemyFollowStateChase>(true))
+        if (other.GetComponentInChildren<EnemyFollowStateChase>() != null)
         {
             SendActionToGameManager();
-            this.gameObject.GetComponent<Collider>().enabled = true;
+            trapCollider.GetComponent<Collider>().enabled = true;
         }
     }
 
