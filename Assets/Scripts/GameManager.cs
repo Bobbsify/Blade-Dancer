@@ -130,6 +130,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentArena);
             GoToNextStage(nextStage);
+            PlayerPawn.GetComponent<PlayerController>().DisableAllAbilities();
         }
         else
         {
