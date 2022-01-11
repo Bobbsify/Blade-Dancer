@@ -5,11 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class GatherObjects : MonoBehaviour,IGameEntity
 {
+    [SerializeField]
     private GameManager gameManager;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponentInChildren<PlayerController>(true))
+        if (collision.collider.GetComponentInChildren<PlayerController>() != null)
         {
             SendActionToGameManager();
             Destroy(this.gameObject);

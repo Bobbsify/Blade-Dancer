@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class BreakObject : MonoBehaviour, IGameEntity
 {
+    [SerializeField]
     private GameManager gameManager;
 
     [SerializeField]
@@ -13,12 +14,16 @@ public class BreakObject : MonoBehaviour, IGameEntity
     [SerializeField]
     private float healthToDestroyGameObject;
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void Start()
     {
-        if (collision.collider.GetComponentInChildren<ProjectileController>(true))
+        objectHealth = objectHealth * 2;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentInChildren<ProjectileController>() != null)
         {
-            this.objectHealth--;
+            objectHealth--;
             DestroyIfZeroHealth();
         }
     }

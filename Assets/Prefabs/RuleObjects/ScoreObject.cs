@@ -5,11 +5,12 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class ScoreObject : MonoBehaviour, IGameEntity
 {
+    [SerializeField]
     private GameManager gameManager;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponentInChildren<BallObject>(true))
+        if (collision.collider.GetComponentInChildren<BallObject>() != null)
         {
            SendActionToGameManager();
         }
