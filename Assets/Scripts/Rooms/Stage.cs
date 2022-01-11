@@ -16,11 +16,14 @@ public class Stage
             foreach (RuleObject obj in rule.GetRuleRelatedObjects())
             {
                 GameObject clone = obj.GetRuleObj();
-                foreach (IGameEntity entity in clone.GetComponents<IGameEntity>())
-                {
-                    entity.Init(gm);
+                if (clone != null) { 
+                    IGameEntity[] gameEntitiesInClone = clone.GetComponents<IGameEntity>();
+                    foreach (IGameEntity entity in gameEntitiesInClone)
+                    {
+                        entity.Init(gm);
+                    }
+                    clone.transform.position = FetchObjectPosition(obj.GetPositionType());
                 }
-                clone.transform.position = FetchObjectPosition(obj.GetPositionType());
             }
         }
         this.stageRules = stageRules;
