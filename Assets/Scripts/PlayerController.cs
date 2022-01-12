@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
@@ -61,7 +62,7 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void ToggleMovement(bool state = true) 
@@ -133,6 +134,6 @@ public class PlayerController : MonoBehaviour
 
     private void DoDeath()
     {
-        //Call animator and then die, animator will call Reset at the end of death animation
+        Animate("death");
     }
 }
