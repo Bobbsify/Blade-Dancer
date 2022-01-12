@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 1
-  appliedActions: 05000000
+  appliedActions: 0500000006000000
   ruleRelatedObjects:
   - name: CentralLine
     ruleObjPrefab: {fileID: 0}
