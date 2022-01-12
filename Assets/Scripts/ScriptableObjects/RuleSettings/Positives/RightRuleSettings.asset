@@ -17,6 +17,7 @@ MonoBehaviour:
   appliedActions: 0600000005000000
   ruleRelatedObjects:
   - name: CentralLine
-    ruleObjPrefab: {fileID: 0}
+    ruleObjPrefab: {fileID: 6801434270533008528, guid: 8f2d37a3e6826463abe06ec835463bf3,
+      type: 3}
     pos: 8
   mutuallyExclusives: 050000000600000014000000130000000a0000000e000000
