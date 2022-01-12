@@ -135,5 +135,6 @@ public class PlayerController : MonoBehaviour
     private void DoDeath()
     {
         Animate("death");
+        DisableAllAbilities();
     }
 }
