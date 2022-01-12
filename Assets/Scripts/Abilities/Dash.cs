@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
+[RequireComponent(typeof(Rigidbody))]
 public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, IInputReceiverMove
 { 
     [SerializeField]
@@ -16,6 +17,13 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
     private GameManager gameManager;
 
     private Vector3 lastDirection;
+
+    private Rigidbody rigidBody;
+
+    private void Awake()
+    {
+        TryGetComponent(out rigidBody);
+    }
 
     private void Start()
     {
@@ -33,7 +41,7 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
         if (this.canDash)
         {
             canDash = false;
-            this.transform.position += lastDirection * dashForce * Time.deltaTime;
+            this.rigidBody.AddForce(lastDirection * dashForce,ForceMode.Impulse);
             SendActionToGameManager();
             StartCoroutine(CooldownDash());
         }
