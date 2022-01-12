@@ -8,11 +8,19 @@ public class ScoreObject : MonoBehaviour, IGameEntity
     [SerializeField]
     private GameManager gameManager;
 
-    private void OnCollisionEnter(Collision collision)
+    private void Awake()
     {
-        if (collision.collider.GetComponentInChildren<BallObject>() != null)
+        if (TryGetComponent(out Collider col))
         {
-           SendActionToGameManager();
+            col.isTrigger = true;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentInChildren<BallObject>() != null)
+        {
+            SendActionToGameManager();
         }
     }
 
