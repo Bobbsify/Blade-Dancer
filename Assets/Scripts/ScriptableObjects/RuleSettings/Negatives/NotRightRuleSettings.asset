@@ -14,6 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   durationType: 0
   durationMod: 1
-  appliedActions: 06000000
-  ruleRelatedObjects: []
+  appliedActions: 0600000005000000
+  ruleRelatedObjects:
+  - name: CentralLine
+    ruleObjPrefab: {fileID: 6801434270533008528, guid: 8f2d37a3e6826463abe06ec835463bf3,
+      type: 3}
+    pos: 8
   mutuallyExclusives: 060000001400000005000000130000000e0000000b000000080000000d0000000a000000
