@@ -33,16 +33,16 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
     public IEnumerator CooldownDash()
     {
         yield return new WaitForSeconds(this.dashCooldown);
+        SendActionToGameManager();
         this.canDash = true;
     }
 
     public void Trigger()
     {
-        if (this.canDash)
+        if (this.canDash && lastDirection != Vector3.zero)
         {
             canDash = false;
             this.rigidBody.AddForce(lastDirection * dashForce,ForceMode.Impulse);
-            SendActionToGameManager();
             StartCoroutine(CooldownDash());
         }
     }
