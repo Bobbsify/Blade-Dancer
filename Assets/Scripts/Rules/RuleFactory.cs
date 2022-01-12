@@ -63,8 +63,26 @@ public class RuleFactory
             {
                 i--;
             }
+            if(CheckCompleteExclusivity(selectedRules)){ break; } //Exit if ruleset is mutally exclusive with every rule
         }
         return selectedRules;
+    }
+
+    private bool CheckCompleteExclusivity(List<Rule> selectedRules)
+    {
+        int totalRules = System.Enum.GetNames(typeof(AllRules)).Length;
+        List<int> appeared = new List<int>();
+        foreach (Rule rule in selectedRules) 
+        {
+            foreach (AllRules ruleName in rule.GetMutallyExclusives()) 
+            {
+                if (!appeared.Contains((int)ruleName)) 
+                {
+                    appeared.Add((int)ruleName);
+                }
+            }
+        }
+        return totalRules == appeared.Count;
     }
 
     public Rule GetRule(AllRules ruleName)

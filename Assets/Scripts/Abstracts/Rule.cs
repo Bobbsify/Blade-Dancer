@@ -53,6 +53,11 @@ public abstract class Rule : IRule
         return this.RuleName;
     }
 
+    public virtual List<AllRules> GetMutallyExclusives()
+    {
+        return this.mutuallyExclusives;
+    }
+
     public virtual bool CheckAction(Actions executedAction)
     {
         throw new System.NotImplementedException();
