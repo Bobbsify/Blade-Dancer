@@ -5,17 +5,18 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class FlagObject : MonoBehaviour,IGameEntity
 {
+    [SerializeField]
     private GameManager gameManager;
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.GetComponentInChildren<PlayerController>(true))
+        if (collision.collider.GetComponentInChildren<PlayerController>() != null)
         {
             SendActionToGameManager();
             Destroy(this.gameObject);
         }
 
-        else if (collision.collider.GetComponentInChildren<EnemyFollowStateChase>(true))
+        else if (collision.collider.GetComponentInChildren<FSM>() != null)
         {
             Destroy(this.gameObject);
         }
