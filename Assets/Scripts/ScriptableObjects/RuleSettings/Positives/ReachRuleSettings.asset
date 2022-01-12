@@ -23,6 +23,7 @@ MonoBehaviour:
     ruleObjPrefab: {fileID: 0}
     pos: 0
   - name: Flag
-    ruleObjPrefab: {fileID: 0}
+    ruleObjPrefab: {fileID: 8334453496198540845, guid: 9cf5e318e039e4d1d844941dded6cd8e,
+      type: 3}
     pos: 0
   mutuallyExclusives: 05000000060000000d0000001b00000014000000130000000e000000
