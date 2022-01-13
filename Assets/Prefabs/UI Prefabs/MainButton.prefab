@@ -57,7 +57,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 500
+  m_SortingOrder: 150
   m_TargetDisplay: 0
 --- !u!114 &7589109289306063229
 MonoBehaviour:
@@ -438,7 +438,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 2.5
+      scalar: 1
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -491,8 +491,8 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 3
-      scalar: 8
-      minScalar: 16
+      scalar: 16
+      minScalar: 32
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -923,7 +923,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 120
+    maxNumParticles: 180
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -1188,7 +1188,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 30
+      scalar: 60
       minScalar: 10
       maxCurve:
         serializedVersion: 2
