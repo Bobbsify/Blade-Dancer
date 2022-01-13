@@ -3,18 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyFollowStateChase : FSMState, IGameEntity
+public class EnemyFollowStateChase : FSMState
 {
 	[SerializeField]
-	private NavMeshAgent agent;
-
-	[SerializeField]
-	[Range(3f, 6f)]
-	private float deactivationDistance = 5f;
+	[Range(0f, 30f)]
+	private float deactivationDistance;
 
 	[SerializeField]
 	[Range(0f, 3f)]
-	private float attackDistance = 1f;
+	private float attackDistance;
 
 	[SerializeField]
 	private EnemyFollowStateIdle stateIdle;
@@ -22,60 +19,40 @@ public class EnemyFollowStateChase : FSMState, IGameEntity
 	[SerializeField]
 	private EnemyFollowStateAttack stateAttack;
 
+	[SerializeField]
 	private Transform target;
 
-	private bool goToFlag;
+	private Vector3 dir;
 
-	private Vector3 flagPosition;
+	[SerializeField]
+    private float speed;
 
-	private void OnValidate()
+    private void OnValidate()
 	{
-		this.agent = this.GetComponentInChildren<NavMeshAgent>();
 		this.stateIdle = this.GetComponentInChildren<EnemyFollowStateIdle>();
 		this.stateAttack = this.GetComponentInChildren<EnemyFollowStateAttack>();
 	}
 
 	private void Update()
 	{
+		var pos = this.transform.position;
+		var targetPos = this.target.position;
+		dir = targetPos - pos;
+		this.transform.position += dir * speed * Time.deltaTime;
 
-		if (this.agent.isActiveAndEnabled)
+		var distance = Vector3.Distance(pos, targetPos);
+
+		if (distance > this.deactivationDistance)
 		{
-			this.agent.SetDestination(this.target.position);
-
-			var pos = this.transform.position;
-			var targetPos = this.target.position;
-
-			var distance = Vector3.Distance(pos, targetPos);
-
-			if (distance > this.deactivationDistance)
-			{
-				this.fsm.ChangeState(this.stateIdle);
-				return;
-			}
-			
-			if (distance <= this.attackDistance)
-			{
-				this.fsm.ChangeState(this.stateAttack);
-				return;
-			}
+			this.fsm.ChangeState(this.stateIdle);
+			return;
 		}
 
-		if (goToFlag)
-        {
-			this.agent.SetDestination(this.flagPosition);
-        }
-	}
-
-	public void FlagReach()
-    {
-		this.goToFlag = true;
-    }
-
-	void IGameEntity.Init(GameManager gameManager)
-	{
-		FlagObject flagObject = new FlagObject();
-		this.target = gameManager.PlayerPawn.transform;
-		this.flagPosition = flagObject.GetFlagPosition();
+		if (distance <= this.attackDistance)
+		{
+			this.fsm.ChangeState(this.stateAttack);
+			return;
+		}
 	}
 
 	public override string ToString()

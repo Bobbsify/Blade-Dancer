@@ -9,11 +9,16 @@ public class EnemyFollowStateAttack : FSMState
 	private float minReactionTime = 1f;
 	
 	[SerializeField]
-	[Range(2f, 5f)]
+	[Range(0f, 5f)]
 	private float maxReactionTime = 2f;
 
 	[SerializeField]
 	private EnemyFollowStateChase stateChase;
+
+	[SerializeField]
+	private Transform target;
+
+	private bool isPlayerDamageable;
 
 	private float reactionTime;
 
@@ -22,7 +27,11 @@ public class EnemyFollowStateAttack : FSMState
 		this.stateChase = this.GetComponent<EnemyFollowStateChase>();
 	}
 
-	private void Update()
+    private void Start()
+    {
+		isPlayerDamageable = false;
+    }
+    private void Update()
 	{
 		this.reactionTime -= Time.deltaTime;
 
@@ -46,8 +55,27 @@ public class EnemyFollowStateAttack : FSMState
 		return "ATTACK";
 	}
 
-	private void Attack()
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponentInChildren<PlayerController>() != null)
+        {
+			isPlayerDamageable = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+		if (other.GetComponentInChildren<PlayerController>() != null)
+		{
+			isPlayerDamageable = false;
+		}
+	}
+
+    private void Attack()
 	{
-		Debug.LogError("ATTACK");
+		if (isPlayerDamageable == true)
+        {
+			Debug.LogError("ATTACK"); // mettere il danno o distruggere il player
+		}
 	}
 }

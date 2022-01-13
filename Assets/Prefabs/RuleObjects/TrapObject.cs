@@ -18,10 +18,11 @@ public class TrapObject : MonoBehaviour, IGameEntity
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInChildren<EnemyFollowStateChase>() != null)
+        if (other.GetComponentInChildren<FSM>() != null)
         {
+            Destroy(other.GetComponent<EnemyFollowStateChase>()); // blocca il nemico
             SendActionToGameManager();
-            trapCollider.GetComponent<Collider>().enabled = true;
+            trapCollider.GetComponent<Collider>().enabled = true; // attiva le trappole
         }
     }
 

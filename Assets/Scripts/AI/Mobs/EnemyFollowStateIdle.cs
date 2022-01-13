@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyFollowStateIdle : FSMState, IGameEntity
+public class EnemyFollowStateIdle : FSMState
 {
 	[SerializeField]
 	private float activationDistance = 3f;
@@ -8,6 +8,7 @@ public class EnemyFollowStateIdle : FSMState, IGameEntity
 	[SerializeField]
 	private EnemyFollowStateChase stateChase;
 
+	[SerializeField]
 	private Transform target;
 
 	private void OnValidate()
@@ -24,11 +25,6 @@ public class EnemyFollowStateIdle : FSMState, IGameEntity
 		}
 	}
 
-	void IGameEntity.Init(GameManager gameManager)
-	{
-		this.target = gameManager.PlayerPawn.transform;
-	}
-
 	private bool CheckDistance()
 	{
 		var pos = this.transform.position;
@@ -36,7 +32,7 @@ public class EnemyFollowStateIdle : FSMState, IGameEntity
 
 		var distance = Vector3.Distance(pos, targetPos);
 
-		return distance <= this.activationDistance;
+		return distance >= this.activationDistance;
 	}
 
 	public override string ToString()

@@ -9,11 +9,14 @@ public class FleeEnemyAttack : FSMState
 	private float minReactionTime = 1f;
 
 	[SerializeField]
-	[Range(2f, 5f)]
+	[Range(0f, 5f)]
 	private float maxReactionTime = 2f;
 
 	[SerializeField]
 	private FleeEnemyChase stateChase;
+
+	[SerializeField]
+	private GameObject projectile;
 
 	private float reactionTime;
 
@@ -48,6 +51,6 @@ public class FleeEnemyAttack : FSMState
 
 	private void Attack()
 	{
-		Debug.LogError("ATTACK");
+		Debug.Log("attacco");
 	}
 }
