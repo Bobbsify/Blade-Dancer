@@ -18,6 +18,13 @@ public class FleeEnemyAttack : FSMState
 	[SerializeField]
 	private GameObject projectile;
 
+	[SerializeField]
+	private Transform objSpawnPos;
+
+	private GameObject target;
+
+	private string pg = "Player";
+
 	private float reactionTime;
 
 	private void OnValidate()
@@ -27,8 +34,9 @@ public class FleeEnemyAttack : FSMState
 
 	private void Update()
 	{
-		this.reactionTime -= Time.deltaTime;
+		target = GameObject.FindGameObjectWithTag(pg);
 
+		this.reactionTime -= Time.deltaTime;
 		if (this.reactionTime <= 0f)
 		{
 			this.Attack();
@@ -51,6 +59,6 @@ public class FleeEnemyAttack : FSMState
 
 	private void Attack()
 	{
-		Debug.Log("attacco");
+		Instantiate(projectile, objSpawnPos); // dare la direzione al proiettile
 	}
 }
