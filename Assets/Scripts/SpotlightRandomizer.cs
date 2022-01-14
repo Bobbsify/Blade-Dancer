@@ -52,7 +52,7 @@ public class SpotlightRandomizer : MonoBehaviour
         originalSpotlightColor = spotlight.color;
     }
 
-    private void Start()
+    private void OnEnable()
     {
         DetermineBehaviour();
     }
