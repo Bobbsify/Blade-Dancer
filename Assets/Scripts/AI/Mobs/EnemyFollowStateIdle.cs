@@ -8,8 +8,9 @@ public class EnemyFollowStateIdle : FSMState
 	[SerializeField]
 	private EnemyFollowStateChase stateChase;
 
-	[SerializeField]
-	private Transform target;
+	private GameObject target;
+
+	private string pg = "Player";
 
 	private void OnValidate()
 	{
@@ -27,8 +28,9 @@ public class EnemyFollowStateIdle : FSMState
 
 	private bool CheckDistance()
 	{
+		target = GameObject.FindGameObjectWithTag(pg);
 		var pos = this.transform.position;
-		var targetPos = this.target.position;
+		var targetPos = this.target.transform.position;
 
 		var distance = Vector3.Distance(pos, targetPos);
 

@@ -16,9 +16,11 @@ public class EnemyFollowStateAttack : FSMState
 	private EnemyFollowStateChase stateChase;
 
 	[SerializeField]
-	private Transform target;
+	private int damage;
 
 	private bool isPlayerDamageable;
+
+	private PlayerController playerController;
 
 	private float reactionTime;
 
@@ -60,7 +62,8 @@ public class EnemyFollowStateAttack : FSMState
         if (other.GetComponentInChildren<PlayerController>() != null)
         {
 			isPlayerDamageable = true;
-        }
+			this.playerController = other.GetComponentInChildren<PlayerController>();
+		}
     }
 
     private void OnTriggerExit(Collider other)
@@ -75,7 +78,7 @@ public class EnemyFollowStateAttack : FSMState
 	{
 		if (isPlayerDamageable == true)
         {
-			Debug.LogError("ATTACK"); // mettere il danno o distruggere il player
+			playerController.TakeDamage(damage);
 		}
 	}
 }

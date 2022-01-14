@@ -19,8 +19,9 @@ public class EnemyFollowStateChase : FSMState
 	[SerializeField]
 	private EnemyFollowStateAttack stateAttack;
 
-	[SerializeField]
-	private Transform target;
+	private GameObject target;
+
+	private string pg = "Player";
 
 	private Vector3 dir;
 
@@ -35,8 +36,9 @@ public class EnemyFollowStateChase : FSMState
 
 	private void Update()
 	{
+		target = GameObject.FindGameObjectWithTag(pg);
 		var pos = this.transform.position;
-		var targetPos = this.target.position;
+		var targetPos = this.target.transform.position;
 		dir = targetPos - pos;
 		this.transform.position += dir * speed * Time.deltaTime;
 
