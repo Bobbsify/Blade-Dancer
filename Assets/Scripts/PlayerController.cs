@@ -32,10 +32,12 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamage(int amount) 
     {
-        currentHealth = Mathf.Max(0, currentHealth - amount);
-        if (currentHealth == 0) 
-        {
-            DoDeath();
+        if (currentHealth > 0) { 
+            currentHealth = Mathf.Max(0, currentHealth - amount);
+            if (currentHealth == 0) 
+            {
+                DoDeath();
+            }
         }
     }
 
