@@ -146,7 +146,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activationDistance: 0.5
   stateChase: {fileID: 2096567139338241274}
-  target: {fileID: 0}
 --- !u!114 &2096567139338241274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +162,6 @@ MonoBehaviour:
   attackDistance: 0.5
   stateIdle: {fileID: 2096567139338241273}
   stateAttack: {fileID: 2096567139338241275}
-  target: {fileID: 0}
   speed: 1
 --- !u!114 &2096567139338241275
 MonoBehaviour:
@@ -180,4 +178,4 @@ MonoBehaviour:
   minReactionTime: 1.11
   maxReactionTime: 1.51
   stateChase: {fileID: 2096567139338241274}
-  target: {fileID: 0}
+  damage: 1

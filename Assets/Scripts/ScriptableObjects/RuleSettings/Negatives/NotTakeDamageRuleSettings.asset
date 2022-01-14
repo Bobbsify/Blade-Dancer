@@ -17,7 +17,8 @@ MonoBehaviour:
   appliedActions: 0c000000
   ruleRelatedObjects:
   - name: EnemyMoving
-    ruleObjPrefab: {fileID: 0}
+    ruleObjPrefab: {fileID: 2096567139338241279, guid: f9eb53924614e44da9db48b60a706271,
+      type: 3}
     pos: 0
   - name: EnemyShooting
     ruleObjPrefab: {fileID: 0}
