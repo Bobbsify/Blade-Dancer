@@ -21,7 +21,11 @@ public class EnemyFollowStateChase : FSMState
 
 	private GameObject target;
 
+	private GameObject flagTarget;
+
 	private string pg = "Player";
+
+//	private string flag = "Flag";
 
 	private Vector3 dir;
 
@@ -37,6 +41,8 @@ public class EnemyFollowStateChase : FSMState
 	private void Update()
 	{
 		target = GameObject.FindGameObjectWithTag(pg);
+	//	flagTarget = GameObject.FindGameObjectWithTag(flag);   dire di cercare questo tag in caso di flag
+
 		var pos = this.transform.position;
 		var targetPos = this.target.transform.position;
 		dir = targetPos - pos;
