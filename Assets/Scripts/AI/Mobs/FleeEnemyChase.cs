@@ -31,8 +31,9 @@ public class FleeEnemyChase : FSMState
 		target = GameObject.FindGameObjectWithTag(pg);
 		var pos = this.transform.position;
 		var targetPos = this.target.transform.position;
-		dir = (-(targetPos - pos)) * Time.deltaTime;
-		this.transform.position += dir * speed * Time.deltaTime;
+		dir = (targetPos - pos) * Time.deltaTime;
+		dir.y = 0;
+		this.transform.position += -(dir) * speed * Time.deltaTime;
 
 		var distance = Vector3.Distance(pos, targetPos);
 
