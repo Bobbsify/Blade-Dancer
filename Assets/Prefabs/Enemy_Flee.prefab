@@ -59,7 +59,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 1
   redamageable: 3
-  isDamageable: 0
 --- !u!1 &7251394527796283674
 GameObject:
   m_ObjectHideFlags: 0
