@@ -18,7 +18,7 @@ public class FlagObject : MonoBehaviour,IGameEntity
 
         else if (collision.collider.GetComponentInChildren<FSM>() != null)
         {
-            Destroy(this.gameObject);
+            Destroy(this.gameObject);   // oppure dire al gameManager che si ha perso
         }
     }
 

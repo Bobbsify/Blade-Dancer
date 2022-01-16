@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSM : MonoBehaviour
+public class FSM : MonoBehaviour, IGameEntity
 {
 	[Header("Debug")]
 
@@ -17,6 +17,9 @@ public class FSM : MonoBehaviour
 
 	[SerializeField]
 	private FSMState[] states;
+
+	[SerializeField]
+	private GameManager gameManager;
 
 	private FSMState currentState;
 
@@ -57,7 +60,18 @@ public class FSM : MonoBehaviour
     {
 		if (other.GetComponentInChildren<ProjectileController>() != null)
 		{
+			SendActionToGameManager(); // kill viene chiamata due volte con il flee enemy
 			Destroy(this.gameObject);
 		}
 	}
+
+	public void SendActionToGameManager()
+	{
+		this.gameManager.ActionEventTrigger(Actions.Kill);
+	}
+
+	public void Init(GameManager gameManager)
+    {
+		this.gameManager = gameManager;
+    }
 }

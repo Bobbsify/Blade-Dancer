@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7850248498395396877}
   - component: {fileID: 1420277789138488350}
   - component: {fileID: 2988405123111245111}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: DeathParticles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4820,7 +4820,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7583389412304379998}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ShootingPos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4851,7 +4851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6350033997946597063}
   - component: {fileID: 6861701076128218723}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4940,7 +4940,7 @@ GameObject:
   - component: {fileID: 7626479644181122424}
   - component: {fileID: 9012375419417087643}
   - component: {fileID: 4402864445721168482}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}

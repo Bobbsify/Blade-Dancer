@@ -132,6 +132,7 @@ MonoBehaviour:
   - {fileID: 2096567139338241273}
   - {fileID: 2096567139338241274}
   - {fileID: 2096567139338241275}
+  gameManager: {fileID: 0}
 --- !u!114 &2096567139338241273
 MonoBehaviour:
   m_ObjectHideFlags: 0
