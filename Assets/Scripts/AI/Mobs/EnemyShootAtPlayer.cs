@@ -13,6 +13,6 @@ public class EnemyShootAtPlayer : MonoBehaviour
 
     private void Update()
     {
-        this.transform.rotation = Quaternion.LookRotation(target.transform.position);
+       transform.LookAt(target.transform.position);
     }
 }
