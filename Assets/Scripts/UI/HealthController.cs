@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class HealthController : MonoBehaviour
 {
-    [SerializeField]
     private GameObject[] health;
 
     private PlayerController player;
