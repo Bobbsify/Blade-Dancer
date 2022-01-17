@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -392,6 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 356839864}
   - component: {fileID: 356839863}
+  - component: {fileID: 356839865}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -428,7 +429,8 @@ MonoBehaviour:
   minDifficulty: 1
   maxDifficulty: 4
   difficultyIncreaseMod: 0.15
-  breakRooms: []
+  breakRooms:
+  - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   currentBreakroom: 0
 --- !u!4 &356839864
 Transform:
@@ -444,6 +446,18 @@ Transform:
   m_Father: {fileID: 188017206}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &356839865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 356839862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5d94dbc573561a48baf699f19dbc559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &385150523
 GameObject:
   m_ObjectHideFlags: 0
