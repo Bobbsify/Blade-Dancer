@@ -58,6 +58,11 @@ public abstract class Rule : IRule
         return this.mutuallyExclusives;
     }
 
+    public virtual float GetDuration()
+    {
+        return this.durationModifier;
+    }
+
     public virtual bool CheckAction(Actions executedAction)
     {
         throw new System.NotImplementedException();

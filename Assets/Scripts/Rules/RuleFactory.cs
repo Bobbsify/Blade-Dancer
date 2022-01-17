@@ -54,6 +54,7 @@ public class RuleFactory
                     exclusive = true;
                 }
             }
+
             if (!exclusive)
             {
                 selectedRules.Add(randomRule);
@@ -62,8 +63,11 @@ public class RuleFactory
             else
             {
                 i--;
+                if (CheckCompleteExclusivity(selectedRules))
+                {
+                    break; //Exit if ruleset is mutally exclusive with every rule
+                }
             }
-            if(CheckCompleteExclusivity(selectedRules)){ break; } //Exit if ruleset is mutally exclusive with every rule
         }
         return selectedRules;
     }

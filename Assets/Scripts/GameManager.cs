@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(TimerManager))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -76,12 +77,15 @@ public class GameManager : MonoBehaviour
 
     private Streak currentStreak;
 
+    private TimerManager timer;
+
     private GameObject currentArena;
 
     private bool firstRun = true;
 
     private void Awake()
 	{
+        TryGetComponent(out timer);
 		this.GeneratePlayerPawn();
         PlayerPawn.GetComponent<Shoot>().SetProjectilesRoot(this.projectilesRoot);
         streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules.getAll()), this);
@@ -134,6 +138,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            timer.StopTimer();
             StreakEnded();
         }
     }
@@ -141,7 +146,13 @@ public class GameManager : MonoBehaviour
     private void GoToNextStage(Stage currentStage)
     {
         ruleManager.SetNewRuleset(currentStage.GetRules());
+        timer.SetTimer(currentStage.GetRulesTime());
         currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity);
+        RoomController room = currentArena.GetComponent<RoomController>();
+        foreach (RuleObject objToSpawn in currentStage.GetRuleRelatedObjectsToSpawn()) 
+        {
+            Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType()), Quaternion.identity, currentArena.transform);
+        }
     }
 
     private Vector3 RoomPosition()
