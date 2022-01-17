@@ -22,7 +22,7 @@ public class TimerManager : MonoBehaviour, IGameEntity
     {
         if (doTimer) {         
             currentTime -= Time.deltaTime/2;
-            float truncatedTime = (float)Math.Round((maxTime - currentTime) * 100f) / 100f;
+            float truncatedTime = (float)Math.Round((currentTime) * 100f) / 100f;
             timerText.text = truncatedTime.ToString().Replace(',', ':');
             if (currentTime <= 0) 
             {
