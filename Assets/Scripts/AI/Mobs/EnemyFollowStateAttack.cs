@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollowStateAttack : FSMState
+public class EnemyFollowStateAttack : FSMState, IEnemy
 {
 	[SerializeField]
 	[Range(0f, 2f)]
@@ -81,4 +81,19 @@ public class EnemyFollowStateAttack : FSMState
 			playerController.TakeDamage(damage);
 		}
 	}
+
+    public void Chase(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void FleeFrom(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Dance()
+    {
+        throw new System.NotImplementedException();
+    }
 }
