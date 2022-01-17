@@ -37,6 +37,7 @@ public class MoveRuleSettings : RuleSetting
     public override Rule GetRule()
     {
         durationOfMove = UnityEngine.Random.Range(minDuration,maxDuration);
+        durationMod = durationType == DurationModType.FixedAmount ? durationMod : durationModFormula;
         MoveRule ruleReturned = new MoveRule(AllRules.Move, durationOfMove, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return ruleReturned;
     }
