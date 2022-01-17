@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FleeEnemyChase : FSMState
+public class FleeEnemyChase : FSMState, IEnemy
 {
 	[SerializeField]
 	[Range(0f, 30f)]
@@ -48,4 +48,19 @@ public class FleeEnemyChase : FSMState
 	{
 		return "CHASE";
 	}
+
+    public void Chase(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void FleeFrom(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Dance()
+    {
+        throw new System.NotImplementedException();
+    }
 }

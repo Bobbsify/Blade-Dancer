@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class EnemyFollowStateIdle : FSMState
+public class EnemyFollowStateIdle : FSMState, IEnemy
 {
 	[SerializeField]
 	private float activationDistance = 3f;
@@ -41,4 +41,19 @@ public class EnemyFollowStateIdle : FSMState
 	{
 		return "IDLE";
 	}
+
+    public void Chase(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void FleeFrom(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Dance()
+    {
+        throw new System.NotImplementedException();
+    }
 }

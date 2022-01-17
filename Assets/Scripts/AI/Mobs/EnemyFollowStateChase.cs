@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyFollowStateChase : FSMState
+public class EnemyFollowStateChase : FSMState, IEnemy
 {
 	[SerializeField]
 	[Range(0f, 30f)]
@@ -25,9 +25,11 @@ public class EnemyFollowStateChase : FSMState
 
 	private string pg = "Player";
 
-//	private string flag = "Flag";
+	private string flag = "Flag";
 
 	private Vector3 dir;
+
+	private Vector3 dirFlag;
 
 	[SerializeField]
     private float speed;
@@ -41,13 +43,24 @@ public class EnemyFollowStateChase : FSMState
 	private void Update()
 	{
 		target = GameObject.FindGameObjectWithTag(pg);
-	//	flagTarget = GameObject.FindGameObjectWithTag(flag);   dire di cercare questo tag in caso di flag
+		flagTarget = GameObject.FindGameObjectWithTag(flag);
 
 		var pos = this.transform.position;
 		var targetPos = this.target.transform.position;
-		dir = targetPos - pos;
-		this.transform.position += dir * speed * Time.deltaTime;
 
+		if (flagTarget != null)
+        {
+			var flagTargetPos = this.flagTarget.transform.position;
+			dirFlag = flagTargetPos - pos;
+			this.transform.position += dirFlag * speed * Time.deltaTime;
+		}
+
+        else
+        {
+			dir = targetPos - pos;
+			this.transform.position += dir * speed * Time.deltaTime;
+		}
+		
 		var distance = Vector3.Distance(pos, targetPos);
 
 		if (distance > this.deactivationDistance)
@@ -67,4 +80,19 @@ public class EnemyFollowStateChase : FSMState
 	{
 		return "CHASE";
 	}
+
+    public void Chase(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void FleeFrom(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Dance()
+    {
+        throw new System.NotImplementedException();
+    }
 }
