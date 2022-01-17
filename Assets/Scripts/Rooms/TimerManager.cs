@@ -21,10 +21,10 @@ public class TimerManager : MonoBehaviour, IGameEntity
     void Update()
     {
         if (doTimer) {         
-            currentTime -= Time.deltaTime;
+            currentTime -= Time.deltaTime/2;
             float truncatedTime = (float)Math.Round((maxTime - currentTime) * 100f) / 100f;
             timerText.text = truncatedTime.ToString().Replace(',', ':');
-            if (currentTime < 0) 
+            if (currentTime <= 0) 
             {
                 doTimer = false;
                 gameManager.KillPlayer();
