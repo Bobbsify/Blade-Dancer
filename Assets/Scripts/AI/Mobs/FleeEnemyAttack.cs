@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FleeEnemyAttack : FSMState
+public class FleeEnemyAttack : FSMState, IEnemy
 {
 	[SerializeField]
 	[Range(0f, 2f)]
@@ -62,4 +62,19 @@ public class FleeEnemyAttack : FSMState
 		GameObject proj = Instantiate(projectile, objSpawnPos.position, objSpawnPos.rotation, null);
 		proj.GetComponent<ProjectileController>().SetTeam(Team.Enemy);
 	}
+
+    public void Chase(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void FleeFrom(GameObject obj)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public void Dance()
+    {
+        throw new System.NotImplementedException();
+    }
 }
