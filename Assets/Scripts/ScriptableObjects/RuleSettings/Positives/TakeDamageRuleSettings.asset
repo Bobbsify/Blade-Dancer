@@ -21,6 +21,7 @@ MonoBehaviour:
       type: 3}
     pos: 0
   - name: EnemyShooting
-    ruleObjPrefab: {fileID: 0}
+    ruleObjPrefab: {fileID: 7251394527796283674, guid: aef94e6b2e54b4ebfbf3ca9cd9936f1a,
+      type: 3}
     pos: 0
   mutuallyExclusives: 0c0000001a000000

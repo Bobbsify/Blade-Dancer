@@ -21,7 +21,8 @@ MonoBehaviour:
       type: 3}
     pos: 0
   - name: EnemyShooting
-    ruleObjPrefab: {fileID: 0}
+    ruleObjPrefab: {fileID: 7251394527796283674, guid: aef94e6b2e54b4ebfbf3ca9cd9936f1a,
+      type: 3}
     pos: 0
   - name: Cage
     ruleObjPrefab: {fileID: 8448316130077025965, guid: 73fc787fe54b74e75ad98b88ed2f2f09,
