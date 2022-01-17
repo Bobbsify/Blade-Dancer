@@ -18,4 +18,4 @@ MonoBehaviour:
   ruleRelatedObjects: []
   mutuallyExclusives: 000000000e000000
   minDuration: 2
-  maxDuration: 10
+  maxDuration: 5
