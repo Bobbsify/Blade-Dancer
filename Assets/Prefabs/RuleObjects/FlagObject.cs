@@ -15,11 +15,15 @@ public class FlagObject : MonoBehaviour,IGameEntity
             SendActionToGameManager();
             Destroy(this.gameObject);
         }
+    }
 
-        else if (collision.collider.GetComponentInChildren<FSM>() != null)
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponentInChildren<FSM>() != null)
         {
-            Destroy(this.gameObject);   // oppure dire al gameManager che si ha perso
-        }
+            gameManager.KillPlayer();
+            Destroy(this.gameObject);
+        }  
     }
 
     public void SendActionToGameManager()
