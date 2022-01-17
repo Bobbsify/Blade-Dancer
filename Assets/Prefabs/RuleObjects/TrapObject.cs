@@ -11,9 +11,12 @@ public class TrapObject : MonoBehaviour, IGameEntity
     [SerializeField]
     private GameObject trapCollider;
 
+    private bool canBeTrapped;
+
     private void Start()
     {
         trapCollider.GetComponent<Collider>().enabled = false;
+        canBeTrapped = true;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -21,8 +24,13 @@ public class TrapObject : MonoBehaviour, IGameEntity
         if (other.GetComponentInChildren<FSM>() != null)
         {
             Destroy(other.GetComponent<EnemyFollowStateChase>());
-            SendActionToGameManager();
-            trapCollider.GetComponent<Collider>().enabled = true;      // trap si attiva due volte
+            trapCollider.GetComponent<Collider>().enabled = true;
+
+            if(canBeTrapped == true)
+            {
+                SendActionToGameManager();
+                canBeTrapped = false;
+            }
         }
     }
 

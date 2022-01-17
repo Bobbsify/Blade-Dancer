@@ -21,6 +21,8 @@ public class FSM : MonoBehaviour, IGameEntity
 	[SerializeField]
 	private GameManager gameManager;
 
+	private bool canBeKilled;
+
 	private FSMState currentState;
 
 	private void OnValidate()
@@ -39,7 +41,12 @@ public class FSM : MonoBehaviour, IGameEntity
 		this.ChangeState(this.initialState);
 	}
 
-	public void ChangeState(FSMState newState)
+    private void Start()
+    {
+		this.canBeKilled = true;
+    }
+
+    public void ChangeState(FSMState newState)
 	{
 		if(this.currentState != null)
 		{
@@ -60,7 +67,12 @@ public class FSM : MonoBehaviour, IGameEntity
     {
 		if (other.GetComponentInChildren<ProjectileController>() != null)
 		{
-			SendActionToGameManager(); // kill viene chiamata due volte con il flee enemy
+			if(this.canBeKilled == true)
+            {
+				SendActionToGameManager();
+				canBeKilled = false;
+			}
+			
 			Destroy(this.gameObject);
 		}
 	}
