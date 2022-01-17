@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour
 {
+    [Header("Health")]
     [SerializeField]
     private int maxHealth;
 
@@ -16,6 +18,8 @@ public class PlayerController : MonoBehaviour
     private IAbility[] abilities;
 
     private PhysicsMovement movement;
+
+    private GameObject[] health;
 
     private void OnValidate()
     {
@@ -30,7 +34,10 @@ public class PlayerController : MonoBehaviour
         TryGetComponent(out animPlayer);
     }
 
-    public void TakeDamage(int amount) 
+    public int GetMaxHealth() { return this.maxHealth; }
+    public int GetHealth() { return this.currentHealth; }
+
+    public void TakeDamage(int amount)
     {
         if (currentHealth > 0) { 
             currentHealth = Mathf.Max(0, currentHealth - amount);
@@ -40,7 +47,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
     #region Animation
 
     public void Animate(string name, int amount)

@@ -187,7 +187,7 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer()
     {
-        PlayerPawn.GetComponent<PlayerController>().TakeDamage(500);
+        PlayerPawn.GetComponent<PlayerController>().TakeDamage(PlayerPawn.GetComponent<PlayerController>().GetMaxHealth());
         GenerateNewStreak();
     }
 
