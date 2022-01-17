@@ -1,9 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TimerManager : MonoBehaviour, IGameEntity
 {
+    [SerializeField]
+    private Text timerText;
+
     private GameManager gameManager;
 
     private float maxTime;
@@ -17,7 +22,8 @@ public class TimerManager : MonoBehaviour, IGameEntity
     {
         if (doTimer) {         
             currentTime -= Time.deltaTime;
-            Debug.Log(currentTime);
+            float truncatedTime = (float)Math.Round((maxTime - currentTime) * 100f) / 100f;
+            timerText.text = truncatedTime.ToString().Replace(',', ':');
             if (currentTime < 0) 
             {
                 doTimer = false;
@@ -28,6 +34,7 @@ public class TimerManager : MonoBehaviour, IGameEntity
 
     public void SetTimer(float amount) 
     {
+        maxTime = amount;
         currentTime = amount;
         doTimer = true;
     }
