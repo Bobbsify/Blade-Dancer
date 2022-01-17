@@ -59,6 +59,7 @@ public class FleeEnemyAttack : FSMState
 
 	private void Attack()
 	{
-		Instantiate(projectile, objSpawnPos); // dare la direzione al proiettile
+		GameObject proj = Instantiate(projectile, objSpawnPos.position, objSpawnPos.rotation, null);
+		proj.GetComponent<ProjectileController>().SetTeam(Team.Enemy);
 	}
 }
