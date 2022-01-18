@@ -19,12 +19,6 @@ public class NotDashRuleSettings : RuleSetting
     [Range(3, 6)]
     private int maxAmount = 6;
 
-    [SerializeField]
-    private float extraTime = 1;
-
-    [SerializeField]
-    private float coolDownTime = 0.8f;
-
     private int targetAmountOfDashes;
 
     private float durationModFormula; // => targetAmountOfDashes / durationModDivider;
@@ -47,7 +41,7 @@ public class NotDashRuleSettings : RuleSetting
     public override Rule GetRule()
     {
         targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
-        durationModFormula = (float)(targetAmountOfDashes * coolDownTime) + extraTime;
+        durationModFormula = 0f;
         durationMod = durationModFormula;
         NotDashRule returnedRule = new NotDashRule(AllRules.NotDash,targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;

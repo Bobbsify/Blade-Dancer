@@ -14,12 +14,6 @@ public class NotShootRuleSettings : RuleSetting
     [Range(4, 6)]
     private int maxAmount = 6;
 
-    [SerializeField]
-    private float coolDownShoot = 0.5f;
-
-    [SerializeField]
-    private float extraTime = 1;
-
     private int amountNotToShoot = 1;
 
     private float durationModFormula; // => 1.0f;
@@ -42,7 +36,7 @@ public class NotShootRuleSettings : RuleSetting
     public override Rule GetRule()
     {
         amountNotToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
-        durationModFormula = (amountNotToShoot * coolDownShoot) + extraTime;
+        durationModFormula = 0f;
         durationMod = durationModFormula;
         NotShootRule returnedRule = new NotShootRule(AllRules.NotShoot, amountNotToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
