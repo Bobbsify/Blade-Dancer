@@ -6,22 +6,28 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DashRuleSettings", menuName = "ScriptableObjects/RuleSettings/DashRuleSettings", order = 4)]
 public class DashRuleSettings : RuleSetting
 {
-    [SerializeField]
+   /* [SerializeField]
     [Tooltip("Amount to divide from 'Amount of dashes' to define time")]
     [Range(1, 5)]
-    private int durationModDivider = 3;
+    private int durationModDivider = 3; */
 
     [SerializeField]
-    [Range(1, 4)]
+    [Range(1, 3)]
     private int minAmount = 1;
 
     [SerializeField]
-    [Range(5, 10)]
+    [Range(3, 6)]
     private int maxAmount = 6;
+
+    [SerializeField]
+    private float extraTime = 1;
+
+    [SerializeField]
+    private float coolDownTime = 0.8f;
 
     private int targetAmountOfDashes = 3;
 
-    private float durationModFormula => targetAmountOfDashes / durationModDivider;
+    private float durationModFormula;  // => targetAmountOfDashes / durationModDivider;
 
     public DashRuleSettings()
     {
@@ -41,6 +47,8 @@ public class DashRuleSettings : RuleSetting
     public override Rule GetRule()
     {
         targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
+        durationModFormula = (float)(targetAmountOfDashes * coolDownTime) + extraTime;
+        durationMod = durationModFormula;
         DashRule ruleReturned = new DashRule(AllRules.Dash, targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return ruleReturned;
     }
