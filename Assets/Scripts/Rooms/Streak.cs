@@ -31,7 +31,7 @@ public class Streak
         {
             return this.stages[++currentStage];
         }
-        catch (System.IndexOutOfRangeException)
+        catch (System.Exception)
         {
             return null;
         }
