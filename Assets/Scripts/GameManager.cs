@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
 
     public void ActionEventTrigger(Actions action)
     {
-        Debug.Log(action);
         if (currentStreak != null)
         {
             ruleManager.ApplyRule(action);
@@ -176,9 +175,10 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
-        Debug.Log("End Of Streak");
+        Destroy(currentArena);
         currentBreakroom++;
         firstRun = false;
+        currentStreak = null;
         Instantiate(defaultRoomsPrefabs[0], RoomPosition(), Quaternion.identity); // temporary
         //Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity); actual
     }
