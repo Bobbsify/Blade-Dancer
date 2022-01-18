@@ -7,17 +7,19 @@ using UnityEngine;
 public class MoveRuleSettings : RuleSetting
 {
     [SerializeField]
-    [Range(2,5)]
+    [Range(2,3)]
     private int minDuration = 2;
 
     [SerializeField]
-    [Range(5, 10)]
-    private int maxDuration = 10;
+    [Range(3, 5)]
+    private int maxDuration = 5;
 
     private int durationOfMove = 3;
 
-    private float durationModFormula => durationOfMove + MERCY;
-    private const float MERCY = 1.0f;
+    private float durationModFormula => durationOfMove + extraTime;
+
+    [SerializeField]
+    private float extraTime = 1.0f;
 
     public MoveRuleSettings()
     {

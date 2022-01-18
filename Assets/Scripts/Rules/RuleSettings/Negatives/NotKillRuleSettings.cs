@@ -9,7 +9,7 @@ public class NotKillRuleSettings : RuleSetting
     [SerializeField]
     [Tooltip("Amount that each enemy spawned adds to time")]
     [Range(0, 3)]
-    private int durationModMultiplier = 2;
+    private float durationModMultiplier = 1.5f;
 
     [SerializeField]
     [Range(1, 3)]
@@ -21,7 +21,7 @@ public class NotKillRuleSettings : RuleSetting
 
     int amountOfEnemies;
 
-    private float durationModFormula => amountOfEnemies * durationModMultiplier;
+    private float durationModFormula; // => (amountOfEnemies * durationModMultiplier) + extraTime;
 
 
     public NotKillRuleSettings()
@@ -42,6 +42,7 @@ public class NotKillRuleSettings : RuleSetting
     public override Rule GetRule()
     {
         amountOfEnemies = UnityEngine.Random.Range(minAmountOfEnemies, maxAmountOfEnemies);
+        durationModFormula = amountOfEnemies * durationModMultiplier;
         durationMod = durationModFormula;
         NotKillRule returnedRule = new NotKillRule(AllRules.NotKill, amountOfEnemies, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
