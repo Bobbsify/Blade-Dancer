@@ -28,6 +28,10 @@ public class NotRightRule : Rule
         }
         return true;
     }
+    public override RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, "", this.IsRuleComplete());
+    }
 
     public override bool IsRuleComplete()
     {

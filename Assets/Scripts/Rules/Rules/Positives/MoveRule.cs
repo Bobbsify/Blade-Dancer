@@ -31,6 +31,12 @@ public class MoveRule : Rule
         }
         return false;
     }
+    public override RulePacket ToPacket()
+    {
+        float time = durationOfMove - moveTimer;
+        float truncatedTime = (float)Math.Round(time * 100f) / 100f;
+        return new RulePacket(this.RuleName, ""+truncatedTime, this.IsRuleComplete());
+    }
 
     public override bool IsRuleComplete()
     {

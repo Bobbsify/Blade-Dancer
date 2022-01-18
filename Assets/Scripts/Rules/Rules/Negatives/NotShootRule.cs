@@ -29,6 +29,10 @@ public class NotShootRule : Rule
         }
         return true;
     }
+    public override RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, amountShot + "/" + amountNotToShoot, this.IsRuleComplete());
+    }
 
     public override bool IsRuleComplete()
     {

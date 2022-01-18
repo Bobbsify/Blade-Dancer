@@ -41,6 +41,10 @@ public class KillRule : Rule
         }
         return false;
     }
+    public override RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, amountKilled + "/" + amountToKill, this.IsRuleComplete());
+    }
 
     public override bool IsRuleComplete()
     {
