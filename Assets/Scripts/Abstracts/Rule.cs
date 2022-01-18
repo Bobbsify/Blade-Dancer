@@ -38,6 +38,8 @@ public abstract class Rule : IRule
         return false;
     }
 
+    public abstract RulePacket ToPacket();
+
     public virtual List<RuleObject> GetRuleRelatedObjects()
     {
         return this.ruleRelatedObjects;

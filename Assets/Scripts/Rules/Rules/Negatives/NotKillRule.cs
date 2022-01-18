@@ -29,6 +29,10 @@ public class NotKillRule : Rule
         }
         return enemiesToKill;
     }
+    public override RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, amountKilled + "/" + amountNotToKill, this.IsRuleComplete());
+    }
 
     public override bool CheckAction(Actions executedAction)
     {

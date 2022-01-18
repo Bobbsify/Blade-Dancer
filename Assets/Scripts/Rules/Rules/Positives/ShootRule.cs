@@ -30,6 +30,11 @@ public class ShootRule : Rule
         return false;
     }
 
+    public override RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, ""+Mathf.Max(amountToShoot - amountShot, 0), this.IsRuleComplete());
+    }
+
     public override bool IsRuleComplete()
     {
         return amountShot >= amountToShoot;

@@ -29,6 +29,10 @@ public class DashRule : Rule
         }
         return false;
     }
+    public override RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, dashAmount + "/" + targetAmountOfDashes, this.IsRuleComplete());
+    }
 
     public override bool IsRuleComplete()
     {

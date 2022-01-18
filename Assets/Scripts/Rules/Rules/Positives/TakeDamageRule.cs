@@ -29,6 +29,11 @@ public class TakeDamageRule : Rule
         return tookDamage;
     }
 
+    public override RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, "", this.tookDamage);
+    }
+
     public override bool IsRuleComplete()
     {
         return tookDamage;

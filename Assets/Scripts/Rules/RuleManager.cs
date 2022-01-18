@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,10 +10,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
     private GameManager gameManagerObject;
 
     [SerializeField]
-    [Tooltip("!! TEMPORARY TREAD AS TEXT FIELD OBJECT INSIDE GAMEOBJECT !! (May be permanent)")]
-    private GameObject ruleInformationContainer;
-
-    private Text ruleContainer;
+    private UIRulesController uiRulesController;
     
     private List<RuleSetting> rules;
 
@@ -23,13 +21,12 @@ public class RuleManager : MonoBehaviour, IGameEntity
     private void Awake()
     {
         factory = new RuleFactory(rules);
-        ruleContainer = ruleInformationContainer.GetComponent<Text>();
     }
 
     public void SetNewRuleset(List<Rule> newRuleset)
     {
         rulesToApply = newRuleset;
-        UpdateRulesOnScreen();
+        uiRulesController.SetupRules(GetUpdates());
     }
 
     public void ApplyRule(Actions actionDone)
@@ -44,12 +41,18 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void UpdateRulesOnScreen()
     {
-        string rules = "Rules: \n";
+        uiRulesController.GetUpdate(GetUpdates());
+    }
+
+    private List<RulePacket> GetUpdates() 
+    {
+        List<RulePacket> updates = new List<RulePacket>();
         foreach (Rule r in rulesToApply)
         {
-            rules += (r.IsReverse() ? " X " : " V ") + r.ToString() + "\n";
+            RulePacket update = r.ToPacket();
+            updates.Add(update);
         }
-        ruleContainer.text = rules;
+        return updates;
     }
 
     private void CheckIfAllCompleted()
@@ -73,6 +76,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void RulesCompleted()
     {
+        uiRulesController.StageCompleted();
         gameManagerObject.EndOfStage();
     }
 
