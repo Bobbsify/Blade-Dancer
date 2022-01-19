@@ -17,13 +17,13 @@ public class VolumeManager : MonoBehaviour
     private void Awake() 
     {
         TryGetComponent(out volume);
-        mixer.audioMixer.GetFloat("Volume", out currentVolume);
+        mixer.audioMixer.GetFloat(mixer.name+"Volume", out currentVolume);
         volume.value = currentVolume;
     }
 
     public void ChangeVolume(float value) 
     {
         currentVolume = value;
-        mixer.audioMixer.SetFloat("Volume", currentVolume);
+        mixer.audioMixer.SetFloat(mixer.name + "Volume", currentVolume);
     }
 }
