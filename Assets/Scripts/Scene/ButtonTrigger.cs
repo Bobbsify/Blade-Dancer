@@ -18,14 +18,10 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
 
     private GameManager gameManager;
 
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
     public void ReceiveInputInteract()
     {
-            Vector3 playerDistance = player.transform.position - this.transform.position;
+            player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 playerDistance = player.transform.position - transform.position;
             if (playerDistance.magnitude <= distanceToTrigger) 
             {
                 if (startStreak) 

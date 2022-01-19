@@ -28,6 +28,9 @@ public class GameManager : MonoBehaviour
     [Header("Room Generation")]
 
     [SerializeField]
+    private GameObject stagesRoot;
+
+    [SerializeField]
     private GameObject startingRoom;
 
     [SerializeField]
@@ -94,11 +97,7 @@ public class GameManager : MonoBehaviour
 	private void Start()
     {
         foreach (GameObject root in this.GameEntitiesRoots) {
-            IGameEntity[] entitiesToCall = root.GetComponentsInChildren<IGameEntity>();
-            foreach (IGameEntity entity in entitiesToCall)
-            {
-                entity.Init(this);
-            }
+            InitEntities(root);
         }
         ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
     }
@@ -146,11 +145,19 @@ public class GameManager : MonoBehaviour
     {
         ruleManager.SetNewRuleset(currentStage.GetRules());
         timer.SetTimer(currentStage.GetRulesTime());
-        currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity);
+        currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
         RoomController room = currentArena.GetComponent<RoomController>();
         foreach (RuleObject objToSpawn in currentStage.GetRuleRelatedObjectsToSpawn()) 
         {
             Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType()), Quaternion.identity, currentArena.transform);
+        }
+    }
+
+    private void InitEntities(GameObject obj) 
+    {
+        foreach (IGameEntity entity in obj.GetComponentsInChildren<IGameEntity>())
+        {
+            entity.Init(this);
         }
     }
 
@@ -175,12 +182,14 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
+        GameObject breakoutRoom = Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity, stagesRoot.transform);
+        InitEntities(breakoutRoom);
+        currentArena = breakoutRoom;
+
         Destroy(currentArena);
         currentBreakroom++;
         firstRun = false;
         currentStreak = null;
-        Instantiate(defaultRoomsPrefabs[0], RoomPosition(), Quaternion.identity); // temporary
-        //Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity); actual
     }
 
     #endregion
