@@ -21,6 +21,10 @@ public class FleeEnemyAttack : FSMState, IEnemy
 	[SerializeField]
 	private Transform objSpawnPos;
 
+	[SerializeField]
+	[Range(0f, 30f)]
+	private float ChaseDistance = 5f;
+
 	private GameObject target;
 
 	private string pg = "Player";
@@ -35,13 +39,22 @@ public class FleeEnemyAttack : FSMState, IEnemy
 	private void Update()
 	{
 		target = GameObject.FindGameObjectWithTag(pg);
+		var pos = this.transform.position;
+		var targetPos = this.target.transform.position;
+		var dir = Vector3.Distance(pos, targetPos);
 
 		this.reactionTime -= Time.deltaTime;
 		if (this.reactionTime <= 0f)
 		{
 			this.Attack();
-			this.fsm.ChangeState(this.stateChase);
-			return;
+
+			if(dir < ChaseDistance)
+            {
+				this.fsm.ChangeState(this.stateChase);
+				return;
+			}
+
+			reAttack();
 		}
 	}
 
@@ -49,6 +62,11 @@ public class FleeEnemyAttack : FSMState, IEnemy
 	{
 		base.OnStateEnter();
 
+		this.reactionTime = Random.Range(this.minReactionTime, this.maxReactionTime);
+	}
+
+	public void reAttack()
+    {
 		this.reactionTime = Random.Range(this.minReactionTime, this.maxReactionTime);
 	}
 

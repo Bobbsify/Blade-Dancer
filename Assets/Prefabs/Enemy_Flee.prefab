@@ -244,6 +244,7 @@ MonoBehaviour:
   projectile: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
     type: 3}
   objSpawnPos: {fileID: 7251394528346421220}
+  ChaseDistance: 10
 --- !u!114 &7251394527796283675
 MonoBehaviour:
   m_ObjectHideFlags: 0
