@@ -133,6 +133,7 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        timer.StopTimer();
         Stage nextStage = currentStreak.NextStage();
         if (nextStage != null)
         {
@@ -142,7 +143,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            timer.StopTimer();
+            timer.ResetTimer();
             StreakEnded();
         }
     }
@@ -157,6 +158,7 @@ public class GameManager : MonoBehaviour
         {
             Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType()), Quaternion.identity, currentArena.transform);
         }
+        InitEntities(currentArena);
     }
 
     private void InitEntities(GameObject obj) 
@@ -188,14 +190,16 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
-        GameObject breakoutRoom = Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity, stagesRoot.transform);
-        InitEntities(breakoutRoom);
-        currentArena = breakoutRoom;
-
+        //End Streak
         Destroy(currentArena);
-        currentBreakroom++;
         firstRun = false;
         currentStreak = null;
+
+        //Create Break room
+        GameObject breakoutRoom = Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity, stagesRoot.transform);
+        InitEntities(breakoutRoom);
+        startingRoom = breakoutRoom;
+        currentBreakroom++;
     }
 
     #endregion
