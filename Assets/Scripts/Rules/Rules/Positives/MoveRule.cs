@@ -25,7 +25,7 @@ public class MoveRule : Rule
         {
             if (action == executedAction)
             {
-                this.moveTimer += Time.deltaTime;
+                this.moveTimer += Time.fixedDeltaTime;
                 return moveTimer >= durationOfMove;
             }
         }
