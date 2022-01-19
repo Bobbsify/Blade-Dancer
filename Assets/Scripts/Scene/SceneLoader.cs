@@ -25,7 +25,7 @@ public class SceneLoader : MonoBehaviour
     
 }
 
-enum SceneMoveType
+public enum SceneMoveType
 {
     Forward,
     Backwards,
