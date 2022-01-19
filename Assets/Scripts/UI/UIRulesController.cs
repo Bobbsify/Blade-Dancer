@@ -11,8 +11,6 @@ public class UIRulesController : MonoBehaviour
     [SerializeField]
     private List<RuleContainerManager> ruleContainerManagers = new List<RuleContainerManager>();
 
-    private bool rulesAreSetup = false;
-
     private void OnValidate()
     {
         if (ruleContainerManagers.Count == 0) 
@@ -79,18 +77,21 @@ public class UIRulesController : MonoBehaviour
 
 public class RulePacket
 {
-    private bool completed;
     private AllRules ruleName;
     private string score;
+    private bool isReverse;
+    private bool completed;
 
-    public RulePacket(AllRules rule, string score, bool completed)
+    public RulePacket(AllRules rule, string score, bool completed,bool reverse)
     {
         this.ruleName = rule;
         this.score = score;
+        this.isReverse = reverse;
         this.completed = completed;
     }
 
-    public bool GetCompleted() { return this.completed; }
     public AllRules GetName() { return this.ruleName; }
     public string GetScore() { return this.score; }
+    public bool GetCompleted() { return this.completed; }
+    public bool IsReverse() { return this.isReverse; }
 }

@@ -53,6 +53,14 @@ public class RuleContainerManager : MonoBehaviour
     {
         setup = true;
         this.currentRule = packet.GetName();
+        if (packet.IsReverse())
+        {
+            ruleName.color = Color.black;
+        }
+        else
+        {
+            ruleName.color = Color.white;
+        }
         EnableComponents();
         UpdateInformation(packet);
     }
@@ -89,7 +97,7 @@ public class RuleContainerManager : MonoBehaviour
     private void UpdateInformation(RulePacket packet)
     {
         ruleName.text = packet.GetName().ToString();
-        ruleScore.text = packet.GetCompleted() ? "" : packet.GetScore(); //If complete hide score
-        completed.gameObject.SetActive(packet.GetCompleted());
+        ruleScore.text = packet.GetScore(); //If complete hide score
+        completed.gameObject.SetActive(!packet.IsReverse() && packet.GetCompleted());
     }
 }
