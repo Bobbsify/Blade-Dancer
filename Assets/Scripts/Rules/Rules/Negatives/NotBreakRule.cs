@@ -28,10 +28,6 @@ public class NotBreakRule : Rule
         }
         return notBroken;
     }
-    public override RulePacket ToPacket()
-    {
-        return new RulePacket(this.RuleName, "", this.IsRuleComplete());
-    }
 
     public override bool IsRuleComplete()
     {

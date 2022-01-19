@@ -31,10 +31,6 @@ public class DanceRule : Rule
         }
         return false;
     }
-    public override RulePacket ToPacket()
-    {
-        return new RulePacket(this.RuleName, "", this.IsRuleComplete());
-    }
 
     public override bool IsRuleComplete()
     {

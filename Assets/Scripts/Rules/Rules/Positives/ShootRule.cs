@@ -32,7 +32,7 @@ public class ShootRule : Rule
 
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, ""+Mathf.Max(amountToShoot - amountShot, 0), this.IsRuleComplete());
+        return new RulePacket(this.RuleName, ""+Mathf.Max(amountToShoot - amountShot, 0), this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()
