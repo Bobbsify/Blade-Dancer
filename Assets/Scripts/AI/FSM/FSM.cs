@@ -72,8 +72,6 @@ public class FSM : MonoBehaviour, IGameEntity
 				SendActionToGameManager();
 				canBeKilled = false;
 			}
-			
-			Destroy(this.gameObject);
 		}
 	}
 
