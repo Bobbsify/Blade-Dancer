@@ -43,7 +43,7 @@ public class KillRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountKilled + "/" + amountToKill, this.IsRuleComplete());
+        return new RulePacket(this.RuleName, amountKilled + "/" + amountToKill, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()

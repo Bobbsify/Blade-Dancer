@@ -38,7 +38,10 @@ public abstract class Rule : IRule
         return false;
     }
 
-    public abstract RulePacket ToPacket();
+    public virtual RulePacket ToPacket()
+    {
+        return new RulePacket(this.RuleName, "", this.IsRuleComplete(),IsReverse());
+    }
 
     public virtual List<RuleObject> GetRuleRelatedObjects()
     {
@@ -53,6 +56,11 @@ public abstract class Rule : IRule
     public virtual AllRules GetRuleName()
     {
         return this.RuleName;
+    }
+
+    public virtual AllRules GetPureRuleName()
+    {
+        return (AllRules)((int)this.RuleName - (Enum.GetValues(typeof(AllRules)).Length / 2));
     }
 
     public virtual List<AllRules> GetMutallyExclusives()

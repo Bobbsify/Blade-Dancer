@@ -34,11 +34,6 @@ public class InputSystemInteract : MonoBehaviour
         }
     }
 
-    private void Start()
-    {
-        this.receivers = this.searchRoot.GetComponentsInChildren<IInputReceiverInteract>(true);
-    }
-
     private void Update()
     {
         if (this.inputType == InputType.Update)
@@ -55,9 +50,8 @@ public class InputSystemInteract : MonoBehaviour
     {
         if (Input.GetButtonUp(interactAxisName))
         {
-            for (int i = 0; i < this.receivers.Length; i++)
+            foreach(IInputReceiverInteract receiver in this.searchRoot.GetComponentsInChildren<IInputReceiverInteract>(true))
             {
-                IInputReceiverInteract receiver = this.receivers[i];
                 receiver.ReceiveInputInteract();
             }
         }

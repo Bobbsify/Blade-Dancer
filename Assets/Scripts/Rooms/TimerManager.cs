@@ -21,9 +21,12 @@ public class TimerManager : MonoBehaviour, IGameEntity
     void Update()
     {
         if (doTimer) {         
-            currentTime -= Time.deltaTime/2;
+            currentTime -= Time.deltaTime;
             float truncatedTime = (float)Math.Round((currentTime) * 100f) / 100f;
-            timerText.text = truncatedTime.ToString().Replace(',', ':');
+            string textToAdd = truncatedTime.ToString().Replace(',', ':');
+            if (textToAdd.Length == 3) textToAdd += "0";
+            if (textToAdd.Length == 1) textToAdd += ":00";
+            timerText.text = textToAdd;
             if (currentTime <= 0) 
             {
                 doTimer = false;
@@ -32,11 +35,15 @@ public class TimerManager : MonoBehaviour, IGameEntity
         }
     }
 
-    public void SetTimer(float amount) 
+    public void SetTimer(float amount)
     {
         maxTime = amount;
         currentTime = amount;
-        doTimer = true;
+        float truncatedTime = (float)Math.Round((currentTime) * 100f) / 100f;
+        string textToAdd = truncatedTime.ToString().Replace(',', ':');
+        if (textToAdd.Length == 3) textToAdd += "0";
+        if (textToAdd.Length == 1) textToAdd += ":00";
+        timerText.text = textToAdd;
     }
 
     public void StopTimer()
@@ -47,6 +54,13 @@ public class TimerManager : MonoBehaviour, IGameEntity
     public void StartTimer()
     {
         doTimer = true;
+    }
+
+    public void ResetTimer()
+    {
+        doTimer = false;
+        currentTime = 0;
+        timerText.text = "00:00";
     }
 
     public void Init(GameManager gameManager)

@@ -34,11 +34,6 @@ public class TrapRule : Rule
         return trapped;
     }
 
-    public override RulePacket ToPacket()
-    {
-        return new RulePacket(this.RuleName, "",this.trapped);
-    }
-
     public override string ToString()
     {
         return "Trap";

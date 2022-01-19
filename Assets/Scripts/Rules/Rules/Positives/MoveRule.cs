@@ -25,7 +25,7 @@ public class MoveRule : Rule
         {
             if (action == executedAction)
             {
-                this.moveTimer += Time.deltaTime;
+                this.moveTimer += Time.fixedDeltaTime;
                 return moveTimer >= durationOfMove;
             }
         }
@@ -35,7 +35,7 @@ public class MoveRule : Rule
     {
         float time = durationOfMove - moveTimer;
         float truncatedTime = (float)Math.Round(time * 100f) / 100f;
-        return new RulePacket(this.RuleName, ""+truncatedTime, this.IsRuleComplete());
+        return new RulePacket(this.RuleName, ""+Mathf.Max(truncatedTime,0), this.IsRuleComplete(), IsReverse());
     }
 
     public override bool IsRuleComplete()

@@ -43,7 +43,7 @@ public class GatherRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountGathered + "/" + amountToGather, this.IsRuleComplete());
+        return new RulePacket(this.RuleName, amountGathered + "/" + amountToGather, this.IsRuleComplete(), IsReverse());
     }
 
     public override bool IsRuleComplete()
