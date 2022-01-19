@@ -5,9 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public void GoToNextScene() 
+    [SerializeField]
+    private SceneMoveType sceneMoveType = SceneMoveType.Forward;
+    public void Execute() 
     {
-        int nextScene = SceneManager.GetActiveScene().buildIndex+1;
-        SceneManager.LoadScene(nextScene);
+        switch (sceneMoveType) 
+        {
+            case SceneMoveType.Quit:
+                Application.Quit();
+                break;
+            default:
+                int mod = sceneMoveType == SceneMoveType.Forward ? 1 : -1;
+                int nextScene = SceneManager.GetActiveScene().buildIndex + mod;
+                SceneManager.LoadScene(nextScene);
+                break;
+        }
     }
+
+    
+}
+
+enum SceneMoveType
+{
+    Forward,
+    Backwards,
+    Quit
 }
