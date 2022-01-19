@@ -49,6 +49,12 @@ public class TimerManager : MonoBehaviour, IGameEntity
         doTimer = true;
     }
 
+    public void ResetTimer()
+    {
+        doTimer = false;
+        currentTime = 0;
+    }
+
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
