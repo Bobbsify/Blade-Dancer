@@ -1682,6 +1682,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6755790587649925980}
   - component: {fileID: 6755790587649925981}
+  - component: {fileID: 6926055506280768220}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1754,13 +1755,37 @@ MonoBehaviour:
   m_FillRect: {fileID: 6755790587695662297}
   m_HandleRect: {fileID: 6755790587906293719}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6926055506280768220}
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6926055506280768220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755790587649925983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47a4fc501dd45c4da527200f0eb839a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: -4361033704221049852, guid: f72785bbfeca96b4cb11a758d9d0e02b, type: 2}
 --- !u!1 &6755790587689621079
 GameObject:
   m_ObjectHideFlags: 0
@@ -1919,6 +1944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6755790587811002930}
   - component: {fileID: 6755790587811002931}
+  - component: {fileID: 1549522517299970269}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -1991,13 +2017,37 @@ MonoBehaviour:
   m_FillRect: {fileID: 6755790587857526199}
   m_HandleRect: {fileID: 6755790587548346041}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1549522517299970269}
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1549522517299970269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755790587811002929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47a4fc501dd45c4da527200f0eb839a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: -1242301498137307266, guid: f72785bbfeca96b4cb11a758d9d0e02b, type: 2}
 --- !u!1 &6755790587857526198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2883,6 +2933,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330667161336602733}
   - component: {fileID: 9146549814999915371}
+  - component: {fileID: 8967076657212399998}
   m_Layer: 5
   m_Name: Slider
   m_TagString: Untagged
@@ -2955,13 +3006,37 @@ MonoBehaviour:
   m_FillRect: {fileID: 3126580053262922562}
   m_HandleRect: {fileID: 1613267425631211243}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: -80
+  m_MaxValue: 0
   m_WholeNumbers: 0
-  m_Value: 0.5
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8967076657212399998}
+        m_MethodName: ChangeVolume
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8967076657212399998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8129440452442679542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47a4fc501dd45c4da527200f0eb839a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixer: {fileID: 24300002, guid: f72785bbfeca96b4cb11a758d9d0e02b, type: 2}
 --- !u!1 &8170532661179777272
 GameObject:
   m_ObjectHideFlags: 0
