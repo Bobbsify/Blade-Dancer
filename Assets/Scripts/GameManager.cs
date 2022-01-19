@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Transform projectilesRoot;
 
-	[SerializeField]
+    [SerializeField]
 	private Transform spawnPoint;
 
 	[SerializeField]
@@ -125,6 +126,11 @@ public class GameManager : MonoBehaviour
         GoToNextStage(currentStage);
     }
 
+    public void StartStage()
+    {
+        timer.StartTimer();
+    }
+
     public void EndOfStage()
     {
         Stage nextStage = currentStreak.NextStage();
@@ -175,7 +181,7 @@ public class GameManager : MonoBehaviour
             currentStreak = streakFactory.GetTutorialStreak();
         }
         else { 
-            int difficulty = fixedDifficulty == 0 ? Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
+            int difficulty = fixedDifficulty == 0 ? UnityEngine.Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
             currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
         }
     }
