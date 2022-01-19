@@ -201,7 +201,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 22c61542b1f678e4bb270f95548f6d09, type: 3}
-    m_FontSize: 100
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -5590,7 +5590,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 22c61542b1f678e4bb270f95548f6d09, type: 3}
-    m_FontSize: 100
+    m_FontSize: 80
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -6318,12 +6318,12 @@ PrefabInstance:
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Value
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_MaxValue
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
@@ -6524,12 +6524,12 @@ PrefabInstance:
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Value
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_MaxValue
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
@@ -6896,12 +6896,12 @@ PrefabInstance:
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Value
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_MaxValue
-      value: 20
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
         type: 3}
