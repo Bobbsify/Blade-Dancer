@@ -225,7 +225,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Sound Effects
+  m_Text: Effetti Sonori
 --- !u!1 &1529657253871606228
 GameObject:
   m_ObjectHideFlags: 0
@@ -303,7 +303,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Music
+  m_Text: Musica
 --- !u!1 &1845659103075279425
 GameObject:
   m_ObjectHideFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Controls
+  m_Text: Controlli
 --- !u!1 &3050316701728975442
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,18 +789,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 8
---- !u!114 &2376227158903773668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5619969052864105081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f6ea4d8f6c91c49950c07154e7a29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &5069293344997659926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1019,6 +1007,19 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 9.999941}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2376227158903773668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5619969052864105081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f6ea4d8f6c91c49950c07154e7a29b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneMoveType: 1
 --- !u!1 &6020665747004141057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1031,7 +1032,7 @@ GameObject:
   - component: {fileID: 6020665747004141062}
   - component: {fileID: 6020665747004141063}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1096,9 +1097,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Controls
-
-'
+  m_Text: Controlli
 --- !u!1 &6020665747011987514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,7 +1453,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Master Volume
+  m_Text: Volume Generale
 --- !u!1 &6755790587038928220
 GameObject:
   m_ObjectHideFlags: 0
@@ -2298,7 +2297,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Indietro
 --- !u!1 &7319351987565639692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2873,7 +2872,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pause
+  m_Text: Pausa
 --- !u!1 &8129440452442679542
 GameObject:
   m_ObjectHideFlags: 0
@@ -3172,7 +3171,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Settings
+  m_Text: Impostazioni
 --- !u!1 &8742919380394427777
 GameObject:
   m_ObjectHideFlags: 0
@@ -3382,7 +3381,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Indietro
 --- !u!1 &8921774258857774774
 GameObject:
   m_ObjectHideFlags: 0
@@ -3561,7 +3560,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Settings
+      value: Impostazioni
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -3751,7 +3750,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Continue
+      value: Continua
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -3911,7 +3910,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Quit
+      value: Torna al menu
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -3941,7 +3940,7 @@ PrefabInstance:
     - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: GoToNextScene
+      value: Execute
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
