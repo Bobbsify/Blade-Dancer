@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3573820155056416970}
   - component: {fileID: 3573820155056416968}
   - component: {fileID: 3573820155056416967}
-  - component: {fileID: 6177076657276605138}
   m_Layer: 5
   m_Name: MainButton
   m_TagString: Untagged
@@ -111,18 +110,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6177076657276605138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3573820155056416966}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f6ea4d8f6c91c49950c07154e7a29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &3573820155205400009
 GameObject:
   m_ObjectHideFlags: 0
@@ -189,7 +176,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 22c61542b1f678e4bb270f95548f6d09, type: 3}
-    m_FontSize: 40
+    m_FontSize: 30
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
