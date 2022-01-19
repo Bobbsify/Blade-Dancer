@@ -16,6 +16,7 @@ public class VolumeManager : MonoBehaviour
 
     private void Awake() 
     {
+        TryGetComponent(out volume);
         mixer.audioMixer.GetFloat(mixer.name, out currentVolume);
         volume.value = currentVolume;
     }
