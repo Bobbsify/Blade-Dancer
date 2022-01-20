@@ -20,4 +20,4 @@ MonoBehaviour:
     ruleObjPrefab: {fileID: 4072430416109815961, guid: 1fbeb67b7cac740558906c3b735ebb44,
       type: 3}
     pos: 1
-  mutuallyExclusives: 04000000120000000f0000000e000000
+  mutuallyExclusives: 04000000120000000f000000
