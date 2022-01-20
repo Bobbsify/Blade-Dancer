@@ -26,6 +26,8 @@ public class GameManager : MonoBehaviour
 
 	public GameObject PlayerPawn { get; private set; }
 
+    private PlayerController playerCtrl;
+
     [Header("Room Generation")]
 
     [SerializeField]
@@ -115,6 +117,11 @@ public class GameManager : MonoBehaviour
             ruleManager.ApplyRule(action);
         }
     }
+    public void KillPlayer()
+    {
+        playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
+        GenerateNewStreak();
+    }
 
     #region StreakManagement
 
@@ -139,13 +146,24 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentArena);
             GoToNextStage(nextStage);
-            PlayerPawn.GetComponent<PlayerController>().DisableAllAbilities();
+            playerCtrl.DisableAllAbilities();
         }
         else
         {
             timer.ResetTimer();
             StreakEnded();
         }
+    }
+
+    public void doReset()
+    {
+        timer.ResetTimer();
+        bool fr = firstRun; //If first run repeat first run instead of randomizing (In order to complete tutorial)
+        StreakEnded();
+        firstRun = fr;
+        currentBreakroom--; //Don't proceed to next brakeroom
+        playerCtrl.EnableAllAbilities();
+        ruleManager.SetNewRuleset(new List<Rule>()); //Empty rules
     }
 
     private void GoToNextStage(Stage currentStage)
@@ -159,14 +177,6 @@ public class GameManager : MonoBehaviour
             Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType()), Quaternion.identity, currentArena.transform);
         }
         InitEntities(currentArena);
-    }
-
-    private void InitEntities(GameObject obj) 
-    {
-        foreach (IGameEntity entity in obj.GetComponentsInChildren<IGameEntity>())
-        {
-            entity.Init(this);
-        }
     }
 
     private Vector3 RoomPosition()
@@ -204,10 +214,12 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    public void KillPlayer()
+    private void InitEntities(GameObject obj)
     {
-        PlayerPawn.GetComponent<PlayerController>().TakeDamage(PlayerPawn.GetComponent<PlayerController>().GetMaxHealth());
-        GenerateNewStreak();
+        foreach (IGameEntity entity in obj.GetComponentsInChildren<IGameEntity>())
+        {
+            entity.Init(this);
+        }
     }
 
 
@@ -215,6 +227,7 @@ public class GameManager : MonoBehaviour
 	{
 		this.PlayerPawn = Instantiate(this.playerPrefab, this.spawnPoint.position, Quaternion.identity);
 		this.PlayerPawn.transform.SetParent(this.inputReceiversTransform);
+        playerCtrl = PlayerPawn.GetComponent<PlayerController>();
 	}
     
 }
