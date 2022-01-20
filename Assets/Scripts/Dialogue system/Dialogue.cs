@@ -2,25 +2,47 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
-    private string Line;
-    private Sprite image;
-    private UnityEvent dialogueEvent;
+    [SerializeField]
+    private string characterName = "Default";
+
+    [SerializeField]
+    private string characterLine = "Ciaone Proprio";
+
+    [SerializeField]
+    private Image characterPortrait;
+
+    [SerializeField]
+    private Dialogue nextDialogue;
+
+    public Dialogue(string name, string line, Image portrait, Dialogue nextDialogue) 
+    {
+        this.characterName = name;
+        this.characterLine = line;
+        this.characterPortrait = portrait;
+        this.nextDialogue = nextDialogue;
+    }
+
+    public string GetName()
+    {
+        return this.characterName;
+    }
 
     public string GetLine()
     {
-        return Line;
+        return this.characterLine;
     }
 
-    public Sprite GetImage()
+    public Image GetPicture()
     {
-        return image;
+        return this.characterPortrait;
     }
 
-    public UnityEvent GetEvent()
+    public Dialogue GetNextDialogue()
     {
-        return dialogueEvent;
+        return this.nextDialogue;
     }
 }
