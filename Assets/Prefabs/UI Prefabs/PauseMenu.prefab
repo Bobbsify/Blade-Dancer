@@ -115,7 +115,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6020665747782658860
 Transform:
   m_ObjectHideFlags: 0
@@ -224,7 +224,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Controlli
+  m_Text: Comandi
 --- !u!1 &6020665747011987514
 GameObject:
   m_ObjectHideFlags: 0
@@ -999,7 +999,7 @@ PrefabInstance:
     - target: {fileID: 3548245853459462057, guid: 8968ec9c85dc8f64ba47da07fa5b1d0e,
         type: 3}
       propertyPath: m_Text
-      value: Controlli
+      value: Comandi
       objectReference: {fileID: 0}
     - target: {fileID: 3548245853545622180, guid: 8968ec9c85dc8f64ba47da07fa5b1d0e,
         type: 3}
