@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
 
 public class Dialogue : MonoBehaviour
 {
@@ -13,12 +12,12 @@ public class Dialogue : MonoBehaviour
     private string characterLine = "Ciaone Proprio";
 
     [SerializeField]
-    private Image characterPortrait;
+    private Sprite characterPortrait;
 
     [SerializeField]
     private Dialogue nextDialogue;
 
-    public Dialogue(string name, string line, Image portrait, Dialogue nextDialogue) 
+    public Dialogue(string name, string line, Sprite portrait, Dialogue nextDialogue) 
     {
         this.characterName = name;
         this.characterLine = line;
@@ -36,7 +35,7 @@ public class Dialogue : MonoBehaviour
         return this.characterLine;
     }
 
-    public Image GetPicture()
+    public Sprite GetPicture()
     {
         return this.characterPortrait;
     }
