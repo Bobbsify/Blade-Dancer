@@ -25,6 +25,10 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     public void SetNewRuleset(List<Rule> newRuleset)
     {
+        if (newRuleset.Count == 0) 
+        {
+            uiRulesController.ResetContainers();
+        }
         rulesToApply = newRuleset;
         uiRulesController.SetupRules(GetUpdates());
     }

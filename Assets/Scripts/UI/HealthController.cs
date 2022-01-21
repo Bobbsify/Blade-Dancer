@@ -33,7 +33,7 @@ public class HealthController : MonoBehaviour
         {
             health[i].SetActive(false);
         }
-        for (int i = 0; i > playerCurrentHealth; i++)
+        for (int i = 0; i < playerCurrentHealth; i++)
         {
             health[i].SetActive(true);
         }

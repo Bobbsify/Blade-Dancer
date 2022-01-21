@@ -49,6 +49,11 @@ public class RuleContainerManager : MonoBehaviour
         DisableComponents();
     }
 
+    public void ResetContainer() 
+    {
+        DisableComponents();
+    }
+
     public void SetupForRule(RulePacket packet)
     {
         setup = true;

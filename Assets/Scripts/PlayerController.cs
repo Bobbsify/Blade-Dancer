@@ -5,12 +5,13 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
-public class PlayerController : MonoBehaviour
+public class PlayerController : MonoBehaviour, IGameEntity
 {
     [Header("Health")]
     [SerializeField]
     private int maxHealth;
 
+    [SerializeField]
     private int currentHealth;
 
     private Animator animPlayer;
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour
     private PhysicsMovement movement;
 
     private GameObject[] health;
+
+    private GameManager gameManager;
 
     private void OnValidate()
     {
@@ -70,7 +73,8 @@ public class PlayerController : MonoBehaviour
 
     public void Reset()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        gameManager.doReset();
+        this.currentHealth = maxHealth;
     }
 
     public void ToggleMovement(bool state = true) 
@@ -144,5 +148,10 @@ public class PlayerController : MonoBehaviour
     {
         Animate("death");
         DisableAllAbilities();
+    }
+
+    public void Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 }

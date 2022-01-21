@@ -24,8 +24,9 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
             Vector3 playerDistance = player.transform.position - transform.position;
             if (playerDistance.magnitude <= distanceToTrigger) 
             {
-                if (startStreak) 
+                if (startStreak)
                 {
+                    player.GetComponent<PlayerController>().DisableAllAbilities();
                     gameManager.StartStreak();
                 }
                 otherButtonEvents.Invoke();

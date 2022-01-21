@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +17,14 @@ public class UIRulesController : MonoBehaviour
         if (ruleContainerManagers.Count == 0) 
         { 
             ruleContainerManagers.AddRange(GetComponentsInChildren<RuleContainerManager>());
+        }
+    }
+
+    public void ResetContainers()
+    {
+        foreach (RuleContainerManager rcm in ruleContainerManagers) 
+        {
+            rcm.ResetContainer();
         }
     }
 
