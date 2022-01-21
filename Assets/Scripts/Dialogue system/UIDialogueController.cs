@@ -2,12 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIDialogueController : MonoBehaviour
 {
+    [SerializeField]
+    private Image ImageToShow;
+
+    [SerializeField]
+    private Text NameToShow;
+
+    [SerializeField]
+    private Text DialogueText;
+
     public void SetDialogue(Dialogue dialogue)
     {
-        Debug.Log(dialogue.GetName() + " dice: \"" + dialogue.GetLine() + "\" - Utilizzando " + dialogue.GetPicture());
+        ImageToShow.sprite = dialogue.GetPicture();
+
+        NameToShow.text = dialogue.GetName();
+
+        DialogueText.text = dialogue.GetLine();
     }
 
     internal void EndDialogue()
