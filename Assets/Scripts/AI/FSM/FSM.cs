@@ -63,12 +63,23 @@ public class FSM : MonoBehaviour, IGameEntity
 		this.debug_CurrentState = this.currentState != null ? this.currentState.ToString() : "NULL";
 	}
 
-    private void OnTriggerEnter(Collider other)
-    {
+	public void DisalbeStates()
+	{
+		this.currentState.OnStateExit();
+	}
+
+	public void EnableStates()
+	{
+		this.currentState = initialState;
+		this.currentState.OnStateEnter();
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
 		if (other.GetComponentInChildren<ProjectileController>() != null)
 		{
-			if(this.canBeKilled == true)
-            {
+			if (this.canBeKilled == true)
+			{
 				SendActionToGameManager();
 				canBeKilled = false;
 			}
