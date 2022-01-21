@@ -19,6 +19,8 @@ public class EnemyController : MonoBehaviour
     {
         TryGetComponent(out stateMachine);
         TryGetComponent(out animator);
+
+        currentHealth = maxHealth;
     }
 
     public void TakeDamage(int amount) 
