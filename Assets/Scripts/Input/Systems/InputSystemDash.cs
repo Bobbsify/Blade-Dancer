@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(InputManager))]
-public class InputSystemDash : MonoBehaviour
+public class InputSystemDash : MonoBehaviour, IInputEntity
 {
     private enum InputType
     {
@@ -59,5 +59,10 @@ public class InputSystemDash : MonoBehaviour
                 receiver.ReceiveInputDash();
             }
         }
+    }
+
+    public void ToggleInput(bool state)
+    {
+        this.enabled = state;
     }
 }

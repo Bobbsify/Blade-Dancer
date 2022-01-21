@@ -38,9 +38,9 @@ public class ProjectileController : MonoBehaviour
         switch (projectileTeam) 
         {
                 case Team.Player:
-                if (other.TryGetComponent(out IEnemy enemy))
+                if (other.TryGetComponent(out EnemyController enemy))
                 {
-                    Destroy(other.gameObject);
+                    enemy.TakeDamage(projectileDamage);
                 }
                 if (other.tag != "Player")
                 {

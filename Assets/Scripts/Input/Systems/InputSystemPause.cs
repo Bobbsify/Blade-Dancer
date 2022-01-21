@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(InputManager))]
-public class InputSystemPause : MonoBehaviour
+public class InputSystemPause : MonoBehaviour, IInputEntity
 {
     private enum InputType
     {
@@ -59,5 +59,9 @@ public class InputSystemPause : MonoBehaviour
                 receiver.ReceiveInputPause();
             }
         }
+    }
+    public void ToggleInput(bool state)
+    {
+        this.enabled = state;
     }
 }
