@@ -38,6 +38,11 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
 
     }
 
+    private void Start()
+    {
+        dialogueUI = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<UIDialogueController>(true);
+    }
+
     public void ReceiveInputInteract()
     {
         player = GameObject.FindGameObjectWithTag("Player");

@@ -18,7 +18,6 @@ public class UIDialogueController : MonoBehaviour
     [SerializeField]
     private GameObject UIdialogue;
 
-
     public void SetDialogue(Dialogue dialogue)
     {
         UIdialogue.SetActive(true);
