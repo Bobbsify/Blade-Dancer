@@ -179,6 +179,7 @@ MonoBehaviour:
   startingDialogue: {fileID: 1166514188681799514}
   dialogues:
   - {fileID: 1166514188681799514}
+  - {fileID: 1193153584125143778}
 --- !u!1 &4740193752744067674
 GameObject:
   m_ObjectHideFlags: 0
