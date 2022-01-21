@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(InputManager))]
-public class InputSystemMove : MonoBehaviour
+public class InputSystemMove : MonoBehaviour, IInputEntity
 {
 	private enum InputType
 	{
@@ -64,5 +64,9 @@ public class InputSystemMove : MonoBehaviour
 			IInputReceiverMove receiver = this.receivers[i];
 			receiver.ReceiveInputMove(dir);
 		}
+	}
+	public void ToggleInput(bool state)
+	{
+		this.enabled = state;
 	}
 }

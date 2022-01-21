@@ -13,11 +13,31 @@ public class InputManager : MonoBehaviour, IInputManager
 	private void Start()
 	{
 		this.receivers = this.searchRoot.GetComponentsInChildren<IInputEntity>(true);
-		
-		for (int i = 0; i < this.receivers.Length; i++)
+	}
+	public GameObject GetRoot()
+	{
+		return this.searchRoot;
+	}
+
+	public void DisableInput<T>() where T : IInputEntity
+	{
+		foreach (IInputEntity receiver in receivers)
 		{
-			var receiver = this.receivers[i];
-			receiver.InitInput(this);
+			if (receiver.GetType() is T) 
+			{
+				receiver.ToggleInput(false);
+			}
+		}
+	}
+
+	public void EnableInput<T>() where T : IInputEntity
+	{
+		foreach (IInputEntity receiver in receivers)
+		{
+			if (receiver.GetType() is T)
+			{
+				receiver.ToggleInput(true);
+			}
 		}
 	}
 
@@ -25,9 +45,4 @@ public class InputManager : MonoBehaviour, IInputManager
 	{
 		this.gameObject.SetActive(enabled);
 	}
-
-    public GameObject GetRoot()
-    {
-        return this.searchRoot;
-    }
 }

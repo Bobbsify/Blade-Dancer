@@ -7,6 +7,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    [Tooltip("Input Manager of the game")]
+    private InputManager inputManager;
+
+    [SerializeField]
     [Tooltip("For entities that require to know of the Game Manager Object")]
     private GameObject[] GameEntitiesRoots;
 
@@ -127,6 +131,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        this.inputManager.DisableInput<InputSystemPause>();
         Destroy(startingRoom);
         GenerateNewStreak();
         Stage currentStage = currentStreak.GetCurrentStage();
@@ -210,6 +215,8 @@ public class GameManager : MonoBehaviour
         InitEntities(breakoutRoom);
         startingRoom = breakoutRoom;
         currentBreakroom++;
+
+        this.inputManager.EnableInput<InputSystemPause>();
     }
 
     #endregion

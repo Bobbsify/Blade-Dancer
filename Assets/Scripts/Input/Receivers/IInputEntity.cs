@@ -1,4 +1,4 @@
 ﻿public interface IInputEntity 
 {
-	void InitInput(IInputManager inputManager);
+	void ToggleInput(bool state);
 }
