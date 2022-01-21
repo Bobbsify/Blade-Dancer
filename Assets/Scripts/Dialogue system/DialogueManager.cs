@@ -44,23 +44,24 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
         Vector3 playerDistance = player.transform.position - transform.position;
         if (playerDistance.magnitude <= distanceToTrigger)
         {
-            if (!isInDialogue)
+            if (isInDialogue)
             {
-                isInDialogue = true;
                 player.GetComponent<PlayerController>().DisableAllAbilities();
                 dialogueUI.SetDialogue(startingDialogue);
                 nextDialogue = startingDialogue.GetNextDialogue();
             }
             else
             {
+                isInDialogue = true;
                 dialogueUI.SetDialogue(startingDialogue);
                 nextDialogue = startingDialogue.GetNextDialogue();
-                if (nextDialogue == null) 
-                {
-                    isInDialogue = false;
-                    dialogueUI.EndDialogue();
-                    player.GetComponent<PlayerController>().EnableAllAbilities();
-                }
+            }
+
+            if (nextDialogue == null)
+            {
+                isInDialogue = false;
+                dialogueUI.EndDialogue();
+                player.GetComponent<PlayerController>().EnableAllAbilities();
             }
         }
     }
