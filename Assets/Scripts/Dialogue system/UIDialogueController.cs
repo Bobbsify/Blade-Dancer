@@ -15,8 +15,14 @@ public class UIDialogueController : MonoBehaviour
     [SerializeField]
     private Text DialogueText;
 
+    [SerializeField]
+    private GameObject UIdialogue;
+
+
     public void SetDialogue(Dialogue dialogue)
     {
+        UIdialogue.SetActive(true);
+
         ImageToShow.sprite = dialogue.GetPicture();
 
         NameToShow.text = dialogue.GetName();
@@ -26,6 +32,7 @@ public class UIDialogueController : MonoBehaviour
 
     internal void EndDialogue()
     {
+        UIdialogue.SetActive(false);
         Debug.LogError("END OF DIALOGUE");
     }
 }
