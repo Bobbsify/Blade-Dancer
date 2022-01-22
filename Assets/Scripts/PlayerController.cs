@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
     public void TakeDamage(int amount)
     {
         if (currentHealth > 0) { 
-            currentHealth = Mathf.Max(0, currentHealth - amount);
+            currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount),maxHealth);
             if (currentHealth == 0) 
             {
                 DoDeath();
