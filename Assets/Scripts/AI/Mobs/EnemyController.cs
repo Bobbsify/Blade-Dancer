@@ -4,7 +4,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(FSM))]
-public class EnemyController : MonoBehaviour
+public class EnemyController : MonoBehaviour, IEnemy
 {
     [SerializeField]
     private float maxHealth = 1;
@@ -41,5 +41,30 @@ public class EnemyController : MonoBehaviour
     {
         stateMachine.DisalbeStates();
         animator.SetTrigger("death");
+    }
+
+    public void Chase()
+    {
+        if (TryGetComponent(out EnemyChase chase)) 
+        {
+            stateMachine.ChangeState(chase);
+        }
+    }
+
+    public void Flee()
+    {
+        if (TryGetComponent(out EnemyFlee flee))
+        {
+            stateMachine.ChangeState(flee);
+        }
+    }
+
+    public void Dance()
+    {
+        if (TryGetComponent(out EnemyDance dance))
+        {
+            Debug.Log("Do a lil' dance");
+            stateMachine.ChangeState(dance);
+        }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFollowStateAttack : FSMState, IEnemy
+public class EnemyAttackMelee : FSMState
 {
 	[SerializeField]
 	[Range(0f, 2f)]
@@ -13,7 +13,7 @@ public class EnemyFollowStateAttack : FSMState, IEnemy
 	private float maxReactionTime = 2f;
 
 	[SerializeField]
-	private EnemyFollowStateChase stateChase;
+	private EnemyChase stateChase;
 
 	[SerializeField]
 	private int damage;
@@ -26,7 +26,7 @@ public class EnemyFollowStateAttack : FSMState, IEnemy
 
 	private void OnValidate()
 	{
-		this.stateChase = this.GetComponent<EnemyFollowStateChase>();
+		this.stateChase = this.GetComponent<EnemyChase>();
 	}
 
     private void Start()
@@ -81,19 +81,4 @@ public class EnemyFollowStateAttack : FSMState, IEnemy
 			playerController.TakeDamage(damage);
 		}
 	}
-
-    public void Chase(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void FleeFrom(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Dance()
-    {
-        throw new System.NotImplementedException();
-    }
 }

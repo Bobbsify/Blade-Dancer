@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyShootAtPlayer : MonoBehaviour
+public class LookAtPlayer : MonoBehaviour
 {
     private GameObject target;
 

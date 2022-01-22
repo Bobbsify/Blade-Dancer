@@ -1,12 +1,12 @@
 ﻿using UnityEngine;
 
-public class EnemyFollowStateIdle : FSMState, IEnemy
+public class EnemyIdle : FSMState
 {
 	[SerializeField]
 	private float activationDistance = 3f;
 
 	[SerializeField]
-	private EnemyFollowStateChase stateChase;
+	private EnemyChase stateChase;
 
 	private GameObject target;
 
@@ -14,7 +14,7 @@ public class EnemyFollowStateIdle : FSMState, IEnemy
 
 	private void OnValidate()
 	{
-		this.stateChase = this.GetComponentInChildren<EnemyFollowStateChase>();
+		this.stateChase = this.GetComponentInChildren<EnemyChase>();
 	}
 
 	private void Update()
@@ -41,19 +41,4 @@ public class EnemyFollowStateIdle : FSMState, IEnemy
 	{
 		return "IDLE";
 	}
-
-    public void Chase(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void FleeFrom(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Dance()
-    {
-        throw new System.NotImplementedException();
-    }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FleeEnemyAttack : FSMState, IEnemy
+public class EnemyAttackRanged : FSMState
 {
 	[SerializeField]
 	[Range(0f, 2f)]
@@ -13,7 +13,7 @@ public class FleeEnemyAttack : FSMState, IEnemy
 	private float maxReactionTime = 2f;
 
 	[SerializeField]
-	private FleeEnemyChase stateChase;
+	private EnemyFlee stateChase;
 
 	[SerializeField]
 	private GameObject projectile;
@@ -33,7 +33,7 @@ public class FleeEnemyAttack : FSMState, IEnemy
 
 	private void OnValidate()
 	{
-		this.stateChase = this.GetComponent<FleeEnemyChase>();
+		this.stateChase = this.GetComponent<EnemyFlee>();
 	}
 
 	private void Update()
@@ -54,7 +54,7 @@ public class FleeEnemyAttack : FSMState, IEnemy
 				return;
 			}
 
-			reAttack();
+			ReAttack();
 		}
 	}
 
@@ -65,7 +65,7 @@ public class FleeEnemyAttack : FSMState, IEnemy
 		this.reactionTime = Random.Range(this.minReactionTime, this.maxReactionTime);
 	}
 
-	public void reAttack()
+	public void ReAttack()
     {
 		this.reactionTime = Random.Range(this.minReactionTime, this.maxReactionTime);
 	}
@@ -80,19 +80,4 @@ public class FleeEnemyAttack : FSMState, IEnemy
 		GameObject proj = Instantiate(projectile, objSpawnPos.position, objSpawnPos.rotation, null);
 		proj.GetComponent<ProjectileController>().SetTeam(Team.Enemy);
 	}
-
-    public void Chase(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void FleeFrom(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Dance()
-    {
-        throw new System.NotImplementedException();
-    }
 }

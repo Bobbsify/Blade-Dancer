@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class FleeEnemyChase : FSMState, IEnemy
+public class EnemyFlee : FSMState
 {
 	[SerializeField]
 	[Range(0f, 30f)]
 	private float attackDistance = 1f;
 
 	[SerializeField]
-	private FleeEnemyAttack stateAttack;
+	private EnemyAttackRanged stateAttack;
 
 	[SerializeField]
 	private float speed;
@@ -23,7 +23,7 @@ public class FleeEnemyChase : FSMState, IEnemy
 
     private void OnValidate()
 	{
-		this.stateAttack = this.GetComponentInChildren<FleeEnemyAttack>();
+		this.stateAttack = this.GetComponentInChildren<EnemyAttackRanged>();
 	}
 
 	private void Update()
@@ -48,19 +48,4 @@ public class FleeEnemyChase : FSMState, IEnemy
 	{
 		return "CHASE";
 	}
-
-    public void Chase(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void FleeFrom(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Dance()
-    {
-        throw new System.NotImplementedException();
-    }
 }

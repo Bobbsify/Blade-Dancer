@@ -2,7 +2,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(FSM))]
-public class EnemyFollowStateDance : FSMState, IEnemy
+public class EnemyDance : FSMState
 {
     [SerializeField]
     private float danceDuration = 2.0f;
@@ -10,9 +10,7 @@ public class EnemyFollowStateDance : FSMState, IEnemy
     [SerializeField]
     private float danceSpeed = 0.5f;
 
-    private FSM fsm;
-
-    private EnemyFollowStateIdle stateIdle;
+    private EnemyIdle stateIdle;
 
     private GameObject target;
 
@@ -28,6 +26,7 @@ public class EnemyFollowStateDance : FSMState, IEnemy
     {
         TryGetComponent(out stateIdle);
         TryGetComponent(out fsm);
+        danceTime = 0.0f;
         StartCoroutine(DoDance());
     }
 
@@ -43,6 +42,8 @@ public class EnemyFollowStateDance : FSMState, IEnemy
         if (danceTime >= danceDuration)
         {
             fsm.ChangeState(stateIdle);
+            this.transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
+            this.StopAllCoroutines();
         }
         else 
         {
@@ -54,19 +55,4 @@ public class EnemyFollowStateDance : FSMState, IEnemy
 	{
 		return "DANCE";
 	}
-
-    public void Chase(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void FleeFrom(GameObject obj)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public void Dance()
-    {
-        throw new System.NotImplementedException();
-    }
 }
