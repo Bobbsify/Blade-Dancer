@@ -37,11 +37,12 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     {
         playerController.DisableOtherAbilities<Dance>();
         playerController.Animate("dance");
-        float radius = (maxCharge / maxSphereWidth) * (charge / minSphereWidth);
-        RaycastHit[] hits = Physics.SphereCastAll(this.transform.position, radius, Vector3.zero);
-        foreach (RaycastHit hit in hits) 
+        float radius = charge * maxSphereWidth / maxCharge;
+        Debug.Log("Looking for enemies");
+        Collider[] hits =Physics.OverlapSphere(this.transform.position, radius);
+        foreach (Collider hit in hits) 
         {
-            if (hit.collider.TryGetComponent(out IEnemy enemy)) 
+            if (hit.TryGetComponent(out IEnemy enemy)) 
             {
                 enemy.Dance();
             }
@@ -81,5 +82,14 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Color GizmosColor = Color.green;
+        GizmosColor.a = 0.2f;
+        Gizmos.color = GizmosColor;
+        float radius = charge * maxSphereWidth / maxCharge;
+        Gizmos.DrawSphere(this.transform.position, radius);
     }
 }
