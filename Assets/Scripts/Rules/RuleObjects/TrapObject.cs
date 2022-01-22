@@ -23,7 +23,7 @@ public class TrapObject : MonoBehaviour, IGameEntity
     {
         if (other.GetComponentInChildren<FSM>() != null)
         {
-            Destroy(other.GetComponent<EnemyFollowStateChase>());
+            Destroy(other.GetComponent<EnemyChase>());
             trapCollider.GetComponent<Collider>().enabled = true;
 
             if(canBeTrapped == true)
