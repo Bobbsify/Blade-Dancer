@@ -145,6 +145,7 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
         Stage nextStage = currentStreak.NextStage();
         if (nextStage != null)
@@ -158,6 +159,11 @@ public class GameManager : MonoBehaviour
             timer.ResetTimer();
             StreakEnded();
         }
+    }
+
+    private int GetDanceCharge()
+    {
+        return timer.GetCheer();
     }
 
     public void doReset()
@@ -216,6 +222,7 @@ public class GameManager : MonoBehaviour
         startingRoom = breakoutRoom;
         currentBreakroom++;
 
+        playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
         this.inputManager.EnableInput<InputSystemPause>();
     }
 
