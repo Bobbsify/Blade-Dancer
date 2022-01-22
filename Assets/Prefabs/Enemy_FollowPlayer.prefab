@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6483328039640278890}
   - component: {fileID: 1848887251066109454}
   - component: {fileID: 2096567139338241272}
+  - component: {fileID: 1001425777393156325}
   - component: {fileID: 2096567139338241273}
   - component: {fileID: 2096567139338241274}
   - component: {fileID: 2096567139338241275}
@@ -116,10 +117,25 @@ MonoBehaviour:
   debug_CurrentState: 
   initialState: {fileID: 2096567139338241275}
   states:
+  - {fileID: 1001425777393156325}
   - {fileID: 2096567139338241273}
   - {fileID: 2096567139338241274}
   - {fileID: 2096567139338241275}
   gameManager: {fileID: 0}
+--- !u!114 &1001425777393156325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2096567139338241279}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1f32236f35d8b47bfb90f21c076fb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  danceDuration: 2
+  danceSpeed: 0.5
 --- !u!114 &2096567139338241273
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,11 +162,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b8bef65ebe38c5a4ba1680287e1dbaf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deactivationDistance: 2
+  deactivationDistance: 15
   attackDistance: 0.5
   stateIdle: {fileID: 2096567139338241273}
   stateAttack: {fileID: 2096567139338241275}
-  speed: 1
+  speed: 7
 --- !u!114 &2096567139338241275
 MonoBehaviour:
   m_ObjectHideFlags: 0

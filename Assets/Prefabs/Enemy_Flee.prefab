@@ -4966,8 +4966,9 @@ GameObject:
   - component: {fileID: -4049630656755785450}
   - component: {fileID: 1720986811016011097}
   - component: {fileID: 7251394527796283673}
-  - component: {fileID: 7251394527796283672}
   - component: {fileID: 7251394527796283675}
+  - component: {fileID: 8311623136659962207}
+  - component: {fileID: 3030171392430779592}
   m_Layer: 8
   m_Name: Enemy_Flee
   m_TagString: Untagged
@@ -5067,12 +5068,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug_CurrentState: 
-  initialState: {fileID: 7251394527796283672}
+  initialState: {fileID: 7251394527796283675}
   states:
-  - {fileID: 7251394527796283672}
   - {fileID: 7251394527796283675}
+  - {fileID: 8311623136659962207}
+  - {fileID: 3030171392430779592}
   gameManager: {fileID: 0}
---- !u!114 &7251394527796283672
+--- !u!114 &7251394527796283675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251394527796283674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133040742343144a48791ba5460ebc4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackDistance: 8
+  stateAttack: {fileID: 8311623136659962207}
+  speed: 5
+--- !u!114 &8311623136659962207
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5090,8 +5107,8 @@ MonoBehaviour:
   projectile: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
     type: 3}
   objSpawnPos: {fileID: 7251394528346421220}
-  ChaseDistance: 10
---- !u!114 &7251394527796283675
+  ChaseDistance: 5
+--- !u!114 &3030171392430779592
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5100,12 +5117,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7251394527796283674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 133040742343144a48791ba5460ebc4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c1f32236f35d8b47bfb90f21c076fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackDistance: 7
-  stateAttack: {fileID: 7251394527796283672}
-  speed: 5
+  danceDuration: 2
+  danceSpeed: 0.5
 --- !u!1 &7251394528346421223
 GameObject:
   m_ObjectHideFlags: 0
