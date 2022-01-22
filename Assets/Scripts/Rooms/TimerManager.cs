@@ -9,6 +9,15 @@ public class TimerManager : MonoBehaviour, IGameEntity
     [SerializeField]
     private Text timerText;
 
+    [Header("Cheer")]
+    [SerializeField]
+    [Tooltip("Percentage of timer needed for a cheer")]
+    [Range(1, 90)]
+    private float cheerThreshold = 50;
+
+    [SerializeField]
+    private int cheerChargingBonus = 2;
+
     private GameManager gameManager;
 
     private float maxTime;
@@ -61,6 +70,10 @@ public class TimerManager : MonoBehaviour, IGameEntity
         doTimer = false;
         currentTime = 0;
         timerText.text = "00:00";
+    }
+    public int GetCheer()
+    {
+        return currentTime > maxTime * cheerThreshold / 100 ? cheerChargingBonus : 1;
     }
 
     public void Init(GameManager gameManager)
