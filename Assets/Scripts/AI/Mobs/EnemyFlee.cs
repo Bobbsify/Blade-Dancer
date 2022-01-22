@@ -26,14 +26,19 @@ public class EnemyFlee : FSMState
 		this.stateAttack = this.GetComponentInChildren<EnemyAttackRanged>();
 	}
 
-	private void Update()
-	{
+    private void Awake()
+    {
 		target = GameObject.FindGameObjectWithTag(pg);
+	}
+
+    private void Update()
+	{
 		var pos = this.transform.position;
 		var targetPos = this.target.transform.position;
-		dir = (targetPos - pos) * Time.deltaTime;
+		dir = pos - targetPos;
+		dir.Normalize();
 		dir.y = 0;
-		this.transform.position += -(dir) * speed * Time.deltaTime;
+		this.transform.position += dir * speed * Time.deltaTime;
 
 		var distance = Vector3.Distance(pos, targetPos);
 
