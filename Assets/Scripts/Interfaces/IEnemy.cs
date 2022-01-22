@@ -4,9 +4,9 @@ using UnityEngine;
 
 public interface IEnemy
 {
-    void Chase(GameObject obj);
+    void Chase();
 
-    void FleeFrom(GameObject obj);
+    void Flee();
 
     void Dance();
 
