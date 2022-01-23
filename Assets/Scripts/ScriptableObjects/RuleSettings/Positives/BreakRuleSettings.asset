@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BreakRuleSettings
   m_EditorClassIdentifier: 
   durationType: 0
-  durationMod: 1
+  durationMod: 4
   appliedActions: 07000000
   ruleRelatedObjects:
   - name: BreakbaleObject

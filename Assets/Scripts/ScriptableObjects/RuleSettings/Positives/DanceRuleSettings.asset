@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DanceRuleSettings
   m_EditorClassIdentifier: 
   durationType: 0
-  durationMod: 1
+  durationMod: 2
   appliedActions: 03000000
   ruleRelatedObjects: []
   mutuallyExclusives: 0300000011000000

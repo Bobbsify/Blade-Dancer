@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ScoreRuleSettings
   m_EditorClassIdentifier: 
   durationType: 0
-  durationMod: 1
+  durationMod: 8
   appliedActions: 0a000000
   ruleRelatedObjects:
   - name: Ball

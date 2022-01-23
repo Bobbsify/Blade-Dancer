@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TrapRuleSettings
   m_EditorClassIdentifier: 
   durationType: 0
-  durationMod: 1
+  durationMod: 6
   appliedActions: 0b000000
   ruleRelatedObjects:
   - name: EnemyMoving
