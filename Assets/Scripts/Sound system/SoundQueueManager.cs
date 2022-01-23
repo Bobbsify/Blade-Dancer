@@ -10,24 +10,25 @@ public class SoundQueueManager
     private Dictionary<SoundPacket, GameObject> playOnceAudioList=new Dictionary<SoundPacket, GameObject>();
 
     private SoundEmissionManager emission;
-
-    public void AddSound(SoundPacket sound, bool fade=false)
+    
+    public void AddSound(SoundPacket sound, bool fade = false)
     {
         SoundType type = sound.GetAudioType();
         Transform position = sound.GetPlayPosition();
-
-
         GameObject soundObject = new GameObject();
+
         soundObject.AddComponent<AudioSource>();
         soundObject.AddComponent<SoundEmissionManager>();
         soundObject.GetComponent<AudioSource>().clip = sound.GetAudio();
 
+        emission = soundObject.GetComponentInChildren<SoundEmissionManager>();
         emission.InstantiateGameObject(soundObject, position);
 
         switch (type)
         {
             case SoundType.Loop:
                 loopAudioList.Add(sound, soundObject);
+                soundObject.GetComponent<AudioSource>().loop = true;
                 break;
 
             case SoundType.PlayOnce:
@@ -39,13 +40,13 @@ public class SoundQueueManager
                 break;
         }
 
-        if (fade==false && type == SoundType.PlayOnce)
+        if (fade == false && type == SoundType.PlayOnce)
         {
             emission.PlayAudioOnce();
             emission.EliminateGameObject(soundObject);
         }
 
-        else if(fade==false && type !=SoundType.PlayOnce)
+        else if(fade == false && type != SoundType.PlayOnce)
         {
             emission.PlayAudio();
         }
@@ -57,7 +58,7 @@ public class SoundQueueManager
         }
     }
 
-    public void RemoveSound(SoundPacket sound, bool fade=false)
+    public void RemoveSound(SoundPacket sound, bool fade = false)
     {
         if (fade == false)
         {
@@ -86,11 +87,9 @@ public class SoundQueueManager
                 delayAudioList.Remove(sound);
                 break;
         }
-
-        //emission.EliminateGameObject(soundObject);
     }
 
-    public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
+   public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
     {
         RemoveSound(oldSound, fade);
         AddSound(newSound, fade);

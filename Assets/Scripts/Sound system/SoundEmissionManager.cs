@@ -6,10 +6,8 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(AudioSource))]
 public class SoundEmissionManager : MonoBehaviour
 {
-    [SerializeField]
-    private float timeToDestruction;
-    
-    private AudioSource audio;
+    private new AudioSource audio;
+
     private void Awake()
     {
         TryGetComponent(out audio);
@@ -56,13 +54,15 @@ public class SoundEmissionManager : MonoBehaviour
     {
         fadeDuration = sound.GetDelay();
         float startVolume = audio.volume;
-        while(audio.volume>0)
+
+        while(audio.volume > 0)
         {
             audio.volume -= startVolume * Time.deltaTime/fadeDuration;
             yield return null;
         }
         audio.Stop();
         audio.volume = startVolume;
+        
     }
 
     public void InstantiateGameObject(GameObject soundObject, Transform position)
