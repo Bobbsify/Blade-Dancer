@@ -2,27 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PauseController : MonoBehaviour
+public class PauseController : MonoBehaviour, IInputReceiverPause
 {
     [SerializeField]
     private static bool pause;
     [SerializeField]
     private GameObject pauseMenu;
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (pause)
-            {
-                Continue();
-            }
-            else
-            {
-                Pause();
-            }
-        }
-    }
 
     public void Continue()
     {
@@ -36,5 +21,17 @@ public class PauseController : MonoBehaviour
         pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         pause = true;
+    }
+
+    public void ReceiveInputPause()
+    {
+        if (pause)
+        {
+            Continue();
+        }
+        else 
+        {
+            Pause();
+        }
     }
 }

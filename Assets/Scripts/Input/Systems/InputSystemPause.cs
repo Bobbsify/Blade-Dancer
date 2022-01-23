@@ -24,11 +24,13 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
 
     private void OnValidate()
     {
-        InputManager manager;
-
-        if (TryGetComponent(out manager))
-        {
-            this.searchRoot = manager.GetRoot();
+        if (this.searchRoot == null) { 
+            InputManager manager;
+       
+            if (TryGetComponent(out manager))
+            {
+                this.searchRoot = manager.GetRoot();
+            }
         }
     }
 
@@ -51,7 +53,7 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
 
     private void SendInput()
     {
-        if (Input.GetAxisRaw(pauseAxisName) > 0f)
+        if (Input.GetButtonUp(pauseAxisName))
         {
             for (int i = 0; i < this.receivers.Length; i++)
             {
