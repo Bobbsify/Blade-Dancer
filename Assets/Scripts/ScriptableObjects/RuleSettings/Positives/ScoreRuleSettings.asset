@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beaa890b70d008044a55c2e341148747, type: 3}
+  m_Name: ScoreRuleSettings
+  m_EditorClassIdentifier: 
+  durationType: 0
+  durationMod: 1
+  appliedActions: 0a000000
+  ruleRelatedObjects:
+  - name: Ball
+    ruleObjPrefab: {fileID: 1766524116523848119, guid: a81f181353b564db7882fcf2b5a5db9c,
+      type: 3}
+    pos: 0
+  - name: Goal
+    ruleObjPrefab: {fileID: 3395232647765131754, guid: 2bae4766c579442578463eb2b2b08081,
+      type: 3}
+    pos: 5
+  mutuallyExclusives: 0a0000001800000005000000060000000e0000001400000013000000

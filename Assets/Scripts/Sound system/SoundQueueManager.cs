@@ -1,0 +1,98 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Audio;
+
+public class SoundQueueManager
+{
+    private Dictionary<SoundPacket, GameObject> loopAudioList= new Dictionary<SoundPacket, GameObject>();
+    private Dictionary<SoundPacket, GameObject> delayAudioList= new Dictionary<SoundPacket, GameObject>();
+    private Dictionary<SoundPacket, GameObject> playOnceAudioList=new Dictionary<SoundPacket, GameObject>();
+
+    private SoundEmissionManager emission;
+
+    public void AddSound(SoundPacket sound, bool fade=false)
+    {
+        SoundType type = sound.GetAudioType();
+        Transform position = sound.GetPlayPosition();
+
+
+        GameObject soundObject = new GameObject();
+        soundObject.AddComponent<AudioSource>();
+        soundObject.AddComponent<SoundEmissionManager>();
+        soundObject.GetComponent<AudioSource>().clip = sound.GetAudio();
+
+        emission.InstantiateGameObject(soundObject, position);
+
+        switch (type)
+        {
+            case SoundType.Loop:
+                loopAudioList.Add(sound, soundObject);
+                break;
+
+            case SoundType.PlayOnce:
+                playOnceAudioList.Add(sound, soundObject);
+                break;
+
+            case SoundType.ReplayAfterSeconds:
+                delayAudioList.Add(sound, soundObject);
+                break;
+        }
+
+        if (fade==false && type == SoundType.PlayOnce)
+        {
+            emission.PlayAudioOnce();
+            emission.EliminateGameObject(soundObject);
+        }
+
+        else if(fade==false && type !=SoundType.PlayOnce)
+        {
+            emission.PlayAudio();
+        }
+
+        else
+
+        {
+            emission.FadeIn(sound);
+        }
+    }
+
+    public void RemoveSound(SoundPacket sound, bool fade=false)
+    {
+        if (fade == false)
+        {
+            emission.StopAudio();
+        }
+
+        else
+
+        {
+            emission.FadeOut(sound);
+        }
+
+        SoundType type = sound.GetAudioType();
+
+        switch (type)
+        {
+            case SoundType.Loop:
+                loopAudioList.Remove(sound);
+                break;
+
+            case SoundType.PlayOnce:
+                playOnceAudioList.Remove(sound);
+                break;
+
+            case SoundType.ReplayAfterSeconds:
+                delayAudioList.Remove(sound);
+                break;
+        }
+
+        //emission.EliminateGameObject(soundObject);
+    }
+
+    public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
+    {
+        RemoveSound(oldSound, fade);
+        AddSound(newSound, fade);
+    }
+}

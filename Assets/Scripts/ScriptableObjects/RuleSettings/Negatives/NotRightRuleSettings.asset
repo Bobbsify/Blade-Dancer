@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fa4d10bbde5b6b41aefc3a1caab185e, type: 3}
+  m_Name: NotRightRuleSettings
+  m_EditorClassIdentifier: 
+  durationType: 0
+  durationMod: 1
+  appliedActions: 0600000005000000
+  ruleRelatedObjects:
+  - name: CentralLine
+    ruleObjPrefab: {fileID: 6801434270533008528, guid: 8f2d37a3e6826463abe06ec835463bf3,
+      type: 3}
+    pos: 8
+  mutuallyExclusives: 060000001400000005000000130000000e0000000b000000080000000d0000000a000000

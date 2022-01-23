@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7199b8e8f75a1a4d9c4b5a469a0fc06, type: 3}
+  m_Name: NotShootRuleSettings
+  m_EditorClassIdentifier: 
+  durationType: 0
+  durationMod: 1
+  appliedActions: 01000000
+  ruleRelatedObjects: []
+  mutuallyExclusives: 010000000f000000090000000700000004000000
+  minAmount: 1
+  maxAmount: 5

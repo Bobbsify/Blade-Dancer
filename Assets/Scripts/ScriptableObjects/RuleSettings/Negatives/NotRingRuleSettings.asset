@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8299556376e294c86ded9601ed381e, type: 3}
+  m_Name: NotRingRuleSettings
+  m_EditorClassIdentifier: 
+  durationType: 0
+  durationMod: 1
+  appliedActions: 04000000
+  ruleRelatedObjects:
+  - name: Bell
+    ruleObjPrefab: {fileID: 4072430416109815961, guid: 1fbeb67b7cac740558906c3b735ebb44,
+      type: 3}
+    pos: 1
+  mutuallyExclusives: 0400000012000000

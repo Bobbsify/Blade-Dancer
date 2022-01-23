@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f856bf1cb9707df48b3590e3f862849c, type: 3}
+  m_Name: ReachRuleSettings
+  m_EditorClassIdentifier: 
+  durationType: 0
+  durationMod: 1
+  appliedActions: 0d000000
+  ruleRelatedObjects:
+  - name: EnemyMoving
+    ruleObjPrefab: {fileID: 2096567139338241279, guid: f9eb53924614e44da9db48b60a706271,
+      type: 3}
+    pos: 0
+  - name: EnemyShooting
+    ruleObjPrefab: {fileID: 7251394527796283674, guid: aef94e6b2e54b4ebfbf3ca9cd9936f1a,
+      type: 3}
+    pos: 0
+  - name: Flag
+    ruleObjPrefab: {fileID: 8334453496198540845, guid: 9cf5e318e039e4d1d844941dded6cd8e,
+      type: 3}
+    pos: 0
+  mutuallyExclusives: 05000000060000000d0000001b00000014000000130000000e000000

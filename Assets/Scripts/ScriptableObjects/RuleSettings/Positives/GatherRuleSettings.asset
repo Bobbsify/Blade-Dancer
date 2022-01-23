@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d23e025648d5aae47a271615f2ba87f9, type: 3}
+  m_Name: GatherRuleSettings
+  m_EditorClassIdentifier: 
+  durationType: 0
+  durationMod: 0
+  appliedActions: 08000000
+  ruleRelatedObjects:
+  - name: Collectible
+    ruleObjPrefab: {fileID: 4402554105172814456, guid: 5f29a85c98c564ec9acad585f77e8e40,
+      type: 3}
+    pos: 0
+  mutuallyExclusives: 050000000600000008000000160000000e0000001400000013000000
+  durationModMultiplier: 2
+  minAmountToGather: 1
+  maxAmountToGather: 4
