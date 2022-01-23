@@ -170,9 +170,9 @@ public class GameManager : MonoBehaviour
     {
         timer.ResetTimer();
         bool fr = firstRun; //If first run repeat first run instead of randomizing (In order to complete tutorial)
+        currentBreakroom--; //Don't proceed to next brakeroom
         StreakEnded();
         firstRun = fr;
-        currentBreakroom--; //Don't proceed to next brakeroom
         playerCtrl.EnableAllAbilities();
         ruleManager.SetNewRuleset(new List<Rule>()); //Empty rules
     }
@@ -217,10 +217,10 @@ public class GameManager : MonoBehaviour
         currentStreak = null;
 
         //Create Break room
+        currentBreakroom++;
         GameObject breakoutRoom = Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity, stagesRoot.transform);
         InitEntities(breakoutRoom);
         startingRoom = breakoutRoom;
-        currentBreakroom++;
 
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
         this.inputManager.EnableInput<InputSystemPause>();
