@@ -5,6 +5,16 @@ using UnityEngine.Audio;
 
 public class SoundQueueManager : MonoBehaviour
 {
+
+    [SerializeField]
+    AudioMixerGroup audioMixerMaster;
+
+    [SerializeField]
+    AudioMixerGroup audioMixerMusic;
+
+    [SerializeField]
+    AudioMixerGroup audioMixerSfx;
+
     private Dictionary<SoundPacket, GameObject> loopAudioList = new Dictionary<SoundPacket, GameObject>();
     private Dictionary<SoundPacket, GameObject> delayAudioList = new Dictionary<SoundPacket, GameObject>();
     private Dictionary<SoundPacket, GameObject> playOnceAudioList = new Dictionary<SoundPacket, GameObject>();
@@ -14,6 +24,7 @@ public class SoundQueueManager : MonoBehaviour
     public void AddSound(SoundPacket sound, bool fade = false)
     {
         SoundType type = sound.GetAudioType();
+        OutputType outputType = sound.GetOutputType();
         Vector3 position = sound.GetPlayPosition();
         GameObject soundObject = new GameObject();
 
@@ -39,6 +50,22 @@ public class SoundQueueManager : MonoBehaviour
                 delayAudioList.Add(sound, soundObject);
                 break;
         }
+
+        switch (outputType)
+        {
+            case OutputType.Master:
+                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerMaster;
+                break;
+
+            case OutputType.Music:
+                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerMusic;
+                break;
+
+            case OutputType.Sfx:
+                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup =audioMixerSfx;
+                break;
+        }
+
 
         if (fade == false && type == SoundType.PlayOnce)
         {
@@ -92,11 +119,5 @@ public class SoundQueueManager : MonoBehaviour
                 delayAudioList.Remove(sound);
                 break;
         }
-    }
-
-   public void ReplaceSound(SoundPacket oldSound, SoundPacket newSound, bool fade=false)
-    {
-        RemoveSound(oldSound, fade);
-        AddSound(newSound, fade);
     }
 }
