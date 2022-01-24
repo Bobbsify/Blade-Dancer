@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(TimerManager))]
+[RequireComponent(typeof(SoundQueueManager))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -91,11 +92,14 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
+    private SoundQueueManager sqm;
+
     private bool firstRun = true;
     private bool tookDamage = false;
 
     private void Awake()
 	{
+        TryGetComponent(out sqm);
         TryGetComponent(out timer);
 		this.GeneratePlayerPawn();
         PlayerPawn.GetComponent<Shoot>().SetProjectilesRoot(this.projectilesRoot);
@@ -127,6 +131,17 @@ public class GameManager : MonoBehaviour
             ruleManager.ApplyRule(action);
         }
     }
+
+    public void PlaySound(SoundPacket packet, bool fade = false)
+    {
+        sqm.AddSound(packet, fade);
+    }
+
+    public void StopSound(SoundPacket packet, bool fade = false) 
+    {
+        sqm.RemoveSound(packet, fade);
+    }
+
     public void KillPlayer()
     {
         playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
