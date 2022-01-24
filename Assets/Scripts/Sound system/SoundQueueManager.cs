@@ -38,16 +38,32 @@ public class SoundQueueManager : MonoBehaviour
         switch (type)
         {
             case SoundType.Loop:
-                loopAudioList.Add(sound, soundObject);
-                soundObject.GetComponent<AudioSource>().loop = true;
+
+                if (loopAudioList.ContainsKey(sound) == false)
+
+                {
+                    loopAudioList.Add(sound, soundObject);
+                    soundObject.GetComponent<AudioSource>().loop = true;
+                }
+              
                 break;
 
             case SoundType.PlayOnce:
-                playOnceAudioList.Add(sound, soundObject);
+
+                if (playOnceAudioList.ContainsKey(sound) == false)
+                {
+                    playOnceAudioList.Add(sound, soundObject);
+                }
+
                 break;
 
             case SoundType.ReplayAfterSeconds:
-                delayAudioList.Add(sound, soundObject);
+
+                if (delayAudioList.ContainsKey(sound) == false)
+                {
+                    delayAudioList.Add(sound, soundObject);
+                }
+               
                 break;
         }
 
@@ -62,7 +78,7 @@ public class SoundQueueManager : MonoBehaviour
                 break;
 
             case OutputType.Sfx:
-                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup =audioMixerSfx;
+                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerSfx;
                 break;
         }
 
