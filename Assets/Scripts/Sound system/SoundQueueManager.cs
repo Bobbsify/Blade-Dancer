@@ -39,22 +39,21 @@ public class SoundQueueManager : MonoBehaviour
         {
             case SoundType.Loop:
 
-                if (loopAudioList.ContainsKey(sound) == false)
-
+                if(loopAudioList.ContainsKey(sound) == false)
                 {
                     loopAudioList.Add(sound, soundObject);
                     soundObject.GetComponent<AudioSource>().loop = true;
                 }
-              
+
                 break;
 
             case SoundType.PlayOnce:
 
-                if (playOnceAudioList.ContainsKey(sound) == false)
+                if(playOnceAudioList.ContainsKey(sound) == false)
                 {
                     playOnceAudioList.Add(sound, soundObject);
                 }
-
+            
                 break;
 
             case SoundType.ReplayAfterSeconds:
@@ -63,7 +62,7 @@ public class SoundQueueManager : MonoBehaviour
                 {
                     delayAudioList.Add(sound, soundObject);
                 }
-               
+
                 break;
         }
 
