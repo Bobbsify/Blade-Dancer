@@ -11,7 +11,7 @@ public class SoundPacket
     private AudioClip audio;
 
     [SerializeField]
-    private Transform playPos;
+    private Vector3 playPos;
 
     [SerializeField]
     private SoundType audioType;
@@ -19,7 +19,7 @@ public class SoundPacket
     [SerializeField]
     private float playDelay;
 
-    public SoundPacket(AudioClip audio, Transform playPos, SoundType audioType, float playDelay = 0)
+    public SoundPacket(AudioClip audio, Vector3 playPos, SoundType audioType, float playDelay = 0)
     {
         this.audio = audio;
         this.playPos = playPos;
@@ -33,7 +33,7 @@ public class SoundPacket
         return audio;
     }
 
-    public Transform GetPlayPosition()
+    public Vector3 GetPlayPosition()
     {
         return playPos;
     }

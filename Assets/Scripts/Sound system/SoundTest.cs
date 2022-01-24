@@ -12,18 +12,21 @@ public class SoundTest : MonoBehaviour
     private SoundQueueManager sqm = new SoundQueueManager();
 
     [SerializeField]
-    private bool fade;
+    private bool fadein;
+
+    [SerializeField]
+    private bool fadeout;
 
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.K))
         {
-            sqm.AddSound(this.sound,fade);
+            sqm.AddSound(this.sound,fadein);
         }
 
         if(Input.GetKeyDown(KeyCode.L))
         {
-            sqm.RemoveSound(this.sound, fade);
+            sqm.RemoveSound(this.sound, fadeout);
         }
     }
 }
