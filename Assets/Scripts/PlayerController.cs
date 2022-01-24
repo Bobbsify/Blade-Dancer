@@ -48,6 +48,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
             {
                 DoDeath();
             }
+            gameManager.ActionEventTrigger(Actions.TakeDamage);
         }
     }
     #region Animation

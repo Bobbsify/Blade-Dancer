@@ -33,6 +33,18 @@ public class RuleManager : MonoBehaviour, IGameEntity
         uiRulesController.SetupRules(GetUpdates());
     }
 
+    public bool IsCurrentlyRule(AllRules rule)
+    {
+        foreach (Rule r in rulesToApply) 
+        {
+            if (r.GetRuleName().Equals(rule)) 
+            {
+                return true; 
+            }
+        }
+        return false;
+    }
+
     public void ApplyRule(Actions actionDone)
     {
         foreach (Rule rule in rulesToApply)

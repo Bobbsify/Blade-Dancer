@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
     private GameObject currentArena;
 
     private bool firstRun = true;
+    private bool tookDamage = false;
 
     private void Awake()
 	{
@@ -118,6 +119,11 @@ public class GameManager : MonoBehaviour
     {
         if (currentStreak != null)
         {
+            if (action.Equals(Actions.TakeDamage) && ruleManager.IsCurrentlyRule(AllRules.TakeDamage) && !tookDamage)
+            {
+                tookDamage = true;
+                playerCtrl.TakeDamage(-1); //Heal player on first instance of damage
+            }
             ruleManager.ApplyRule(action);
         }
     }
@@ -140,6 +146,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        tookDamage = false;
         timer.StartTimer();
     }
 
