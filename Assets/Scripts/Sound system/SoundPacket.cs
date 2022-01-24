@@ -17,14 +17,14 @@ public class SoundPacket
     private SoundType audioType;
 
     [SerializeField]
-    private float playDelay;
+    private OutputType outputType;
 
-    public SoundPacket(AudioClip audio, Vector3 playPos, SoundType audioType, float playDelay = 0)
+    public SoundPacket(AudioClip audio, Vector3 playPos, SoundType audioType, OutputType outputType)
     {
         this.audio = audio;
         this.playPos = playPos;
         this.audioType = audioType;
-        this.playDelay = playDelay;
+        this.outputType = outputType;
     }
 
 
@@ -43,9 +43,9 @@ public class SoundPacket
         return audioType;
     }
 
-    public float GetDelay()
+    public OutputType GetOutputType()
     {
-        return playDelay;
+        return outputType;
     }
 
 }
@@ -54,4 +54,11 @@ public enum SoundType
     Loop,
     PlayOnce,
     ReplayAfterSeconds
+}
+
+public enum OutputType
+{
+    Master,
+    Music,
+    Sfx
 }
