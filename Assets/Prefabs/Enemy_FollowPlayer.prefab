@@ -179,8 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0374019e5a196254dbb7c82b00deb765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minReactionTime: 1.11
-  maxReactionTime: 1.51
+  minReactionTime: 0
+  maxReactionTime: 0
   stateChase: {fileID: 2096567139338241274}
   damage: 1
 --- !u!1 &4110936719562507667
