@@ -63,8 +63,15 @@ public class EnemyController : MonoBehaviour, IEnemy
     {
         if (TryGetComponent(out EnemyDance dance))
         {
-            Debug.Log("Do a lil' dance");
             stateMachine.ChangeState(dance);
+        }
+    }
+
+    public void Go()
+    {
+        if (TryGetComponent(out EnemyIdle idle))
+        {
+            idle.StopForce();
         }
     }
 }

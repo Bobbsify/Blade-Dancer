@@ -166,6 +166,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        EnableEnemies();
         tookDamage = false;
         timer.StartTimer();
     }
@@ -185,6 +186,15 @@ public class GameManager : MonoBehaviour
         {
             timer.ResetTimer();
             StreakEnded();
+        }
+    }
+
+    private void EnableEnemies()
+    {
+        IEnemy[] enemies = currentArena.GetComponentsInChildren<IEnemy>();
+        foreach (IEnemy enemy in enemies) 
+        {
+            enemy.Go();
         }
     }
 
@@ -214,7 +224,8 @@ public class GameManager : MonoBehaviour
         foreach (RuleObject objToSpawn in currentStage.GetRuleRelatedObjectsToSpawn()) 
         {
             GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
-            spacesOccupied.Add(instantiated.transform.position, new Vector3(1, 1, 1));
+            Collider col = instantiated.GetComponentInChildren<Collider>();
+            spacesOccupied.Add(instantiated.transform.position, col == null ? new Vector3(1, 1, 1) : col.bounds.extents);
         }
         InitEntities(currentArena);
     }
