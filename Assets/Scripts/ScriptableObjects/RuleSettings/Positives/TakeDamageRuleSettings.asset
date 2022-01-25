@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TakeDamageRuleSettings
   m_EditorClassIdentifier: 
   durationType: 1
-  durationMod: 1
+  durationMod: 3
   appliedActions: 0c000000
   ruleRelatedObjects:
   - name: EnemyMoving
