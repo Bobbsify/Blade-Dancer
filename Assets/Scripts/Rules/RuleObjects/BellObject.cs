@@ -11,7 +11,7 @@ public class BellObject : MonoBehaviour,IGameEntity
     [SerializeField]
     private SoundPacket sound;
 
-    private SoundQueueManager sqm = new SoundQueueManager();
+    private SoundQueueManager sqm;
 
     [SerializeField]
     private bool fadeIn;
