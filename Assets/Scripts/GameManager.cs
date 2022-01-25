@@ -94,11 +94,16 @@ public class GameManager : MonoBehaviour
 
     private SoundQueueManager sqm;
 
+    [SerializeField] //TEMPORARY
     private bool firstRun = true;
     private bool tookDamage = false;
 
     private void Awake()
 	{
+        if (!firstRun) 
+        {
+            Debug.LogWarning("Game Manager has first run set to false upon start");
+        }
         TryGetComponent(out sqm);
         TryGetComponent(out timer);
 		this.GeneratePlayerPawn();
