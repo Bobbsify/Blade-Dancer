@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae0b93b7a3c3e8e4f92ac0b24a22fafa, type: 3}
   m_Name: NotReachRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
+  durationType: 1
   durationMod: 1
   appliedActions: 0d000000
   ruleRelatedObjects:

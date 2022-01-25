@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de28c09e686f8e45b5eff26e4a45e15, type: 3}
   m_Name: NotMoveRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
-  durationMod: -2
+  durationType: 1
+  durationMod: 1
   appliedActions: 0000000002000000
   ruleRelatedObjects: []
   mutuallyExclusives: 000000000e0000000200000010000000050000001300000006000000140000000800000016000000170000000a000000180000000b000000190000000d0000001b0000001a000000
