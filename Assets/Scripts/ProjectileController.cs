@@ -35,8 +35,6 @@ public class ProjectileController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.LogError(other);
-
         switch (projectileTeam) 
         {
                 case Team.Player:
