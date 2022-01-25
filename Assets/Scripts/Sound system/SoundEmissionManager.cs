@@ -31,6 +31,14 @@ public class SoundEmissionManager : MonoBehaviour
         audio.Stop();
     }
 
+    private void Update()
+    {
+        if(this.gameObject.GetComponent<AudioSource>().isPlaying == false)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void FadeIn(SoundPacket soundToFadeIn, float fadeDuration=0)
     {
         StartCoroutine(FadeInTime(soundToFadeIn, fadeDuration));
