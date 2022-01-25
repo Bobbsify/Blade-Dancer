@@ -95,10 +95,11 @@ public class RoomController : MonoBehaviour
         float randomX;
         float randomZ;
 
-        bool isXOk = true;
-        bool isZOk = true;
+        bool isXOk;
+        bool isZOk;
         do
         {
+            isXOk = true;
             randomX = Random.Range(leftmost.x, rightmost.x);
             foreach (KeyValuePair<Vector3, Vector3> positionAndWidth in positionsAndWidths) 
             {
@@ -109,6 +110,7 @@ public class RoomController : MonoBehaviour
         } while (!isXOk);
         do
         {
+            isZOk = true;
             randomZ = Random.Range(leftmost.z, rightmost.z);
             foreach (KeyValuePair<Vector3, Vector3> positionAndWidth in positionsAndWidths)
             {
