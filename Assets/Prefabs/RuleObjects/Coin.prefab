@@ -58,6 +58,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77112ee79a46430fa2f3cd226ca6830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinPickupSound:
+    audio: {fileID: 8300000, guid: c115d5d6ada8240448b82a9431530bac, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
   gameManager: {fileID: 0}
 --- !u!1 &5931913739711801189
 GameObject:
