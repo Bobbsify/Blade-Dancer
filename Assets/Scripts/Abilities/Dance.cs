@@ -38,7 +38,6 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
         playerController.DisableOtherAbilities<Dance>();
         playerController.Animate("dance");
         float radius = charge * maxSphereWidth / maxCharge;
-        Debug.Log("Looking for enemies");
         Collider[] hits =Physics.OverlapSphere(this.transform.position, radius);
         foreach (Collider hit in hits) 
         {
