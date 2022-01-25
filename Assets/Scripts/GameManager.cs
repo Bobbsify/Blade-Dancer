@@ -210,9 +210,11 @@ public class GameManager : MonoBehaviour
         timer.SetTimer(currentStage.GetRulesTime());
         currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
         RoomController room = currentArena.GetComponent<RoomController>();
+        Dictionary<Vector3, Vector3> spacesOccupied = new Dictionary<Vector3, Vector3>(); //Position --> Collider width
         foreach (RuleObject objToSpawn in currentStage.GetRuleRelatedObjectsToSpawn()) 
         {
-            Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType()), Quaternion.identity, currentArena.transform);
+            GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
+            spacesOccupied.Add(instantiated.transform.position, new Vector3(1, 1, 1));
         }
         InitEntities(currentArena);
     }

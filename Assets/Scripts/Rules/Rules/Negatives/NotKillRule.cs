@@ -40,10 +40,10 @@ public class NotKillRule : Rule
         {
             if (action == executedAction)
             {
-                return ++amountKilled > 0;
+                return ++amountKilled < 0;
             }
         }
-        return false;
+        return true;
     }
 
     public override bool IsRuleComplete()

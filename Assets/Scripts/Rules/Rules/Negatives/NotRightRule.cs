@@ -26,7 +26,7 @@ public class NotRightRule : Rule
                 return left;
             }
         }
-        return true;
+        return left;
     }
 
     public override bool IsRuleComplete()

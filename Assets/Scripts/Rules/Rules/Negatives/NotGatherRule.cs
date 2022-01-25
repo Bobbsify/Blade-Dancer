@@ -36,10 +36,10 @@ public class NotGatherRule : Rule
         {
             if (action == executedAction)
             {
-                return ++amountGathered > 0;
+                return ++amountGathered < 0;
             }
         }
-        return false;
+        return true;
     }
     public override RulePacket ToPacket()
     {

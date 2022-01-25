@@ -20,7 +20,7 @@ public class RoomController : MonoBehaviour
 
     private List<Vector3> corners = new List<Vector3>();
 
-    private const float centerMercy = 5.0f;
+    private const float centerMercy = 1.0f;
 
     private void Awake()
     {
@@ -41,7 +41,7 @@ public class RoomController : MonoBehaviour
         }
     }
 
-    public Vector3 GetPos(PositionType pos)
+    public Vector3 GetPos(PositionType pos,Dictionary<Vector3,Vector3> positionsOccupied) //Position --> Collider width
     {
         Vector3 toPass = new Vector3(0, 0, 0);
         if ((int)pos > 3) //If position is not random
@@ -61,13 +61,13 @@ public class RoomController : MonoBehaviour
                 case PositionType.AnyLeft:
                     associatedPositions.TryGetValue(PositionType.BotLeftCorner, out bottomLeft);
 
-                    toPass = RandomRangeVectorNoCenter(bottomLeft, topCenter);
+                    toPass = RandomRangeVectorNoCenter(bottomLeft, topCenter, positionsOccupied);
                     break;
 
                 case PositionType.AnyRight:
                     associatedPositions.TryGetValue(PositionType.BotRightCorner, out bottomRight);
 
-                    toPass = RandomRangeVectorNoCenter(topCenter, bottomRight);
+                    toPass = RandomRangeVectorNoCenter(topCenter, bottomRight, positionsOccupied);
                     break;
 
                 case PositionType.AnyCorner:
@@ -78,7 +78,7 @@ public class RoomController : MonoBehaviour
                     associatedPositions.TryGetValue(PositionType.BotRightCorner, out bottomRight);
                     associatedPositions.TryGetValue(PositionType.TopLeftCorner, out topLeft);
 
-                    toPass = RandomRangeVectorNoCenter(topLeft, bottomRight);
+                    toPass = RandomRangeVectorNoCenter(topLeft, bottomRight, positionsOccupied);
                     break;
                 default:
                     throw new System.Exception("Unkown Position Type " + pos + " as a Randomized position (Could this be a fixed position in the wrong place?)");
@@ -87,21 +87,48 @@ public class RoomController : MonoBehaviour
         return toPass;
     }
 
-    public Vector3 RandomRangeVectorNoCenter(Vector3 leftmost, Vector3 rightmost)
+    private Vector3 RandomRangeVectorNoCenter(Vector3 leftmost, Vector3 rightmost, Dictionary<Vector3,Vector3> positionsAndWidths)
     {
         Vector3 center;
         associatedPositions.TryGetValue(PositionType.Center, out center);
 
         float randomX;
         float randomZ;
+
+        bool isXOk = true;
+        bool isZOk = true;
         do
         {
             randomX = Random.Range(leftmost.x, rightmost.x);
-        } while (randomX >= center.x - centerMercy && randomX <= center.x + centerMercy);
+            foreach (KeyValuePair<Vector3, Vector3> positionAndWidth in positionsAndWidths) 
+            {
+                isXOk = !checkInBetween(randomX, positionAndWidth.Key.x - positionAndWidth.Value.x, positionAndWidth.Key.x + positionAndWidth.Value.x);
+                    if (isXOk) { break; }
+            }
+            isXOk = isXOk && !checkInBetween(randomX,center.x - centerMercy, center.x + centerMercy); //x is in correct position
+        } while (!isXOk);
         do
         {
             randomZ = Random.Range(leftmost.z, rightmost.z);
-        } while (randomZ >= center.z - centerMercy && randomZ <= center.z + centerMercy);
+            foreach (KeyValuePair<Vector3, Vector3> positionAndWidth in positionsAndWidths)
+            {
+                isZOk = !checkInBetween(randomZ, positionAndWidth.Key.z - positionAndWidth.Value.z, positionAndWidth.Key.z + positionAndWidth.Value.z);
+                if (isZOk) { break; }
+            }
+            isZOk = isZOk && !checkInBetween(randomZ, center.z - centerMercy, center.z + centerMercy); //z is in correct position
+        } while (!isZOk);
+
         return new Vector3(randomX, center.y, randomZ);
+    }
+
+    private bool checkInBetween(float value, float min, float max) 
+    {
+        if (min > max) 
+        {
+            float temp = min;
+            min = max;
+            max = temp;
+        }
+        return (value >= min && value <= max);
     }
 }
