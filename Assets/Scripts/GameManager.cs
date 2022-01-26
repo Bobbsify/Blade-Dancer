@@ -216,7 +216,6 @@ public class GameManager : MonoBehaviour
 
     private void GoToNextStage(Stage currentStage)
     {
-        ruleManager.SetNewRuleset(currentStage.GetRules());
         timer.SetTimer(currentStage.GetRulesTime());
         currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
         RoomController room = currentArena.GetComponent<RoomController>();
@@ -227,6 +226,7 @@ public class GameManager : MonoBehaviour
             Collider col = instantiated.GetComponentInChildren<Collider>();
             spacesOccupied.Add(instantiated.transform.position, col == null ? new Vector3(1, 1, 1) : col.bounds.extents);
         }
+        ruleManager.SetNewRuleset(currentStage.GetRules());
         InitEntities(currentArena);
     }
 
