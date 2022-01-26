@@ -40,9 +40,12 @@ public class NotDashRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
-        durationModFormula = 0f;
-        durationMod = durationModFormula;
+        if (durationType == DurationModType.RuleDependant)
+        {
+            targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
+            durationModFormula = 0f;
+            durationMod = durationModFormula;
+        }
         NotDashRule returnedRule = new NotDashRule(AllRules.NotDash,targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
