@@ -35,9 +35,9 @@ public class NotShootRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
+        amountNotToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
         if (durationType == DurationModType.RuleDependant)
         {
-            amountNotToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
             durationModFormula = 0f;
             durationMod = durationModFormula;
         }

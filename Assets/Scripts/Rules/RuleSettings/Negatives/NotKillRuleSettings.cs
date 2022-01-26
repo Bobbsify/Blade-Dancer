@@ -41,9 +41,9 @@ public class NotKillRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
+        amountOfEnemies = UnityEngine.Random.Range(minAmountOfEnemies, maxAmountOfEnemies);
         if (durationType == DurationModType.RuleDependant)
         {
-            amountOfEnemies = UnityEngine.Random.Range(minAmountOfEnemies, maxAmountOfEnemies);
             durationModFormula = 0f;
             durationMod = durationModFormula;
         }
