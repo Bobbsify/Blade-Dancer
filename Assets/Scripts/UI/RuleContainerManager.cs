@@ -55,14 +55,8 @@ public class RuleContainerManager : MonoBehaviour
 
     public void SetupForRule(RulePacket packet)
     {
-        //Setup maxAmount   
-        if (packet.GetScore().Contains("/"))
-        {
-            float.TryParse(packet.GetScore().Split('/')[1], out maxAmount); //Second part of 1/6 so 6;}
-        }
-        
         //SetupSlider
-        ruleScore.maxValue = maxAmount;
+        ruleScore.maxValue = packet.GetMaxScore();
         ruleScore.minValue = 0;
         
 
@@ -111,12 +105,9 @@ public class RuleContainerManager : MonoBehaviour
 
     private void UpdateInformation(RulePacket packet)
     {
-        //Get score amount of packet
-        float packetScoreAmount = 0;
-        float.TryParse(packet.GetScore().Split('/')[0],out packetScoreAmount); //If it has / get only first half if it does not have dash it still gets the first part
-
         ruleName.text = packet.GetName().ToString();
-        ruleScore.value = packetScoreAmount; //If complete hide score
+        ruleScore.value = packet.GetScore(); 
+        //If complete hide score
         completed.gameObject.SetActive(!packet.IsReverse() && packet.GetCompleted());
     }
 }

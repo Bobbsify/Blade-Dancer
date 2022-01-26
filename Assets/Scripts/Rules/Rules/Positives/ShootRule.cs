@@ -32,7 +32,7 @@ public class ShootRule : Rule
 
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, Mathf.Min(amountShot,amountToShoot) + "/" + amountToShoot, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, amountShot, amountToShoot, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()

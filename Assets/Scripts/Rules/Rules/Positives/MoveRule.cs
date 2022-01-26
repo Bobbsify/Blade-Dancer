@@ -35,7 +35,7 @@ public class MoveRule : Rule
     {
         float time = moveTimer;
         float truncatedTime = (float)Math.Round(time * 100f) / 100f;
-        return new RulePacket(this.RuleName, ""+Mathf.Max(truncatedTime,0)+"/"+durationOfMove, this.IsRuleComplete(), IsReverse());
+        return new RulePacket(this.RuleName, Mathf.Max(truncatedTime,0), durationOfMove, this.IsRuleComplete(), IsReverse());
     }
 
     public override bool IsRuleComplete()

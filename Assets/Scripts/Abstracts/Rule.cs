@@ -40,7 +40,7 @@ public abstract class Rule : IRule
 
     public virtual RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, "", this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, IsReverse() ? (IsRuleComplete() ? 0 : 1) : (IsRuleComplete() ? 1 : 0), 1, this.IsRuleComplete(),IsReverse());
     }
 
     public virtual List<RuleObject> GetRuleRelatedObjects()

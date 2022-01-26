@@ -31,7 +31,7 @@ public class NotMoveRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, "0/"+UnityEngine.Random.Range(2, 6), this.IsRuleComplete(),IsReverse()) ;
+        return new RulePacket(this.RuleName, IsRuleComplete() ? 0 : 1, 1, this.IsRuleComplete(),IsReverse()) ;
     }
 
     public override bool IsRuleComplete()
