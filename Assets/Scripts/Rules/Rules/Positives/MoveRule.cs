@@ -35,7 +35,7 @@ public class MoveRule : Rule
     {
         float time = durationOfMove - moveTimer;
         float truncatedTime = (float)Math.Round(time * 100f) / 100f;
-        return new RulePacket(this.RuleName, ""+Mathf.Max(truncatedTime,0), this.IsRuleComplete(), IsReverse());
+        return new RulePacket(this.RuleName, ""+Mathf.Max(truncatedTime,0)+"/"+durationOfMove, this.IsRuleComplete(), IsReverse());
     }
 
     public override bool IsRuleComplete()
@@ -45,7 +45,7 @@ public class MoveRule : Rule
 
     public override string ToString()
     {
-        float time = durationOfMove - moveTimer;
+        float time = moveTimer;
         float truncatedTime = (float)Math.Round(time * 100f) / 100f;
         return "Move (" + Mathf.Max(truncatedTime, 0) + ")";
     }

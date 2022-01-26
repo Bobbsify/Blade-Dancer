@@ -56,23 +56,15 @@ public class RuleContainerManager : MonoBehaviour
     public void SetupForRule(RulePacket packet)
     {
         //Setup maxAmount   
-        if (packet.GetName().Equals(AllRules.Move) || packet.GetName().Equals(AllRules.NotMove))
+        if (packet.GetScore().Contains("/"))
         {
-            float.TryParse(packet.GetScore(), out maxAmount);
-            //SetupSlider
-            ruleScore.maxValue = 0;
-            ruleScore.minValue = maxAmount;
+            float.TryParse(packet.GetScore().Split('/')[1], out maxAmount); //Second part of 1/6 so 6;}
         }
-        else
-        {
-            if (packet.GetScore().Contains("/"))
-            {
-                float.TryParse(packet.GetScore().Split('/')[1], out maxAmount); //Second part of 1/6 so 6;}
-            }
-            //SetupSlider
-            ruleScore.maxValue = maxAmount;
-            ruleScore.minValue = 0;
-        }
+        
+        //SetupSlider
+        ruleScore.maxValue = maxAmount;
+        ruleScore.minValue = 0;
+        
 
         this.currentRule = packet.GetName();
         if (packet.IsReverse())
