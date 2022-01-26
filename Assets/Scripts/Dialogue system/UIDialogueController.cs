@@ -6,6 +6,20 @@ using UnityEngine.UI;
 
 public class UIDialogueController : MonoBehaviour
 {
+
+    [SerializeField]
+    [Range(0.01f,1.0f)]
+    private float dialogueSpeed = 0.01f;
+
+    [Header("Dialogue Sound")]
+
+    [SerializeField]
+    private SoundQueueManager sqm;
+
+    [SerializeField]
+    private SoundPacket speakingSound;
+
+    [Header("UI")]
     [SerializeField]
     private Image ImageToShow;
 
@@ -15,13 +29,16 @@ public class UIDialogueController : MonoBehaviour
     [SerializeField]
     private Text DialogueText;
 
-    [SerializeField]
-    [Range(0.01f,1.0f)]
-    private float dialogueSpeed = 0.01f;
-
     private char[] totalDialogue;
-    private string currentDialogue;
     private int pointInDialogue = 0;
+
+    private void OnValidate()
+    {
+        if (sqm == null) 
+        {
+            sqm = transform.root.GetComponentInChildren<SoundQueueManager>();
+        }
+    }
 
     public void SetDialogue(Dialogue dialogue)
     {
@@ -36,7 +53,7 @@ public class UIDialogueController : MonoBehaviour
         StartCoroutine(TellDialogue());
     }
 
-    internal void EndDialogue()
+    public void EndDialogue()
     {
         gameObject.SetActive(false);
     }
