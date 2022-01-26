@@ -33,7 +33,7 @@ public class MoveRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        float time = durationOfMove - moveTimer;
+        float time = moveTimer;
         float truncatedTime = (float)Math.Round(time * 100f) / 100f;
         return new RulePacket(this.RuleName, ""+Mathf.Max(truncatedTime,0)+"/"+durationOfMove, this.IsRuleComplete(), IsReverse());
     }
