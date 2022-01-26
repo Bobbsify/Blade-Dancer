@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb60abf6a00781744a341fbb6ba8f9db, type: 3}
   m_Name: NotDanceRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
+  durationType: 1
   durationMod: 1
   appliedActions: 03000000
   ruleRelatedObjects: []
