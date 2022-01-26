@@ -16,22 +16,42 @@ public class UIDialogueController : MonoBehaviour
     private Text DialogueText;
 
     [SerializeField]
-    private GameObject UIdialogue;
+    [Range(0.01f,1.0f)]
+    private float dialogueSpeed = 0.01f;
+
+    private char[] totalDialogue;
+    private string currentDialogue;
+    private int pointInDialogue = 0;
 
     public void SetDialogue(Dialogue dialogue)
     {
-        UIdialogue.SetActive(true);
+        gameObject.SetActive(true);
 
         ImageToShow.sprite = dialogue.GetPicture();
 
         NameToShow.text = dialogue.GetName();
 
-        DialogueText.text = dialogue.GetLine();
+        totalDialogue = dialogue.GetLine().ToCharArray();
+        DialogueText.text = "";
+        StartCoroutine(TellDialogue());
     }
 
     internal void EndDialogue()
     {
-        UIdialogue.SetActive(false);
-        Debug.LogError("END OF DIALOGUE");
+        gameObject.SetActive(false);
+    }
+
+    private IEnumerator TellDialogue() 
+    {
+        DialogueText.text += totalDialogue[pointInDialogue];
+        ++pointInDialogue;
+        if (pointInDialogue == totalDialogue.Length)
+        {
+            pointInDialogue = 0;
+        }
+        else { 
+            yield return new WaitForSeconds(dialogueSpeed);
+            StartCoroutine(TellDialogue());
+        }
     }
 }

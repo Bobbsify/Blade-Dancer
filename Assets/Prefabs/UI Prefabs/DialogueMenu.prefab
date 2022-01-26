@@ -534,3 +534,5 @@ MonoBehaviour:
   ImageToShow: {fileID: 335906930915696675}
   NameToShow: {fileID: 1597908403715332412}
   DialogueText: {fileID: 4287827438068241915}
+  UIdialogue: {fileID: 0}
+  dialogueSpeed: 0.1
