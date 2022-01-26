@@ -48,7 +48,7 @@ public class NotGatherRule : Rule
 
     public override bool IsRuleComplete()
     {
-        return amountGathered > 0;
+        return amountGathered < 0;
     }
 
     public override string ToString()

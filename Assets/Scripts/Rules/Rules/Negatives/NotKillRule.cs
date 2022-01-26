@@ -48,7 +48,7 @@ public class NotKillRule : Rule
 
     public override bool IsRuleComplete()
     {
-        return amountKilled > 0;
+        return amountKilled < 0;
     }
 
     public override string ToString()
