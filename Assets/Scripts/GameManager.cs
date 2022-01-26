@@ -173,6 +173,7 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        playerCtrl.GetComponent<Rigidbody>().velocity = Vector3.zero;
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
         Stage nextStage = currentStreak.NextStage();
