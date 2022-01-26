@@ -22,7 +22,7 @@ public class NotTrapRule : Rule
         {
             if (action == executedAction)
             {
-                notTrapped = true;
+                notTrapped = false;
                 return notTrapped;
             }
         }
