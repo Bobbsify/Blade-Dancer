@@ -36,12 +36,18 @@ public class UIDialogueController : MonoBehaviour
     {
         if (sqm == null) 
         {
-            sqm = transform.root.GetComponentInChildren<SoundQueueManager>();
+            
+            GameObject gameManager = GameObject.Find("GameManager");
+            if (gameManager != null) 
+            {
+                sqm = gameManager.GetComponent<SoundQueueManager>();
+            }
         }
     }
 
     public void SetDialogue(Dialogue dialogue)
     {
+        sqm.RemoveSound(speakingSound);
         gameObject.SetActive(true);
 
         ImageToShow.sprite = dialogue.GetPicture();
@@ -51,6 +57,7 @@ public class UIDialogueController : MonoBehaviour
         totalDialogue = dialogue.GetLine().ToCharArray();
         DialogueText.text = "";
         StartCoroutine(TellDialogue());
+        sqm.AddSound(speakingSound);
     }
 
     public void EndDialogue()
@@ -65,6 +72,7 @@ public class UIDialogueController : MonoBehaviour
         if (pointInDialogue == totalDialogue.Length)
         {
             pointInDialogue = 0;
+            sqm.RemoveSound(speakingSound);
         }
         else { 
             yield return new WaitForSeconds(dialogueSpeed);
