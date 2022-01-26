@@ -15,6 +15,9 @@ public class RuleContainerManager : MonoBehaviour
     [SerializeField]
     private Text ruleScore;
 
+    private Color normalRuleColor = new Color(242, 242, 242);
+    private Color reverseRuleColor = new Color(237,62,154);
+
     private AllRules currentRule;
     private bool setup = false;
 
@@ -46,6 +49,11 @@ public class RuleContainerManager : MonoBehaviour
 
     private void Start()
     {
+        normalRuleColor = new Color(242, 242, 242);
+        reverseRuleColor = new Color(237, 62, 154);
+        reverseRuleColor.r = 0.92941f;
+        reverseRuleColor.g = 0.24314f;
+        reverseRuleColor.b = 0.60392f;
         DisableComponents();
     }
 
@@ -60,11 +68,11 @@ public class RuleContainerManager : MonoBehaviour
         this.currentRule = packet.GetName();
         if (packet.IsReverse())
         {
-            ruleName.color = Color.black;
+            ruleName.color = reverseRuleColor;
         }
         else
         {
-            ruleName.color = Color.white;
+            ruleName.color = normalRuleColor;
         }
         EnableComponents();
         UpdateInformation(packet);
