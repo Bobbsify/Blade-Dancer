@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d95628165146c4dabec46ae5b06c71, type: 3}
   m_Name: NotKillRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
+  durationType: 1
   durationMod: 1
   appliedActions: 09000000
   ruleRelatedObjects:

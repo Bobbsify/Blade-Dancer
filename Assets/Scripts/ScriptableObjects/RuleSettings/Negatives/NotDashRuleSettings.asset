@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d7a77efdfcc0344885981e2375a5a4f, type: 3}
   m_Name: NotDashRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
+  durationType: 1
   durationMod: 1
   appliedActions: 02000000
   ruleRelatedObjects: []
