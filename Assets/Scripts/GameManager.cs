@@ -173,7 +173,7 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
-        playerCtrl.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
         Stage nextStage = currentStreak.NextStage();
@@ -233,6 +233,8 @@ public class GameManager : MonoBehaviour
 
     private Vector3 RoomPosition()
     {
+        playerCtrl.GetComponent<Rigidbody>().isKinematic = false;
+
         Vector3 playerPos = PlayerPawn.transform.position;
         playerPos.y -= roomUnderminingValue;
         return playerPos;
