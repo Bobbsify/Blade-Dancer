@@ -20,7 +20,7 @@ public class RuleContainerManager : MonoBehaviour
     
 
     private AllRules currentRule;
-    private float maxAmount = 0;
+    private float maxAmount = 1;
 
     private const string tickContainerName = "TICK";
     private const string nameContainerName = "NAME";
