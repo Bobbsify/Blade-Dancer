@@ -11,7 +11,7 @@ public class ObjectSwitcher : MonoBehaviour
     [Range(0.1f, 10f)]
     private float delay = 0.5f;
 
-    private int currentObj = 1;
+    private int currentObj = 0;
 
     private void Awake()
     {
