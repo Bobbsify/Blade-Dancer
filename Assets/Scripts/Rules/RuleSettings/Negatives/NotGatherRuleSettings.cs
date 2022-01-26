@@ -40,8 +40,10 @@ public class NotGatherRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        amountNotToGather = UnityEngine.Random.Range(minAmountToGather, maxAmountToGather);
-        durationMod = durationModFormula;
+        if (durationType == DurationModType.RuleDependant) { 
+            amountNotToGather = UnityEngine.Random.Range(minAmountToGather, maxAmountToGather);
+            durationMod = durationModFormula;
+        }
         NotGatherRule returnedRule = new NotGatherRule(AllRules.NotGather, amountNotToGather, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
