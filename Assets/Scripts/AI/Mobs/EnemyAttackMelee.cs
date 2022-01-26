@@ -18,7 +18,7 @@ public class EnemyAttackMelee : FSMState
 	[SerializeField]
 	private int damage;
 
-	private bool isPlayerDamageable;
+	public bool isPlayerDamageable;
 
 	private PlayerController playerController;
 
@@ -31,7 +31,7 @@ public class EnemyAttackMelee : FSMState
 
     private void Start()
     {
-		isPlayerDamageable = false;
+		isPlayerDamageable = true;
     }
     private void Update()
 	{
@@ -79,6 +79,7 @@ public class EnemyAttackMelee : FSMState
 		if (isPlayerDamageable == true)
         {
 			playerController.TakeDamage(damage);
+			isPlayerDamageable = false;
 		}
 	}
 }
