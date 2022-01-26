@@ -531,8 +531,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f22310f38ef00042821c179372cb70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueSpeed: 0.01
+  sqm: {fileID: 0}
+  speakingSound:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   ImageToShow: {fileID: 335906930915696675}
   NameToShow: {fileID: 1597908403715332412}
   DialogueText: {fileID: 4287827438068241915}
-  UIdialogue: {fileID: 0}
-  dialogueSpeed: 0.1
