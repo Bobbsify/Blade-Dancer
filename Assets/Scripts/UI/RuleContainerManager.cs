@@ -13,13 +13,14 @@ public class RuleContainerManager : MonoBehaviour
     private Image completed;
 
     [SerializeField]
-    private Text ruleScore;
+    private Slider ruleScore;
 
-    private Color normalRuleColor = new Color(242, 242, 242);
-    private Color reverseRuleColor = new Color(237,62,154);
+    private Color normalRuleColor = new Color(0.95311f, 0.95311f, 0.95311f);
+    private Color reverseRuleColor = new Color(0.92941f, 0.24314f, 0.60392f);
+    
 
     private AllRules currentRule;
-    private bool setup = false;
+    private float maxAmount = 1;
 
     private const string tickContainerName = "TICK";
     private const string nameContainerName = "NAME";
@@ -27,18 +28,13 @@ public class RuleContainerManager : MonoBehaviour
 
     private void OnValidate()
     {
-        if (ruleName == null && ruleScore == null) { 
-            foreach (Text t in GetComponentsInChildren<Text>())
-            {
-                if (t.name.ToUpper().Equals(nameContainerName))
-                {
-                    ruleName = t;
-                }
-                if (t.name.ToUpper().Equals(scoreContainerName))
-                {
-                    ruleScore = t;
-                }
-            }
+        if (ruleName == null) {
+            ruleName = GetComponentInChildren<Text>();
+        }
+
+        if (ruleScore == null)
+        {
+            ruleScore = GetComponentInChildren<Slider>();
         }
 
         if (completed == null) 
@@ -49,11 +45,6 @@ public class RuleContainerManager : MonoBehaviour
 
     private void Start()
     {
-        normalRuleColor = new Color(242, 242, 242);
-        reverseRuleColor = new Color(237, 62, 154);
-        reverseRuleColor.r = 0.92941f;
-        reverseRuleColor.g = 0.24314f;
-        reverseRuleColor.b = 0.60392f;
         DisableComponents();
     }
 
@@ -64,7 +55,17 @@ public class RuleContainerManager : MonoBehaviour
 
     public void SetupForRule(RulePacket packet)
     {
-        setup = true;
+        //Setup maxAmount   
+        if (packet.GetScore().Contains("/"))
+        {
+            float.TryParse(packet.GetScore().Split('/')[1], out maxAmount); //Second part of 1/6 so 6;}
+        }
+        
+        //SetupSlider
+        ruleScore.maxValue = maxAmount;
+        ruleScore.minValue = 0;
+        
+
         this.currentRule = packet.GetName();
         if (packet.IsReverse())
         {
@@ -74,6 +75,8 @@ public class RuleContainerManager : MonoBehaviour
         {
             ruleName.color = normalRuleColor;
         }
+
+
         EnableComponents();
         UpdateInformation(packet);
     }
@@ -90,7 +93,6 @@ public class RuleContainerManager : MonoBehaviour
 
     public void Reset()
     {
-        setup = false;
         DisableComponents();
     }
 
@@ -109,8 +111,12 @@ public class RuleContainerManager : MonoBehaviour
 
     private void UpdateInformation(RulePacket packet)
     {
+        //Get score amount of packet
+        float packetScoreAmount = 0;
+        float.TryParse(packet.GetScore().Split('/')[0],out packetScoreAmount); //If it has / get only first half if it does not have dash it still gets the first part
+
         ruleName.text = packet.GetName().ToString();
-        ruleScore.text = packet.GetScore(); //If complete hide score
+        ruleScore.value = packetScoreAmount; //If complete hide score
         completed.gameObject.SetActive(!packet.IsReverse() && packet.GetCompleted());
     }
 }
