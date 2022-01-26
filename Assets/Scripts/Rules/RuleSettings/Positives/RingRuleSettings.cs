@@ -6,7 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "RingRuleSettings", menuName = "ScriptableObjects/RuleSettings/RingRuleSettings", order = 8)]
 public class RingRuleSettings : RuleSetting
 {
-    private float durationModFormula => 1.0f;
+    private float durationModFormula => 3.0f;
 
     public RingRuleSettings()
     {
