@@ -181,9 +181,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   minReactionTime: 0
-  maxReactionTime: 0.5
+  maxReactionTime: 0
   stateChase: {fileID: 2096567139338241274}
   damage: 1
+  isPlayerDamageable: 0
 --- !u!1 &4110936719562507667
 GameObject:
   m_ObjectHideFlags: 0
