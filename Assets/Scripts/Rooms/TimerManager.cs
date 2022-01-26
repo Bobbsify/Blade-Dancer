@@ -80,4 +80,9 @@ public class TimerManager : MonoBehaviour, IGameEntity
     {
         this.gameManager = gameManager;
     }
+
+    public bool IsGoing()
+    {
+        return doTimer;
+    }
 }

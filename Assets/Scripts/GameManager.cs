@@ -126,8 +126,7 @@ public class GameManager : MonoBehaviour
 
     public void ActionEventTrigger(Actions action)
     {
-        Debug.Log("Exectued Action " + action);
-        if (currentStreak != null)
+        if (currentStreak != null && timer.IsGoing())
         {
             if (action.Equals(Actions.TakeDamage) && ruleManager.IsCurrentlyRule(AllRules.TakeDamage) && !tookDamage)
             {
