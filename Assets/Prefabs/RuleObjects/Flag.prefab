@@ -160,4 +160,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f48b02592c99345f695e65a47aa0b08c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reachingSound:
+    audio: {fileID: 8300000, guid: f66389f745c4c88439901483b5b696cd, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
   gameManager: {fileID: 0}

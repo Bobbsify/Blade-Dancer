@@ -6,12 +6,16 @@ using UnityEngine;
 public class FlagObject : MonoBehaviour,IGameEntity
 {
     [SerializeField]
+    private SoundPacket reachingSound;
+
+    [SerializeField]
     private GameManager gameManager;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.GetComponentInChildren<PlayerController>() != null)
         {
+            gameManager.PlaySound(reachingSound);
             SendActionToGameManager();
             Destroy(this.gameObject);
         }
