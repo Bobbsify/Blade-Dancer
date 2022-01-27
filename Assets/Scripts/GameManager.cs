@@ -15,21 +15,24 @@ public class GameManager : MonoBehaviour
     [Tooltip("For entities that require to know of the Game Manager Object")]
     private GameObject[] GameEntitiesRoots;
 
+    [SerializeField]
+    private CheerController cheerController;
+
     [Header("Player Generation")]
 
-	[SerializeField]
-	private Transform inputReceiversTransform;
+    [SerializeField]
+    private Transform inputReceiversTransform;
 
     [SerializeField]
     private Transform projectilesRoot;
 
     [SerializeField]
-	private Transform spawnPoint;
+    private Transform spawnPoint;
 
-	[SerializeField]
-	private GameObject playerPrefab;
+    [SerializeField]
+    private GameObject playerPrefab;
 
-	public GameObject PlayerPawn { get; private set; }
+    public GameObject PlayerPawn { get; private set; }
 
     private PlayerController playerCtrl;
 
@@ -82,6 +85,8 @@ public class GameManager : MonoBehaviour
 
     //--------------------------------------------------
 
+    private SoundQueueManager sqm;
+
     private RuleManager ruleManager;
 
     private StreakFactory streakFactory;
@@ -92,11 +97,17 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
-    private SoundQueueManager sqm;
-
     [SerializeField] //TEMPORARY
     private bool firstRun = true;
     private bool tookDamage = false;
+
+    private void OnValidate()
+    {
+        if (cheerController == null) 
+        {
+            cheerController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerController>(true);
+        }
+    }
 
     private void Awake()
 	{
@@ -201,7 +212,12 @@ public class GameManager : MonoBehaviour
 
     private int GetDanceCharge()
     {
-        return timer.GetCheer();
+        int cheer = timer.GetCheer();
+        if (cheer > 1) 
+        {
+            cheerController.DoCheer();
+        }
+        return cheer;
     }
 
     public void doReset()
