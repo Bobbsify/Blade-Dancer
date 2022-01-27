@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
     private GameObject[] GameEntitiesRoots;
 
     [SerializeField]
-    private CheerController cheerController;
+    private CheerManager cheerController;
 
     [Header("Player Generation")]
 
@@ -105,7 +105,7 @@ public class GameManager : MonoBehaviour
     {
         if (cheerController == null) 
         {
-            cheerController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerController>(true);
+            cheerController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
         }
     }
 
@@ -215,7 +215,7 @@ public class GameManager : MonoBehaviour
         int cheer = timer.GetCheer();
         if (cheer > 1) 
         {
-            cheerController.DoCheer();
+            cheerController.ExecuteCheer();
         }
         return cheer;
     }
