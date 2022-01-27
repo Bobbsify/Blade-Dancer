@@ -81,6 +81,11 @@ public class UIRulesController : MonoBehaviour
             }
         }
     }
+
+    public List<RuleContainerManager> GetContainers()
+    {
+        return this.ruleContainerManagers;
+    }
 }
 
 
