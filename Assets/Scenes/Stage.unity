@@ -1320,7 +1320,7 @@ MonoBehaviour:
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   currentBreakroom: 0
-  firstRun: 0
+  firstRun: 1
 --- !u!114 &2027274950
 MonoBehaviour:
   m_ObjectHideFlags: 0
