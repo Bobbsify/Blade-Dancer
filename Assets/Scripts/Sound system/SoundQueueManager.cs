@@ -107,31 +107,59 @@ public class SoundQueueManager : MonoBehaviour
 
     public void RemoveSound(SoundPacket sound, bool fade = false)
     {
-        if (fade == false)
-        {
-            emission.StopAudio();
-        }
-
-        else
-
-        {
-            emission.FadeOut(sound);
-        }
-
         SoundType type = sound.GetAudioType();
 
         switch (type)
         {
             case SoundType.Loop:
+
+                if (fade == false)
+                {
+                    emission.StopAudio(sound);
+                }
+
+                else
+
+                {
+                    emission.FadeOut(sound);
+                }
+
                 loopAudioList.Remove(sound);
+
                 break;
 
             case SoundType.PlayOnce:
+
+                if (fade == false)
+                {
+                    emission.StopAudio(sound);
+                }
+
+                else
+
+                {
+                    emission.FadeOut(sound);
+                }
+
                 playOnceAudioList.Remove(sound);
+
                 break;
 
             case SoundType.ReplayAfterSeconds:
+
+                if (fade == false)
+                {
+                    emission.StopAudio(sound);
+                }
+
+                else
+
+                {
+                    emission.FadeOut(sound);
+                }
+
                 delayAudioList.Remove(sound);
+
                 break;
         }
     }

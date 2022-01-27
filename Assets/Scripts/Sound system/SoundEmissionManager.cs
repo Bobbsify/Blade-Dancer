@@ -26,7 +26,7 @@ public class SoundEmissionManager : MonoBehaviour
         audio.Play();
     }
 
-    public void StopAudio()
+    public void StopAudio(SoundPacket soundPacket)
     {
         audio.Stop();
     }
