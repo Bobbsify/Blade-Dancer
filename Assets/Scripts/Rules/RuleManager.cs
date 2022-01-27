@@ -69,7 +69,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
             RulePacket update = r.ToPacket();
             if (r.IsReverse()) 
             {
-                update = new RulePacket(r.GetPureRuleName(), update.GetScore(), update.GetCompleted(),update.IsReverse());
+                update = new RulePacket(r.GetPureRuleName(), update.GetScore(), update.GetMaxScore(), update.GetCompleted(),update.IsReverse());
             }
             updates.Add(update);
         }

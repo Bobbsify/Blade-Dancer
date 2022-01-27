@@ -81,26 +81,34 @@ public class UIRulesController : MonoBehaviour
             }
         }
     }
+
+    public List<RuleContainerManager> GetContainers()
+    {
+        return this.ruleContainerManagers;
+    }
 }
 
 
 public class RulePacket
 {
     private AllRules ruleName;
-    private string score;
+    private float score;
+    private float maxScore;
     private bool isReverse;
     private bool completed;
 
-    public RulePacket(AllRules rule, string score, bool completed,bool reverse)
+    public RulePacket(AllRules rule, float score, float maxScore, bool completed,bool reverse)
     {
         this.ruleName = rule;
         this.score = score;
+        this.maxScore = maxScore;
         this.isReverse = reverse;
         this.completed = completed;
     }
 
     public AllRules GetName() { return this.ruleName; }
-    public string GetScore() { return this.score; }
+    public float GetScore() { return this.score; }
+    public float GetMaxScore() { return this.maxScore; }
     public bool GetCompleted() { return this.completed; }
     public bool IsReverse() { return this.isReverse; }
 }

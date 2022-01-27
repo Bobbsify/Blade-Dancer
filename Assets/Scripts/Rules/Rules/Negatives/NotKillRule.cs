@@ -31,7 +31,7 @@ public class NotKillRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountKilled + "/" + amountNotToKill, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, amountKilled, amountNotToKill, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool CheckAction(Actions executedAction)
