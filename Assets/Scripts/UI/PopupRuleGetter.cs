@@ -9,13 +9,17 @@ public class PopupRuleGetter : MonoBehaviour
     private UIRulesController urc;
 
     [SerializeField]
-    private List<Text> texts;
+    private List<Text> texts = new List<Text>();
 
     private void OnValidate()
     {
         if (urc == null) 
         {
             urc = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<UIRulesController>(true);
+        }
+        if (texts.Count == 0) 
+        {
+            texts.AddRange(GetComponentsInChildren<Text>(true));
         }
     }
 
