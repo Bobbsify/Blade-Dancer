@@ -25,7 +25,7 @@ public class DanceRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        DanceRule returnedRule = new DanceRule(AllRules.Dance, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        DanceRule returnedRule = new DanceRule(AllRules.Balla, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

@@ -47,7 +47,7 @@ public class NotKillRuleSettings : RuleSetting
             durationModFormula = 0f;
             durationMod = durationModFormula;
         }
-        NotKillRule returnedRule = new NotKillRule(AllRules.NotKill, amountOfEnemies, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotKillRule returnedRule = new NotKillRule(AllRules.NotUccidi, amountOfEnemies, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

@@ -25,7 +25,7 @@ public class TrapRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        TrapRule returnedRule = new TrapRule(AllRules.Trap, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        TrapRule returnedRule = new TrapRule(AllRules.Cattura, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

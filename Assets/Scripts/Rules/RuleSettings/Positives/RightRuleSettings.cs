@@ -25,7 +25,7 @@ public class RightRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        RightRule returnedRule = new RightRule(AllRules.Right, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        RightRule returnedRule = new RightRule(AllRules.Destra, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

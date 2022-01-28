@@ -25,7 +25,7 @@ public class RingRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        RingRule returnedRule = new RingRule(AllRules.Ring, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        RingRule returnedRule = new RingRule(AllRules.Suona, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

@@ -43,7 +43,7 @@ public class KillRuleSettings : RuleSetting
         amountOfEnemies = UnityEngine.Random.Range(minAmountOfEnemies, maxAmountOfEnemies);
         durationModFormula = amountOfEnemies * durationModMultiplier;
         durationMod = durationModFormula;
-        KillRule returnedRule = new KillRule(AllRules.Kill,amountOfEnemies, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        KillRule returnedRule = new KillRule(AllRules.Uccidi,amountOfEnemies, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

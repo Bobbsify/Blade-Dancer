@@ -25,7 +25,7 @@ public class NotTakeDamageRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotTakeDamageRule returnedRule = new NotTakeDamageRule(AllRules.NotTakeDamage, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotTakeDamageRule returnedRule = new NotTakeDamageRule(AllRules.NotDanneggiati, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

@@ -25,7 +25,7 @@ public class NotBreakRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotBreakRule returnedRule = new NotBreakRule(AllRules.NotBreak, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotBreakRule returnedRule = new NotBreakRule(AllRules.NotRompi, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

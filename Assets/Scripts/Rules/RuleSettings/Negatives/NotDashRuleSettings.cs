@@ -46,7 +46,7 @@ public class NotDashRuleSettings : RuleSetting
             durationModFormula = 0f;
             durationMod = durationModFormula;
         }
-        NotDashRule returnedRule = new NotDashRule(AllRules.NotDash,targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotDashRule returnedRule = new NotDashRule(AllRules.NotScatta,targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }
