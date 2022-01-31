@@ -48,7 +48,7 @@ public class RoomController : MonoBehaviour
     public Vector3 GetPos(PositionType pos,Dictionary<Vector3,Vector3> positionsOccupied) //Position --> Collider width
     {
         Vector3 toPass = new Vector3(0, 0, 0);
-        if ((int)pos > 3) //If position is not random
+        if ((int)pos > 4) //If position is not random
         {
             associatedPositions.TryGetValue(pos, out toPass);
         }
@@ -84,7 +84,8 @@ public class RoomController : MonoBehaviour
 
                     toPass = RandomRangeVectorNoCenter(topLeft, bottomRight, positionsOccupied);
                     break;
-                case PositionType.NoCorner:
+                case PositionType.RandomNoCorner:
+
                     associatedPositions.TryGetValue(PositionType.BotRightCorner, out bottomRight);
                     associatedPositions.TryGetValue(PositionType.TopLeftCorner, out topLeft);
 
@@ -97,7 +98,10 @@ public class RoomController : MonoBehaviour
                     bottomRight = new Vector3(bottomRight.x - xMod, bottomRight.y, bottomRight.z + zMod);
                     topLeft = new Vector3(topLeft.x + xMod, topLeft.y, topLeft.z - zMod);
 
+                    Debug.Log(bottomRight + " - " + topLeft);
+
                     toPass = RandomRangeVectorNoCenter(topLeft, bottomRight, positionsOccupied);
+
                     break;
                 default:
                     throw new System.Exception("Unkown Position Type " + pos + " as a Randomized position (Could this be a fixed position in the wrong place?)");
