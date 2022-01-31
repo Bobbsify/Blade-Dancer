@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(Collider))]
 public class BreakObject : MonoBehaviour, IGameEntity
 {
@@ -12,29 +13,47 @@ public class BreakObject : MonoBehaviour, IGameEntity
     private float objectHealth;
 
     [SerializeField]
-    private float healthToDestroyGameObject;
+    private SoundPacket damageSound;
+
+    [SerializeField]
+    private SoundPacket breakSound;
+
+    private Animator animator;
+
+    private float maxHealth;
+    private bool damaged = false;
 
     private void Start()
     {
+        TryGetComponent(out animator);
         objectHealth = objectHealth * 2;
+        maxHealth = objectHealth;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponentInChildren<ProjectileController>() != null)
+        if (other.GetComponentInChildren<ProjectileController>() != null && this.enabled)
         {
-            objectHealth--;
             DestroyIfZeroHealth();
         }
     }
 
     private void DestroyIfZeroHealth()
     {
-        if (this.objectHealth <= healthToDestroyGameObject)
+        objectHealth--;
+        if (this.objectHealth == maxHealth / 2)
         {
             SendActionToGameManager();
-            Destroy(this.gameObject);
-        }      
+            gameManager.PlaySound(damageSound);
+            animator.SetTrigger("damage");
+            damaged = true;
+        }
+        else if (this.objectHealth == 0) //no health
+        {
+            gameManager.PlaySound(breakSound);
+            animator.SetTrigger("damage");
+            this.enabled = false;
+        }
     }
 
     public void SendActionToGameManager()
