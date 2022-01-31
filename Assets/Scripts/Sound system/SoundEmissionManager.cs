@@ -26,8 +26,9 @@ public class SoundEmissionManager : MonoBehaviour
         audio.Play();
     }
 
-    public void StopAudio(SoundPacket soundPacket)
+    public void StopAudio(Dictionary<SoundPacket, SoundEmissionManager> soundEmission,SoundPacket sound)
     {
+        soundEmission.Remove(sound);
         audio.Stop();
     }
 

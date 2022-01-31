@@ -18,6 +18,7 @@ public class SoundQueueManager : MonoBehaviour
     private Dictionary<SoundPacket, GameObject> loopAudioList = new Dictionary<SoundPacket, GameObject>();
     private Dictionary<SoundPacket, GameObject> delayAudioList = new Dictionary<SoundPacket, GameObject>();
     private Dictionary<SoundPacket, GameObject> playOnceAudioList = new Dictionary<SoundPacket, GameObject>();
+    private Dictionary<SoundPacket, SoundEmissionManager> EmissionSound = new Dictionary<SoundPacket, SoundEmissionManager>();
 
     private SoundEmissionManager emission;
     
@@ -26,6 +27,7 @@ public class SoundQueueManager : MonoBehaviour
         SoundType type = sound.GetAudioType();
         OutputType outputType = sound.GetOutputType();
         Vector3 position = sound.GetPlayPosition();
+
         GameObject soundObject = new GameObject();
 
         soundObject.AddComponent<AudioSource>();
@@ -33,6 +35,7 @@ public class SoundQueueManager : MonoBehaviour
         soundObject.GetComponent<AudioSource>().clip = sound.GetAudio();
 
         emission = soundObject.GetComponentInChildren<SoundEmissionManager>();
+
         GameObject spawnedSound = Instantiate(soundObject, position, this.transform.rotation, null);
 
         switch (type)
@@ -43,6 +46,11 @@ public class SoundQueueManager : MonoBehaviour
                 {
                     loopAudioList.Add(sound, soundObject);
                     soundObject.GetComponent<AudioSource>().loop = true;
+
+                    if(EmissionSound.ContainsKey(sound)== false)
+                    {
+                        EmissionSound.Add(sound, emission);
+                    }
                 }
 
                 break;
@@ -52,6 +60,11 @@ public class SoundQueueManager : MonoBehaviour
                 if(playOnceAudioList.ContainsKey(sound) == false)
                 {
                     playOnceAudioList.Add(sound, soundObject);
+
+                    if (EmissionSound.ContainsKey(sound) == false)
+                    {
+                        EmissionSound.Add(sound, emission);
+                    }
                 }
             
                 break;
@@ -61,6 +74,11 @@ public class SoundQueueManager : MonoBehaviour
                 if (delayAudioList.ContainsKey(sound) == false)
                 {
                     delayAudioList.Add(sound, soundObject);
+
+                    if (EmissionSound.ContainsKey(sound) == false)
+                    {
+                        EmissionSound.Add(sound, emission);
+                    }
                 }
 
                 break;
@@ -115,33 +133,48 @@ public class SoundQueueManager : MonoBehaviour
 
                 if (fade == false)
                 {
-                    emission.StopAudio(sound);
+                    if(EmissionSound.ContainsKey(sound) == true)
+                    {
+                        emission.StopAudio(EmissionSound, sound);
+                        loopAudioList.Remove(sound);
+                    }   
                 }
 
                 else
 
                 {
-                    emission.FadeOut(sound);
+                    if(EmissionSound.ContainsKey(sound) == true)
+                    {
+                        emission.FadeOut(sound);
+                        loopAudioList.Remove(sound);
+                    }
+                    
                 }
-
-                loopAudioList.Remove(sound);
-
+                   
                 break;
 
             case SoundType.PlayOnce:
 
                 if (fade == false)
                 {
-                    emission.StopAudio(sound);
+                    if(EmissionSound.ContainsKey(sound) == true)
+                    {
+                        emission.StopAudio(EmissionSound, sound);
+                        playOnceAudioList.Remove(sound);
+                    }
+                   
                 }
 
                 else
 
                 {
-                    emission.FadeOut(sound);
+                    if(EmissionSound.ContainsKey(sound) == true)
+                    {
+                        emission.FadeOut(sound);
+                        playOnceAudioList.Remove(sound);
+                    }
+                    
                 }
-
-                playOnceAudioList.Remove(sound);
 
                 break;
 
@@ -149,17 +182,25 @@ public class SoundQueueManager : MonoBehaviour
 
                 if (fade == false)
                 {
-                    emission.StopAudio(sound);
+                    if(EmissionSound.ContainsKey(sound) == true)
+                    {
+                        emission.StopAudio(EmissionSound, sound);
+                        delayAudioList.Remove(sound);
+                    }
+                    
                 }
 
                 else
 
                 {
-                    emission.FadeOut(sound);
+                    if(EmissionSound.ContainsKey(sound) == true)
+                    {
+                        emission.FadeOut(sound);
+                        delayAudioList.Remove(sound);
+                    }
+                    
                 }
-
-                delayAudioList.Remove(sound);
-
+     
                 break;
         }
     }
