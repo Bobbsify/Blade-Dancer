@@ -1500,6 +1500,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BreakRoom0
       objectReference: {fileID: 0}
+    - target: {fileID: 5114155448005026985, guid: 3e58502907722bf46a284ac033deac24,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e58502907722bf46a284ac033deac24, type: 3}
 --- !u!4 &2776294679201660313 stripped
