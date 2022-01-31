@@ -33,16 +33,16 @@ public class StreakFactory
     {
         List<Stage> tutorialStages = new List<Stage>();
 
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Move)); //Stage 1
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Shoot)); //Stage 2
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Dash)); //Stage 3
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Dance)); //Stage 4
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Move, AllRules.Shoot)); //Stage 5
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Move, AllRules.NotShoot)); //Stage 6
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Move, AllRules.NotDash)); //Stage 7
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Dash, AllRules.NotShoot)); //Stage 8
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Kill)); //Stage 9
-        tutorialStages.Add(factory.GetFixedStage(AllRules.Kill, AllRules.NotDash, AllRules.NotDance)); //Stage 10
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Muoviti)); //Stage 1
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Spara)); //Stage 2
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Scatta)); //Stage 3
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Balla)); //Stage 4
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Muoviti, AllRules.Spara)); //Stage 5
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Muoviti, AllRules.NotSpara)); //Stage 6
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Muoviti, AllRules.NotScatta)); //Stage 7
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Scatta, AllRules.NotSpara)); //Stage 8
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Uccidi)); //Stage 9
+        tutorialStages.Add(factory.GetFixedStage(AllRules.Uccidi, AllRules.NotScatta, AllRules.NotBalla)); //Stage 10
 
         return new Streak(tutorialStages);
     }

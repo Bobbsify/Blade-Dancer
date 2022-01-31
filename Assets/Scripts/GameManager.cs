@@ -139,7 +139,7 @@ public class GameManager : MonoBehaviour
     {
         if (currentStreak != null && timer.IsGoing())
         {
-            if (action.Equals(Actions.TakeDamage) && ruleManager.IsCurrentlyRule(AllRules.TakeDamage) && !tookDamage)
+            if (action.Equals(Actions.TakeDamage) && ruleManager.IsCurrentlyRule(AllRules.Danneggiati) && !tookDamage)
             {
                 tookDamage = true;
                 playerCtrl.TakeDamage(-1); //Heal player on first instance of damage
@@ -184,6 +184,7 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        RemoveProjectiles();
         playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
@@ -198,6 +199,14 @@ public class GameManager : MonoBehaviour
         {
             timer.ResetTimer();
             StreakEnded();
+        }
+    }
+
+    private void RemoveProjectiles()
+    {
+        foreach (Transform t in projectilesRoot) 
+        {
+            Destroy(t.gameObject);
         }
     }
 

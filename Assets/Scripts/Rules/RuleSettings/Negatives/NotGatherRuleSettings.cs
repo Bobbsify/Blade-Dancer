@@ -44,7 +44,7 @@ public class NotGatherRuleSettings : RuleSetting
         if (durationType == DurationModType.RuleDependant) { 
             durationMod = durationModFormula;
         }
-        NotGatherRule returnedRule = new NotGatherRule(AllRules.NotGather, amountNotToGather, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotGatherRule returnedRule = new NotGatherRule(AllRules.NotRaccogli, amountNotToGather, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

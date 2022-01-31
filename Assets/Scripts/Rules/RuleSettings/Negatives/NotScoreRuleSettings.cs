@@ -25,7 +25,7 @@ public class NotScoreRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotScoreRule returnedRule = new NotScoreRule(AllRules.NotScore, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotScoreRule returnedRule = new NotScoreRule(AllRules.NotSegna, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

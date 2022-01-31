@@ -42,7 +42,7 @@ public class GatherRuleSettings : RuleSetting
     {
         amountToGather = UnityEngine.Random.Range(minAmountToGather, maxAmountToGather);
         durationMod = durationModFormula;
-        GatherRule returnedRule = new GatherRule(AllRules.Gather, amountToGather, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        GatherRule returnedRule = new GatherRule(AllRules.Raccogli, amountToGather, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

@@ -15,9 +15,4 @@ public class CheerController : MonoBehaviour
     {
         anim.SetTrigger("execute");
     }
-
-    public void EndCheer() 
-    {
-        this.gameObject.SetActive(false);
-    }
 }
