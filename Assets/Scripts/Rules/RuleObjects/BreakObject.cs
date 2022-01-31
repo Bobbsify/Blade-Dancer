@@ -41,7 +41,6 @@ public class BreakObject : MonoBehaviour, IGameEntity
     private void DestroyIfZeroHealth()
     {
         objectHealth--;
-        Debug.Log(this.objectHealth + " == " + maxHealth + " / 2" + (this.objectHealth == maxHealth / 2));
         if (this.objectHealth == maxHealth / 2)
         {
             SendActionToGameManager();
