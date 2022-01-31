@@ -47,7 +47,7 @@ public class UIDialogueController : MonoBehaviour
 
     public void SetDialogue(Dialogue dialogue)
     {
-        //sqm.RemoveSound(speakingSound);
+        sqm.RemoveSound(speakingSound);
         StopCoroutine(TellDialogue());
         gameObject.SetActive(true);
 
