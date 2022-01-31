@@ -97,7 +97,7 @@ public class RoomController : MonoBehaviour
                     bottomRight = new Vector3(bottomRight.x - xMod, bottomRight.y, bottomRight.z + zMod);
                     topLeft = new Vector3(topLeft.x + xMod, topLeft.y, topLeft.z - zMod);
 
-                    toPass = RandomRangeVectorNoCenter(topCenter, bottomRight, positionsOccupied);
+                    toPass = RandomRangeVectorNoCenter(topLeft, bottomRight, positionsOccupied);
                     break;
                 default:
                     throw new System.Exception("Unkown Position Type " + pos + " as a Randomized position (Could this be a fixed position in the wrong place?)");
