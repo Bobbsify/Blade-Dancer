@@ -10,7 +10,7 @@ using UnityEngine;
 public class UIRulesController : MonoBehaviour
 {
     [SerializeField]
-    private float oddRulesOffset = 125.0f;
+    private float oddRulesOffset = 47.5f; //125.0f
 
     [SerializeField]
     private List<RuleContainerManager> ruleContainerManagers = new List<RuleContainerManager>();
@@ -27,7 +27,11 @@ public class UIRulesController : MonoBehaviour
     }
     private void Awake()
     {
-        defaultPos = this.transform.position;
+        defaultPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+    }
+
+    private void Start()
+    {
         offsettedPos = new Vector3(defaultPos.x + oddRulesOffset, defaultPos.y, defaultPos.z);
     }
 
