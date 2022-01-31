@@ -83,6 +83,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int currentBreakroom = 0;
 
+    //TEMPORARY
+    [SerializeField]
+    private bool firstRun = true;
+
+    [SerializeField]
+    private bool customRunEnabled = true;
+
+    [SerializeField]
+    private AllRules[] customRun = new AllRules[10];
+
     //--------------------------------------------------
 
     private SoundQueueManager sqm;
@@ -97,8 +107,6 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
-    [SerializeField] //TEMPORARY
-    private bool firstRun = true;
     private bool tookDamage = false;
 
     private void OnValidate()
@@ -238,6 +246,7 @@ public class GameManager : MonoBehaviour
         firstRun = fr;
         playerCtrl.EnableAllAbilities();
         ruleManager.SetNewRuleset(new List<Rule>()); //Empty rules
+        RemoveProjectiles();
     }
 
     private void GoToNextStage(Stage currentStage)
@@ -270,8 +279,13 @@ public class GameManager : MonoBehaviour
         if (firstRun)
         {
             currentStreak = streakFactory.GetTutorialStreak();
+        } 
+        else if (customRunEnabled) 
+        {
+            currentStreak = streakFactory.GetCustomStreak(customRun);
         }
-        else { 
+        else 
+        {
             int difficulty = fixedDifficulty == 0 ? UnityEngine.Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
             currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
         }
@@ -291,6 +305,7 @@ public class GameManager : MonoBehaviour
         startingRoom = breakoutRoom;
 
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
+        RemoveProjectiles();
         this.inputManager.EnableInput<InputSystemPause>();
     }
 

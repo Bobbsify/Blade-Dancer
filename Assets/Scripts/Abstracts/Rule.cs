@@ -126,6 +126,7 @@ public class RuleObject
 public enum PositionType
 {
     Random = 0,
+    RandomNoCorner,
     AnyCorner,
     AnyLeft,
     AnyRight,
@@ -138,7 +139,6 @@ public enum PositionType
     BotLeftCorner,
     BotCenter,
     BotRightCorner,
-    NoCorner,
 }
 
 //Defines wether or not the amount written in the "Duration Modifier" Box affects the duration of the rule or if it is calculated by the rule itself

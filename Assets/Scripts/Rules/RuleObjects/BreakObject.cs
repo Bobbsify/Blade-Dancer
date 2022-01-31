@@ -43,13 +43,13 @@ public class BreakObject : MonoBehaviour, IGameEntity
         objectHealth--;
         if (this.objectHealth == maxHealth / 2)
         {
-            SendActionToGameManager();
             gameManager.PlaySound(damageSound);
             animator.SetTrigger("damage");
             damaged = true;
         }
         else if (this.objectHealth == 0) //no health
         {
+            SendActionToGameManager();
             gameManager.PlaySound(breakSound);
             animator.SetTrigger("damage");
             this.enabled = false;

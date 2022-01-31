@@ -19,5 +19,5 @@ MonoBehaviour:
   - name: Bell
     ruleObjPrefab: {fileID: 4072430416109815961, guid: 1fbeb67b7cac740558906c3b735ebb44,
       type: 3}
-    pos: 1
+    pos: 2
   mutuallyExclusives: 04000000120000000f000000

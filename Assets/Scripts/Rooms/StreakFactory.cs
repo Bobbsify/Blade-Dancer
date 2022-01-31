@@ -47,6 +47,18 @@ public class StreakFactory
         return new Streak(tutorialStages);
     }
 
+    public Streak GetCustomStreak(AllRules[] customRun)
+    {
+        List<Stage> customStages = new List<Stage>();
+
+        for (int i = 0; i < customRun.Length; i++) 
+        { 
+            customStages.Add(factory.GetFixedStage(customRun[i])); //Stage 1
+        }
+
+        return new Streak(customStages);
+    }
+
     private int compileDifficulty(ref float difficulty, float increaseAmount)
     {
         difficulty += increaseAmount;
