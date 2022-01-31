@@ -94,8 +94,8 @@ public class RoomController : MonoBehaviour
                     float xMod = distanceX * defaultCornerPercentage / 100;
                     float zMod = distanceZ * defaultCornerPercentage / 100;
 
-                    bottomRight = new Vector3(bottomRight.x - xMod, bottomRight.y, bottomRight.z - zMod);
-                    topLeft = new Vector3(topLeft.x - xMod, topLeft.y, topLeft.z - zMod);
+                    bottomRight = new Vector3(bottomRight.x - xMod, bottomRight.y, bottomRight.z + zMod);
+                    topLeft = new Vector3(topLeft.x + xMod, topLeft.y, topLeft.z - zMod);
 
                     toPass = RandomRangeVectorNoCenter(topCenter, bottomRight, positionsOccupied);
                     break;

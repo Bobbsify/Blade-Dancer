@@ -19,7 +19,7 @@ MonoBehaviour:
   - name: Ball
     ruleObjPrefab: {fileID: 1766524116523848119, guid: a81f181353b564db7882fcf2b5a5db9c,
       type: 3}
-    pos: 0
+    pos: 13
   - name: Goal
     ruleObjPrefab: {fileID: 3395232647765131754, guid: 2bae4766c579442578463eb2b2b08081,
       type: 3}
