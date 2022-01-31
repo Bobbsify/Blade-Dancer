@@ -16,6 +16,10 @@ public class RoomController : MonoBehaviour
     [Tooltip("(Element 0 is associated to Element 0 of Transforms Of Position Type and so on..)")]
     private List<PositionType> typeOfPositionRelativeToTransform;
 
+    [SerializeField]
+    [Range(1.0f,20.0f)]
+    private float defaultCornerPercentage = 10.0f;
+
     private Dictionary<PositionType, Vector3> associatedPositions = new Dictionary<PositionType, Vector3>();
 
     private List<Vector3> corners = new List<Vector3>();
@@ -79,6 +83,21 @@ public class RoomController : MonoBehaviour
                     associatedPositions.TryGetValue(PositionType.TopLeftCorner, out topLeft);
 
                     toPass = RandomRangeVectorNoCenter(topLeft, bottomRight, positionsOccupied);
+                    break;
+                case PositionType.NoCorner:
+                    associatedPositions.TryGetValue(PositionType.BotRightCorner, out bottomRight);
+                    associatedPositions.TryGetValue(PositionType.TopLeftCorner, out topLeft);
+
+                    float distanceX = Mathf.Abs(bottomRight.x - topLeft.x);
+                    float distanceZ = Mathf.Abs(bottomRight.z - topLeft.z);
+
+                    float xMod = distanceX * defaultCornerPercentage / 100;
+                    float zMod = distanceZ * defaultCornerPercentage / 100;
+
+                    bottomRight = new Vector3(bottomRight.x - xMod, bottomRight.y, bottomRight.z - zMod);
+                    topLeft = new Vector3(topLeft.x - xMod, topLeft.y, topLeft.z - zMod);
+
+                    toPass = RandomRangeVectorNoCenter(topCenter, bottomRight, positionsOccupied);
                     break;
                 default:
                     throw new System.Exception("Unkown Position Type " + pos + " as a Randomized position (Could this be a fixed position in the wrong place?)");

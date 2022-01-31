@@ -47,8 +47,9 @@ public class UIDialogueController : MonoBehaviour
 
     public void SetDialogue(Dialogue dialogue)
     {
+        StopAllCoroutines();
+        EndTelling();
         sqm.RemoveSound(speakingSound);
-        StopCoroutine(TellDialogue());
         gameObject.SetActive(true);
 
         ImageToShow.sprite = dialogue.GetPicture();
@@ -63,7 +64,8 @@ public class UIDialogueController : MonoBehaviour
 
     public void EndDialogue()
     {
-        StopCoroutine(TellDialogue());
+        EndTelling();
+        StopAllCoroutines();
         gameObject.SetActive(false);
     }
 
@@ -73,12 +75,17 @@ public class UIDialogueController : MonoBehaviour
         ++pointInDialogue;
         if (pointInDialogue == totalDialogue.Length)
         {
-            pointInDialogue = 0;
-            sqm.RemoveSound(speakingSound);
+            EndTelling();
         }
         else { 
             yield return new WaitForSeconds(dialogueSpeed);
             StartCoroutine(TellDialogue());
         }
+    }
+
+    private void EndTelling()
+    {
+        pointInDialogue = 0;
+        sqm.RemoveSound(speakingSound);
     }
 }
