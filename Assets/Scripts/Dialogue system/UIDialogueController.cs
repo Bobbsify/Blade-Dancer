@@ -48,6 +48,7 @@ public class UIDialogueController : MonoBehaviour
     public void SetDialogue(Dialogue dialogue)
     {
         //sqm.RemoveSound(speakingSound);
+        StopCoroutine(TellDialogue());
         gameObject.SetActive(true);
 
         ImageToShow.sprite = dialogue.GetPicture();
@@ -62,6 +63,7 @@ public class UIDialogueController : MonoBehaviour
 
     public void EndDialogue()
     {
+        StopCoroutine(TellDialogue());
         gameObject.SetActive(false);
     }
 
