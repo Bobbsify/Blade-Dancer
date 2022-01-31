@@ -10,7 +10,13 @@ using UnityEngine;
 public class UIRulesController : MonoBehaviour
 {
     [SerializeField]
+    private float oddRulesOffset = 125.0f;
+
+    [SerializeField]
     private List<RuleContainerManager> ruleContainerManagers = new List<RuleContainerManager>();
+
+    private Vector3 defaultPos;
+    private Vector3 offsettedPos;
 
     private void OnValidate()
     {
@@ -18,6 +24,11 @@ public class UIRulesController : MonoBehaviour
         { 
             ruleContainerManagers.AddRange(GetComponentsInChildren<RuleContainerManager>());
         }
+    }
+    private void Awake()
+    {
+        defaultPos = this.transform.position;
+        offsettedPos = new Vector3(defaultPos.x + oddRulesOffset, defaultPos.y, defaultPos.z);
     }
 
     public void ResetContainers()
@@ -30,15 +41,35 @@ public class UIRulesController : MonoBehaviour
 
     public void SetupRules(RulePacket[] packets) 
     {
+        //Setup position
+        if (packets.Length % 2 == 0)
+        {
+            this.transform.position = defaultPos;
+        }
+        else 
+        {
+            this.transform.position = offsettedPos;
+        }
+
         for (int i = 0; i < packets.Length; i++) 
         {
             ruleContainerManagers[i].SetupForRule(packets[i]);
         }
     }
 
-    public void SetupRules(List<RulePacket> packets) 
+    public void SetupRules(List<RulePacket> packets)
     {
-        for(int i = 0; i < packets.Count; i++) 
+        //Setup position
+        if (packets.Count % 2 == 0)
+        {
+            this.transform.position = defaultPos;
+        }
+        else
+        {
+            this.transform.position = offsettedPos;
+        }
+
+        for (int i = 0; i < packets.Count; i++) 
         {
             ruleContainerManagers[i].SetupForRule(packets[i]);
         }
