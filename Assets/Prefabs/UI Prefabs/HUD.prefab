@@ -3243,6 +3243,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80f7369adfed63f4cb5a13c7e258a2f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  oddRulesOffset: 47.5
   ruleContainerManagers:
   - {fileID: 109029521350491226}
   - {fileID: 3324607729296128395}
