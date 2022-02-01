@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIDialogueController : MonoBehaviour
@@ -62,11 +63,12 @@ public class UIDialogueController : MonoBehaviour
         sqm.AddSound(speakingSound);
     }
 
-    public void EndDialogue()
+    public void EndDialogue(UnityEvent events)
     {
         EndTelling();
         StopAllCoroutines();
         gameObject.SetActive(false);
+        events.Invoke();
     }
 
     private IEnumerator TellDialogue() 
