@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour, IGameEntity
@@ -68,6 +64,16 @@ public class PlayerController : MonoBehaviour, IGameEntity
     public void Animate(string name)
     {
         animPlayer.SetTrigger(name);
+    }
+
+    public void FallAnimationCompleted()
+    {
+        gameManager.PlayerHasFallen();
+    }
+
+    public void PlayerLanded()
+    {
+        gameManager.PlayerLanded();
     }
 
     #endregion

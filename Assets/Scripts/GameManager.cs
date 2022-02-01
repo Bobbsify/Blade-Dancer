@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(TimerManager))]
 [RequireComponent(typeof(SoundQueueManager))]
@@ -83,7 +84,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int currentBreakroom = 0;
 
-    //TEMPORARY
+    [Header("UI")]
+    [SerializeField]
+    private Image fadeToBlack;
+
+    [SerializeField]
+    [Range(0.01f,0.1f)]
+    private float fadeAmount = 0.01f;
+
+    [Header("Debug")]
     [SerializeField]
     private bool firstRun = true;
 
@@ -102,6 +111,8 @@ public class GameManager : MonoBehaviour
     private StreakFactory streakFactory;
 
     private Streak currentStreak;
+
+    private Stage nextStage;
 
     private TimerManager timer;
 
@@ -136,6 +147,7 @@ public class GameManager : MonoBehaviour
             InitEntities(root);
         }
         ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
+        currentArena = startingRoom;
     }
 
     public List<RuleSetting> GetRuleSettings()
@@ -177,10 +189,16 @@ public class GameManager : MonoBehaviour
     public void StartStreak()
     {
         this.inputManager.DisableInput<InputSystemPause>();
-        Destroy(startingRoom);
+       //Destroy(startingRoom);
         GenerateNewStreak();
-        Stage currentStage = currentStreak.GetCurrentStage();
-        GoToNextStage(currentStage);
+        nextStage = currentStreak.GetCurrentStage();
+
+        //Do animation
+        playerCtrl.DisableAllAbilities();
+        currentArena.GetComponent<RoomController>().DoEndOfStage();
+
+        /*Stage currentStage = currentStreak.GetCurrentStage();
+        GoToNextStage(currentStage);*/
     }
 
     public void StartStage()
@@ -196,12 +214,17 @@ public class GameManager : MonoBehaviour
         playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
-        Stage nextStage = currentStreak.NextStage();
+        nextStage = currentStreak.NextStage();
         if (nextStage != null)
         {
+            /*
             Destroy(currentArena);
             GoToNextStage(nextStage);
             playerCtrl.DisableAllAbilities();
+            */
+
+            playerCtrl.DisableAllAbilities();
+            currentArena.GetComponent<RoomController>().DoEndOfStage();
         }
         else
         {
@@ -209,6 +232,27 @@ public class GameManager : MonoBehaviour
             StreakEnded();
         }
     }
+
+    public void PlayerHasFallen()
+    {
+        if (fadeToBlack.color.a == 0)
+        {
+            StartCoroutine(FadeToBlack());
+        }
+        else
+        {
+            Destroy(currentArena);
+            playerCtrl.Animate("fall"); //remove fall trigger
+            GoToNextStage(nextStage);
+        }
+    }
+
+    public void PlayerLanded()
+    {
+        Debug.Log("Show Rules");
+        Debug.Log("Start Timer");
+    }
+
 
     private void RemoveProjectiles()
     {
@@ -249,26 +293,25 @@ public class GameManager : MonoBehaviour
         RemoveProjectiles();
     }
 
-    private void GoToNextStage(Stage currentStage)
+    private void GoToNextStage(Stage stage)
     {
-        timer.SetTimer(currentStage.GetRulesTime());
-        currentArena = Instantiate(currentStage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
+        timer.SetTimer(stage.GetRulesTime());
+        currentArena = Instantiate(stage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
         RoomController room = currentArena.GetComponent<RoomController>();
         Dictionary<Vector3, Vector3> spacesOccupied = new Dictionary<Vector3, Vector3>(); //Position --> Collider width
-        foreach (RuleObject objToSpawn in currentStage.GetRuleRelatedObjectsToSpawn()) 
+        foreach (RuleObject objToSpawn in stage.GetRuleRelatedObjectsToSpawn()) 
         {
             GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
             Collider col = instantiated.GetComponentInChildren<Collider>();
             spacesOccupied.Add(instantiated.transform.position, col == null ? new Vector3(1, 1, 1) : col.bounds.extents);
         }
-        ruleManager.SetNewRuleset(currentStage.GetRules());
+        ruleManager.SetNewRuleset(stage.GetRules());
         InitEntities(currentArena);
+        StartCoroutine(ReverseFade());
     }
 
     private Vector3 RoomPosition()
     {
-        playerCtrl.GetComponent<Rigidbody>().isKinematic = false;
-
         Vector3 playerPos = PlayerPawn.transform.position;
         playerPos.y -= roomUnderminingValue;
         return playerPos;
@@ -319,6 +362,39 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private IEnumerator FadeToBlack()
+    {
+        Color tempColor = fadeToBlack.color;
+        tempColor.a += fadeAmount;
+        tempColor.a = Mathf.Min(tempColor.a, 1);
+        fadeToBlack.color = tempColor;
+        if (fadeToBlack.color.a != 1)
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(FadeToBlack());
+        }
+        else 
+        {
+            PlayerHasFallen();
+        }
+    }
+
+    private IEnumerator ReverseFade()
+    {
+        Color tempColor = fadeToBlack.color;
+        tempColor.a -= fadeAmount;
+        tempColor.a = Mathf.Max(tempColor.a, 0);
+        fadeToBlack.color = tempColor;
+        if (fadeToBlack.color.a != 0)
+        {
+            yield return new WaitForEndOfFrame();
+            StartCoroutine(ReverseFade());
+        }
+        else
+        {
+
+        }
+    }
 
     private void GeneratePlayerPawn()
 	{

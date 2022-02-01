@@ -4,7 +4,8 @@ using UnityEngine;
 
 /*!! TO BE PLACED IN DEFAULT ROOM PREFABS TO ALLOW FOR CORRECT ROOM GENERATION UPON LOAD !!*/
 
-public class RoomController : MonoBehaviour
+[RequireComponent(typeof(Animator))]
+public class RoomController : MonoBehaviour, IGameEntity
 {
     [Header("Set them as same length to allow dictionary compilation")]
 
@@ -23,6 +24,10 @@ public class RoomController : MonoBehaviour
     private Dictionary<PositionType, Vector3> associatedPositions = new Dictionary<PositionType, Vector3>();
 
     private List<Vector3> corners = new List<Vector3>();
+
+    private Animator floorAnim;
+
+    private GameManager gameManager;
 
     private const float centerMercy = 1.0f;
 
@@ -43,6 +48,20 @@ public class RoomController : MonoBehaviour
         {
             throw new System.IndexOutOfRangeException("Lists of " + this + "are not of the same lenth:" + transformsOfPositionType.Count + " & " + typeOfPositionRelativeToTransform.Count);
         }
+    }
+    private void Start()
+    {
+        TryGetComponent(out floorAnim);
+    }
+
+    public void DoEndOfStage()
+    {
+        floorAnim.SetTrigger("breakfloor");
+    }
+
+    public void TriggerPlayerFall() 
+    {
+        gameManager.PlayerPawn.GetComponent<PlayerController>().Animate("fall");
     }
 
     public Vector3 GetPos(PositionType pos,Dictionary<Vector3,Vector3> positionsOccupied) //Position --> Collider width
@@ -155,5 +174,10 @@ public class RoomController : MonoBehaviour
             max = temp;
         }
         return (value >= min && value <= max);
+    }
+
+    void IGameEntity.Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 }
