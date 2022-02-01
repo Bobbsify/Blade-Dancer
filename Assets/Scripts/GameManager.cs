@@ -203,6 +203,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        playerCtrl.EnableAllAbilities();
         EnableEnemies();
         tookDamage = false;
         timer.StartTimer();
@@ -249,8 +250,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLanded()
     {
-        Debug.Log("Show Rules");
-        Debug.Log("Start Timer");
+        StartStage();
     }
 
 
@@ -307,6 +307,7 @@ public class GameManager : MonoBehaviour
         }
         ruleManager.SetNewRuleset(stage.GetRules());
         InitEntities(currentArena);
+        PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
         StartCoroutine(ReverseFade());
     }
 
