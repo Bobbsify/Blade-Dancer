@@ -51,9 +51,11 @@ public class StreakFactory
     {
         List<Stage> customStages = new List<Stage>();
 
-        for (int i = 0; i < customRun.Length; i++) 
-        { 
-            customStages.Add(factory.GetFixedStage(customRun[i])); //Stage 1
+
+        for (int i = 0; i < customRun.Length; i++)
+        {
+            Stage customStage = factory.GetFixedStage(customRun);
+            customStages.Add(customStage);
         }
 
         return new Streak(customStages);

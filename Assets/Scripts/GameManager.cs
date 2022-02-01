@@ -100,7 +100,8 @@ public class GameManager : MonoBehaviour
     private bool customRunEnabled = true;
 
     [SerializeField]
-    private AllRules[] customRun = new AllRules[10];
+    [Tooltip("Specificare le regole che usciranno durante i prossimi 10 stage")]
+    private AllRules[] customRun = new AllRules[6];
 
     //--------------------------------------------------
 
