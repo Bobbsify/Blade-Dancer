@@ -346,6 +346,7 @@ public class GameManager : MonoBehaviour
         GameObject breakoutRoom = Instantiate(breakRooms[currentBreakroom], RoomPosition(), Quaternion.identity, stagesRoot.transform);
         InitEntities(breakoutRoom);
         startingRoom = breakoutRoom;
+        currentArena = breakoutRoom;
 
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
         RemoveProjectiles();
