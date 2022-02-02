@@ -19,6 +19,9 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
     [SerializeField]
     private List<Dialogue> dialogues = new List<Dialogue>();
 
+    [SerializeField]
+    UnityEvent endOfDialogueEvents;
+
     private GameObject player;
 
     private Dialogue nextDialogue;
@@ -56,7 +59,7 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
                 if (nextDialogue == null)
                 {
                     isInDialogue = false;
-                    dialogueUI.EndDialogue();
+                    dialogueUI.EndDialogue(endOfDialogueEvents);
                     player.GetComponent<PlayerController>().EnableAllAbilities();
                     return;
                 }

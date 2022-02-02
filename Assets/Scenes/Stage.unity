@@ -1594,9 +1594,9 @@ MonoBehaviour:
   currentBreakroom: 0
   fadeToBlack: {fileID: 511583434}
   fadeAmount: 0.01
-  firstRun: 1
+  firstRun: 0
   customRunEnabled: 1
-  customRun: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  customRun: 00000000090000000a0000000b0000000700000006000000
 --- !u!114 &2027274950
 MonoBehaviour:
   m_ObjectHideFlags: 0

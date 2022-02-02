@@ -100,7 +100,8 @@ public class GameManager : MonoBehaviour
     private bool customRunEnabled = true;
 
     [SerializeField]
-    private AllRules[] customRun = new AllRules[10];
+    [Tooltip("Specificare le regole che usciranno durante i prossimi 10 stage")]
+    private AllRules[] customRun = new AllRules[6];
 
     //--------------------------------------------------
 
@@ -203,6 +204,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        playerCtrl.EnableAllAbilities();
         EnableEnemies();
         tookDamage = false;
         timer.StartTimer();
@@ -249,8 +251,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLanded()
     {
-        Debug.Log("Show Rules");
-        Debug.Log("Start Timer");
+        StartStage();
     }
 
 
@@ -307,6 +308,7 @@ public class GameManager : MonoBehaviour
         }
         ruleManager.SetNewRuleset(stage.GetRules());
         InitEntities(currentArena);
+        PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
         StartCoroutine(ReverseFade());
     }
 
@@ -371,7 +373,7 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 1)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
             StartCoroutine(FadeToBlack());
         }
         else 
@@ -388,7 +390,7 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
             StartCoroutine(ReverseFade());
         }
         else
