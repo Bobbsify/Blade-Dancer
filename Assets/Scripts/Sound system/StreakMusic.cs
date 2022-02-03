@@ -5,9 +5,9 @@ using UnityEngine;
 public class StreakMusic : MonoBehaviour
 {
     [SerializeField]
-    private AudioSource[] audioSources;
+    private SoundPacket[] soundPackets;
 
-    private List<AudioSource> sources = new List<AudioSource>();
+    private List<SoundPacket> sources = new List<SoundPacket>();
 
     private int RandomMusicSelector;
 
@@ -20,13 +20,13 @@ public class StreakMusic : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            GetSong();
+            GetSoundpacketForStreak();
         }
     }
 
-    public AudioSource GetSong()
+    public SoundPacket GetSoundpacketForStreak()
     {
-        AudioSource[] audios = this.audioSources;
+        SoundPacket[] packets = this.soundPackets;
 
         if(sources.Count < 1)
         {
@@ -35,21 +35,19 @@ public class StreakMusic : MonoBehaviour
 
         do
         {
-            RandomMusicSelector = Random.Range(0, audioSources.Length);
-        } while (!sources.Contains(audios[RandomMusicSelector]));
+            RandomMusicSelector = Random.Range(0, packets.Length);
+        } while (!sources.Contains(packets[RandomMusicSelector]));
 
-         sources.Remove(audios[RandomMusicSelector]);
-      
-         audios[RandomMusicSelector].Play();
-            
-         return audios[RandomMusicSelector];
+         sources.Remove(packets[RandomMusicSelector]);
+
+         return packets[RandomMusicSelector];
     }
 
     private void CompileSources()
     {
-       for (int i = 0; i < audioSources.Length; i++)
+       for (int i = 0; i < soundPackets.Length; i++)
        {
-           sources.Add(audioSources[i]);
+           sources.Add(soundPackets[i]);
        }
     }
 }
