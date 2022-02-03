@@ -17,9 +17,6 @@ public class GameManager : MonoBehaviour
     [Tooltip("For entities that require to know of the Game Manager Object")]
     private GameObject[] GameEntitiesRoots;
 
-    [SerializeField]
-    private CheerManager cheerController;
-
     [Header("Player Generation")]
 
     [SerializeField]
@@ -96,6 +93,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Animator HUDAnimator;
 
+    [SerializeField]
+    private CheerManager cheerManager;
+
     [Header("Debug")]
     [SerializeField]
     private bool firstRun = true;
@@ -131,9 +131,9 @@ public class GameManager : MonoBehaviour
 
     private void OnValidate()
     {
-        if (cheerController == null) 
+        if (cheerManager == null) 
         {
-            cheerController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
+            cheerManager = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
         }
         if(HUDAnimator == null) 
         {
@@ -238,6 +238,7 @@ public class GameManager : MonoBehaviour
         //Remove HUD
         HUDAnimator.SetBool("active", false);
 
+
         RemoveProjectiles();
         playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
@@ -303,7 +304,7 @@ public class GameManager : MonoBehaviour
         int cheer = timer.GetCheer();
         if (cheer > 1) 
         {
-            cheerController.ExecuteCheer();
+            cheerManager.ExecuteCheer();
         }
         return cheer;
     }
