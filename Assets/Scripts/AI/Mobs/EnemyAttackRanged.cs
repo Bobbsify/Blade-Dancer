@@ -16,7 +16,7 @@ public class EnemyAttackRanged : FSMState
 	private EnemyFlee stateChase;
 
 	[SerializeField]
-	private GameObject projectile;
+	private GameObject projectilePrefab;
 
 	[SerializeField]
 	private Transform objSpawnPos;
@@ -26,6 +26,8 @@ public class EnemyAttackRanged : FSMState
 	private float ChaseDistance = 5f;
 
 	private GameObject target;
+
+	private Transform projectilesRoot;
 
 	private string pg = "Player";
 
@@ -70,6 +72,11 @@ public class EnemyAttackRanged : FSMState
 		this.reactionTime = Random.Range(this.minReactionTime, this.maxReactionTime);
 	}
 
+	public void SetProjectilesRoot(Transform root) 
+	{
+		this.projectilesRoot = root;
+	}
+
 	public override string ToString()
 	{
 		return "ATTACK";
@@ -77,7 +84,8 @@ public class EnemyAttackRanged : FSMState
 
 	private void Attack()
 	{
-		GameObject proj = Instantiate(projectile, objSpawnPos.position, objSpawnPos.rotation, null);
+		GameObject proj = Instantiate(projectilePrefab, objSpawnPos.position, objSpawnPos.rotation, null);
+		proj.transform.parent = projectilesRoot;
 		proj.GetComponent<ProjectileController>().SetTeam(Team.Enemy);
 	}
 }

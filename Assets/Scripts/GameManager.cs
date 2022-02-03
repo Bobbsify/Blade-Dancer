@@ -293,6 +293,10 @@ public class GameManager : MonoBehaviour
         {
             enemy.Go();
         }
+        foreach (EnemyController enemy in currentArena.GetComponentsInChildren<EnemyController>(true)) 
+        {
+            enemy.SetProjectilesRoot(projectilesRoot);
+        }
     }
 
     private void DisableEnemies()

@@ -5121,7 +5121,7 @@ MonoBehaviour:
   minReactionTime: 1
   maxReactionTime: 2
   stateChase: {fileID: 7251394527796283675}
-  projectile: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
+  projectilePrefab: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
     type: 3}
   objSpawnPos: {fileID: 7251394528346421220}
   ChaseDistance: 5
