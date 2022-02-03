@@ -119,6 +119,8 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
+    private SoundPacket streakMusic;
+
     private bool tookDamage = false;
 
     private void OnValidate()
@@ -189,6 +191,10 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        //Select music for streak
+        streakMusic = StreakMusicSelector.GetSong();
+        PlaySound(streakMusic);
+
         this.inputManager.DisableInput<InputSystemPause>();
        //Destroy(startingRoom);
         GenerateNewStreak();
@@ -338,6 +344,7 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
+        StopSound(streakMusic,true);
         //End Streak
         Destroy(currentArena);
         firstRun = false;
