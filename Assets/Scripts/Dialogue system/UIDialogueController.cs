@@ -18,7 +18,7 @@ public class UIDialogueController : MonoBehaviour
     private SoundQueueManager sqm;
 
     [SerializeField]
-    private AudioSource defaultSpeakingSound;
+    private AudioClip defaultSpeakingSound;
 
     [Header("UI")]
     [SerializeField]
@@ -48,7 +48,7 @@ public class UIDialogueController : MonoBehaviour
         }
     }
 
-    public void SetDialogue(Dialogue dialogue, AudioSource voice = null)
+    public void SetDialogue(Dialogue dialogue, AudioClip voice = null)
     {
         StopAllCoroutines();
         EndTelling();

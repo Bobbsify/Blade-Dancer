@@ -14,7 +14,7 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
     private float distanceToTrigger = 5.0f;
 
     [SerializeField]
-    private AudioSource voice;
+    private AudioClip voice;
 
     [SerializeField]
     private Dialogue startingDialogue;
