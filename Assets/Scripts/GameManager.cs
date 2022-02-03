@@ -365,7 +365,8 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
-        StopSound(streakMusic,true);
+        StopSound(streakMusic);
+
         //End Streak
         Destroy(currentArena);
         firstRun = false;
