@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(TimerManager))]
 [RequireComponent(typeof(SoundQueueManager))]
+[RequireComponent(typeof(StreakMusicSelector))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -92,6 +93,9 @@ public class GameManager : MonoBehaviour
     [Range(0.01f,0.1f)]
     private float fadeAmount = 0.01f;
 
+    [SerializeField]
+    private Animator HUDAnimator;
+
     [Header("Debug")]
     [SerializeField]
     private bool firstRun = true;
@@ -121,6 +125,8 @@ public class GameManager : MonoBehaviour
 
     private SoundPacket streakMusic;
 
+    private StreakMusicSelector streakMusicSelector;
+
     private bool tookDamage = false;
 
     private void OnValidate()
@@ -128,6 +134,10 @@ public class GameManager : MonoBehaviour
         if (cheerController == null) 
         {
             cheerController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
+        }
+        if(HUDAnimator == null) 
+        {
+            GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<Animator>();
         }
     }
 
@@ -137,6 +147,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Game Manager has first run set to false upon start");
         }
+        TryGetComponent(out streakMusicSelector);
         TryGetComponent(out sqm);
         TryGetComponent(out timer);
 		this.GeneratePlayerPawn();
@@ -191,8 +202,11 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        //Remove HUD
+        HUDAnimator.SetBool("active", false);
+
         //Select music for streak
-        streakMusic = StreakMusicSelector.GetSong();
+        streakMusic = streakMusicSelector.GetSong();
         PlaySound(streakMusic);
 
         this.inputManager.DisableInput<InputSystemPause>();
@@ -210,6 +224,9 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        //Enable HUD
+        HUDAnimator.SetBool("active", true);
+
         playerCtrl.EnableAllAbilities();
         EnableEnemies();
         tookDamage = false;
@@ -218,6 +235,9 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        //Remove HUD
+        HUDAnimator.SetBool("active", false);
+
         RemoveProjectiles();
         playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
