@@ -10,7 +10,8 @@ public class StreakMusicSelector : MonoBehaviour
 
     [SerializeField]
     [Range(2,5)]
-    private int maxMusic = 2;
+    [Tooltip("Amount of songs needed for a song to be able to be repeated")]
+    private int repeatRange = 2;
 
     private List<int> lastTwoSongIndex = new List<int>();
    
@@ -37,7 +38,7 @@ public class StreakMusicSelector : MonoBehaviour
         //Shift All
         if (lastTwoSongIndex.Count > 0) 
         { 
-            for (int i = maxMusic-1; i != 1; i--) 
+            for (int i = repeatRange-1; i != 1; i--) 
             {
                 lastTwoSongIndex[i] = lastTwoSongIndex[i - 1];
             }
