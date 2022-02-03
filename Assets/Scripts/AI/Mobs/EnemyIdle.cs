@@ -44,9 +44,9 @@ public class EnemyIdle : FSMState
 		return distance >= this.activationDistance;
 	}
 
-	public void StopForce() 
+	public void ForceIdle(bool state) 
 	{
-		this.force = false;
+		this.force = state;
 	}
 
 	public override string ToString()

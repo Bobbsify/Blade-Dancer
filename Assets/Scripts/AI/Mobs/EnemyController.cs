@@ -71,7 +71,17 @@ public class EnemyController : MonoBehaviour, IEnemy
     {
         if (TryGetComponent(out EnemyIdle idle))
         {
-            idle.StopForce();
+            stateMachine.ChangeState(idle);
+            idle.ForceIdle(false);
+        }
+    }
+
+    public void Stop()
+    {
+        if (TryGetComponent(out EnemyIdle idle))
+        {
+            stateMachine.ChangeState(idle);
+            idle.ForceIdle(true);
         }
     }
 }

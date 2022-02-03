@@ -235,9 +235,10 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        DisableEnemies();
+
         //Remove HUD
         HUDAnimator.SetBool("active", false);
-
 
         RemoveProjectiles();
         playerCtrl.GetComponent<Rigidbody>().Sleep();
@@ -288,9 +289,18 @@ public class GameManager : MonoBehaviour
     private void EnableEnemies()
     {
         IEnemy[] enemies = currentArena.GetComponentsInChildren<IEnemy>();
-        foreach (IEnemy enemy in enemies) 
+        foreach (IEnemy enemy in enemies)
         {
             enemy.Go();
+        }
+    }
+
+    private void DisableEnemies()
+    {
+        IEnemy[] enemies = currentArena.GetComponentsInChildren<IEnemy>();
+        foreach (IEnemy enemy in enemies)
+        {
+            enemy.Stop();
         }
     }
 
