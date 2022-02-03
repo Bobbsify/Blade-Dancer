@@ -20,6 +20,7 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
 
     public void ReceiveInputInteract()
     {
+        if (this.enabled) { 
             player = GameObject.FindGameObjectWithTag("Player");
             Vector3 playerDistance = player.transform.position - transform.position;
             if (playerDistance.magnitude <= distanceToTrigger) 
@@ -31,6 +32,7 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
                 }
                 otherButtonEvents.Invoke();
             }
+        }
     }
 
     private void OnDrawGizmosSelected()
