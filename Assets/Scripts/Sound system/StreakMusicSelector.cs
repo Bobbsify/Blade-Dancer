@@ -39,7 +39,7 @@ public class StreakMusicSelector : MonoBehaviour
 
         repeatedSongsIndexes[0] = randomPacketIndex;
 
-        return soundPackets[repeatedSongsIndexes[0]];
+        return soundPackets[randomPacketIndex];
     }
 
     private bool CheckRepeated()
