@@ -207,7 +207,7 @@ public class GameManager : MonoBehaviour
 
         //Select music for streak
         streakMusic = streakMusicSelector.GetMusic();
-        PlaySound(streakMusic);
+        PlaySound(streakMusic, true);
 
         this.inputManager.DisableInput<InputSystemPause>();
        //Destroy(startingRoom);
@@ -246,12 +246,6 @@ public class GameManager : MonoBehaviour
         nextStage = currentStreak.NextStage();
         if (nextStage != null)
         {
-            /*
-            Destroy(currentArena);
-            GoToNextStage(nextStage);
-            playerCtrl.DisableAllAbilities();
-            */
-
             playerCtrl.DisableAllAbilities();
             currentArena.GetComponent<RoomController>().DoEndOfStage();
         }
@@ -365,7 +359,7 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
-        StopSound(streakMusic);
+        StopSound(streakMusic, true);
 
         //End Streak
         Destroy(currentArena);
