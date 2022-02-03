@@ -17,14 +17,6 @@ public class SoundEmissionManager : MonoBehaviour
         TryGetComponent(out audio);
     }
 
-    private void Update()
-    {
-        if (this.gameObject.GetComponent<AudioSource>().isPlaying == false)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
     public void PlayAudio()
     {
         audio.Play();
@@ -41,41 +33,37 @@ public class SoundEmissionManager : MonoBehaviour
         audio.Stop();
     }
 
-    public void FadeIn(SoundPacket soundToFadeIn, float fadeDuration=0)
+    public void FadeIn()
     {
-        StartCoroutine(FadeInTime(soundToFadeIn, fadeDuration));
+        StartCoroutine(FadeInTime());
     }
 
-    public void FadeOut(SoundPacket soundToFadeOut, float fadeDuration=0)
+    public void FadeOut()
     {
-        StartCoroutine(FadeOutTime(soundToFadeOut, fadeDuration));
+        StartCoroutine(FadeOutTime());
     }
 
-    private IEnumerator FadeInTime(SoundPacket sound, float fadeDuration)
+    private IEnumerator FadeInTime()
     {
         audio.volume += fadeAmount;
 
-        fadeDuration = fadeTime;
-
-        yield return new WaitForSeconds(fadeDuration / (1/fadeAmount));
+        yield return new WaitForSeconds(fadeTime / (1/fadeAmount));
 
         if (audio.volume < 0.99f)
         {
-            StartCoroutine(FadeInTime(sound, fadeDuration));
+            StartCoroutine(FadeInTime());
         }
     }
 
-    private IEnumerator FadeOutTime(SoundPacket sound, float fadeDuration)
+    private IEnumerator FadeOutTime()
     {
         audio.volume -= fadeAmount;
 
-        fadeDuration = fadeTime;
-
-        yield return new WaitForSeconds(fadeDuration / (1/fadeAmount));
+        yield return new WaitForSeconds(fadeTime / (1 / fadeAmount));
 
         if (audio.volume > 0)
         {
-            StartCoroutine(FadeOutTime(sound, fadeDuration));
+            StartCoroutine(FadeOutTime());
         }
         else 
         {

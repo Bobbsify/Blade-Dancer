@@ -15,12 +15,7 @@ public class SoundQueueManager : MonoBehaviour
     [SerializeField]
     AudioMixerGroup audioMixerSfx;
 
-    private Dictionary<SoundPacket, GameObject> loopAudioList = new Dictionary<SoundPacket, GameObject>();
-    private Dictionary<SoundPacket, GameObject> delayAudioList = new Dictionary<SoundPacket, GameObject>();
-    private Dictionary<SoundPacket, GameObject> playOnceAudioList = new Dictionary<SoundPacket, GameObject>();
     private Dictionary<SoundPacket, SoundEmissionManager> EmissionSound = new Dictionary<SoundPacket, SoundEmissionManager>();
-
-    private SoundEmissionManager emission;
     
     public void AddSound(SoundPacket sound, bool fade = false)
     {
@@ -28,169 +23,81 @@ public class SoundQueueManager : MonoBehaviour
         OutputType outputType = sound.GetOutputType();
         Vector3 position = sound.GetPlayPosition();
 
+        //Audio Creation
+
         GameObject soundObject = new GameObject();
 
-        soundObject.AddComponent<AudioSource>();
-        soundObject.AddComponent<SoundEmissionManager>();
-        soundObject.GetComponent<AudioSource>().clip = sound.GetAudio();
+        AudioSource audio = soundObject.AddComponent<AudioSource>();
+        SoundEmissionManager sem = soundObject.AddComponent<SoundEmissionManager>();
+        audio.clip = sound.GetAudio();
 
-        emission = soundObject.GetComponentInChildren<SoundEmissionManager>();
-
-        GameObject spawnedSound = Instantiate(soundObject, position, this.transform.rotation, null);
-
-        switch (type)
+        if (!EmissionSound.ContainsKey(sound))
         {
-            case SoundType.Loop:
-
-                if(loopAudioList.ContainsKey(sound) == false)
-                {
-                    loopAudioList.Add(sound, soundObject);
-                    soundObject.GetComponent<AudioSource>().loop = true;
-
-                    if(EmissionSound.ContainsKey(sound)== false)
-                    {
-                        EmissionSound.Add(sound, emission);
-                    }
-                }
-
-                break;
-
-            case SoundType.PlayOnce:
-
-                if(playOnceAudioList.ContainsKey(sound) == false)
-                {
-                    playOnceAudioList.Add(sound, soundObject);
-
-                    if (EmissionSound.ContainsKey(sound) == false)
-                    {
-                        EmissionSound.Add(sound, emission);
-                    }
-                }
-            
-                break;
-
-            case SoundType.ReplayAfterSeconds:
-
-                if (delayAudioList.ContainsKey(sound) == false)
-                {
-                    delayAudioList.Add(sound, soundObject);
-
-                    if (EmissionSound.ContainsKey(sound) == false)
-                    {
-                        EmissionSound.Add(sound, emission);
-                    }
-                }
-
-                break;
+            EmissionSound.Add(sound, sem);
         }
+
+        //Output Type Definition
 
         switch (outputType)
         {
             case OutputType.Master:
-                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerMaster;
+                audio.outputAudioMixerGroup = audioMixerMaster;
                 break;
 
             case OutputType.Music:
-                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerMusic;
+                audio.outputAudioMixerGroup = audioMixerMusic;
                 break;
 
             case OutputType.Sfx:
-                soundObject.GetComponent<AudioSource>().outputAudioMixerGroup = audioMixerSfx;
+                audio.outputAudioMixerGroup = audioMixerSfx;
                 break;
         }
 
+        //Audio Type Management
 
-        if (fade == false && type == SoundType.PlayOnce)
+        if (sound.GetAudioType().Equals(SoundType.Loop))
         {
-            emission.PlayAudioOnce();
-            emission.deleteGameObject(spawnedSound);
+            audio.loop = true;
+        }
+        else if (sound.GetAudioType().Equals(SoundType.PlayOnce))
+        {
+            StartCoroutine(PlayOnceAudioMonitor(audio));
         }
 
-        else if(fade == false && type != SoundType.PlayOnce)
-        {
-            emission.PlayAudio();
-            emission.deleteGameObject(spawnedSound);
-        }
+        //Fading
 
+        if (!fade)
+        {
+            sem.PlayAudioOnce();
+        }
         else
-
         {
-            soundObject.GetComponent<AudioSource>().volume = 0;
-            soundObject.GetComponent<AudioSource>().enabled = true;
-            soundObject.GetComponent<SoundEmissionManager>().FadeIn(sound);
+            audio.volume = 0;
+            audio.enabled = true;
+            sem.PlayAudio();
+            soundObject.GetComponent<SoundEmissionManager>().FadeIn();
         }
     }
 
     public void RemoveSound(SoundPacket sound, bool fade = false)
     {
-        EmissionSound.Remove(sound);
+        if (EmissionSound.ContainsKey(sound)) { 
+            if (fade)
+            {
+                EmissionSound[sound].FadeOut();
+            }
+            else
+            {
+                Destroy(EmissionSound[sound].gameObject);
+            }
 
-        SoundType type = sound.GetAudioType();
-
-        switch (type)
-        {
-            case SoundType.Loop:
-
-                if (!fade)
-                {
-                    if (loopAudioList.ContainsKey(sound)) 
-                    { 
-                        Destroy(loopAudioList[sound]);
-                        loopAudioList.Remove(sound);
-                    }
-                }
-                else
-                {
-                    if (loopAudioList.ContainsKey(sound))
-                    {
-                        loopAudioList[sound].GetComponent<SoundEmissionManager>().FadeOut(sound);
-                        loopAudioList.Remove(sound);
-                    }
-                }
-                   
-                break;
-
-            case SoundType.PlayOnce:
-
-                if (!fade)
-                {
-                    if (playOnceAudioList.ContainsKey(sound))
-                    {
-                        Destroy(playOnceAudioList[sound]);
-                        playOnceAudioList.Remove(sound);
-                    }
-                }
-                else
-                {
-                    if (playOnceAudioList.ContainsKey(sound))
-                    {
-                        playOnceAudioList[sound].GetComponent<SoundEmissionManager>().FadeOut(sound);
-                        playOnceAudioList.Remove(sound);
-                    }
-                }
-
-                break;
-
-            case SoundType.ReplayAfterSeconds:
-
-                if (!fade)
-                {
-                    if (delayAudioList.ContainsKey(sound))
-                    {
-                        Destroy(delayAudioList[sound]);
-                        delayAudioList.Remove(sound);
-                    }
-                }
-                else
-                {
-                    if (delayAudioList.ContainsKey(sound))
-                    {
-                        delayAudioList[sound].GetComponent<SoundEmissionManager>().FadeOut(sound);
-                        delayAudioList.Remove(sound);
-                    }
-                }
-
-                break;
+            EmissionSound.Remove(sound);
         }
+    }
+
+    private IEnumerator PlayOnceAudioMonitor(AudioSource audio)
+    {
+        yield return new WaitForSeconds(audio.clip.length);
+        Destroy(audio.gameObject);
     }
 }
