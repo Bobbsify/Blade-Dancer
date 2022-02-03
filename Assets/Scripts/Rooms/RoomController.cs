@@ -148,6 +148,7 @@ public class RoomController : MonoBehaviour, IGameEntity
             }
             isXOk = isXOk && !checkInBetween(randomX,center.x - centerMercy, center.x + centerMercy); //x is in correct position
         } while (!isXOk);
+
         do
         {
             isZOk = true;

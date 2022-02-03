@@ -340,7 +340,9 @@ public class GameManager : MonoBehaviour
         {
             GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
             Collider col = instantiated.GetComponentInChildren<Collider>();
-            spacesOccupied.Add(instantiated.transform.position, col == null ? new Vector3(1, 1, 1) : col.bounds.extents);
+            spacesOccupied.Add(instantiated.transform.position,
+                //col == null ? new Vector3(1, 1, 1) : col.bounds.extents);
+               new Vector3(1, 1, 1)); //Possibile soluzioen ai crash
         }
         ruleManager.SetNewRuleset(stage.GetRules());
         InitEntities(currentArena);
