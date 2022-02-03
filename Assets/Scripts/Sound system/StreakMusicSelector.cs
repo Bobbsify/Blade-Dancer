@@ -33,11 +33,11 @@ public class StreakMusicSelector : MonoBehaviour
     private void ShiftIndexList()
     {
         //Remove Last Element
-        lastTwoSongIndex.Remove(lastTwoSongIndex[lastTwoSongIndex.Count - 1]);
+        if (lastTwoSongIndex.Count > 0)
+        {
+            lastTwoSongIndex.Remove(lastTwoSongIndex[lastTwoSongIndex.Count - 1]);
 
-        //Shift All
-        if (lastTwoSongIndex.Count > 0) 
-        { 
+            //Shift All
             for (int i = repeatRange-1; i != 1; i--) 
             {
                 lastTwoSongIndex[i] = lastTwoSongIndex[i - 1];
