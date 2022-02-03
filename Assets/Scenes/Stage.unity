@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -300,42 +300,12 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2047708396379988911, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2047708396379988911, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2537137885850842458, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2537137885850842458, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537564157690525958, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3537564157690525958, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806246908423667206, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3806246908423667206, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -349,21 +319,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3837045693897300875, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3837045693897300875, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4032183845654062843, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -38.69995
       objectReference: {fileID: 0}
     - target: {fileID: 4032183846944661070, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
@@ -475,37 +430,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 4032183846944661071, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4643939752375963874, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4643939752375963874, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7605429436387765871, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7605429436387765871, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9166168273229563864, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9166168273229563864, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1604,7 +1534,7 @@ MonoBehaviour:
   currentBreakroom: 0
   fadeToBlack: {fileID: 511583434}
   fadeAmount: 0.01
-  HUDAnimator: {fileID: 0}
+  HUDAnimator: {fileID: 2147415104}
   cheerManager: {fileID: 1775990553}
   firstRun: 0
   customRunEnabled: 0
@@ -1735,6 +1665,12 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
+--- !u!95 &2147415104 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1323423931995303524, guid: 25956f7ff032eb64fbc76915aada8d2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 134483437}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &381958638981821563
 PrefabInstance:
   m_ObjectHideFlags: 0
