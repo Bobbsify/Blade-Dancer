@@ -1601,15 +1601,15 @@ MonoBehaviour:
   - audio: {fileID: 8300000, guid: c610d0cc6b459d3439b33e02406ba399, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
-    outputType: 0
+    outputType: 1
   - audio: {fileID: 8300000, guid: 11efae84a33598b48b69d0d2fc96a5a2, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
-    outputType: 0
+    outputType: 1
   - audio: {fileID: 8300000, guid: c115d5d6ada8240448b82a9431530bac, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
-    outputType: 0
+    outputType: 1
   repeatRange: 2
 --- !u!1 &2110569548
 GameObject:
@@ -1779,6 +1779,11 @@ PrefabInstance:
     - target: {fileID: 5114155448005026985, guid: 3e58502907722bf46a284ac033deac24,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8848316814638692298, guid: 3e58502907722bf46a284ac033deac24,
+        type: 3}
+      propertyPath: otherButtonEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

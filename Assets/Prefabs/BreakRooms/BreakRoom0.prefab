@@ -1596,10 +1596,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   distanceToTrigger: 5
+  voice: {fileID: 0}
   startingDialogue: {fileID: 3025735120018377228}
   dialogues:
   - {fileID: 3025735120018377228}
   - {fileID: 2973280283245742004}
+  endOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3025735121837192765
 GameObject:
   m_ObjectHideFlags: 0
@@ -5577,4 +5581,15 @@ MonoBehaviour:
   startStreak: 1
   otherButtonEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8848316814638692298}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
