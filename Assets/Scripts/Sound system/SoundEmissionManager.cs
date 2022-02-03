@@ -16,6 +16,15 @@ public class SoundEmissionManager : MonoBehaviour
     {
         TryGetComponent(out audio);
     }
+
+    private void Update()
+    {
+        if (this.gameObject.GetComponent<AudioSource>().isPlaying == false)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void PlayAudio()
     {
         audio.Play();
@@ -30,14 +39,6 @@ public class SoundEmissionManager : MonoBehaviour
     {
         soundEmission.Remove(sound);
         audio.Stop();
-    }
-
-    private void Update()
-    {
-        if(this.gameObject.GetComponent<AudioSource>().isPlaying == false)
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     public void FadeIn(SoundPacket soundToFadeIn, float fadeDuration=0)

@@ -533,11 +533,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueSpeed: 0.01
   sqm: {fileID: 0}
-  speakingSound:
-    audio: {fileID: 8300000, guid: 10a5eee27aeaeaf429331e768d98c229, type: 3}
-    playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 2
+  defaultSpeakingSound: {fileID: 8300000, guid: 192902f10044fcf478199ad7b2eb645e,
+    type: 3}
   ImageToShow: {fileID: 335906930915696675}
   NameToShow: {fileID: 1597908403715332412}
   DialogueText: {fileID: 4287827438068241915}

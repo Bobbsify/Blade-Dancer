@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(TimerManager))]
 [RequireComponent(typeof(SoundQueueManager))]
+[RequireComponent(typeof(StreakMusicSelector))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,9 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     [Tooltip("For entities that require to know of the Game Manager Object")]
     private GameObject[] GameEntitiesRoots;
-
-    [SerializeField]
-    private CheerManager cheerController;
 
     [Header("Player Generation")]
 
@@ -92,6 +90,12 @@ public class GameManager : MonoBehaviour
     [Range(0.01f,0.1f)]
     private float fadeAmount = 0.01f;
 
+    [SerializeField]
+    private Animator HUDAnimator;
+
+    [SerializeField]
+    private CheerManager cheerManager;
+
     [Header("Debug")]
     [SerializeField]
     private bool firstRun = true;
@@ -100,7 +104,8 @@ public class GameManager : MonoBehaviour
     private bool customRunEnabled = true;
 
     [SerializeField]
-    private AllRules[] customRun = new AllRules[10];
+    [Tooltip("Specificare le regole che usciranno durante i prossimi 10 stage")]
+    private AllRules[] customRun = new AllRules[6];
 
     //--------------------------------------------------
 
@@ -118,13 +123,21 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
+    private SoundPacket streakMusic;
+
+    private StreakMusicSelector streakMusicSelector;
+
     private bool tookDamage = false;
 
     private void OnValidate()
     {
-        if (cheerController == null) 
+        if (cheerManager == null) 
         {
-            cheerController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
+            cheerManager = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
+        }
+        if(HUDAnimator == null) 
+        {
+            GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<Animator>();
         }
     }
 
@@ -134,6 +147,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Game Manager has first run set to false upon start");
         }
+        TryGetComponent(out streakMusicSelector);
         TryGetComponent(out sqm);
         TryGetComponent(out timer);
 		this.GeneratePlayerPawn();
@@ -188,6 +202,13 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        //Remove HUD
+        HUDAnimator.SetBool("active", false);
+
+        //Select music for streak
+        streakMusic = streakMusicSelector.GetSong();
+        PlaySound(streakMusic);
+
         this.inputManager.DisableInput<InputSystemPause>();
        //Destroy(startingRoom);
         GenerateNewStreak();
@@ -203,6 +224,10 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        //Enable HUD
+        HUDAnimator.SetBool("active", true);
+
+        playerCtrl.EnableAllAbilities();
         EnableEnemies();
         tookDamage = false;
         timer.StartTimer();
@@ -210,6 +235,10 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        //Remove HUD
+        HUDAnimator.SetBool("active", false);
+
+
         RemoveProjectiles();
         playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
@@ -249,8 +278,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLanded()
     {
-        Debug.Log("Show Rules");
-        Debug.Log("Start Timer");
+        StartStage();
     }
 
 
@@ -276,7 +304,7 @@ public class GameManager : MonoBehaviour
         int cheer = timer.GetCheer();
         if (cheer > 1) 
         {
-            cheerController.ExecuteCheer();
+            cheerManager.ExecuteCheer();
         }
         return cheer;
     }
@@ -307,6 +335,7 @@ public class GameManager : MonoBehaviour
         }
         ruleManager.SetNewRuleset(stage.GetRules());
         InitEntities(currentArena);
+        PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
         StartCoroutine(ReverseFade());
     }
 
@@ -336,6 +365,7 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
+        StopSound(streakMusic,true);
         //End Streak
         Destroy(currentArena);
         firstRun = false;
@@ -371,7 +401,7 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 1)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
             StartCoroutine(FadeToBlack());
         }
         else 
@@ -388,7 +418,7 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
             StartCoroutine(ReverseFade());
         }
         else
