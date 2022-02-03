@@ -244,6 +244,7 @@ public class GameManager : MonoBehaviour
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
         nextStage = currentStreak.NextStage();
+
         if (nextStage != null)
         {
             playerCtrl.DisableAllAbilities();
@@ -415,10 +416,6 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(0.001f);
             StartCoroutine(ReverseFade());
-        }
-        else
-        {
-
         }
     }
 
