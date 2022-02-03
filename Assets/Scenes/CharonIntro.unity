@@ -1604,6 +1604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 3067501661385293686}
   distanceToTrigger: 5
+  voice: {fileID: 8300000, guid: 4ae71c2e154c1eb40b1f3d6bcbea119b, type: 3}
   startingDialogue: {fileID: 392516380}
   dialogues:
   - {fileID: 392516380}
@@ -2707,6 +2708,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 3067501661385293686}
   distanceToTrigger: 5
+  voice: {fileID: 8300000, guid: 4ae71c2e154c1eb40b1f3d6bcbea119b, type: 3}
   startingDialogue: {fileID: 679443403}
   dialogues:
   - {fileID: 679443403}
@@ -2829,6 +2831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 3067501661385293686}
   distanceToTrigger: 5
+  voice: {fileID: 8300000, guid: 4ae71c2e154c1eb40b1f3d6bcbea119b, type: 3}
   startingDialogue: {fileID: 1373986153}
   dialogues:
   - {fileID: 1373986153}
