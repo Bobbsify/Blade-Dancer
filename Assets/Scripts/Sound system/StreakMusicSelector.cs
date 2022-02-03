@@ -13,7 +13,7 @@ public class StreakMusicSelector : MonoBehaviour
     [Tooltip("Amount of songs needed for a song to be able to be repeated")]
     private int repeatRange = 2;
 
-    private List<int> lastTwoSongIndex = new List<int>();
+    private List<int> repeatedSongsIndexes = new List<int>();
    
     private int randomPacketIndex;
 
@@ -23,28 +23,34 @@ public class StreakMusicSelector : MonoBehaviour
         do
         {
             randomPacketIndex = UnityEngine.Random.Range(0, soundPackets.Length);
-        } while (lastTwoSongIndex.Contains(randomPacketIndex));
+        } while (repeatedSongsIndexes.Contains(randomPacketIndex));
 
         ShiftIndexList();
 
-        return soundPackets[lastTwoSongIndex[0]];
+        if (repeatedSongsIndexes.Count > 0)
+        {
+            repeatedSongsIndexes[0] = randomPacketIndex;
+        }
+        else 
+        {
+            repeatedSongsIndexes.Add(randomPacketIndex);
+        }
+
+        return soundPackets[repeatedSongsIndexes[0]];
     }
 
     private void ShiftIndexList()
     {
         //Remove Last Element
-        if (lastTwoSongIndex.Count > 0)
+        if (repeatedSongsIndexes.Count > 0)
         {
-            lastTwoSongIndex.Remove(lastTwoSongIndex[lastTwoSongIndex.Count - 1]);
+            repeatedSongsIndexes.Remove(repeatedSongsIndexes[repeatedSongsIndexes.Count - 1]);
 
             //Shift All
             for (int i = repeatRange-1; i != 1; i--) 
             {
-                lastTwoSongIndex[i] = lastTwoSongIndex[i - 1];
+                repeatedSongsIndexes[i] = repeatedSongsIndexes[i - 1];
             }
         }
-
-        //Add Element
-        lastTwoSongIndex[0] = randomPacketIndex;
     }
 }
