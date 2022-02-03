@@ -206,7 +206,7 @@ public class GameManager : MonoBehaviour
         HUDAnimator.SetBool("active", false);
 
         //Select music for streak
-        streakMusic = streakMusicSelector.GetSong();
+        streakMusic = streakMusicSelector.GetMusic();
         PlaySound(streakMusic);
 
         this.inputManager.DisableInput<InputSystemPause>();
