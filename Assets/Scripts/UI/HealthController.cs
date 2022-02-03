@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
     private GameObject[] health;
 
     private PlayerController player;
+
+    private Color whiteColor = new Color(0.95311f, 0.95311f, 0.95311f);
+    private Color purpleColor = new Color(0.56078f, 0.35294f, 0.85882f);
 
     private void Start()
     {
@@ -31,11 +35,11 @@ public class HealthController : MonoBehaviour
         int playerCurrentHealth = player.GetHealth();
         for (int i = playerCurrentHealth; i < player.GetMaxHealth(); i++)
         {
-            health[i].SetActive(false);
+            health[i].GetComponent<Image>().color = whiteColor;
         }
         for (int i = 0; i < playerCurrentHealth; i++)
         {
-            health[i].SetActive(true);
+            health[i].GetComponent<Image>().color = purpleColor;
         }
     }
 }
