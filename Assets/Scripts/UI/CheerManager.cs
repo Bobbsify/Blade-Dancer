@@ -6,19 +6,30 @@ public class CheerManager : MonoBehaviour
 {
     [SerializeField]
     [Tooltip("Automatically selects all child cheers as cheers")]
-    private List<CheerController> cheers = new List<CheerController>();
+    private CheerController cheerController;
+
+    [SerializeField]
+    private List<string> possibleCheers = new List<string>();
 
     private void OnValidate()
     {
-        if (cheers.Count == 0)
+        if (possibleCheers.Count == 0)
         {
-            cheers.AddRange(GetComponentsInChildren<CheerController>());
+            possibleCheers.Add("WOW");
+            possibleCheers.Add("FANTASTIC");
+            possibleCheers.Add("EXTRAVAGANT");
+            possibleCheers.Add("INCREDIBLE");
+            possibleCheers.Add("GOKU");
+        }
+
+        if (cheerController == null)
+        {
+            cheerController = GetComponentInChildren<CheerController>();
         }
     }
 
     public void ExecuteCheer()
     {
-        int randCheerController = Random.Range(0, cheers.Count);
-        cheers[randCheerController].ExecuteCheer();
+        cheerController.ExecuteCheer(possibleCheers[Random.Range(0, possibleCheers.Count)]);
     }
 }
