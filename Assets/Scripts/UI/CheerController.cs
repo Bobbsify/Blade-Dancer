@@ -8,7 +8,7 @@ public class CheerController : MonoBehaviour
 {
     private Animator anim;
 
-    private List<Text> cheerTexts;
+    private List<Text> cheerTexts = new List<Text>();
 
     private void OnValidate()
     {
