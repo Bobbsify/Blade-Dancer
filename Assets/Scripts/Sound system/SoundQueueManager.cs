@@ -115,92 +115,81 @@ public class SoundQueueManager : MonoBehaviour
         else
 
         {
-            soundObject.GetComponent<AudioSource>().enabled = false;
             soundObject.GetComponent<AudioSource>().volume = 0;
             soundObject.GetComponent<AudioSource>().enabled = true;
-            emission.FadeIn(sound);
-            emission.deleteGameObject(spawnedSound);
+            soundObject.GetComponent<SoundEmissionManager>().FadeIn(sound);
         }
     }
 
     public void RemoveSound(SoundPacket sound, bool fade = false)
     {
+        EmissionSound.Remove(sound);
+
         SoundType type = sound.GetAudioType();
 
         switch (type)
         {
             case SoundType.Loop:
 
-                if (fade == false)
+                if (!fade)
                 {
-                    if(EmissionSound.ContainsKey(sound) == true)
-                    {
-                        emission.StopAudio(EmissionSound, sound);
-                        loopAudioList.Remove(sound);
-                    }   
-                }
-
-                else
-
-                {
-                    if(EmissionSound.ContainsKey(sound) == true)
-                    {
-                        emission.FadeOut(sound);
+                    if (loopAudioList.ContainsKey(sound)) 
+                    { 
+                        Destroy(loopAudioList[sound]);
                         loopAudioList.Remove(sound);
                     }
-                    
+                }
+                else
+                {
+                    if (loopAudioList.ContainsKey(sound))
+                    {
+                        loopAudioList[sound].GetComponent<SoundEmissionManager>().FadeOut(sound);
+                        loopAudioList.Remove(sound);
+                    }
                 }
                    
                 break;
 
             case SoundType.PlayOnce:
 
-                if (fade == false)
+                if (!fade)
                 {
-                    if(EmissionSound.ContainsKey(sound) == true)
+                    if (playOnceAudioList.ContainsKey(sound))
                     {
-                        emission.StopAudio(EmissionSound, sound);
+                        Destroy(playOnceAudioList[sound]);
                         playOnceAudioList.Remove(sound);
                     }
-                   
                 }
-
                 else
-
                 {
-                    if(EmissionSound.ContainsKey(sound) == true)
+                    if (playOnceAudioList.ContainsKey(sound))
                     {
-                        emission.FadeOut(sound);
+                        playOnceAudioList[sound].GetComponent<SoundEmissionManager>().FadeOut(sound);
                         playOnceAudioList.Remove(sound);
                     }
-                    
                 }
 
                 break;
 
             case SoundType.ReplayAfterSeconds:
 
-                if (fade == false)
+                if (!fade)
                 {
-                    if(EmissionSound.ContainsKey(sound) == true)
+                    if (delayAudioList.ContainsKey(sound))
                     {
-                        emission.StopAudio(EmissionSound, sound);
+                        Destroy(delayAudioList[sound]);
                         delayAudioList.Remove(sound);
                     }
-                    
                 }
-
                 else
-
                 {
-                    if(EmissionSound.ContainsKey(sound) == true)
+                    if (delayAudioList.ContainsKey(sound))
                     {
-                        emission.FadeOut(sound);
+                        delayAudioList[sound].GetComponent<SoundEmissionManager>().FadeOut(sound);
                         delayAudioList.Remove(sound);
                     }
-                    
                 }
-     
+
                 break;
         }
     }

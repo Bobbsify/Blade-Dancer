@@ -73,9 +73,13 @@ public class SoundEmissionManager : MonoBehaviour
 
         yield return new WaitForSeconds(fadeDuration / (1/fadeAmount));
 
-        if(audio.volume > 0)
+        if (audio.volume > 0)
         {
             StartCoroutine(FadeOutTime(sound, fadeDuration));
+        }
+        else 
+        {
+            Destroy(gameObject);
         }
     }
 
