@@ -117,8 +117,6 @@ public class RoomController : MonoBehaviour, IGameEntity
                     bottomRight = new Vector3(bottomRight.x - xMod, bottomRight.y, bottomRight.z + zMod);
                     topLeft = new Vector3(topLeft.x + xMod, topLeft.y, topLeft.z - zMod);
 
-                    Debug.Log(bottomRight + " - " + topLeft);
-
                     toPass = RandomRangeVectorNoCenter(topLeft, bottomRight, positionsOccupied);
 
                     break;
