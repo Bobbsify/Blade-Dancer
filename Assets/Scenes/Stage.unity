@@ -1301,8 +1301,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1740df45bf8987042a50cfdb3b9e65b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheers:
-  - {fileID: 664516833}
+  cheerController: {fileID: 664516833}
+  possibleCheers:
+  - WOW
+  - FANTASTIC
+  - EXTRAVAGANT
+  - INCREDIBLE
+  - GOKU
 --- !u!1 &1672778059
 GameObject:
   m_ObjectHideFlags: 0
@@ -1505,8 +1510,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1740df45bf8987042a50cfdb3b9e65b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cheers:
-  - {fileID: 1775990551}
+  cheerController: {fileID: 1775990551}
+  possibleCheers:
+  - WOW
+  - FANTASTIC
+  - EXTRAVAGANT
+  - INCREDIBLE
+  - GOKU
 --- !u!1 &1787614904
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1559,7 @@ GameObject:
   - component: {fileID: 2027274949}
   - component: {fileID: 2027274950}
   - component: {fileID: 2027274952}
+  - component: {fileID: 2027274953}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1573,7 +1584,6 @@ MonoBehaviour:
   - {fileID: 1513149077}
   - {fileID: 1787614904}
   - {fileID: 311219301}
-  cheerController: {fileID: 1584962673}
   inputReceiversTransform: {fileID: 1787614905}
   projectilesRoot: {fileID: 321017109}
   spawnPoint: {fileID: 1672778060}
@@ -1594,8 +1604,10 @@ MonoBehaviour:
   currentBreakroom: 0
   fadeToBlack: {fileID: 511583434}
   fadeAmount: 0.01
+  HUDAnimator: {fileID: 0}
+  cheerManager: {fileID: 1775990553}
   firstRun: 0
-  customRunEnabled: 1
+  customRunEnabled: 0
   customRun: 00000000090000000a0000000b0000000700000006000000
 --- !u!114 &2027274950
 MonoBehaviour:
@@ -1643,6 +1655,20 @@ MonoBehaviour:
     type: 2}
   audioMixerSfx: {fileID: -1242301498137307266, guid: f72785bbfeca96b4cb11a758d9d0e02b,
     type: 2}
+--- !u!114 &2027274953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2027274948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f53b067b5b934cfc8d1398cefe3b556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundPackets: []
+  repeatRange: 2
 --- !u!1 &2110569548
 GameObject:
   m_ObjectHideFlags: 0
