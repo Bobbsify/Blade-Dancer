@@ -18,7 +18,7 @@ public class UIDialogueController : MonoBehaviour
     private SoundQueueManager sqm;
 
     [SerializeField]
-    private SoundPacket speakingSound;
+    private AudioSource defaultSpeakingSound;
 
     [Header("UI")]
     [SerializeField]
@@ -33,6 +33,8 @@ public class UIDialogueController : MonoBehaviour
     private char[] totalDialogue;
     private int pointInDialogue = 0;
 
+    private SoundPacket speakingSound;
+
     private void OnValidate()
     {
         if (sqm == null) 
@@ -46,11 +48,14 @@ public class UIDialogueController : MonoBehaviour
         }
     }
 
-    public void SetDialogue(Dialogue dialogue)
+    public void SetDialogue(Dialogue dialogue, AudioSource voice = null)
     {
         StopAllCoroutines();
         EndTelling();
-        sqm.RemoveSound(speakingSound);
+
+        speakingSound = new SoundPacket(voice == null ? defaultSpeakingSound : voice, Vector3.zero, SoundType.Loop, OutputType.Music);
+        sqm.AddSound(speakingSound);    //Add new sound
+
         gameObject.SetActive(true);
 
         ImageToShow.sprite = dialogue.GetPicture();
@@ -60,7 +65,6 @@ public class UIDialogueController : MonoBehaviour
         totalDialogue = dialogue.GetLine().ToCharArray();
         DialogueText.text = "";
         StartCoroutine(TellDialogue());
-        sqm.AddSound(speakingSound);
     }
 
     public void EndDialogue(UnityEvent events)
@@ -88,6 +92,10 @@ public class UIDialogueController : MonoBehaviour
     private void EndTelling()
     {
         pointInDialogue = 0;
-        sqm.RemoveSound(speakingSound);
+
+        if (speakingSound != null)
+        {
+            sqm.RemoveSound(speakingSound); //Remove previous sound
+        }
     }
 }

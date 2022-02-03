@@ -8,7 +8,7 @@ using UnityEngine.Audio;
 public class SoundPacket
 {
     [SerializeField]
-    private AudioClip audio;
+    private AudioSource audio;
 
     [SerializeField]
     private Vector3 playPos;
@@ -19,7 +19,7 @@ public class SoundPacket
     [SerializeField]
     private OutputType outputType;
 
-    public SoundPacket(AudioClip audio, Vector3 playPos, SoundType audioType, OutputType outputType)
+    public SoundPacket(AudioSource audio, Vector3 playPos, SoundType audioType, OutputType outputType)
     {
         this.audio = audio;
         this.playPos = playPos;

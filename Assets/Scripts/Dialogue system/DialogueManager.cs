@@ -14,6 +14,9 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
     private float distanceToTrigger = 5.0f;
 
     [SerializeField]
+    private AudioSource voice;
+
+    [SerializeField]
     private Dialogue startingDialogue;
 
     [SerializeField]
@@ -64,14 +67,14 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
                     return;
                 }
 
-                dialogueUI.SetDialogue(nextDialogue);
+                dialogueUI.SetDialogue(nextDialogue,voice);
                 nextDialogue = nextDialogue.GetNextDialogue();
             }
             else
             {
                 player.GetComponent<PlayerController>().DisableAllAbilities();
                 isInDialogue = true;
-                dialogueUI.SetDialogue(startingDialogue);
+                dialogueUI.SetDialogue(startingDialogue, voice);
                 nextDialogue = startingDialogue.GetNextDialogue();
             }
         }
@@ -84,6 +87,4 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
         Gizmos.color = GizmosColor;
         Gizmos.DrawCube(this.transform.position, new Vector3(distanceToTrigger, distanceToTrigger, distanceToTrigger));
     }
-
-    /*TODO | Remove se alla fine non si usa il Game Manager*/
 }
