@@ -164,6 +164,11 @@ public class GameManager : MonoBehaviour
         currentArena = startingRoom;
     }
 
+    public T GetUIComponent<T>()
+    {
+        return GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<T>();
+    }
+
     public List<RuleSetting> GetRuleSettings()
     {
         return this.allRules.getAll();
