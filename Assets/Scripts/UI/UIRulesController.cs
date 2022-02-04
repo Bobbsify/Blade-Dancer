@@ -9,6 +9,13 @@ using UnityEngine;
  */
 public class UIRulesController : MonoBehaviour
 {
+    [Header("Animation")]
+
+    [SerializeField]
+    private List<Animator> ruleAnimators = new List<Animator>();
+
+    [Header("Settings")]
+
     [SerializeField]
     private float oddRulesOffset = 125.0f;
 
@@ -23,6 +30,10 @@ public class UIRulesController : MonoBehaviour
         if (ruleContainerManagers.Count == 0) 
         { 
             ruleContainerManagers.AddRange(GetComponentsInChildren<RuleContainerManager>());
+        }
+        if (ruleAnimators.Count == 0) 
+        {
+            ruleAnimators.AddRange(GetComponentsInChildren<Animator>());
         }
     }
     private void Awake()
@@ -116,6 +127,14 @@ public class UIRulesController : MonoBehaviour
     public List<RuleContainerManager> GetContainers()
     {
         return this.ruleContainerManagers;
+    }
+
+    public void ShowRules() 
+    {
+        foreach (Animator anim in ruleAnimators) 
+        {
+            anim.SetTrigger("showrule");
+        }
     }
 }
 
