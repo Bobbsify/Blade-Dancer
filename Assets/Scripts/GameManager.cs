@@ -225,7 +225,6 @@ public class GameManager : MonoBehaviour
     public void StartStage()
     {
         //Enable HUD
-        HUDAnimator.SetBool("active", true);
 
         playerCtrl.EnableAllAbilities();
         EnableEnemies();
@@ -335,18 +334,25 @@ public class GameManager : MonoBehaviour
         timer.SetTimer(stage.GetRulesTime());
         currentArena = Instantiate(stage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
         RoomController room = currentArena.GetComponent<RoomController>();
+        
+        //Create Rule Objects
+
         Dictionary<Vector3, Vector3> spacesOccupied = new Dictionary<Vector3, Vector3>(); //Position --> Collider width
         foreach (RuleObject objToSpawn in stage.GetRuleRelatedObjectsToSpawn()) 
         {
             GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
             Collider col = instantiated.GetComponentInChildren<Collider>();
             spacesOccupied.Add(instantiated.transform.position,
-                //col == null ? new Vector3(1, 1, 1) : col.bounds.extents);
-               new Vector3(1, 1, 1)); //Possibile soluzioen ai crash
+                col == null  || col.isTrigger ? new Vector3(1, 1, 1) : col.bounds.extents);
         }
+
+        //Setup new Arena
         ruleManager.SetNewRuleset(stage.GetRules());
         InitEntities(currentArena);
         PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
+
+        //Screen Go to Next Arena
+        HUDAnimator.SetBool("active", true);
         StartCoroutine(ReverseFade());
     }
 
