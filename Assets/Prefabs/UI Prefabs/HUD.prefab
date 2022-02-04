@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8891473301845652510}
   - component: {fileID: 5488876077419793666}
+  - component: {fileID: 715393420549428532}
   m_Layer: 0
   m_Name: Rule6
   m_TagString: Untagged
@@ -53,6 +54,25 @@ MonoBehaviour:
   ruleName: {fileID: 3379682877227397449}
   completed: {fileID: 4607774030133765567}
   ruleScore: {fileID: 5922000354267007217}
+--- !u!95 &715393420549428532
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 10494069329731095}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0472db6c05b97054cafa6f2c8756378e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &190967839821788479
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 810111122109049021}
   - component: {fileID: 109029521350491226}
-  - component: {fileID: 6122217853617698461}
+  - component: {fileID: 6018290673402126245}
   m_Layer: 0
   m_Name: Rule1
   m_TagString: Untagged
@@ -832,7 +852,7 @@ MonoBehaviour:
   ruleName: {fileID: 810111121407511144}
   completed: {fileID: 810111121874336045}
   ruleScore: {fileID: 4565023840773179293}
---- !u!95 &6122217853617698461
+--- !u!95 &6018290673402126245
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -1337,6 +1357,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3787071700447884122}
   - component: {fileID: 8978847423206032616}
+  - component: {fileID: 6605012495060946249}
   m_Layer: 0
   m_Name: Rule5
   m_TagString: Untagged
@@ -1380,6 +1401,25 @@ MonoBehaviour:
   ruleName: {fileID: 921060536446019175}
   completed: {fileID: 8915309290642024994}
   ruleScore: {fileID: 1373428603976187094}
+--- !u!95 &6605012495060946249
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963126899471749641}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0472db6c05b97054cafa6f2c8756378e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2062414493206070842
 GameObject:
   m_ObjectHideFlags: 0
@@ -1764,6 +1804,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9152808515628626042}
   - component: {fileID: 2495643285758301670}
+  - component: {fileID: 5293018925600306671}
   m_Layer: 0
   m_Name: Rule3
   m_TagString: Untagged
@@ -1807,6 +1848,25 @@ MonoBehaviour:
   ruleName: {fileID: 6978967938739913379}
   completed: {fileID: 4120973639039278236}
   ruleScore: {fileID: 2358707154193918475}
+--- !u!95 &5293018925600306671
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2993920404182910174}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0472db6c05b97054cafa6f2c8756378e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3068716365935209692
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,6 +2263,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1134038085113133688}
   - component: {fileID: 2128575294831398859}
+  - component: {fileID: 2175479755432115307}
   m_Layer: 0
   m_Name: Rule4
   m_TagString: Untagged
@@ -2246,6 +2307,25 @@ MonoBehaviour:
   ruleName: {fileID: 5745702018022671607}
   completed: {fileID: 4348601279583930078}
   ruleScore: {fileID: 1871967408508070746}
+--- !u!95 &2175479755432115307
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3808969565029925722}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0472db6c05b97054cafa6f2c8756378e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &3953188068396028722
 GameObject:
   m_ObjectHideFlags: 0
@@ -2331,6 +2411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7958765566971231500}
   - component: {fileID: 3324607729296128395}
+  - component: {fileID: 5790671342087435362}
   m_Layer: 0
   m_Name: Rule2
   m_TagString: Untagged
@@ -2374,6 +2455,25 @@ MonoBehaviour:
   ruleName: {fileID: 4837443414031987878}
   completed: {fileID: 5681862884540585883}
   ruleScore: {fileID: 2418016663540745321}
+--- !u!95 &5790671342087435362
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3978822668062082214}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0472db6c05b97054cafa6f2c8756378e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &4032183845654062820
 GameObject:
   m_ObjectHideFlags: 0
