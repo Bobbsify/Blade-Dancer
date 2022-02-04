@@ -5582,8 +5582,8 @@ MonoBehaviour:
   otherButtonEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8848316814638692296}
-        m_MethodName: SetActive
+      - m_Target: {fileID: 8848316814638692298}
+        m_MethodName: set_enabled
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
