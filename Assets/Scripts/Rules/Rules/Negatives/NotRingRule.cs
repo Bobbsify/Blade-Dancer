@@ -6,7 +6,7 @@ using UnityEngine;
 [Serializable]
 public class NotRingRule : Rule
 {
-    private bool complete = false;
+    private bool notRang = true;
 
     public NotRingRule(AllRules ruleName, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
@@ -23,16 +23,16 @@ public class NotRingRule : Rule
         {
             if (action == executedAction)
             {
-                complete = true;
-                return complete;
+                notRang = false;
+                return notRang;
             }
         }
-        return false;
+        return notRang;
     }
 
     public override bool IsRuleComplete()
     {
-        return complete;
+        return notRang;
     }
 
     public override string ToString()
