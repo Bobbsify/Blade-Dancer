@@ -4126,6 +4126,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9092505181373489284}
+  - component: {fileID: 2386669542698342887}
   m_Layer: 0
   m_Name: Dance
   m_TagString: Untagged
@@ -4157,6 +4158,24 @@ RectTransform:
   m_AnchoredPosition: {x: 0.000030517, y: 17.852245}
   m_SizeDelta: {x: 500, y: 35.704468}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2386669542698342887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101475451833696713}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d56950ea6f17844aac92150637f834c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chargeBackgrounds:
+  - {fileID: 240959170444975717}
+  - {fileID: 1139046949228173248}
+  - {fileID: 5172077977447839520}
+  - {fileID: 4464472256336156467}
+  - {fileID: 6466709099129769957}
 --- !u!1 &8158877411319890859
 GameObject:
   m_ObjectHideFlags: 0
