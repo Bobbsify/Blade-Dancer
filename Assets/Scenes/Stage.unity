@@ -1339,7 +1339,7 @@ MonoBehaviour:
   - {fileID: 5522282984504969493, guid: 69c226fd5ae9990449a39dd785f128f4, type: 3}
   ruleManagerLocation: {fileID: 1479370606}
   minDifficulty: 1
-  maxDifficulty: 4
+  maxDifficulty: 6
   difficultyIncreaseMod: 0.15
   breakRooms:
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
@@ -1349,6 +1349,7 @@ MonoBehaviour:
   fadeAmount: 0.01
   HUDAnimator: {fileID: 2147415104}
   cheerManager: {fileID: 341461291}
+  endless: 0
   firstRun: 0
   customRunEnabled: 0
   customRun: 00000000090000000a0000000b0000000700000006000000

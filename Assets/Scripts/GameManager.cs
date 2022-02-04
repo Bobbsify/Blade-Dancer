@@ -98,6 +98,10 @@ public class GameManager : MonoBehaviour
 
     [Header("Debug")]
     [SerializeField]
+    [Tooltip("Never leaves the first break room")]
+    private bool endless = false;
+
+    [SerializeField]
     private bool firstRun = true;
 
     [SerializeField]
@@ -258,7 +262,9 @@ public class GameManager : MonoBehaviour
         else
         {
             timer.ResetTimer();
+            currentBreakroom -= endless ? 1 : 0;
             StreakEnded();
+            
         }
     }
 
