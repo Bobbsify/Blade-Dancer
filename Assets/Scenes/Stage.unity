@@ -203,7 +203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputType: 0
   searchRoot: {fileID: 1787614904}
-  danceAxisName: Jump
+  danceAxisName: Fire3
 --- !u!114 &16071989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputType: 1
   searchRoot: {fileID: 1787614904}
-  dashAxisName: Fire3
+  dashAxisName: Jump
 --- !u!114 &16071990
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -333,7 +333,7 @@ PrefabInstance:
     - target: {fileID: 4032183846944661070, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4032183846944661070, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
@@ -758,7 +758,7 @@ PrefabInstance:
     - target: {fileID: 8613225852285713245, guid: c570c80dd6f0e144a8c60cf3bf13cad4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8613225852285713245, guid: c570c80dd6f0e144a8c60cf3bf13cad4,
         type: 3}
@@ -908,7 +908,7 @@ PrefabInstance:
     - target: {fileID: 6020665747782658860, guid: 5a49ca99676c3104da1f2bd452235ac2,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6020665747782658860, guid: 5a49ca99676c3104da1f2bd452235ac2,
         type: 3}
@@ -1411,15 +1411,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundPackets:
-  - audio: {fileID: 8300000, guid: c610d0cc6b459d3439b33e02406ba399, type: 3}
+  - audio: {fileID: 8300000, guid: eba8d218efae4ee4b84fb199f49f7648, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 1
-  - audio: {fileID: 8300000, guid: 11efae84a33598b48b69d0d2fc96a5a2, type: 3}
+  - audio: {fileID: 8300000, guid: 03e5e579c7783ae478c4c49f7c8f547f, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 1
-  - audio: {fileID: 8300000, guid: c115d5d6ada8240448b82a9431530bac, type: 3}
+  - audio: {fileID: 8300000, guid: f251f954beb2c234cbff8ad6e63e3b0f, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 1
+  - audio: {fileID: 8300000, guid: ac6ec2378e4c9d14ea84d2b42766344a, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 1
+  - audio: {fileID: 8300000, guid: 83e5aaa371ff1384ca026bf46d6b7075, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 1
