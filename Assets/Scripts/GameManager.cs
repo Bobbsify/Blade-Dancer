@@ -436,8 +436,8 @@ public class GameManager : MonoBehaviour
         currentArena = breakoutRoom;
 
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
-        PlayerDamageTrigger();
         RemoveProjectiles();
+        PlayerDamageTrigger();
         this.inputManager.EnableInput<InputSystemPause>();
     }
 
