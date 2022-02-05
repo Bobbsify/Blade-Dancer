@@ -32,8 +32,9 @@ public class HealthController : MonoBehaviour
     {
         int playerCurrentHealth = player.GetHealth();
         if (playerCurrentHealth < latestPlayerHealth) 
-        { 
+        {
             //Do damage Anim
+            Debug.Log("Damage");
         }
         for (int i = playerCurrentHealth; i < player.GetMaxHealth(); i++)
         {
