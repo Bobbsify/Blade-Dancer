@@ -29,19 +29,19 @@ public class UIRulesController : MonoBehaviour
     private float oddRulesOffsetTreMezzi = 125.0f;
 
     [SerializeField]
-    private float oddRulesOffCinqueQuarti = 125.0f;
+    private float oddRulesOffsetCinqueQuarti = 125.0f;
 
     [SerializeField]
-    private float oddRulesOffQuattroTerzi = 125.0f;
+    private float oddRulesOffsetQuattroTerzi = 125.0f;
 
     [SerializeField]
-    private float oddRulesOffSediciNoni= 125.0f;
+    private float oddRulesOffsetSediciNoni= 125.0f;
 
     [SerializeField]
-    private float oddRulesOffSediciDecimi = 125.0f;
+    private float oddRulesOffsetSediciDecimi = 125.0f;
 
     [SerializeField]
-    private float oddRulesOffHD = 125.0f;
+    private float oddRulesOffsetHD = 125.0f;
 
     [SerializeField]
     private List<RuleContainerManager> ruleContainerManagers = new List<RuleContainerManager>();
@@ -64,11 +64,14 @@ public class UIRulesController : MonoBehaviour
     private void Awake()
     {
         defaultPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+
+        Screen.SetResolution(1280, 1024, false);
         screenResolution = Screen.currentResolution;
     }
 
     private void Start()
     {
+
         if (screenResolution.width == 2160 && screenResolution.height == 1440)
         {
             offsettedPos = new Vector3(defaultPos.x + oddRulesOffsetTreMezzi, defaultPos.y, defaultPos.z);
@@ -76,25 +79,25 @@ public class UIRulesController : MonoBehaviour
 
         else if(screenResolution.width == 1280 && screenResolution.height == 1024)
         {
-            offsettedPos = new Vector3(defaultPos.x + oddRulesOffCinqueQuarti, defaultPos.y, defaultPos.z);
+            offsettedPos = new Vector3(defaultPos.x + oddRulesOffsetCinqueQuarti, defaultPos.y, defaultPos.z);
         }
         else if (screenResolution.width == 1024 && screenResolution.height == 768)
         {
-            offsettedPos = new Vector3(defaultPos.x + oddRulesOffQuattroTerzi, defaultPos.y, defaultPos.z);
+            offsettedPos = new Vector3(defaultPos.x + oddRulesOffsetQuattroTerzi, defaultPos.y, defaultPos.z);
         }
         else if (screenResolution.width ==  1920 && screenResolution.height == 1080)
         {
-            offsettedPos = new Vector3(defaultPos.x + oddRulesOffSediciNoni, defaultPos.y, defaultPos.z);
+            offsettedPos = new Vector3(defaultPos.x + oddRulesOffsetSediciNoni, defaultPos.y, defaultPos.z);
         }
 
         else if (screenResolution.width == 1920 && screenResolution.height == 1200)
         {
-            offsettedPos = new Vector3(defaultPos.x + oddRulesOffSediciDecimi, defaultPos.y, defaultPos.z);
+            offsettedPos = new Vector3(defaultPos.x + oddRulesOffsetSediciDecimi, defaultPos.y, defaultPos.z);
         }
 
         else if (screenResolution.width == 2560 && screenResolution.height == 1080)
         {
-            offsettedPos = new Vector3(defaultPos.x + oddRulesOffHD, defaultPos.y, defaultPos.z);
+            offsettedPos = new Vector3(defaultPos.x + oddRulesOffsetHD, defaultPos.y, defaultPos.z);
         }
     }
 
