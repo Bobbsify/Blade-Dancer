@@ -185,6 +185,7 @@ MonoBehaviour:
   stateChase: {fileID: 2096567139338241274}
   damage: 1
   isPlayerDamageable: 0
+  continueToDamage: 1
 --- !u!1 &4110936719562507667
 GameObject:
   m_ObjectHideFlags: 0
