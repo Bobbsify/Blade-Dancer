@@ -1345,6 +1345,11 @@ MonoBehaviour:
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   currentBreakroom: 0
+  breakRoomMusic:
+    audio: {fileID: 8300000, guid: c610d0cc6b459d3439b33e02406ba399, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 1
   fadeToBlack: {fileID: 511583434}
   fadeAmount: 0.01
   HUDAnimator: {fileID: 2147415104}

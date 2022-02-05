@@ -82,6 +82,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int currentBreakroom = 0;
 
+    [SerializeField]
+    private SoundPacket breakRoomMusic;
+
     [Header("UI")]
     [SerializeField]
     private Image fadeToBlack;
@@ -166,6 +169,7 @@ public class GameManager : MonoBehaviour
         }
         ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
         currentArena = startingRoom;
+        PlaySound(breakRoomMusic);
     }
 
     public T GetUIComponent<T>()
@@ -211,6 +215,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        StopSound(breakRoomMusic, true);
         //Remove HUD
         HUDAnimator.SetBool("active", false);
 
@@ -233,6 +238,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        StopSound(breakRoomMusic, true);
         //Enable HUD
 
         playerCtrl.EnableAllAbilities();
@@ -252,7 +258,10 @@ public class GameManager : MonoBehaviour
         playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
-        nextStage = currentStreak.NextStage();
+        if (currentStreak != null) 
+        { 
+            nextStage = currentStreak.NextStage();
+        }
 
         if (nextStage != null)
         {
@@ -393,6 +402,7 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
+        PlaySound(breakRoomMusic, true);
         StopSound(streakMusic, true);
 
         //End Streak
