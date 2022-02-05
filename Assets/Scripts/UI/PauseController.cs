@@ -9,9 +9,16 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     [SerializeField]
     private GameObject pauseMenu;
 
+    private CursorSetter cursorSetter;
+
+    private void Start()
+    {
+        cursorSetter = GameObject.FindGameObjectWithTag("UI").GetComponent<CursorSetter>();
+    }
     public void Continue()
     {
         pauseMenu.SetActive(false);
+        cursorSetter.SetCursor(CursorType.Game);
         Time.timeScale = 1f;
         pause = false;
     }
@@ -19,6 +26,7 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public void Pause()
     {
         pauseMenu.SetActive(true);
+        cursorSetter.SetCursor(CursorType.Menu);
         Time.timeScale = 0f;
         pause = true;
     }
