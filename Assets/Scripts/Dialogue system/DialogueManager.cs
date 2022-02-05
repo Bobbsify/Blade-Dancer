@@ -14,10 +14,16 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
     private float distanceToTrigger = 5.0f;
 
     [SerializeField]
+    private AudioClip voice;
+
+    [SerializeField]
     private Dialogue startingDialogue;
 
     [SerializeField]
     private List<Dialogue> dialogues = new List<Dialogue>();
+
+    [SerializeField]
+    UnityEvent endOfDialogueEvents;
 
     private GameObject player;
 
@@ -56,19 +62,19 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
                 if (nextDialogue == null)
                 {
                     isInDialogue = false;
-                    dialogueUI.EndDialogue();
+                    dialogueUI.EndDialogue(endOfDialogueEvents);
                     player.GetComponent<PlayerController>().EnableAllAbilities();
                     return;
                 }
 
-                dialogueUI.SetDialogue(nextDialogue);
+                dialogueUI.SetDialogue(nextDialogue,voice);
                 nextDialogue = nextDialogue.GetNextDialogue();
             }
             else
             {
                 player.GetComponent<PlayerController>().DisableAllAbilities();
                 isInDialogue = true;
-                dialogueUI.SetDialogue(startingDialogue);
+                dialogueUI.SetDialogue(startingDialogue, voice);
                 nextDialogue = startingDialogue.GetNextDialogue();
             }
         }
@@ -81,6 +87,4 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
         Gizmos.color = GizmosColor;
         Gizmos.DrawCube(this.transform.position, new Vector3(distanceToTrigger, distanceToTrigger, distanceToTrigger));
     }
-
-    /*TODO | Remove se alla fine non si usa il Game Manager*/
 }

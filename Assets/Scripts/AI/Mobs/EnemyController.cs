@@ -37,6 +37,14 @@ public class EnemyController : MonoBehaviour, IEnemy
         Destroy(gameObject);
     }
 
+    public void SetProjectilesRoot(Transform projectilesRoot) 
+    {
+        if (TryGetComponent(out EnemyAttackRanged rangedAttack))
+        { 
+            rangedAttack.SetProjectilesRoot(projectilesRoot);
+        }
+    }
+
     private void Die() 
     {
         stateMachine.DisalbeStates();
@@ -71,7 +79,17 @@ public class EnemyController : MonoBehaviour, IEnemy
     {
         if (TryGetComponent(out EnemyIdle idle))
         {
-            idle.StopForce();
+            stateMachine.ChangeState(idle);
+            idle.ForceIdle(false);
+        }
+    }
+
+    public void Stop()
+    {
+        if (TryGetComponent(out EnemyIdle idle))
+        {
+            stateMachine.ChangeState(idle);
+            idle.ForceIdle(true);
         }
     }
 }

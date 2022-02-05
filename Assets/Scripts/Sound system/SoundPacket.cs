@@ -48,6 +48,22 @@ public class SoundPacket
         return outputType;
     }
 
+    public override bool Equals(object obj)
+    {
+        if (obj.GetType().Equals(this.GetType()))
+        {
+            SoundPacket convertedObj = (SoundPacket)obj;
+            return convertedObj.audio == this.audio
+                && convertedObj.audioType == this.audioType
+                && convertedObj.GetOutputType() == this.outputType
+                && convertedObj.GetPlayPosition() == this.playPos;
+        }
+        else 
+        {
+            return false;
+        }
+    }
+
 }
 public enum SoundType
 {

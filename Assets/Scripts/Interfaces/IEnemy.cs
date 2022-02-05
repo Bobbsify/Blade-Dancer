@@ -12,4 +12,5 @@ public interface IEnemy
 
     void Go();
 
+    void Stop();
 }

@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 [RequireComponent(typeof(TimerManager))]
 [RequireComponent(typeof(SoundQueueManager))]
+[RequireComponent(typeof(StreakMusicSelector))]
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
@@ -15,9 +16,6 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     [Tooltip("For entities that require to know of the Game Manager Object")]
     private GameObject[] GameEntitiesRoots;
-
-    [SerializeField]
-    private CheerManager cheerController;
 
     [Header("Player Generation")]
 
@@ -84,6 +82,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private int currentBreakroom = 0;
 
+    [SerializeField]
+    private SoundPacket breakRoomMusic;
+
     [Header("UI")]
     [SerializeField]
     private Image fadeToBlack;
@@ -92,7 +93,20 @@ public class GameManager : MonoBehaviour
     [Range(0.01f,0.1f)]
     private float fadeAmount = 0.01f;
 
+    [SerializeField]
+    private Animator HUDAnimator;
+
+    [SerializeField]
+    private CheerManager cheerManager;
+
+    [SerializeField]
+    private HealthController healthController;
+
     [Header("Debug")]
+    [SerializeField]
+    [Tooltip("Never leaves the first break room")]
+    private bool endless = false;
+
     [SerializeField]
     private bool firstRun = true;
 
@@ -100,11 +114,12 @@ public class GameManager : MonoBehaviour
     private bool customRunEnabled = true;
 
     [SerializeField]
-    private AllRules[] customRun = new AllRules[10];
+    [Tooltip("Specificare le regole che usciranno durante i prossimi 10 stage")]
+    private AllRules[] customRun = new AllRules[6];
 
     //--------------------------------------------------
 
-    private SoundQueueManager sqm;
+    //Streaking
 
     private RuleManager ruleManager;
 
@@ -118,13 +133,31 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
+    //Sound
+
+    private SoundQueueManager sqm;
+
+    private SoundPacket streakMusic;
+
+    private StreakMusicSelector streakMusicSelector;
+
+    //Other
+
     private bool tookDamage = false;
 
     private void OnValidate()
     {
-        if (cheerController == null) 
+        if (cheerManager == null) 
         {
-            cheerController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
+            cheerManager = GetUIComponent<CheerManager>();
+        }
+        if (healthController == null) 
+        {
+            healthController = GetUIComponent<HealthController>();
+        }
+        if(HUDAnimator == null) 
+        {
+            GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<Animator>();
         }
     }
 
@@ -134,6 +167,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("Game Manager has first run set to false upon start");
         }
+        TryGetComponent(out streakMusicSelector);
         TryGetComponent(out sqm);
         TryGetComponent(out timer);
 		this.GeneratePlayerPawn();
@@ -148,11 +182,22 @@ public class GameManager : MonoBehaviour
         }
         ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
         currentArena = startingRoom;
+        PlaySound(breakRoomMusic);
+    }
+
+    public T GetUIComponent<T>()
+    {
+        return GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<T>(true);
     }
 
     public List<RuleSetting> GetRuleSettings()
     {
         return this.allRules.getAll();
+    }
+
+    public void PlayerDamageTrigger()
+    {
+        healthController.UpdateHearts();
     }
 
     public void ActionEventTrigger(Actions action)
@@ -188,6 +233,14 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        StopSound(breakRoomMusic);
+        //Remove HUD
+        HUDAnimator.SetBool("active", false);
+
+        //Select music for streak
+        streakMusic = streakMusicSelector.GetMusic();
+        PlaySound(streakMusic, true);
+
         this.inputManager.DisableInput<InputSystemPause>();
        //Destroy(startingRoom);
         GenerateNewStreak();
@@ -203,6 +256,10 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
+        //Enable HUD
+        HUDAnimator.SetBool("active", true);
+
+        playerCtrl.EnableAllAbilities();
         EnableEnemies();
         tookDamage = false;
         timer.StartTimer();
@@ -210,26 +267,31 @@ public class GameManager : MonoBehaviour
 
     public void EndOfStage()
     {
+        DisableEnemies();
+
+        //Remove HUD
+        HUDAnimator.SetBool("active", false);
+
         RemoveProjectiles();
         playerCtrl.GetComponent<Rigidbody>().Sleep();
         playerCtrl.GetComponent<Dance>().Charge(GetDanceCharge());
         timer.StopTimer();
-        nextStage = currentStreak.NextStage();
+        if (currentStreak != null) 
+        { 
+            nextStage = currentStreak.NextStage();
+        }
+
         if (nextStage != null)
         {
-            /*
-            Destroy(currentArena);
-            GoToNextStage(nextStage);
-            playerCtrl.DisableAllAbilities();
-            */
-
             playerCtrl.DisableAllAbilities();
             currentArena.GetComponent<RoomController>().DoEndOfStage();
         }
         else
         {
             timer.ResetTimer();
+            currentBreakroom -= endless ? 1 : 0;
             StreakEnded();
+            
         }
     }
 
@@ -249,8 +311,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLanded()
     {
-        Debug.Log("Show Rules");
-        Debug.Log("Start Timer");
+        StartStage();
     }
 
 
@@ -265,9 +326,22 @@ public class GameManager : MonoBehaviour
     private void EnableEnemies()
     {
         IEnemy[] enemies = currentArena.GetComponentsInChildren<IEnemy>();
-        foreach (IEnemy enemy in enemies) 
+        foreach (IEnemy enemy in enemies)
         {
             enemy.Go();
+        }
+        foreach (EnemyController enemy in currentArena.GetComponentsInChildren<EnemyController>(true)) 
+        {
+            enemy.SetProjectilesRoot(projectilesRoot);
+        }
+    }
+
+    private void DisableEnemies()
+    {
+        IEnemy[] enemies = currentArena.GetComponentsInChildren<IEnemy>();
+        foreach (IEnemy enemy in enemies)
+        {
+            enemy.Stop();
         }
     }
 
@@ -276,7 +350,7 @@ public class GameManager : MonoBehaviour
         int cheer = timer.GetCheer();
         if (cheer > 1) 
         {
-            cheerController.ExecuteCheer();
+            cheerManager.ExecuteCheer();
         }
         return cheer;
     }
@@ -298,15 +372,25 @@ public class GameManager : MonoBehaviour
         timer.SetTimer(stage.GetRulesTime());
         currentArena = Instantiate(stage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
         RoomController room = currentArena.GetComponent<RoomController>();
+        
+        //Create Rule Objects
+
         Dictionary<Vector3, Vector3> spacesOccupied = new Dictionary<Vector3, Vector3>(); //Position --> Collider width
         foreach (RuleObject objToSpawn in stage.GetRuleRelatedObjectsToSpawn()) 
         {
             GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
             Collider col = instantiated.GetComponentInChildren<Collider>();
-            spacesOccupied.Add(instantiated.transform.position, col == null ? new Vector3(1, 1, 1) : col.bounds.extents);
+            spacesOccupied.Add(instantiated.transform.position,
+                col == null  || col.isTrigger ? new Vector3(1, 1, 1) : col.bounds.extents);
         }
+
+        //Setup new Arena
         ruleManager.SetNewRuleset(stage.GetRules());
         InitEntities(currentArena);
+        PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
+
+        //Screen Go to Next Arena
+        HUDAnimator.SetBool("active", true);
         StartCoroutine(ReverseFade());
     }
 
@@ -336,6 +420,9 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
+        PlaySound(breakRoomMusic, true);
+        StopSound(streakMusic, true);
+
         //End Streak
         Destroy(currentArena);
         firstRun = false;
@@ -349,6 +436,7 @@ public class GameManager : MonoBehaviour
         currentArena = breakoutRoom;
 
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
+        PlayerDamageTrigger();
         RemoveProjectiles();
         this.inputManager.EnableInput<InputSystemPause>();
     }
@@ -371,7 +459,7 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 1)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
             StartCoroutine(FadeToBlack());
         }
         else 
@@ -388,12 +476,8 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 0)
         {
-            yield return new WaitForEndOfFrame();
+            yield return new WaitForSeconds(0.001f);
             StartCoroutine(ReverseFade());
-        }
-        else
-        {
-
         }
     }
 

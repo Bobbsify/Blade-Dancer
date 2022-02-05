@@ -22,15 +22,26 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
 
     private PlayerController playerController;
 
+    private UIDanceController danceUI;
+
     private void OnValidate()
     {
         playerController = GetComponent<PlayerController>();
     }
 
-    private void Awake()
+    private void Start()
     {
         if(playerController == null)
         playerController = GetComponent<PlayerController>();
+        danceUI = gameManager.GetUIComponent<UIDanceController>();
+        if (danceUI == null)
+        {
+            Debug.LogError("No dance ui attached to " + this);
+        }
+        else 
+        {
+            danceUI.UpdateCharge(charge);
+        }
     }
 
     public void Trigger()
@@ -48,12 +59,14 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
         }
         SendActionToGameManager();
         this.charge = minCharge;
+        danceUI.UpdateCharge(charge);
         this.enabled = false; //Deactivate after use;
     }
 
     public void Charge(int amount) 
     {
-        this.charge += Mathf.Max(Mathf.Min(charge + amount, maxCharge),minCharge);
+        this.charge = Mathf.Max(Mathf.Min(charge + amount, maxCharge),minCharge);
+        danceUI.UpdateCharge(charge);
     }
 
     public void SendActionToGameManager()

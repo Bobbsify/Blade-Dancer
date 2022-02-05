@@ -10,6 +10,18 @@ public class PlayerController : MonoBehaviour, IGameEntity
     [SerializeField]
     private int currentHealth;
 
+    [Header("Sound Effects")]
+    [SerializeField]
+    private SoundPacket playerDamage;
+
+    [SerializeField]
+    private SoundPacket playerShoot;
+
+    [SerializeField]
+    private SoundPacket playerDie;
+
+    //---------------------------
+
     private Animator animPlayer;
 
     private IAbility[] abilities;
@@ -40,11 +52,17 @@ public class PlayerController : MonoBehaviour, IGameEntity
     {
         if (currentHealth > 0) { 
             currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount),maxHealth);
-            if (currentHealth == 0) 
+            if (currentHealth == 0)
             {
+                gameManager.PlaySound(playerDie);
                 DoDeath();
             }
+            else if (amount > 0) 
+            {
+                gameManager.PlaySound(playerDamage);
+            }
             gameManager.ActionEventTrigger(Actions.TakeDamage);
+            gameManager.PlayerDamageTrigger();
         }
     }
     #region Animation
@@ -68,11 +86,13 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     public void FallAnimationCompleted()
     {
+        DisableAllAbilities();
         gameManager.PlayerHasFallen();
     }
 
     public void PlayerLanded()
     {
+        EnableAllAbilities();
         gameManager.PlayerLanded();
     }
 

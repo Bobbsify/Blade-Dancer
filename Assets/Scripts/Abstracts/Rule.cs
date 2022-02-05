@@ -187,7 +187,7 @@ public enum AllRules
     NotSpara,
     NotScatta,
     NotBalla,
-    NotSouna,
+    NotSuona,
     NotSinistra,
     NotDestra,
     NotRompi,
