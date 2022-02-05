@@ -24,6 +24,9 @@ public class EnemyAttackMelee : FSMState
 
 	private float reactionTime;
 
+	[SerializeField]
+	private float continueToDamage;
+
 	private void OnValidate()
 	{
 		this.stateChase = this.GetComponent<EnemyChase>();
@@ -63,6 +66,7 @@ public class EnemyAttackMelee : FSMState
         {
 			isPlayerDamageable = true;
 			this.playerController = other.GetComponentInChildren<PlayerController>();
+			StartCoroutine(DamagePlayerIfStillInContact());
 		}
     }
 
@@ -71,6 +75,15 @@ public class EnemyAttackMelee : FSMState
 		if (other.GetComponentInChildren<PlayerController>() != null)
 		{
 			isPlayerDamageable = false;
+			StopAllCoroutines();
+		}
+	}
+
+    private void OnTriggerStay(Collider other)
+    {
+		if (other.GetComponentInChildren<PlayerController>() != null)
+		{ 
+			StopCoroutine(DamagePlayerIfStillInContact());
 		}
 	}
 
@@ -82,4 +95,11 @@ public class EnemyAttackMelee : FSMState
 			isPlayerDamageable = false;
 		}
 	}
+
+	private IEnumerator DamagePlayerIfStillInContact()
+    {
+		yield return new WaitForSeconds(continueToDamage);
+		isPlayerDamageable = true;
+		StartCoroutine(DamagePlayerIfStillInContact());
+    }
 }
