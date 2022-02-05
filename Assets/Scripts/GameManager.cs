@@ -116,7 +116,7 @@ public class GameManager : MonoBehaviour
 
     //--------------------------------------------------
 
-    private SoundQueueManager sqm;
+    //Streaking
 
     private RuleManager ruleManager;
 
@@ -130,9 +130,15 @@ public class GameManager : MonoBehaviour
 
     private GameObject currentArena;
 
+    //Sound
+
+    private SoundQueueManager sqm;
+
     private SoundPacket streakMusic;
 
     private StreakMusicSelector streakMusicSelector;
+
+    //Other
 
     private bool tookDamage = false;
 
@@ -182,6 +188,11 @@ public class GameManager : MonoBehaviour
         return this.allRules.getAll();
     }
 
+    public void PlayerDamageTrigger()
+    {
+        
+    }
+
     public void ActionEventTrigger(Actions action)
     {
         if (currentStreak != null && timer.IsGoing())
@@ -215,7 +226,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
-        StopSound(breakRoomMusic, true);
+        StopSound(breakRoomMusic);
         //Remove HUD
         HUDAnimator.SetBool("active", false);
 
@@ -238,8 +249,8 @@ public class GameManager : MonoBehaviour
 
     public void StartStage()
     {
-        StopSound(breakRoomMusic, true);
         //Enable HUD
+        HUDAnimator.SetBool("active", true);
 
         playerCtrl.EnableAllAbilities();
         EnableEnemies();
