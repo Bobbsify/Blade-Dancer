@@ -12,6 +12,8 @@ public class HealthController : MonoBehaviour
     private Color whiteColor = new Color(0.95311f, 0.95311f, 0.95311f);
     private Color purpleColor = new Color(0.56078f, 0.35294f, 0.85882f);
 
+    private int latestPlayerHealth;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
@@ -23,16 +25,16 @@ public class HealthController : MonoBehaviour
             health[i] = t.gameObject;
             i++;
         }
+        latestPlayerHealth = player.GetHealth();
     }
 
-    private void Update()
-    {
-        UpdateHearts();
-    }
-
-    private void UpdateHearts()
+    public void UpdateHearts()
     {
         int playerCurrentHealth = player.GetHealth();
+        if (playerCurrentHealth < latestPlayerHealth) 
+        { 
+            //Do damage Anim
+        }
         for (int i = playerCurrentHealth; i < player.GetMaxHealth(); i++)
         {
             health[i].GetComponent<Image>().color = whiteColor;
@@ -41,5 +43,6 @@ public class HealthController : MonoBehaviour
         {
             health[i].GetComponent<Image>().color = purpleColor;
         }
+        latestPlayerHealth = playerCurrentHealth;
     }
 }

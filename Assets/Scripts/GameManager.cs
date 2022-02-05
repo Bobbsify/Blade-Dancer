@@ -99,6 +99,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private CheerManager cheerManager;
 
+    [SerializeField]
+    private HealthController healthController;
+
     [Header("Debug")]
     [SerializeField]
     [Tooltip("Never leaves the first break room")]
@@ -146,7 +149,11 @@ public class GameManager : MonoBehaviour
     {
         if (cheerManager == null) 
         {
-            cheerManager = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<CheerManager>(true);
+            cheerManager = GetUIComponent<CheerManager>();
+        }
+        if (healthController == null) 
+        {
+            healthController = GetUIComponent<HealthController>();
         }
         if(HUDAnimator == null) 
         {
@@ -180,7 +187,7 @@ public class GameManager : MonoBehaviour
 
     public T GetUIComponent<T>()
     {
-        return GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<T>();
+        return GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<T>(true);
     }
 
     public List<RuleSetting> GetRuleSettings()
@@ -190,7 +197,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDamageTrigger()
     {
-        
+        healthController.UpdateHearts();
     }
 
     public void ActionEventTrigger(Actions action)
