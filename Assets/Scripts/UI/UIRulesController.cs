@@ -65,7 +65,6 @@ public class UIRulesController : MonoBehaviour
     {
         defaultPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
 
-        Screen.SetResolution(1280, 1024, false);
         screenResolution = Screen.currentResolution;
     }
 
