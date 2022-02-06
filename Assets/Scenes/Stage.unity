@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -450,6 +450,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 4096571790708563455, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811169423769973254, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: ruleAnimators.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811169423769973254, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: ruleContainerManagers.Array.size
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5299476863602012950, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -478,6 +493,11 @@ PrefabInstance:
     - target: {fileID: 5890674830912195924, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556146926700334945, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7605429436387765871, guid: 25956f7ff032eb64fbc76915aada8d2b,
@@ -502,18 +522,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25956f7ff032eb64fbc76915aada8d2b, type: 3}
---- !u!114 &134483438 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5709849508671088907, guid: 25956f7ff032eb64fbc76915aada8d2b,
-    type: 3}
-  m_PrefabInstance: {fileID: 134483437}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80f7369adfed63f4cb5a13c7e258a2f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &134483439 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4032183846944661070, guid: 25956f7ff032eb64fbc76915aada8d2b,
@@ -707,6 +715,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1740df45bf8987042a50cfdb3b9e65b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &369434281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6164085452775311664, guid: 25956f7ff032eb64fbc76915aada8d2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 134483437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &369434283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369434281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27bc6d825199a74479306c5d066af76e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &511583432
@@ -1190,7 +1216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManagerObject: {fileID: 2027274949}
-  uiRulesController: {fileID: 134483438}
+  uiRulesManager: {fileID: 369434283}
 --- !u!1 &1513149077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1436,7 +1462,7 @@ MonoBehaviour:
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   currentBreakroom: 0
   breakRoomMusic:
-    audio: {fileID: 8300000, guid: c610d0cc6b459d3439b33e02406ba399, type: 3}
+    audio: {fileID: 8300000, guid: d3eb5dfe960bd164d90be86c11dfd6bb, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 1
