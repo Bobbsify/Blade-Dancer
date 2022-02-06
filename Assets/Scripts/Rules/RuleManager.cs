@@ -10,7 +10,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
     private GameManager gameManagerObject;
 
     [SerializeField]
-    private UIRulesController uiRulesController;
+    private UIRuleControllerManager uiRulesManager;
     
     private List<RuleSetting> rules;
 
@@ -23,15 +23,23 @@ public class RuleManager : MonoBehaviour, IGameEntity
         factory = new RuleFactory(rules);
     }
 
+    private void Start()
+    {
+        if (uiRulesManager == null) 
+        {
+            gameManagerObject.GetUIComponent<UIRuleControllerManager>();
+        }
+    }
+
     public void SetNewRuleset(List<Rule> newRuleset)
     {
         if (newRuleset.Count == 0) 
         {
-            uiRulesController.ResetContainers();
+            uiRulesManager.ResetContainers();
         }
         rulesToApply = newRuleset;
-        uiRulesController.SetupRules(GetUpdates());
-        uiRulesController.ShowRules();
+        uiRulesManager.SetupRules(GetUpdates());
+        uiRulesManager.ShowRules();
     }
 
     public bool IsCurrentlyRule(AllRules rule)
@@ -58,7 +66,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void UpdateRulesOnScreen()
     {
-        uiRulesController.GetUpdate(GetUpdates());
+        uiRulesManager.GetUpdate(GetUpdates());
     }
 
     private List<RulePacket> GetUpdates() 
@@ -98,7 +106,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void RulesCompleted()
     {
-        uiRulesController.StageCompleted();
+        uiRulesManager.StageCompleted();
         gameManagerObject.EndOfStage();
     }
 
