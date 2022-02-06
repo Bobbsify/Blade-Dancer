@@ -8,6 +8,7 @@ public class StreakFactory
     private StageFactory factory;
 
     private const int streakDefaultLength = 10;
+    private const int maxDifficulty = 6;
 
     public StreakFactory(StageFactory factory)
     {
@@ -64,6 +65,7 @@ public class StreakFactory
     private int compileDifficulty(ref float difficulty, float increaseAmount)
     {
         difficulty += increaseAmount;
+        difficulty = Mathf.Min(difficulty, maxDifficulty);
         return (int)difficulty; //Truncate to lowest integer for difficulty
     }
 }

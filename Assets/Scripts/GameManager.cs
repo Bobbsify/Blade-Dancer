@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     [Tooltip("The amount of units the next room is generated below the character")]
     private const float roomUnderminingValue = 10.0f;
 
-    [Header("Rule Management")]
+    [Header("Difficulty Settings")]
 
     [SerializeField]
     [Range(1, 3)]
@@ -67,12 +67,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     [Range(4, 8)]
     [Tooltip("Determines the amount of rules generated in a stage")]
-    private int maxDifficulty = 4;
+    private int maxDifficulty = 6;
 
     [SerializeField]
     [Range(0.1f, 1)]
     [Tooltip("Determines how much the difficulty is increased inbetween stages")]
     private float difficultyIncreaseMod = 0.15f;
+
+    [SerializeField]
+    [Range(1,6)]
+    private int currentDifficulty = 1;
 
     [Header("Break Rooms")]
 
@@ -361,6 +365,7 @@ public class GameManager : MonoBehaviour
         timer.ResetTimer();
         bool fr = firstRun; //If first run repeat first run instead of randomizing (In order to complete tutorial)
         currentBreakroom--; //Don't proceed to next brakeroom
+        currentDifficulty--; //Do not increase difficulty
         StreakEnded();
         firstRun = fr;
         playerCtrl.EnableAllAbilities();
@@ -414,13 +419,14 @@ public class GameManager : MonoBehaviour
         }
         else 
         {
-            int difficulty = fixedDifficulty == 0 ? UnityEngine.Random.Range(minDifficulty, maxDifficulty) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
+            int difficulty = fixedDifficulty == 0 ? UnityEngine.Random.Range(minDifficulty, Mathf.Min(currentDifficulty,maxDifficulty)) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
             currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
         }
     }
 
     private void StreakEnded()
     {
+        //UI and Sound
         HUDAnimator.SetBool("active", false);
         PlaySound(breakRoomMusic, true);
         StopSound(streakMusic, true);
@@ -437,6 +443,7 @@ public class GameManager : MonoBehaviour
         startingRoom = breakoutRoom;
         currentArena = breakoutRoom;
 
+        currentDifficulty++;
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
         RemoveProjectiles();
         PlayerDamageTrigger();
