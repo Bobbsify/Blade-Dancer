@@ -183,6 +183,7 @@ public class GameManager : MonoBehaviour
         ruleManager = this.ruleManagerLocation.GetComponentInChildren<RuleManager>();
         currentArena = startingRoom;
         PlaySound(breakRoomMusic);
+        HUDAnimator.SetBool("active", false);
     }
 
     public T GetUIComponent<T>()
@@ -420,6 +421,7 @@ public class GameManager : MonoBehaviour
 
     private void StreakEnded()
     {
+        HUDAnimator.SetBool("active", false);
         PlaySound(breakRoomMusic, true);
         StopSound(streakMusic, true);
 
