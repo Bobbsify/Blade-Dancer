@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
+  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1421,6 +1421,7 @@ MonoBehaviour:
   minDifficulty: 1
   maxDifficulty: 6
   difficultyIncreaseMod: 0.15
+  currentDifficulty: 1
   breakRooms:
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
@@ -1437,8 +1438,8 @@ MonoBehaviour:
   healthController: {fileID: 134483441}
   endless: 0
   firstRun: 0
-  customRunEnabled: 0
-  customRun: 00000000090000000a0000000b0000000700000006000000
+  customRunEnabled: 1
+  customRun: 0c00000003000000
 --- !u!114 &2027274950
 MonoBehaviour:
   m_ObjectHideFlags: 0
