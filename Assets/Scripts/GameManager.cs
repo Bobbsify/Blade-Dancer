@@ -442,6 +442,7 @@ public class GameManager : MonoBehaviour
         InitEntities(breakoutRoom);
         startingRoom = breakoutRoom;
         currentArena = breakoutRoom;
+        PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
 
         currentDifficulty++;
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());

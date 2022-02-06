@@ -36,6 +36,7 @@ public class HealthController : MonoBehaviour
             //Do damage Anim
             Debug.Log("Damage");
         }
+
         for (int i = playerCurrentHealth; i < player.GetMaxHealth(); i++)
         {
             health[i].GetComponent<Image>().color = whiteColor;

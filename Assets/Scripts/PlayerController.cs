@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour, IGameEntity
@@ -9,6 +10,9 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     [SerializeField]
     private int currentHealth;
+
+    [SerializeField]
+    private float invincibilityDuration = 0.5f;
 
     [Header("Sound Effects")]
     [SerializeField]
@@ -32,6 +36,8 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     private GameManager gameManager;
 
+    private bool canTakeDamage = true;
+
     private void OnValidate()
     {
         this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
@@ -50,8 +56,9 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     public void TakeDamage(int amount)
     {
-        if (currentHealth > 0) { 
+        if (canTakeDamage) { 
             currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount),maxHealth);
+            canTakeDamage = false;
             if (currentHealth == 0)
             {
                 gameManager.PlaySound(playerDie);
@@ -60,6 +67,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
             else if (amount > 0) 
             {
                 gameManager.PlaySound(playerDamage);
+                StartCoroutine(Invincibility());
             }
             gameManager.ActionEventTrigger(Actions.TakeDamage);
             gameManager.PlayerDamageTrigger();
@@ -102,6 +110,8 @@ public class PlayerController : MonoBehaviour, IGameEntity
     {
         gameManager.doReset();
         this.currentHealth = maxHealth;
+        canTakeDamage = true;
+        gameManager.PlayerDamageTrigger();
     }
 
     public void ToggleMovement(bool state = true) 
@@ -175,6 +185,12 @@ public class PlayerController : MonoBehaviour, IGameEntity
     {
         Animate("death");
         DisableAllAbilities();
+    }
+
+    private IEnumerator Invincibility() 
+    {
+        yield return new WaitForSeconds(invincibilityDuration);
+        canTakeDamage = true;
     }
 
     public void Init(GameManager gameManager)
