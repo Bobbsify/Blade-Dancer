@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     private PhysicsMovement movement;
 
+    private SpriteRenderer playerSprite;
+
     private GameObject[] health;
 
     private GameManager gameManager;
@@ -46,6 +48,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
     private void Start()
     {
         currentHealth = maxHealth;
+        this.playerSprite = GetComponentInChildren<SpriteRenderer>();
         this.abilities = GetComponentsInChildren<IAbility>(true);
         movement = GetComponent<PhysicsMovement>();
         TryGetComponent(out animPlayer);
@@ -189,7 +192,13 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     private IEnumerator Invincibility() 
     {
-        yield return new WaitForSeconds(invincibilityDuration);
+        playerSprite.enabled = false;
+        yield return new WaitForSeconds(invincibilityDuration / 3);
+        playerSprite.enabled = true;
+        yield return new WaitForSeconds(invincibilityDuration / 3);
+        playerSprite.enabled = false;
+        yield return new WaitForSeconds(invincibilityDuration / 3);
+        playerSprite.enabled = true;
         canTakeDamage = true;
     }
 
