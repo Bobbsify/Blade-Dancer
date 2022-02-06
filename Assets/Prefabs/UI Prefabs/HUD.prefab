@@ -5214,7 +5214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000030517156, y: -32.000015}
+  m_AnchoredPosition: {x: 0, y: -32.000015}
   m_SizeDelta: {x: 1500, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5709849508671088907
@@ -5236,12 +5236,6 @@ MonoBehaviour:
   - {fileID: 2175479755432115307}
   - {fileID: 6605012495060946249}
   - {fileID: 715393420549428532}
-  oddRulesOffsetTreMezzi: 125
-  oddRulesOffsetCinqueQuarti: 125
-  oddRulesOffsetQuattroTerzi: 125
-  oddRulesOffsetSediciNoni: 125
-  oddRulesOffsetSediciDecimi: 125
-  oddRulesOffsetHD: 125
   ruleContainerManagers:
   - {fileID: 109029521350491226}
   - {fileID: 3324607729296128395}
@@ -5258,6 +5252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1388351820226907849}
+  - component: {fileID: 369434283}
   m_Layer: 0
   m_Name: Rules
   m_TagString: Untagged
@@ -5283,9 +5278,21 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000061035, y: 427.7}
+  m_AnchoredPosition: {x: 6, y: 427.7}
   m_SizeDelta: {x: 1500, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &369434283
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6164085452775311664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27bc6d825199a74479306c5d066af76e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6213826225803208408
 GameObject:
   m_ObjectHideFlags: 0
@@ -6052,7 +6059,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.000030517156, y: -32}
+  m_AnchoredPosition: {x: 0, y: -32}
   m_SizeDelta: {x: 1250, y: 64}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4811169423769973254
@@ -6073,20 +6080,12 @@ MonoBehaviour:
   - {fileID: 3537937332273371087}
   - {fileID: 8545204284129506696}
   - {fileID: 2023576232474564124}
-  - {fileID: 0}
-  oddRulesOffsetTreMezzi: 125
-  oddRulesOffsetCinqueQuarti: 125
-  oddRulesOffsetQuattroTerzi: 125
-  oddRulesOffsetSediciNoni: 125
-  oddRulesOffsetSediciDecimi: 125
-  oddRulesOffsetHD: 125
   ruleContainerManagers:
   - {fileID: 7910463841665151986}
   - {fileID: 187564549293992815}
   - {fileID: 1916651272378556550}
   - {fileID: 5817101258785987136}
   - {fileID: 5747666828918194006}
-  - {fileID: 0}
 --- !u!1 &7122115660022945999
 GameObject:
   m_ObjectHideFlags: 0
