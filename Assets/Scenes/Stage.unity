@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -320,16 +320,6 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3808039300271339944, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3808039300271339944, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 3823630880029084671, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -450,21 +440,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 4096571790708563455, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4811169423769973254, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: ruleAnimators.Array.size
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4811169423769973254, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: ruleContainerManagers.Array.size
-      value: 5
-      objectReference: {fileID: 0}
     - target: {fileID: 5299476863602012950, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -493,11 +468,6 @@ PrefabInstance:
     - target: {fileID: 5890674830912195924, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556146926700334945, guid: 25956f7ff032eb64fbc76915aada8d2b,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7605429436387765871, guid: 25956f7ff032eb64fbc76915aada8d2b,
@@ -717,19 +687,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1740df45bf8987042a50cfdb3b9e65b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &369434281 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6164085452775311664, guid: 25956f7ff032eb64fbc76915aada8d2b,
+--- !u!114 &369434282 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 369434283, guid: 25956f7ff032eb64fbc76915aada8d2b,
     type: 3}
   m_PrefabInstance: {fileID: 134483437}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &369434283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369434281}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27bc6d825199a74479306c5d066af76e, type: 3}
@@ -1216,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManagerObject: {fileID: 2027274949}
-  uiRulesManager: {fileID: 369434283}
+  uiRulesManager: {fileID: 369434282}
 --- !u!1 &1513149077
 GameObject:
   m_ObjectHideFlags: 0
