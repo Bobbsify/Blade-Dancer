@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43667555, g: 0.48427182, b: 0.5645241, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -687,7 +687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1740df45bf8987042a50cfdb3b9e65b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &369434283 stripped
+--- !u!114 &369434282 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 369434283, guid: 25956f7ff032eb64fbc76915aada8d2b,
     type: 3}
@@ -1180,7 +1180,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManagerObject: {fileID: 2027274949}
-  uiRulesManager: {fileID: 369434283}
+  uiRulesManager: {fileID: 369434282}
 --- !u!1 &1513149077
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,7 +1421,6 @@ MonoBehaviour:
   minDifficulty: 1
   maxDifficulty: 6
   difficultyIncreaseMod: 0.15
-  currentDifficulty: 1
   breakRooms:
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f6ea4d8f6c91c49950c07154e7a29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneMoveType: 1
+  sceneMoveType: 3
 --- !u!1 &6020665747004141057
 GameObject:
   m_ObjectHideFlags: 0
@@ -2372,7 +2372,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Torna al menu
+      value: Arrenditi
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
