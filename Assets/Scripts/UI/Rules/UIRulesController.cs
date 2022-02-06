@@ -8,13 +8,6 @@ using UnityEngine;
  * al suo interno e UIRulesController li controlla e li smista
  */
 
-/*treMezzi,    2160 * 1440     x larghezza y altezza
-  cinqueQuarti,  1280 * 1024
-  quattroTerzi,  1024 * 768
-  sediciNoni,   1920 * 1080      
-  sediciDecimi,  1920 * 1200    
-  HD             2560 * 1080*/
-
 
 public class UIRulesController : MonoBehaviour
 {
@@ -26,29 +19,7 @@ public class UIRulesController : MonoBehaviour
     [Header("Settings")]
 
     [SerializeField]
-    private float OffsetTreMezzi = 125.0f;
-
-    [SerializeField]
-    private float OffsetCinqueQuarti = 125.0f;
-
-    [SerializeField]
-    private float OffsetQuattroTerzi = 125.0f;
-
-    [SerializeField]
-    private float OffsetSediciNoni= 125.0f;
-
-    [SerializeField]
-    private float OffsetSediciDecimi = 125.0f;
-
-    [SerializeField]
-    private float OffsetHD = 125.0f;
-
-    [SerializeField]
     private List<RuleContainerManager> ruleContainerManagers = new List<RuleContainerManager>();
-
-    private Resolution screenResolution;
-    private Vector3 defaultPos;
-    private Vector3 offsettedPos;
 
     private void OnValidate()
     {
@@ -59,44 +30,6 @@ public class UIRulesController : MonoBehaviour
         if (ruleAnimators.Count == 0) 
         {
             ruleAnimators.AddRange(GetComponentsInChildren<Animator>());
-        }
-    }
-    private void Awake()
-    {
-        defaultPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-
-        screenResolution = Screen.currentResolution;
-    }
-
-    private void Start()
-    {
-
-        if (screenResolution.width == 2160 && screenResolution.height == 1440)
-        {
-            offsettedPos = new Vector3(defaultPos.x + OffsetTreMezzi, defaultPos.y, defaultPos.z);
-        }
-
-        else if(screenResolution.width == 1280 && screenResolution.height == 1024)
-        {
-            offsettedPos = new Vector3(defaultPos.x + OffsetCinqueQuarti, defaultPos.y, defaultPos.z);
-        }
-        else if (screenResolution.width == 1024 && screenResolution.height == 768)
-        {
-            offsettedPos = new Vector3(defaultPos.x + OffsetQuattroTerzi, defaultPos.y, defaultPos.z);
-        }
-        else if (screenResolution.width ==  1920 && screenResolution.height == 1080)
-        {
-            offsettedPos = new Vector3(defaultPos.x + OffsetSediciNoni, defaultPos.y, defaultPos.z);
-        }
-
-        else if (screenResolution.width == 1920 && screenResolution.height == 1200)
-        {
-            offsettedPos = new Vector3(defaultPos.x + OffsetSediciDecimi, defaultPos.y, defaultPos.z);
-        }
-
-        else if (screenResolution.width == 2560 && screenResolution.height == 1080)
-        {
-            offsettedPos = new Vector3(defaultPos.x + OffsetHD, defaultPos.y, defaultPos.z);
         }
     }
 
@@ -110,15 +43,6 @@ public class UIRulesController : MonoBehaviour
 
     public void SetupRules(RulePacket[] packets) 
     {
-        //Setup position
-        if (packets.Length % 2 == 0)
-        {
-            this.transform.position = defaultPos;
-        }
-        else 
-        {
-            this.transform.position = offsettedPos;
-        }
 
         for (int i = 0; i < packets.Length; i++) 
         {
@@ -128,16 +52,6 @@ public class UIRulesController : MonoBehaviour
 
     public void SetupRules(List<RulePacket> packets)
     {
-        //Setup position
-        if (packets.Count % 2 == 0)
-        {
-            this.transform.position = defaultPos;
-        }
-        else
-        {
-            this.transform.position = offsettedPos;
-        }
-
         for (int i = 0; i < packets.Count; i++) 
         {
             ruleContainerManagers[i].SetupForRule(packets[i]);
