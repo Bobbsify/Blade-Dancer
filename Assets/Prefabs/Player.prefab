@@ -5138,7 +5138,7 @@ MonoBehaviour:
   dashForce: 10
   dashCooldown: 0.8
   dashSound:
-    audio: {fileID: 8300000, guid: 5091c477c4b05134893490a8f70beb91, type: 3}
+    audio: {fileID: 8300000, guid: 72e6bb5a3451c9e40bc3ad4d0452ad02, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2
