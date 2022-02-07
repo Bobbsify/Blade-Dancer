@@ -5095,16 +5095,21 @@ MonoBehaviour:
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2
-  playerShoot:
-    audio: {fileID: 8300000, guid: 40e6e33440dd4fc4d872c75ee442f05e, type: 3}
+  playerDie:
+    audio: {fileID: 8300000, guid: 2aab7831cb621a848acf878812aa20c7, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2
-  playerDie:
-    audio: {fileID: 0}
+  playerFall:
+    audio: {fileID: 8300000, guid: 74f07fae10cd33f4fb83c5b258964a19, type: 3}
     playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
+    audioType: 1
+    outputType: 2
+  playerLand:
+    audio: {fileID: 8300000, guid: f467493d61b58b143b966acd177c3c48, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
 --- !u!114 &771581947546238164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5132,6 +5137,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashForce: 10
   dashCooldown: 0.8
+  dashSound:
+    audio: {fileID: 8300000, guid: 5091c477c4b05134893490a8f70beb91, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
 --- !u!114 &7626479644181122424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5148,6 +5158,11 @@ MonoBehaviour:
   projectile: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
     type: 3}
   objSpawnPos: {fileID: 7583389412304379998}
+  shootingSound:
+    audio: {fileID: 8300000, guid: 40e6e33440dd4fc4d872c75ee442f05e, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
   horizontalLeftJoyName: Horizontal-RightStick
   verticalLeftJoyName: Vertical-RightStick
 --- !u!114 &9012375419417087643

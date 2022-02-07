@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinPickupSound:
-    audio: {fileID: 8300000, guid: c115d5d6ada8240448b82a9431530bac, type: 3}
+    audio: {fileID: 8300000, guid: 35895dad4209a7b4c8cc771bb9678c30, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2

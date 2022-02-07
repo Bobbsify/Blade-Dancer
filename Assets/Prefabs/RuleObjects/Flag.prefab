@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reachingSound:
-    audio: {fileID: 8300000, guid: f66389f745c4c88439901483b5b696cd, type: 3}
+    audio: {fileID: 8300000, guid: 3a433a2202d0f944e8e1bbf9e8b138ec, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2
