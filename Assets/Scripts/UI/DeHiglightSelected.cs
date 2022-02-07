@@ -17,7 +17,7 @@ public class DeHiglightSelected : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(null);
         }
 
-        if(Input.GetAxis("Mouse X") == 0 || Input.GetAxis("Mouse Y") == 0)
+        if(Input.GetAxis("Mouse X") == 0 && Input.GetAxis("Mouse Y") == 0)
         {
             EventSystem.current.SetSelectedGameObject(ButtonToshow);
         }
