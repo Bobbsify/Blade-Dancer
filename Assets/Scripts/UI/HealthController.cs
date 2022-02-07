@@ -34,7 +34,7 @@ public class HealthController : MonoBehaviour
             health[i] = t.gameObject;
             i++;
         }
-        latestPlayerHealth = player.GetHealth();
+        latestPlayerHealth = player.GetMaxHealth();
     }
 
     public void UpdateHearts()
@@ -59,8 +59,8 @@ public class HealthController : MonoBehaviour
 
     private IEnumerator UIDamageTrigger() 
     {
-        DamageImage.enabled = true;
+        DamageImage.gameObject.SetActive(true);
         yield return new WaitForSeconds(DamageAnimDuration);
-        DamageImage.enabled = false;
+        DamageImage.gameObject.SetActive(false);
     }
 }
