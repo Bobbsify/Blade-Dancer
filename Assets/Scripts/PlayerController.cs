@@ -103,6 +103,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     public void PlayerLanded()
     {
+        canTakeDamage = true;
         EnableAllAbilities();
         gameManager.PlayerLanded();
     }
@@ -198,8 +199,8 @@ public class PlayerController : MonoBehaviour, IGameEntity
         yield return new WaitForSeconds(invincibilityDuration / 3);
         playerSprite.enabled = false;
         yield return new WaitForSeconds(invincibilityDuration / 3);
-        playerSprite.enabled = true;
         canTakeDamage = true;
+        playerSprite.enabled = true;
     }
 
     public void Init(GameManager gameManager)
