@@ -264,6 +264,12 @@ MonoBehaviour:
   inputType: 0
   searchRoot: {fileID: 1461939160}
   pauseAxisName: Pause
+--- !u!1 &53735811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1905733647319270172, guid: 5a49ca99676c3104da1f2bd452235ac2,
+    type: 3}
+  m_PrefabInstance: {fileID: 932930734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &134483437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -934,6 +940,74 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1461939161}
     m_Modifications:
+    - target: {fileID: 214139580, guid: 5a49ca99676c3104da1f2bd452235ac2, type: 3}
+      propertyPath: pausedFirstButton
+      value: 
+      objectReference: {fileID: 1710728019}
+    - target: {fileID: 542818627, guid: 5a49ca99676c3104da1f2bd452235ac2, type: 3}
+      propertyPath: pausedFirstButton
+      value: 
+      objectReference: {fileID: 1168291398}
+    - target: {fileID: 1869332780241470242, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869332780241470242, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869332780241470242, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1461939162}
+    - target: {fileID: 1869332780241470242, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: GoToControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869332780241470242, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1869332780241470242, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905733647319270162, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905733647319270162, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905733647319270162, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1461939162}
+    - target: {fileID: 1905733647319270162, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: BackFromControls
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905733647319270162, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1905733647319270162, guid: 5a49ca99676c3104da1f2bd452235ac2,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 5069293344997659926, guid: 5a49ca99676c3104da1f2bd452235ac2,
         type: 3}
       propertyPath: m_Name
@@ -1119,9 +1193,11 @@ MonoBehaviour:
   pauseMenu: {fileID: 932930736}
   homePage: {fileID: 1569961787}
   settingMenu: {fileID: 1915139879}
+  Controls: {fileID: 1637311533}
   pausedFirstButton: {fileID: 1710728019}
   optionsFirstButton: {fileID: 1168291398}
   optionClosedButton: {fileID: 702196010}
+  controlsButton: {fileID: 53735811}
 --- !u!114 &1461939163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1223,6 +1299,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 932930734}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1637311533 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6020665748079672166, guid: 5a49ca99676c3104da1f2bd452235ac2,
+    type: 3}
+  m_PrefabInstance: {fileID: 932930734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1637311538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637311533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2f14d6c3a1146d584e48d7a58f716a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pausedFirstButton: {fileID: 53735811}
 --- !u!1 &1672778059
 GameObject:
   m_ObjectHideFlags: 0

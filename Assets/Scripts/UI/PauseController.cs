@@ -12,12 +12,14 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     [SerializeField]
     private GameObject pauseMenu;
 
-
     [SerializeField]
     private GameObject homePage;
 
     [SerializeField]
     private GameObject settingMenu;
+
+    [SerializeField]
+    private GameObject Controls;
 
     [SerializeField]
     public GameObject pausedFirstButton;
@@ -27,6 +29,10 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
 
     [SerializeField]
     public GameObject optionClosedButton;
+
+    [SerializeField]
+    public GameObject controlsButton;
+
 
     private CursorSetter cursorSetter;
 
@@ -66,6 +72,22 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
         settingMenu.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionClosedButton);
+    }
+
+    public void BackFromControls()
+    { 
+        settingMenu.SetActive(true);
+        Controls.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(optionsFirstButton);
+    }
+
+    public void GoToControls()
+    {
+        settingMenu.SetActive(false);
+        Controls.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlsButton);
     }
 
     public void ReceiveInputPause()
