@@ -78,14 +78,11 @@ public class EnemyAttackMelee : FSMState
 			StopAllCoroutines();
 		}
 	}
-
-    private void OnTriggerStay(Collider other)
+	public void NotDamageOnEndStage()
     {
-		if (other.GetComponentInChildren<PlayerController>() != null)
-		{ 
-			StopCoroutine(DamagePlayerIfStillInContact());
-		}
-	}
+		this.isPlayerDamageable = false;
+		this.StopAllCoroutines();
+    }
 
     private void Attack()
 	{
