@@ -5579,6 +5579,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToTrigger: 1.6
   startStreak: 1
+  buttonClickSound:
+    audio: {fileID: 8300000, guid: a5c2c282842733a48a99630d4868ee18, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
   otherButtonEvents:
     m_PersistentCalls:
       m_Calls:
