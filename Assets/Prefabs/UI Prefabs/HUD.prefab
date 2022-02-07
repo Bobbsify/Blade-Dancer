@@ -647,7 +647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageImage: {fileID: 2874665263146683489}
-  DamageAnimDuration: 1
+  DamageAnimDuration: 0.2
 --- !u!1 &810111121407511150
 GameObject:
   m_ObjectHideFlags: 0
@@ -4976,7 +4976,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.7169812, g: 0, b: 0.0052858572, a: 0.34901962}
+  m_Color: {r: 0.7169812, g: 0, b: 0.0052858572, a: 0.3529412}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:
