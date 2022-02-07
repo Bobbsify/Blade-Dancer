@@ -59,21 +59,29 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     public void TakeDamage(int amount)
     {
-        if (canTakeDamage) { 
-            currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount),maxHealth);
-            canTakeDamage = false;
-            if (currentHealth == 0)
+        if (amount > 0)
+        {
+            if (canTakeDamage || amount == this.maxHealth)
             {
-                gameManager.PlaySound(playerDie);
-                DoDeath();
+                currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount), maxHealth);
+                canTakeDamage = false;
+                if (currentHealth == 0)
+                {
+                    gameManager.PlaySound(playerDie);
+                    DoDeath();
+                }
+                else if (amount > 0)
+                {
+                    gameManager.PlaySound(playerDamage);
+                    StartCoroutine(Invincibility());
+                }
+                gameManager.ActionEventTrigger(Actions.TakeDamage);
+                gameManager.PlayerDamageTrigger();
             }
-            else if (amount > 0) 
-            {
-                gameManager.PlaySound(playerDamage);
-                StartCoroutine(Invincibility());
-            }
-            gameManager.ActionEventTrigger(Actions.TakeDamage);
-            gameManager.PlayerDamageTrigger();
+        }
+        else
+        {
+            currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount), maxHealth);
         }
     }
     #region Animation
