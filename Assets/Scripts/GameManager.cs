@@ -245,6 +245,7 @@ public class GameManager : MonoBehaviour
 
     public void StartStreak()
     {
+        PlaySound(playerFall);
         StopSound(breakRoomMusic);
         //Remove HUD
         HUDAnimator.SetBool("active", false);
@@ -283,6 +284,7 @@ public class GameManager : MonoBehaviour
 
         //Remove HUD
         HUDAnimator.SetBool("active", false);
+        PlaySound(playerFall);
 
         RemoveProjectiles();
         playerCtrl.GetComponent<Rigidbody>().Sleep();
@@ -317,7 +319,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentArena);
             playerCtrl.Animate("fall"); //remove fall trigger
-            PlaySound(playerFall);
             GoToNextStage(nextStage);
         }
     }

@@ -477,6 +477,26 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6393021609433372022, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: cheerSounds.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393021609433372022, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: cheerSounds.Array.data[0].audio
+      value: 
+      objectReference: {fileID: 8300000, guid: 026724af2a57fcb439f2fc95d4af4f10, type: 3}
+    - target: {fileID: 6393021609433372022, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: cheerSounds.Array.data[0].audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6393021609433372022, guid: 25956f7ff032eb64fbc76915aada8d2b,
+        type: 3}
+      propertyPath: cheerSounds.Array.data[0].outputType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7605429436387765871, guid: 25956f7ff032eb64fbc76915aada8d2b,
         type: 3}
       propertyPath: m_AnchorMax.x
