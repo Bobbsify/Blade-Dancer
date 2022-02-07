@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
+    [SerializeField]
+    private Image DamageImage;
+
+    [SerializeField]
+    [Range(0.0f, 2.0f)]
+    private float DamageAnimDuration;
+
     private GameObject[] health;
 
     private PlayerController player;
@@ -13,6 +20,8 @@ public class HealthController : MonoBehaviour
     private Color purpleColor = new Color(0.56078f, 0.35294f, 0.85882f);
 
     private int latestPlayerHealth;
+
+
 
     private void Start()
     {
@@ -34,7 +43,7 @@ public class HealthController : MonoBehaviour
         if (playerCurrentHealth < latestPlayerHealth) 
         {
             //Do damage Anim
-            Debug.Log("Damage");
+            StartCoroutine(UIDamageTrigger());
         }
 
         for (int i = playerCurrentHealth; i < player.GetMaxHealth(); i++)
@@ -46,5 +55,12 @@ public class HealthController : MonoBehaviour
             health[i].GetComponent<Image>().color = purpleColor;
         }
         latestPlayerHealth = playerCurrentHealth;
+    }
+
+    private IEnumerator UIDamageTrigger() 
+    {
+        DamageImage.enabled = true;
+        yield return new WaitForSeconds(DamageAnimDuration);
+        DamageImage.enabled = false;
     }
 }
