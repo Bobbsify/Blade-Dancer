@@ -5,12 +5,22 @@ using UnityEngine.UI;
 
 public class HealthController : MonoBehaviour
 {
+    [Header("Damage Feedback")]
     [SerializeField]
     private Image DamageImage;
 
     [SerializeField]
     [Range(0.0f, 2.0f)]
-    private float DamageAnimDuration;
+    private float damageAnimDuration;
+
+    [SerializeField]
+    [Range(0.0f,1.0f)]
+    private float targetOpacity = 0.35f;
+
+    [SerializeField]
+    [Range(0.01f, 0.2f)]
+    private float fadeAmount = 0.1f;
+
 
     private GameObject[] health;
 
@@ -59,8 +69,25 @@ public class HealthController : MonoBehaviour
 
     private IEnumerator UIDamageTrigger() 
     {
-        DamageImage.gameObject.SetActive(true);
-        yield return new WaitForSeconds(DamageAnimDuration);
-        DamageImage.gameObject.SetActive(false);
+        
+        float phaseDuration = damageAnimDuration / fadeAmount;
+
+        Color tempColor = DamageImage.color;
+        tempColor.a += fadeAmount;
+        tempColor.a = Mathf.Max(Mathf.Min(tempColor.a, targetOpacity),0);
+        DamageImage.color = tempColor;
+
+        if (DamageImage.color.a == targetOpacity)
+        {
+            fadeAmount *= -1;
+            StartCoroutine(UIDamageTrigger());
+        }
+        
+        if(DamageImage.color.a == 0)
+        {
+            fadeAmount *= -1;
+        }
+
+        yield return new WaitForSeconds(phaseDuration);
     }
 }
