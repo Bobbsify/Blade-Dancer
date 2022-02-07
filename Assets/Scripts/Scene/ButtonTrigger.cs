@@ -12,6 +12,9 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
     private bool startStreak = false;
 
     [SerializeField]
+    private SoundPacket buttonClickSound;
+
+    [SerializeField]
     private UnityEvent otherButtonEvents;
 
     private GameObject player;
@@ -30,6 +33,7 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
                     player.GetComponent<PlayerController>().DisableAllAbilities();
                     gameManager.StartStreak();
                 }
+                gameManager.PlaySound(buttonClickSound);
                 otherButtonEvents.Invoke();
             }
         }

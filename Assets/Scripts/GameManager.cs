@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject playerPrefab;
 
+    [SerializeField]
+    private SoundPacket playerFall;
+
     public GameObject PlayerPawn { get; private set; }
 
     private PlayerController playerCtrl;
@@ -314,6 +317,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(currentArena);
             playerCtrl.Animate("fall"); //remove fall trigger
+            PlaySound(playerFall);
             GoToNextStage(nextStage);
         }
     }

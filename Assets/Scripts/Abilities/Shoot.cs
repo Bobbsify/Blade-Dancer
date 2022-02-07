@@ -17,7 +17,8 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
     [SerializeField]
     private Transform objSpawnPos;
 
-    private Transform projectilesRoot;
+    [SerializeField]
+    private SoundPacket shootingSound;
 
     [Header("Shoot Direction Axis")]
     [SerializeField]
@@ -27,6 +28,8 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
     private string verticalLeftJoyName = "Vertical-RightStick";
 
     private GameManager gameManager;
+
+    private Transform projectilesRoot;
 
     private void Start()
     {
@@ -52,6 +55,7 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
             GameObject projInstantiated = Instantiate(projectile, this.objSpawnPos); //Create projectile
             projInstantiated.GetComponent<ProjectileController>().SetTeam(Team.Player);
             projInstantiated.transform.parent = projectilesRoot;
+            gameManager.PlaySound(shootingSound);
             SendActionToGameManager();  //Tell the Game Manager that a projectile has been shot
             StartCoroutine(CooldownShoot());    //Start Projectile cooldown
         }

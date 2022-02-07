@@ -19,10 +19,13 @@ public class PlayerController : MonoBehaviour, IGameEntity
     private SoundPacket playerDamage;
 
     [SerializeField]
-    private SoundPacket playerShoot;
+    private SoundPacket playerDie;
 
     [SerializeField]
-    private SoundPacket playerDie;
+    private SoundPacket playerFall;
+
+    [SerializeField]
+    private SoundPacket playerLand;
 
     //---------------------------
 
@@ -113,6 +116,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
     {
         canTakeDamage = true;
         EnableAllAbilities();
+        gameManager.PlaySound(playerLand);
         gameManager.PlayerLanded();
     }
 
