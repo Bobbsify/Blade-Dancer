@@ -145,7 +145,10 @@ public class GameManager : MonoBehaviour
 
     private StreakMusicSelector streakMusicSelector;
 
+
     //Other
+
+    private GameObject mainCamera;
 
     private bool tookDamage = false;
 
@@ -177,6 +180,7 @@ public class GameManager : MonoBehaviour
 		this.GeneratePlayerPawn();
         PlayerPawn.GetComponent<Shoot>().SetProjectilesRoot(this.projectilesRoot);
         streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules.getAll()), this);
+        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 	}
 
 	private void Start()
@@ -397,6 +401,7 @@ public class GameManager : MonoBehaviour
 
         //Screen Go to Next Arena
         HUDAnimator.SetBool("active", true);
+        ResetCamera();
         StartCoroutine(ReverseFade());
     }
 
@@ -449,6 +454,7 @@ public class GameManager : MonoBehaviour
         RemoveProjectiles();
         PlayerDamageTrigger();
         this.inputManager.EnableInput<InputSystemPause>();
+        ResetCamera();
     }
 
     #endregion
@@ -497,5 +503,10 @@ public class GameManager : MonoBehaviour
 		this.PlayerPawn.transform.SetParent(this.inputReceiversTransform);
         playerCtrl = PlayerPawn.GetComponent<PlayerController>();
 	}
+
+    private void ResetCamera() 
+    {
+        mainCamera.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z);
+    }
     
 }

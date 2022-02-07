@@ -1255,7 +1255,6 @@ GameObject:
   - component: {fileID: 1742558314}
   - component: {fileID: 1742558317}
   - component: {fileID: 1742558316}
-  - component: {fileID: 1742558315}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1277,18 +1276,6 @@ Transform:
   m_Father: {fileID: 1101009520}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1742558315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1742558313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bc25ddccf0469c4faff9fcae13a21b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!81 &1742558316
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1421,7 +1408,7 @@ MonoBehaviour:
   minDifficulty: 1
   maxDifficulty: 6
   difficultyIncreaseMod: 0.15
-  currentDifficulty: 1
+  currentDifficulty: 3
   breakRooms:
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
   - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
@@ -1436,9 +1423,9 @@ MonoBehaviour:
   HUDAnimator: {fileID: 2147415104}
   cheerManager: {fileID: 341461291}
   healthController: {fileID: 134483441}
-  endless: 0
-  firstRun: 0
-  customRunEnabled: 1
+  endless: 1
+  firstRun: 1
+  customRunEnabled: 0
   customRun: 0c00000003000000
 --- !u!114 &2027274950
 MonoBehaviour:

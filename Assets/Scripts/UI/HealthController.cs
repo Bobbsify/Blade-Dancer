@@ -72,7 +72,6 @@ public class HealthController : MonoBehaviour
         float phaseDuration = fadeAmount * damageAnimDuration;
 
         Color tempColor = DamageImage.color;
-        Debug.Log("Operation = " + tempColor.a + " + " + fadeAmount);
         tempColor.a += fadeAmount;
         tempColor.a = Mathf.Max(Mathf.Min(tempColor.a, targetOpacity),0);
         DamageImage.color = tempColor;
