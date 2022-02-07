@@ -647,7 +647,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DamageImage: {fileID: 2874665263146683489}
-  DamageAnimDuration: 0.2
+  damageAnimDuration: 0.2
+  targetOpacity: 0.35
+  fadeAmount: 0.01
 --- !u!1 &810111121407511150
 GameObject:
   m_ObjectHideFlags: 0

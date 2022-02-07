@@ -19,7 +19,7 @@ public class HealthController : MonoBehaviour
 
     [SerializeField]
     [Range(0.01f, 0.2f)]
-    private float fadeAmount = 0.1f;
+    private float fadeAmount = 0.01f;
 
 
     private GameObject[] health;
@@ -69,25 +69,29 @@ public class HealthController : MonoBehaviour
 
     private IEnumerator UIDamageTrigger() 
     {
-        
-        float phaseDuration = damageAnimDuration / fadeAmount;
+        float phaseDuration = fadeAmount * damageAnimDuration;
 
         Color tempColor = DamageImage.color;
+        Debug.Log("Operation = " + tempColor.a + " + " + fadeAmount);
         tempColor.a += fadeAmount;
         tempColor.a = Mathf.Max(Mathf.Min(tempColor.a, targetOpacity),0);
         DamageImage.color = tempColor;
 
+        yield return new WaitForSeconds(phaseDuration);
+
         if (DamageImage.color.a == targetOpacity)
-        {
-            fadeAmount *= -1;
-            StartCoroutine(UIDamageTrigger());
-        }
-        
-        if(DamageImage.color.a == 0)
         {
             fadeAmount *= -1;
         }
 
-        yield return new WaitForSeconds(phaseDuration);
+        if (DamageImage.color.a == 0)
+        {
+            fadeAmount *= -1;
+        }
+        else
+        {
+            StartCoroutine(UIDamageTrigger());
+        }
+
     }
 }
