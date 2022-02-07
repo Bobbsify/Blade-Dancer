@@ -37,13 +37,17 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
         yield return new WaitForSeconds(this.shootCooldown);
         this.canShoot = true;
     }
+    private void Update()
+    {
+        objSpawnPos.rotation = GetRotationToShootAt();
+    }
 
     public void Trigger()
     {
         if (this.canShoot)
         {
             canShoot = false;
-            objSpawnPos.rotation = GetRotationToShootAt();
+            //objSpawnPos.rotation = GetRotationToShootAt();
             GameObject projInstantiated = Instantiate(projectile, this.objSpawnPos); //Create projectile
             projInstantiated.GetComponent<ProjectileController>().SetTeam(Team.Player);
             projInstantiated.transform.parent = projectilesRoot;
