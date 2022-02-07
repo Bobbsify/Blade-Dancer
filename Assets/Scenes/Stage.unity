@@ -1442,10 +1442,10 @@ MonoBehaviour:
   playerPrefab: {fileID: 8797037534487982121, guid: 522626dacc4a0fa4f968d852d6dacfc9,
     type: 3}
   playerFall:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 74f07fae10cd33f4fb83c5b258964a19, type: 3}
     playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
+    audioType: 1
+    outputType: 2
   stagesRoot: {fileID: 311219301}
   startingRoom: {fileID: 2776294679201660314}
   allRules: {fileID: 11400000, guid: 7777011190532b1439ebd64dd18581a2, type: 2}
