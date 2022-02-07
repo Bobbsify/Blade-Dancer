@@ -91,5 +91,10 @@ public class EnemyController : MonoBehaviour, IEnemy
             stateMachine.ChangeState(idle);
             idle.ForceIdle(true);
         }
+
+        if(TryGetComponent(out EnemyAttackMelee enemyAttackMelee))
+        {
+            enemyAttackMelee.NotDamageOnEndStage();
+        }
     }
 }
