@@ -39,7 +39,8 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
     }
     private void Update()
     {
-        objSpawnPos.rotation = GetRotationToShootAt();
+        Quaternion rotation = GetRotationToShootAt();
+        objSpawnPos.eulerAngles = new Vector3(0, rotation.eulerAngles.y, 0);
     }
 
     public void Trigger()
