@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class DeHiglightSelected : MonoBehaviour
 {
     [SerializeField]
-    public GameObject pausedFirstButton;
+    public GameObject ButtonToshow;
 
     // Update is called once per frame
     void Update()
@@ -19,7 +19,7 @@ public class DeHiglightSelected : MonoBehaviour
 
         if(Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
         {
-            EventSystem.current.SetSelectedGameObject(pausedFirstButton);
+            EventSystem.current.SetSelectedGameObject(ButtonToshow);
         }
     }
 }
