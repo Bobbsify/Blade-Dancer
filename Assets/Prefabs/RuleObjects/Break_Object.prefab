@@ -197,12 +197,12 @@ MonoBehaviour:
   gameManager: {fileID: 0}
   objectHealth: 2
   damageSound:
-    audio: {fileID: 8300000, guid: 29744694754c390488ef3066ffdff1ec, type: 3}
+    audio: {fileID: 8300000, guid: 744d3d6341f57044a88613041865904d, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2
   breakSound:
-    audio: {fileID: 8300000, guid: ccd47fac90c93f3458eb973ae13b7f14, type: 3}
+    audio: {fileID: 8300000, guid: 344c236d6ebac10428c468b37636600a, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2
