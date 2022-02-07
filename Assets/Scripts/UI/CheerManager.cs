@@ -16,10 +16,10 @@ public class CheerManager : MonoBehaviour
         if (possibleCheers.Count == 0)
         {
             possibleCheers.Add("WOW");
-            possibleCheers.Add("FANTASTIC");
-            possibleCheers.Add("EXTRAVAGANT");
-            possibleCheers.Add("INCREDIBLE");
-            possibleCheers.Add("GOKU");
+            possibleCheers.Add("FANTASTICO");
+            possibleCheers.Add("STRAVAGANTE");
+            possibleCheers.Add("INCREDIBILE");
+            possibleCheers.Add("AAAAAAAAAAAA");
         }
 
         if (cheerController == null)
