@@ -1395,11 +1395,17 @@ MonoBehaviour:
   - {fileID: 1513149077}
   - {fileID: 1787614904}
   - {fileID: 311219301}
+  - {fileID: 1461939160}
   inputReceiversTransform: {fileID: 1787614905}
   projectilesRoot: {fileID: 321017109}
   spawnPoint: {fileID: 1672778060}
   playerPrefab: {fileID: 8797037534487982121, guid: 522626dacc4a0fa4f968d852d6dacfc9,
     type: 3}
+  playerFall:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   stagesRoot: {fileID: 311219301}
   startingRoom: {fileID: 2776294679201660314}
   allRules: {fileID: 11400000, guid: 7777011190532b1439ebd64dd18581a2, type: 2}
