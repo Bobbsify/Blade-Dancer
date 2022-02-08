@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class DeHiglightSelected : MonoBehaviour
 {
+    //Todo fixare pausa
     [SerializeField]
     public GameObject ButtonToshow;
 

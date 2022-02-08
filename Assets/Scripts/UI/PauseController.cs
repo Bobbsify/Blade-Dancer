@@ -33,12 +33,20 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     [SerializeField]
     public GameObject controlsButton;
 
-
     private CursorSetter cursorSetter;
+
+    private GameObject player;
+
+    private InputSystemInteract interactManager;
+
+    private IAbility[] abilities;
 
     private void Start()
     {
         cursorSetter = GameObject.FindGameObjectWithTag("UI").GetComponent<CursorSetter>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        abilities = player.GetComponentsInChildren<IAbility>(true);
+        interactManager = GameObject.Find("InputManager").GetComponentInChildren<InputSystemInteract>();
     }
     public void Continue()
     {
@@ -46,6 +54,8 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
         cursorSetter.SetCursor(CursorType.Game);
         Time.timeScale = 1f;
         pause = false;
+        EnableAllAbilities();
+        interactManager.enabled = true;
     }
     public void Pause()
     {
@@ -55,6 +65,8 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
         pause = true;
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(pausedFirstButton);
+        DisableAllAbilities();
+        interactManager.enabled = false;
 
     }
 
@@ -99,6 +111,22 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
         else 
         {
             Pause();
+        }
+    }
+
+    public void DisableAllAbilities()
+    {
+        foreach (IAbility ability in abilities)
+        {
+            ability.Disable();
+        }
+    }
+
+    public void EnableAllAbilities()
+    {
+        foreach (IAbility ability in abilities)
+        {
+            ability.Enable();
         }
     }
 }
