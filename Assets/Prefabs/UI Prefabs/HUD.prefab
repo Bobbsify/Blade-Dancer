@@ -4275,15 +4275,15 @@ MonoBehaviour:
   cheerController: {fileID: 250477088314147845}
   possibleCheers:
   - WOW
-  - FANTASTIC
-  - EXTRAVAGANT
-  - INCREDIBLE
-  - GOKU
+  - FANTASTICO
+  - STRAVAGANTE
+  - INCREDIBILE
+  - AAAAAAAAAAAA
   cheerSounds:
   - audio: {fileID: 8300000, guid: 026724af2a57fcb439f2fc95d4af4f10, type: 3}
     playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
+    audioType: 1
+    outputType: 2
 --- !u!1 &4390282733813479423
 GameObject:
   m_ObjectHideFlags: 0
