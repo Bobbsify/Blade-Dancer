@@ -77,10 +77,6 @@ public class GameManager : MonoBehaviour
     [Tooltip("Determines how much the difficulty is increased inbetween stages")]
     private float difficultyIncreaseMod = 0.15f;
 
-    [SerializeField]
-    [Range(1,6)]
-    private int currentDifficulty = 1;
-
     [Header("Break Rooms")]
 
     [SerializeField]
@@ -119,6 +115,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     private bool customRunEnabled = true;
+
+    [SerializeField]
+    private int streaksCompleted = 1;
 
     [SerializeField]
     [Tooltip("Specificare le regole che usciranno durante i prossimi 10 stage")]
@@ -374,7 +373,7 @@ public class GameManager : MonoBehaviour
         timer.ResetTimer();
         bool fr = firstRun; //If first run repeat first run instead of randomizing (In order to complete tutorial)
         currentBreakroom--; //Don't proceed to next brakeroom
-        currentDifficulty--; //Do not increase difficulty
+        streaksCompleted--; //Do not increase difficulty
         StreakEnded();
         firstRun = fr;
         playerCtrl.EnableAllAbilities();
@@ -427,9 +426,13 @@ public class GameManager : MonoBehaviour
         {
             currentStreak = streakFactory.GetCustomStreak(customRun);
         }
-        else 
+        else
         {
-            int difficulty = fixedDifficulty == 0 ? UnityEngine.Random.Range(minDifficulty, Mathf.Min(currentDifficulty,maxDifficulty)) : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
+            minDifficulty = 1 + (streaksCompleted / 3);
+            maxDifficulty = minDifficulty + (streaksCompleted / minDifficulty);
+            int difficulty = fixedDifficulty == 0 ? 
+                UnityEngine.Random.Range(minDifficulty, Mathf.Min(streaksCompleted,maxDifficulty)) 
+                : Mathf.Max(Mathf.Min(fixedDifficulty, maxDifficulty), minDifficulty); //If difficulty is preset make sure it is between the two max values
             currentStreak = streakFactory.GetRandomStreak(difficulty, difficultyIncreaseMod);
         }
     }
@@ -454,7 +457,7 @@ public class GameManager : MonoBehaviour
         currentArena = breakoutRoom;
         PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
 
-        currentDifficulty++;
+        streaksCompleted++;
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
         RemoveProjectiles();
         PlayerDamageTrigger();

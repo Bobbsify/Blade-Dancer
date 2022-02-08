@@ -76,9 +76,9 @@ public class PlayerController : MonoBehaviour, IGameEntity
                 else if (amount > 0)
                 {
                     gameManager.PlaySound(playerDamage);
+                    gameManager.ActionEventTrigger(Actions.TakeDamage);
                     StartCoroutine(Invincibility());
                 }
-                gameManager.ActionEventTrigger(Actions.TakeDamage);
                 gameManager.PlayerDamageTrigger();
             }
         }
