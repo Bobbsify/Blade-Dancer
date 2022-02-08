@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,17 +10,32 @@ public class DeHiglightSelected : MonoBehaviour
     [SerializeField]
     public GameObject ButtonToshow;
 
+    private bool DeHilight;
+
+    private void Start()
+    {
+        DeHilight = true;
+    }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+        if (Input.GetAxisRaw("Mouse X") != 0 || Input.GetAxisRaw("Mouse Y") != 0)
         {
-            EventSystem.current.SetSelectedGameObject(null);
+            if(DeHilight== true)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                DeHilight = false;
+            }
         }
 
-        if(Input.GetAxis("Mouse X") == 0 && Input.GetAxis("Mouse Y") == 0)
+        else if (Input.GetAxisRaw("Mouse X") == 0 && Input.GetAxisRaw("Mouse Y") == 0)
         {
-            EventSystem.current.SetSelectedGameObject(ButtonToshow);
-        }
+            if (DeHilight == false)
+            {
+                EventSystem.current.SetSelectedGameObject(null);
+                EventSystem.current.SetSelectedGameObject(ButtonToshow);
+                DeHilight = true;
+            }
+        } 
     }
 }
