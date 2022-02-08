@@ -68,7 +68,7 @@ public class SoundQueueManager : MonoBehaviour
 
         if (!fade)
         {
-            sem.PlayAudioOnce();
+            sem.PlayAudio();
         }
         else
         {
