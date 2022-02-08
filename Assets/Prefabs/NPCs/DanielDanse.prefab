@@ -30,7 +30,7 @@ Transform:
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 9140143270680209527}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!212 &1166514187397831525
 SpriteRenderer:
@@ -71,7 +71,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1000
-  m_Sprite: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  m_Sprite: {fileID: -9053529047599286084, guid: d34d88fa7b3560b4781952eea0777724,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -93,7 +93,7 @@ Animator:
   m_GameObject: {fileID: 1166514187397831531}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 79488d0868792804eb660a4f7dc58e0f, type: 2}
+  m_Controller: {fileID: 9100000, guid: b9eda03a20482474cbd7e4dca4a4088f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -145,9 +145,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Albraida Berto
-  characterLine: Sono alberto braida
-  characterPortrait: {fileID: 21300000, guid: 38270b7535ad4ac4aaf39b7e2586c272, type: 3}
+  characterName: Daniel Danse
+  characterLine: Ciao sono Daniel Danse
+  characterPortrait: {fileID: -9053529047599286084, guid: d34d88fa7b3560b4781952eea0777724,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1193153584125143778}
 --- !u!1 &1166514188875752245
 GameObject:
@@ -180,7 +186,7 @@ Transform:
   - {fileID: 1166514188681799515}
   - {fileID: 4190084282245180887}
   m_Father: {fileID: 9140143270680209527}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1166514188875752247
 MonoBehaviour:
@@ -195,8 +201,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
-  distanceToTrigger: 5
-  voice: {fileID: 0}
+  distanceToTrigger: 2.5
+  voice: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
   startingDialogue: {fileID: 1166514188681799514}
   dialogues:
   - {fileID: 1166514188681799514}
@@ -204,6 +210,50 @@ MonoBehaviour:
   endOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &3461211026954471347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6306006108231489138}
+  - component: {fileID: 7305222866677922494}
+  m_Layer: 0
+  m_Name: Collider
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6306006108231489138
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461211026954471347}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 9140143270680209527}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &7305222866677922494
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3461211026954471347}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4740193752744067674
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +264,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9140143270680209527}
   m_Layer: 0
-  m_Name: Annohiath
+  m_Name: DanielDanse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -231,6 +281,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 6306006108231489138}
   - {fileID: 1166514187397831530}
   - {fileID: 1166514188875752244}
   m_Father: {fileID: 0}
@@ -279,7 +330,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Alberto Braida
-  characterLine: "Ma non \xE8 vero, sono io Alberto Braida"
-  characterPortrait: {fileID: 21300000, guid: 38270b7535ad4ac4aaf39b7e2586c272, type: 3}
+  characterName: Daniel Danse
+  characterLine: E tu sei Nabbo
+  characterPortrait: {fileID: -9053529047599286084, guid: d34d88fa7b3560b4781952eea0777724,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 0}
