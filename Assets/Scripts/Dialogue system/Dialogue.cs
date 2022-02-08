@@ -15,13 +15,18 @@ public class Dialogue : MonoBehaviour
     private Sprite characterPortrait;
 
     [SerializeField]
+    [Tooltip("(Optional) Replaces dialogue voice with this one")]
+    private SoundPacket voiceOverride;
+
+    [SerializeField]
     private Dialogue nextDialogue;
 
-    public Dialogue(string name, string line, Sprite portrait, Dialogue nextDialogue) 
+    public Dialogue(string name, string line, Sprite portrait, Dialogue nextDialogue, SoundPacket voiceOverride = null)
     {
         this.characterName = name;
         this.characterLine = line;
         this.characterPortrait = portrait;
+        this.voiceOverride = voiceOverride;
         this.nextDialogue = nextDialogue;
     }
 
@@ -38,6 +43,10 @@ public class Dialogue : MonoBehaviour
     public Sprite GetPicture()
     {
         return this.characterPortrait;
+    }
+    public SoundPacket GetVoice()
+    {
+        return this.voiceOverride;
     }
 
     public Dialogue GetNextDialogue()

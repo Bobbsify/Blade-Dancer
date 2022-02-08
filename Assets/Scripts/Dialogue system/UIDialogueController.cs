@@ -53,7 +53,8 @@ public class UIDialogueController : MonoBehaviour
         StopAllCoroutines();
         EndTelling();
 
-        speakingSound = new SoundPacket(voice == null ? defaultSpeakingSound : voice, Vector3.zero, SoundType.Loop, OutputType.Music);
+        AudioClip speakingAudio = dialogue.GetVoice() != null ? dialogue.GetVoice().GetAudio() : voice != null ? voice : defaultSpeakingSound;
+        speakingSound = new SoundPacket(speakingAudio, Vector3.zero, SoundType.Loop, OutputType.Sfx);
         sqm.AddSound(speakingSound);    //Add new sound
 
         gameObject.SetActive(true);
