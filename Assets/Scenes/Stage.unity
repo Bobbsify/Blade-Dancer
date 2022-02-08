@@ -1761,6 +1761,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8425758032719569852, guid: 3e58502907722bf46a284ac033deac24,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 8848316814638692298, guid: 3e58502907722bf46a284ac033deac24,
         type: 3}
       propertyPath: otherButtonEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
