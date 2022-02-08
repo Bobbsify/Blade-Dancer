@@ -960,18 +960,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1461939161}
     m_Modifications:
-    - target: {fileID: 214139580, guid: 5a49ca99676c3104da1f2bd452235ac2, type: 3}
-      propertyPath: ButtonToshow
-      value: 
-      objectReference: {fileID: 1710728019}
-    - target: {fileID: 542818627, guid: 5a49ca99676c3104da1f2bd452235ac2, type: 3}
-      propertyPath: ButtonToshow
-      value: 
-      objectReference: {fileID: 1168291398}
-    - target: {fileID: 1637311538, guid: 5a49ca99676c3104da1f2bd452235ac2, type: 3}
-      propertyPath: ButtonToshow
-      value: 
-      objectReference: {fileID: 53735811}
     - target: {fileID: 1869332780241470242, guid: 5a49ca99676c3104da1f2bd452235ac2,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -1062,8 +1050,7 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1461939162}
-    m_RemovedComponents:
-    - {fileID: 0}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5a49ca99676c3104da1f2bd452235ac2, type: 3}
 --- !u!4 &932930735 stripped
 Transform:

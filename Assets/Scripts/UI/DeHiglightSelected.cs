@@ -10,18 +10,29 @@ public class DeHiglightSelected : MonoBehaviour
     [SerializeField]
     public GameObject ButtonToshow;
 
-    private bool DeHilight;
+    public bool DeHilight;
 
-    private void Start()
+    public void OnPointerEnter()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void OnPointerExit()
+    {
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(ButtonToshow);
+    }
+
+   /* private void Start()
     {
         DeHilight = true;
     }
-    // Update is called once per frame
+
     void Update()
     {
         if (Input.GetAxisRaw("Mouse X") != 0 || Input.GetAxisRaw("Mouse Y") != 0)
         {
-            if(DeHilight== true)
+            if(DeHilight == true)
             {
                 EventSystem.current.SetSelectedGameObject(null);
                 DeHilight = false;
@@ -37,5 +48,5 @@ public class DeHiglightSelected : MonoBehaviour
                 DeHilight = true;
             }
         } 
-    }
+    }*/
 }
