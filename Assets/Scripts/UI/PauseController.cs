@@ -19,7 +19,10 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     private GameObject settingMenu;
 
     [SerializeField]
-    private GameObject Controls;
+    private GameObject controls;
+
+    [SerializeField]
+    private GameObject musics;
 
     [SerializeField]
     public GameObject pausedFirstButton;
@@ -60,7 +63,7 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        Controls.SetActive(false);
+        controls.SetActive(false);
         settingMenu.SetActive(false);
         homePage.SetActive(true);
         cursorSetter.SetCursor(CursorType.Menu);
@@ -76,7 +79,9 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public void SettingOption()
     {
         settingMenu.SetActive(true);
+        musics.SetActive(false);
         homePage.SetActive(false);
+        musics.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsFirstButton);
     }
@@ -92,7 +97,7 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public void BackFromControls()
     { 
         settingMenu.SetActive(true);
-        Controls.SetActive(false);
+        controls.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(optionsFirstButton);
     }
@@ -100,7 +105,7 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public void GoToControls()
     {
         settingMenu.SetActive(false);
-        Controls.SetActive(true);
+        controls.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(controlsButton);
     }

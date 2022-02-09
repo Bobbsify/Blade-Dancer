@@ -21,31 +21,38 @@ public class DeHiglightSelected : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(ButtonToshow);
-    }
-   /* private void Start()
-    {
-        DeHilight = true;
-    }
 
-    void Update()
-    {
-        if (Input.GetAxisRaw("Mouse X") != 0 || Input.GetAxisRaw("Mouse Y") != 0)
+        if (EventSystem.current.currentSelectedGameObject == null)
         {
-            if(DeHilight == true)
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-                DeHilight = false;
-            }
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(ButtonToshow);
         }
+    }
 
-        else if (Input.GetAxisRaw("Mouse X") == 0 && Input.GetAxisRaw("Mouse Y") == 0)
-        {
-            if (DeHilight == false)
-            {
-                EventSystem.current.SetSelectedGameObject(null);
-                EventSystem.current.SetSelectedGameObject(ButtonToshow);
-                DeHilight = true;
-            }
-        } 
-    }*/
+    /* private void Start()
+     {
+         DeHilight = true;
+     }
+
+     void Update()
+     {
+         if (Input.GetAxisRaw("Mouse X") != 0 || Input.GetAxisRaw("Mouse Y") != 0)
+         {
+             if(DeHilight == true)
+             {
+                 EventSystem.current.SetSelectedGameObject(null);
+                 DeHilight = false;
+             }
+         }
+
+         else if (Input.GetAxisRaw("Mouse X") == 0 && Input.GetAxisRaw("Mouse Y") == 0)
+         {
+             if (DeHilight == false)
+             {
+                 EventSystem.current.SetSelectedGameObject(null);
+                 EventSystem.current.SetSelectedGameObject(ButtonToshow);
+                 DeHilight = true;
+             }
+         } 
+     }*/
 }

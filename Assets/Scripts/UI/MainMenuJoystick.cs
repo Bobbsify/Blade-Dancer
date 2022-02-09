@@ -16,6 +16,9 @@ public class MainMenuJoystick : MonoBehaviour
     public GameObject thirdButton;
 
     [SerializeField]
+    public GameObject MusicButton;
+
+    [SerializeField]
     public GameObject settingPage;
 
     [SerializeField]
@@ -34,7 +37,9 @@ public class MainMenuJoystick : MonoBehaviour
     public void GotoSettings()
     {
         settingPage.SetActive(true);
+        MusicButton.SetActive(false);
         homePage.SetActive(false);
+        MusicButton.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(secondButton);
     }

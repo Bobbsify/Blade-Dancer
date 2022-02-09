@@ -1135,7 +1135,8 @@ MonoBehaviour:
   pauseMenu: {fileID: 932930736}
   homePage: {fileID: 1569961787}
   settingMenu: {fileID: 1915139879}
-  Controls: {fileID: 1637311533}
+  controls: {fileID: 1637311533}
+  musics: {fileID: 1664104965}
   pausedFirstButton: {fileID: 1710728019}
   optionsFirstButton: {fileID: 1168291398}
   optionClosedButton: {fileID: 702196010}
@@ -1244,6 +1245,12 @@ GameObject:
 --- !u!1 &1637311533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6020665748079672166, guid: 5a49ca99676c3104da1f2bd452235ac2,
+    type: 3}
+  m_PrefabInstance: {fileID: 932930734}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1664104965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 806349503885108038, guid: 5a49ca99676c3104da1f2bd452235ac2,
     type: 3}
   m_PrefabInstance: {fileID: 932930734}
   m_PrefabAsset: {fileID: 0}
