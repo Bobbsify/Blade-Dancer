@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(Slider))]
 public class VolumeManager : MonoBehaviour
@@ -11,6 +12,9 @@ public class VolumeManager : MonoBehaviour
     private AudioMixerGroup mixer;
 
     private Slider volume;
+
+    [SerializeField]
+    private GameObject gameObjectButton;
 
     private float currentVolume;
 
@@ -25,5 +29,14 @@ public class VolumeManager : MonoBehaviour
     {
         currentVolume = value;
         mixer.audioMixer.SetFloat(mixer.name + "Volume", currentVolume);
+        gameObjectButton.GetComponent<Animator>().SetTrigger("Highlighted");
+    }
+
+    private void Update()
+    {
+        if(Input.GetAxisRaw("Vertical") != 0)
+        {
+            gameObjectButton.GetComponent<Animator>().SetTrigger("Normal");
+        }
     }
 }
