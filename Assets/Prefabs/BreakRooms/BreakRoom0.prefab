@@ -1404,7 +1404,7 @@ GameObject:
   - component: {fileID: 3104698194571723957}
   - component: {fileID: 7911884419840458321}
   m_Layer: 0
-  m_Name: Line8
+  m_Name: Line9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1422,7 +1422,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6484351385746841562}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7911884419840458321
 MonoBehaviour:
@@ -1499,7 +1499,7 @@ MonoBehaviour:
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
-  nextDialogue: {fileID: 988725935958691503}
+  nextDialogue: {fileID: 6237533611487748525}
 --- !u!1 &1194278003635766877
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1571,7 @@ GameObject:
   - component: {fileID: 2938084803584510659}
   - component: {fileID: 988725935958691503}
   m_Layer: 0
-  m_Name: Line7
+  m_Name: Line8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1589,7 +1589,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6484351385746841562}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &988725935958691503
 MonoBehaviour:
@@ -5568,6 +5568,61 @@ Transform:
   m_Father: {fileID: 3920557604866505164}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5359976962372365542
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 642613206805556182}
+  - component: {fileID: 6237533611487748525}
+  m_Layer: 0
+  m_Name: Line7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &642613206805556182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359976962372365542}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6484351385746841562}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6237533611487748525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5359976962372365542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Annohiath
+  characterLine: Per completare una stanza tutte le regole bianche devono essere
+    completate. Alcune regole saranno rosa, quest'ultime invece, non devono essere
+    seguite.
+  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  nextDialogue: {fileID: 988725935958691503}
 --- !u!1 &6484351385078458245
 GameObject:
   m_ObjectHideFlags: 0
@@ -5704,6 +5759,7 @@ Transform:
   - {fileID: 5037559670187142924}
   - {fileID: 339876443353921036}
   - {fileID: 8472092349841114310}
+  - {fileID: 642613206805556182}
   - {fileID: 2938084803584510659}
   - {fileID: 3104698194571723957}
   m_Father: {fileID: 3969094741755614361}
