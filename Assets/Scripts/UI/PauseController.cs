@@ -60,6 +60,9 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public void Pause()
     {
         pauseMenu.SetActive(true);
+        Controls.SetActive(false);
+        settingMenu.SetActive(false);
+        homePage.SetActive(true);
         cursorSetter.SetCursor(CursorType.Menu);
         Time.timeScale = 0f;
         pause = true;
