@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackRanged : FSMState
+public class EnemyAttackRanged : FSMState, IGameEntity
 {
 	[SerializeField]
 	[Range(0f, 2f)]
@@ -25,6 +25,9 @@ public class EnemyAttackRanged : FSMState
 	[Range(0f, 30f)]
 	private float ChaseDistance = 5f;
 
+	[SerializeField]
+	private SoundPacket shootingSound;
+
 	private GameObject target;
 
 	private Transform projectilesRoot;
@@ -32,6 +35,8 @@ public class EnemyAttackRanged : FSMState
 	private string pg = "Player";
 
 	private float reactionTime;
+
+	private GameManager gameManager;
 
 	private void OnValidate()
 	{
@@ -84,8 +89,14 @@ public class EnemyAttackRanged : FSMState
 
 	private void Attack()
 	{
+		gameManager.PlaySound(shootingSound);
 		GameObject proj = Instantiate(projectilePrefab, objSpawnPos.position, objSpawnPos.rotation, null);
 		proj.transform.parent = projectilesRoot;
 		proj.GetComponent<ProjectileController>().SetTeam(Team.Enemy);
 	}
+
+    public void Init(GameManager gameManager)
+    {
+		this.gameManager = gameManager;
+    }
 }

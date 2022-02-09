@@ -4,16 +4,21 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(FSM))]
-public class EnemyController : MonoBehaviour, IEnemy
+public class EnemyController : MonoBehaviour, IEnemy, IGameEntity
 {
     [SerializeField]
     private float maxHealth = 1;
+
+    [SerializeField]
+    private SoundPacket deathSound;
 
     private float currentHealth;
 
     private Animator animator;
 
     private FSM stateMachine;
+
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -47,6 +52,7 @@ public class EnemyController : MonoBehaviour, IEnemy
 
     private void Die() 
     {
+        gameManager.PlaySound(deathSound);
         stateMachine.DisalbeStates();
         animator.SetTrigger("death");
     }
@@ -96,5 +102,10 @@ public class EnemyController : MonoBehaviour, IEnemy
         {
             enemyAttackMelee.NotDamageOnEndStage();
         }
+    }
+
+    public void Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 }

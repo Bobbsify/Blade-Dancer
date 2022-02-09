@@ -5056,6 +5056,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  deathSound:
+    audio: {fileID: 8300000, guid: 03d30a5c42b1ee44db084d29ee5344f0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
 --- !u!114 &7251394527796283673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5125,6 +5130,11 @@ MonoBehaviour:
     type: 3}
   objSpawnPos: {fileID: 7251394528346421220}
   ChaseDistance: 5
+  shootingSound:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
 --- !u!114 &3030171392430779592
 MonoBehaviour:
   m_ObjectHideFlags: 0

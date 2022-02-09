@@ -35,6 +35,13 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     [Range(4,20)]
     private float particleDefaultAmount = 4;
 
+    [Header("Sound")]
+
+    [SerializeField]
+    private SoundPacket danceSound;
+
+    // ----
+
     private GameManager gameManager;
 
     private PlayerController playerController;
@@ -79,6 +86,7 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
         var main = danceParticles.main;
         main.startSpeed = particleDefaultSpeed + (charge * speedMultiplier);
         danceParticles.Emit(Mathf.FloorToInt(charge * particleDefaultAmount));
+        gameManager.PlaySound(danceSound);
 
         playerController.Animate("dance");
 
