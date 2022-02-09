@@ -483,7 +483,7 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 1)
         {
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForEndOfFrame();
             StartCoroutine(FadeToBlack());
         }
         else 
@@ -500,7 +500,7 @@ public class GameManager : MonoBehaviour
         fadeToBlack.color = tempColor;
         if (fadeToBlack.color.a != 0)
         {
-            yield return new WaitForSeconds(0.001f);
+            yield return new WaitForEndOfFrame();
             StartCoroutine(ReverseFade());
         }
     }
