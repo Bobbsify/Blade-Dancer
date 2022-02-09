@@ -7,11 +7,10 @@ using UnityEngine.UI;
 
 public class DeHiglightSelected : MonoBehaviour
 {
-    //Todo fixare pausa
     [SerializeField]
     public GameObject ButtonToshow;
 
-    public bool DeHilight;
+    private bool DeHilight;
 
     public void OnPointerEnter()
     {
@@ -23,7 +22,6 @@ public class DeHiglightSelected : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(ButtonToshow);
     }
-
    /* private void Start()
     {
         DeHilight = true;
