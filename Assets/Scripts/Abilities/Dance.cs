@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +19,22 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     [SerializeField]
     private float maxSphereWidth = 10.0f;
 
+    [Header("Particles")]
+
+    [SerializeField]
+    private ParticleSystem danceParticles;
+
+    [SerializeField]
+    [Range(0.1f,5.0f)]
+    private float speedMultiplier = 1.5f;
+
+    [SerializeField]
+    private float particleDefaultSpeed;
+
+    [SerializeField]
+    [Range(4,20)]
+    private float particleDefaultAmount = 4;
+
     private GameManager gameManager;
 
     private PlayerController playerController;
@@ -27,12 +44,21 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     private void OnValidate()
     {
         playerController = GetComponent<PlayerController>();
+        if (danceParticles == null)
+        {
+            danceParticles = transform.Find("DanceParticles").GetComponent<ParticleSystem>();
+        }
+        else
+        {
+            particleDefaultSpeed = danceParticles.main.startSpeed.constant;
+        }
     }
 
     private void Start()
     {
         if(playerController == null)
         playerController = GetComponent<PlayerController>();
+
         danceUI = gameManager.GetUIComponent<UIDanceController>();
         if (danceUI == null)
         {
@@ -42,12 +68,20 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
         {
             danceUI.UpdateCharge(charge);
         }
+
+
     }
 
     public void Trigger()
     {
         playerController.DisableOtherAbilities<Dance>();
+
+        var main = danceParticles.main;
+        main.startSpeed = particleDefaultSpeed + (charge * speedMultiplier);
+        danceParticles.Emit(Mathf.FloorToInt(charge * particleDefaultAmount));
+
         playerController.Animate("dance");
+
         float radius = Mathf.Max(charge * maxSphereWidth / maxCharge, minSphereWidth);
         Collider[] hits =Physics.OverlapSphere(this.transform.position, radius);
         foreach (Collider hit in hits) 
