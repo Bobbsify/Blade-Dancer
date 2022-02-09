@@ -1481,7 +1481,7 @@ MonoBehaviour:
   cheerManager: {fileID: 341461291}
   healthController: {fileID: 134483441}
   endless: 1
-  firstRun: 0
+  firstRun: 1
   customRunEnabled: 0
   streaksCompleted: 1
   customRun: 0c00000003000000
