@@ -102,6 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  deathSound:
+    audio: {fileID: 8300000, guid: 03d30a5c42b1ee44db084d29ee5344f0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
 --- !u!114 &2096567139338241272
 MonoBehaviour:
   m_ObjectHideFlags: 0

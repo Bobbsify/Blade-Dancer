@@ -4280,7 +4280,7 @@ MonoBehaviour:
   - INCREDIBILE
   - AAAAAAAAAAAA
   cheerSounds:
-  - audio: {fileID: 8300000, guid: 026724af2a57fcb439f2fc95d4af4f10, type: 3}
+  - audio: {fileID: 8300000, guid: bfe009d72e72e934898b7f2207793838, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2

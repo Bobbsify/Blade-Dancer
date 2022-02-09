@@ -9940,6 +9940,11 @@ MonoBehaviour:
   speedMultiplier: 1.5
   particleDefaultSpeed: 3
   particleDefaultAmount: 4
+  danceSound:
+    audio: {fileID: 8300000, guid: 026724af2a57fcb439f2fc95d4af4f10, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
 --- !u!95 &4402864445721168482
 Animator:
   serializedVersion: 3
