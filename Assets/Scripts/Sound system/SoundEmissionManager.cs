@@ -6,14 +6,17 @@ using UnityEngine.Audio;
 [RequireComponent(typeof(AudioSource))]
 public class SoundEmissionManager : MonoBehaviour
 {
-    [SerializeField]
-    private float timeToDestruction;
-    
-    private AudioSource audio;
+    private new AudioSource audio;
+
+    private const float fadeAmount = 0.1f;
+
+    private const float fadeTime = 3f;
+
     private void Awake()
     {
         TryGetComponent(out audio);
     }
+
     public void PlayAudio()
     {
         audio.Play();
@@ -24,54 +27,52 @@ public class SoundEmissionManager : MonoBehaviour
         audio.Play();
     }
 
-    public void StopAudio()
+    public void StopAudio(Dictionary<SoundPacket, SoundEmissionManager> soundEmission,SoundPacket sound)
     {
+        soundEmission.Remove(sound);
         audio.Stop();
     }
 
-    public void FadeIn(SoundPacket soundToFadeIn, float fadeDuration=0)
+    public void FadeIn()
     {
-        StartCoroutine(FadeInTime(soundToFadeIn, fadeDuration));
+        StartCoroutine(FadeInTime());
     }
 
-    public void FadeOut(SoundPacket soundToFadeOut, float fadeDuration=0)
+    public void FadeOut()
     {
-        StartCoroutine(FadeOutTime(soundToFadeOut, fadeDuration));
+        StartCoroutine(FadeOutTime());
     }
 
-    private IEnumerator FadeInTime(SoundPacket sound, float fadeDuration)
+    private IEnumerator FadeInTime()
     {
-        fadeDuration = sound.GetDelay();
-        float startVolume = audio.volume;
-        audio.Play();
-        audio.volume = startVolume;
-        while (audio.volume < 1)
+        audio.volume += fadeAmount;
+
+        yield return new WaitForSeconds(fadeTime / (1/fadeAmount));
+
+        if (audio.volume < 0.99f)
         {
-            audio.volume += startVolume * Time.deltaTime / fadeDuration;
-            yield return null;
+            StartCoroutine(FadeInTime());
         }
     }
 
-    private IEnumerator FadeOutTime(SoundPacket sound, float fadeDuration)
+    private IEnumerator FadeOutTime()
     {
-        fadeDuration = sound.GetDelay();
-        float startVolume = audio.volume;
-        while(audio.volume>0)
+        audio.volume -= fadeAmount;
+
+        yield return new WaitForSeconds(fadeTime / (1 / fadeAmount));
+
+        if (audio.volume > 0)
         {
-            audio.volume -= startVolume * Time.deltaTime/fadeDuration;
-            yield return null;
+            StartCoroutine(FadeOutTime());
         }
-        audio.Stop();
-        audio.volume = startVolume;
+        else 
+        {
+            Destroy(gameObject);
+        }
     }
 
-    public void InstantiateGameObject(GameObject soundObject, Transform position)
+    public void deleteGameObject(GameObject objectToDestroy)
     {
-        Instantiate(soundObject, position);
-    }
-
-    public void EliminateGameObject(GameObject soundObject)
-    {
-        Destroy(soundObject);
+        Destroy(objectToDestroy);
     }
 }

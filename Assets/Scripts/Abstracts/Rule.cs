@@ -40,7 +40,7 @@ public abstract class Rule : IRule
 
     public virtual RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, "", this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, IsReverse() ? (IsRuleComplete() ? 0 : 1) : (IsRuleComplete() ? 1 : 0), 1, this.IsRuleComplete(),IsReverse());
     }
 
     public virtual List<RuleObject> GetRuleRelatedObjects()
@@ -126,6 +126,7 @@ public class RuleObject
 public enum PositionType
 {
     Random = 0,
+    RandomNoCorner,
     AnyCorner,
     AnyLeft,
     AnyRight,
@@ -167,33 +168,33 @@ public enum Actions
 
 public enum AllRules
 {
-    Move,
-    Shoot,
-    Dash,
-    Dance,
-    Ring,
-    Left,
-    Right,
-    Break,
-    Gather,
-    Kill,
-    Score,
-    Trap,
-    TakeDamage,
-    Reach,
+    Muoviti,
+    Spara,
+    Scatta,
+    Balla,
+    Suona,
+    Sinistra,
+    Destra,
+    Rompi,
+    Raccogli,
+    Uccidi,
+    Segna,
+    Cattura,
+    Danneggiati,
+    Raggiungi,
     //Negatives
-    NotMove,
-    NotShoot,
-    NotDash,
-    NotDance,
-    NotRing,
-    NotLeft,
-    NotRight,
-    NotBreak,
-    NotGather,
-    NotKill,
-    NotScore,
-    NotTrap,
-    NotTakeDamage,
-    NotReach
+    NotMuoviti,
+    NotSpara,
+    NotScatta,
+    NotBalla,
+    NotSuona,
+    NotSinistra,
+    NotDestra,
+    NotRompi,
+    NotRaccogli,
+    NotUccidi,
+    NotSegna,
+    NotCattura,
+    NotDanneggiati,
+    NotRaggiungi
 }

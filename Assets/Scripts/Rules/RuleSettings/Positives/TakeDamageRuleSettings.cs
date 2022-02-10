@@ -25,7 +25,7 @@ public class TakeDamageRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        TakeDamageRule returnedRule = new TakeDamageRule(AllRules.TakeDamage, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        TakeDamageRule returnedRule = new TakeDamageRule(AllRules.Danneggiati, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

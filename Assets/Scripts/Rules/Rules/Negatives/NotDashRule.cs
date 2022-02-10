@@ -31,7 +31,7 @@ public class NotDashRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, dashAmount + "/" + targetAmountOfDashes, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, dashAmount, targetAmountOfDashes, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()

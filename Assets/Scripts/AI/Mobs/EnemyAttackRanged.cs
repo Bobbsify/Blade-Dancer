@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAttackRanged : FSMState
+public class EnemyAttackRanged : FSMState, IGameEntity
 {
 	[SerializeField]
 	[Range(0f, 2f)]
@@ -16,7 +16,7 @@ public class EnemyAttackRanged : FSMState
 	private EnemyFlee stateChase;
 
 	[SerializeField]
-	private GameObject projectile;
+	private GameObject projectilePrefab;
 
 	[SerializeField]
 	private Transform objSpawnPos;
@@ -25,11 +25,18 @@ public class EnemyAttackRanged : FSMState
 	[Range(0f, 30f)]
 	private float ChaseDistance = 5f;
 
+	[SerializeField]
+	private SoundPacket shootingSound;
+
 	private GameObject target;
+
+	private Transform projectilesRoot;
 
 	private string pg = "Player";
 
 	private float reactionTime;
+
+	private GameManager gameManager;
 
 	private void OnValidate()
 	{
@@ -70,6 +77,11 @@ public class EnemyAttackRanged : FSMState
 		this.reactionTime = Random.Range(this.minReactionTime, this.maxReactionTime);
 	}
 
+	public void SetProjectilesRoot(Transform root) 
+	{
+		this.projectilesRoot = root;
+	}
+
 	public override string ToString()
 	{
 		return "ATTACK";
@@ -77,7 +89,14 @@ public class EnemyAttackRanged : FSMState
 
 	private void Attack()
 	{
-		GameObject proj = Instantiate(projectile, objSpawnPos.position, objSpawnPos.rotation, null);
+		gameManager.PlaySound(shootingSound);
+		GameObject proj = Instantiate(projectilePrefab, objSpawnPos.position, objSpawnPos.rotation, null);
+		proj.transform.parent = projectilesRoot;
 		proj.GetComponent<ProjectileController>().SetTeam(Team.Enemy);
 	}
+
+    public void Init(GameManager gameManager)
+    {
+		this.gameManager = gameManager;
+    }
 }

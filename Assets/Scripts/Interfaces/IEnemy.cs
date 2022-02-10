@@ -10,4 +10,7 @@ public interface IEnemy
 
     void Dance();
 
+    void Go();
+
+    void Stop();
 }

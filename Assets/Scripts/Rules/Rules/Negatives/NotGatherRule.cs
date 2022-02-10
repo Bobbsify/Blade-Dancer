@@ -36,19 +36,19 @@ public class NotGatherRule : Rule
         {
             if (action == executedAction)
             {
-                return ++amountGathered > 0;
+                return ++amountGathered < 0;
             }
         }
-        return false;
+        return true;
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountGathered + "/" + amountToGather, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, amountGathered, amountToGather, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()
     {
-        return amountGathered > 0;
+        return amountGathered <= 0;
     }
 
     public override string ToString()

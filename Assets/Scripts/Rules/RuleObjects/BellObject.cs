@@ -8,6 +8,14 @@ public class BellObject : MonoBehaviour,IGameEntity
     [SerializeField]
     private GameManager gameManager;
 
+    [SerializeField]
+    private SoundPacket sound;
+
+    private SoundQueueManager sqm;
+
+    [SerializeField]
+    private bool fadeIn;
+
     private void Awake()
     {
         if (TryGetComponent(out Collider col))
@@ -16,17 +24,22 @@ public class BellObject : MonoBehaviour,IGameEntity
         }
     }
 
+    private void Start()
+    {
+        this.sqm = gameManager.GetComponentInChildren<SoundQueueManager>();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponentInChildren<ProjectileController>() != null)
         {
-            SendActionToGameManager(); 
+            SendActionToGameManager();
         }
     }
 
     public void SendActionToGameManager()
     {
-       this.gameManager.ActionEventTrigger(Actions.Ring);
+        this.gameManager.ActionEventTrigger(Actions.Ring);
+        gameManager.PlaySound(this.sound, fadeIn);
     }
 
     public void Init(GameManager gameManager)

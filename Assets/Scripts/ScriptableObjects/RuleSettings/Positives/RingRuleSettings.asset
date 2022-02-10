@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 075dcecb25146ab4a9d1b967ccfeabf2, type: 3}
   m_Name: RingRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
-  durationMod: 1
+  durationType: 1
+  durationMod: 3
   appliedActions: 04000000
   ruleRelatedObjects:
   - name: Bell
     ruleObjPrefab: {fileID: 4072430416109815961, guid: 1fbeb67b7cac740558906c3b735ebb44,
       type: 3}
-    pos: 1
+    pos: 2
   mutuallyExclusives: 04000000120000000f000000

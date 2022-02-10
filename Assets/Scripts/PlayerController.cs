@@ -1,8 +1,5 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerController : MonoBehaviour, IGameEntity
@@ -14,15 +11,37 @@ public class PlayerController : MonoBehaviour, IGameEntity
     [SerializeField]
     private int currentHealth;
 
+    [SerializeField]
+    private float invincibilityDuration = 0.5f;
+
+    [Header("Sound Effects")]
+    [SerializeField]
+    private SoundPacket playerDamage;
+
+    [SerializeField]
+    private SoundPacket playerDie;
+
+    [SerializeField]
+    private SoundPacket playerFall;
+
+    [SerializeField]
+    private SoundPacket playerLand;
+
+    //---------------------------
+
     private Animator animPlayer;
 
     private IAbility[] abilities;
 
     private PhysicsMovement movement;
 
+    private SpriteRenderer playerSprite;
+
     private GameObject[] health;
 
     private GameManager gameManager;
+
+    private bool canTakeDamage = true;
 
     private void OnValidate()
     {
@@ -32,6 +51,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
     private void Start()
     {
         currentHealth = maxHealth;
+        this.playerSprite = GetComponentInChildren<SpriteRenderer>();
         this.abilities = GetComponentsInChildren<IAbility>(true);
         movement = GetComponent<PhysicsMovement>();
         TryGetComponent(out animPlayer);
@@ -42,12 +62,29 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     public void TakeDamage(int amount)
     {
-        if (currentHealth > 0) { 
-            currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount),maxHealth);
-            if (currentHealth == 0) 
+        if (amount > 0)
+        {
+            if (canTakeDamage || amount == this.maxHealth)
             {
-                DoDeath();
+                currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount), maxHealth);
+                canTakeDamage = false;
+                if (currentHealth == 0)
+                {
+                    gameManager.PlaySound(playerDie);
+                    DoDeath();
+                }
+                else if (amount > 0)
+                {
+                    gameManager.PlaySound(playerDamage);
+                    gameManager.ActionEventTrigger(Actions.TakeDamage);
+                    StartCoroutine(Invincibility());
+                }
+                gameManager.PlayerDamageTrigger();
             }
+        }
+        else
+        {
+            currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount), maxHealth);
         }
     }
     #region Animation
@@ -69,12 +106,28 @@ public class PlayerController : MonoBehaviour, IGameEntity
         animPlayer.SetTrigger(name);
     }
 
+    public void FallAnimationCompleted()
+    {
+        DisableAllAbilities();
+        gameManager.PlayerHasFallen();
+    }
+
+    public void PlayerLanded()
+    {
+        canTakeDamage = true;
+        EnableAllAbilities();
+        gameManager.PlaySound(playerLand);
+        gameManager.PlayerLanded();
+    }
+
     #endregion
 
     public void Reset()
     {
         gameManager.doReset();
         this.currentHealth = maxHealth;
+        canTakeDamage = true;
+        gameManager.PlayerDamageTrigger();
     }
 
     public void ToggleMovement(bool state = true) 
@@ -148,6 +201,18 @@ public class PlayerController : MonoBehaviour, IGameEntity
     {
         Animate("death");
         DisableAllAbilities();
+    }
+
+    private IEnumerator Invincibility() 
+    {
+        playerSprite.enabled = false;
+        yield return new WaitForSeconds(invincibilityDuration / 3);
+        playerSprite.enabled = true;
+        yield return new WaitForSeconds(invincibilityDuration / 3);
+        playerSprite.enabled = false;
+        yield return new WaitForSeconds(invincibilityDuration / 3);
+        canTakeDamage = true;
+        playerSprite.enabled = true;
     }
 
     public void Init(GameManager gameManager)

@@ -25,7 +25,7 @@ public class NotReachRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotReachRule returnedRule = new NotReachRule(AllRules.NotReach, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotReachRule returnedRule = new NotReachRule(AllRules.NotRaggiungi, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

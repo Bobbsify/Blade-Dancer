@@ -6,12 +6,16 @@ using UnityEngine;
 public class GatherObjects : MonoBehaviour,IGameEntity
 {
     [SerializeField]
+    private SoundPacket coinPickupSound;
+
+    [SerializeField]
     private GameManager gameManager;
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.collider.GetComponentInChildren<PlayerController>() != null)
         {
+            gameManager.PlaySound(coinPickupSound);
             SendActionToGameManager();
             Destroy(this.gameObject);
         }

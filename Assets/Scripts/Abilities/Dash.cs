@@ -12,6 +12,9 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
     [SerializeField]
     private float dashCooldown;
 
+    [SerializeField]
+    private SoundPacket dashSound;
+
     private bool canDash;
 
     private GameManager gameManager;
@@ -33,7 +36,6 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
     public IEnumerator CooldownDash()
     {
         yield return new WaitForSeconds(this.dashCooldown);
-        SendActionToGameManager();
         this.canDash = true;
     }
 
@@ -43,6 +45,8 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
         {
             canDash = false;
             this.rigidBody.AddForce(lastDirection * dashForce,ForceMode.Impulse);
+            SendActionToGameManager();
+            gameManager.PlaySound(dashSound);
             StartCoroutine(CooldownDash());
         }
     }

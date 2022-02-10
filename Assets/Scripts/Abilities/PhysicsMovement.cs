@@ -7,9 +7,19 @@ public class PhysicsMovement : MonoBehaviour, IAbility, IInputReceiverMove, IGam
 
 	private GameManager gameManager;
 
+	private Animator anim;
+
+	private void Awake()
+    {
+		TryGetComponent(out anim);    
+    }
+
     private void Move(Vector3 direction)
 	{
 		Vector3 vel = direction * speed;
+		anim.SetFloat("speed", vel.magnitude);
+		anim.SetFloat("verticalSpeed", direction.z);
+		anim.SetFloat("horizontalSpeed", direction.x);
 		this.transform.position += vel * Time.fixedDeltaTime;
 		if (direction != Vector3.zero) 
 		{ 

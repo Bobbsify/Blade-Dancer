@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3961877cff3df134eb8dd87f5f363a3f, type: 3}
   m_Name: TakeDamageRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
-  durationMod: 1
+  durationType: 1
+  durationMod: 3
   appliedActions: 0c000000
   ruleRelatedObjects:
   - name: EnemyMoving

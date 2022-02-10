@@ -102,6 +102,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  deathSound:
+    audio: {fileID: 8300000, guid: 03d30a5c42b1ee44db084d29ee5344f0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
 --- !u!114 &2096567139338241272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug_CurrentState: 
-  initialState: {fileID: 2096567139338241275}
+  initialState: {fileID: 2096567139338241273}
   states:
   - {fileID: 1001425777393156325}
   - {fileID: 2096567139338241273}
@@ -149,7 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   activationDistance: 0.5
-  stateChase: {fileID: 2096567139338241274}
+  nextState: {fileID: 2096567139338241274}
+  force: 1
 --- !u!114 &2096567139338241274
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,10 +185,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0374019e5a196254dbb7c82b00deb765, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minReactionTime: 1.11
-  maxReactionTime: 1.51
+  minReactionTime: 0
+  maxReactionTime: 0
   stateChase: {fileID: 2096567139338241274}
   damage: 1
+  isPlayerDamageable: 0
+  continueToDamage: 1
 --- !u!1 &4110936719562507667
 GameObject:
   m_ObjectHideFlags: 0

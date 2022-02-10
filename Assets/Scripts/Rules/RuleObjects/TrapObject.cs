@@ -11,6 +11,9 @@ public class TrapObject : MonoBehaviour, IGameEntity
     [SerializeField]
     private GameObject trapCollider;
 
+    [SerializeField]
+    private SoundPacket trappingSound;
+
     private bool canBeTrapped;
 
     private void Start()
@@ -28,6 +31,7 @@ public class TrapObject : MonoBehaviour, IGameEntity
 
             if(canBeTrapped == true)
             {
+                gameManager.PlaySound(trappingSound);
                 SendActionToGameManager();
                 canBeTrapped = false;
             }

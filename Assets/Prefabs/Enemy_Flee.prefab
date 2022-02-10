@@ -4966,6 +4966,7 @@ GameObject:
   - component: {fileID: -4049630656755785450}
   - component: {fileID: 1720986811016011097}
   - component: {fileID: 7251394527796283673}
+  - component: {fileID: 6601904179400002039}
   - component: {fileID: 7251394527796283675}
   - component: {fileID: 8311623136659962207}
   - component: {fileID: 3030171392430779592}
@@ -5055,6 +5056,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
+  deathSound:
+    audio: {fileID: 8300000, guid: 03d30a5c42b1ee44db084d29ee5344f0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 1
+    outputType: 2
 --- !u!114 &7251394527796283673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5068,12 +5074,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debug_CurrentState: 
-  initialState: {fileID: 7251394527796283675}
+  initialState: {fileID: 6601904179400002039}
   states:
+  - {fileID: 6601904179400002039}
   - {fileID: 7251394527796283675}
   - {fileID: 8311623136659962207}
   - {fileID: 3030171392430779592}
   gameManager: {fileID: 0}
+--- !u!114 &6601904179400002039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251394527796283674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a181da1e1ee04cf4ba50484c2a9aca3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  activationDistance: 3
+  nextState: {fileID: 7251394527796283675}
+  force: 1
 --- !u!114 &7251394527796283675
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5104,10 +5126,15 @@ MonoBehaviour:
   minReactionTime: 1
   maxReactionTime: 2
   stateChase: {fileID: 7251394527796283675}
-  projectile: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
+  projectilePrefab: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
     type: 3}
   objSpawnPos: {fileID: 7251394528346421220}
   ChaseDistance: 5
+  shootingSound:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
 --- !u!114 &3030171392430779592
 MonoBehaviour:
   m_ObjectHideFlags: 0

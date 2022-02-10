@@ -10,7 +10,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
     private GameManager gameManagerObject;
 
     [SerializeField]
-    private UIRulesController uiRulesController;
+    private UIRuleControllerManager uiRulesManager;
     
     private List<RuleSetting> rules;
 
@@ -23,14 +23,35 @@ public class RuleManager : MonoBehaviour, IGameEntity
         factory = new RuleFactory(rules);
     }
 
+    private void Start()
+    {
+        if (uiRulesManager == null) 
+        {
+            gameManagerObject.GetUIComponent<UIRuleControllerManager>();
+        }
+    }
+
     public void SetNewRuleset(List<Rule> newRuleset)
     {
         if (newRuleset.Count == 0) 
         {
-            uiRulesController.ResetContainers();
+            uiRulesManager.ResetContainers();
         }
         rulesToApply = newRuleset;
-        uiRulesController.SetupRules(GetUpdates());
+        uiRulesManager.SetupRules(GetUpdates());
+        uiRulesManager.ShowRules();
+    }
+
+    public bool IsCurrentlyRule(AllRules rule)
+    {
+        foreach (Rule r in rulesToApply) 
+        {
+            if (r.GetRuleName().Equals(rule)) 
+            {
+                return true; 
+            }
+        }
+        return false;
     }
 
     public void ApplyRule(Actions actionDone)
@@ -45,7 +66,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void UpdateRulesOnScreen()
     {
-        uiRulesController.GetUpdate(GetUpdates());
+        uiRulesManager.GetUpdate(GetUpdates());
     }
 
     private List<RulePacket> GetUpdates() 
@@ -57,7 +78,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
             RulePacket update = r.ToPacket();
             if (r.IsReverse()) 
             {
-                update = new RulePacket(r.GetPureRuleName(), update.GetScore(), update.GetCompleted(),update.IsReverse());
+                update = new RulePacket(r.GetPureRuleName(), update.GetScore(), update.GetMaxScore(), update.GetCompleted(),update.IsReverse());
             }
             updates.Add(update);
         }
@@ -85,7 +106,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void RulesCompleted()
     {
-        uiRulesController.StageCompleted();
+        uiRulesManager.StageCompleted();
         gameManagerObject.EndOfStage();
     }
 

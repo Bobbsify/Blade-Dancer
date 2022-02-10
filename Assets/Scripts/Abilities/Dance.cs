@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,27 +19,78 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     [SerializeField]
     private float maxSphereWidth = 10.0f;
 
+    [Header("Particles")]
+
+    [SerializeField]
+    private ParticleSystem danceParticles;
+
+    [SerializeField]
+    [Range(0.1f,5.0f)]
+    private float speedMultiplier = 1.5f;
+
+    [SerializeField]
+    private float particleDefaultSpeed;
+
+    [SerializeField]
+    [Range(4,20)]
+    private float particleDefaultAmount = 4;
+
+    [Header("Sound")]
+
+    [SerializeField]
+    private SoundPacket danceSound;
+
+    // ----
+
     private GameManager gameManager;
 
     private PlayerController playerController;
 
+    private UIDanceController danceUI;
+
     private void OnValidate()
     {
         playerController = GetComponent<PlayerController>();
+        if (danceParticles == null)
+        {
+            danceParticles = transform.Find("DanceParticles").GetComponent<ParticleSystem>();
+        }
+        else
+        {
+            particleDefaultSpeed = danceParticles.main.startSpeed.constant;
+        }
     }
 
-    private void Awake()
+    private void Start()
     {
         if(playerController == null)
         playerController = GetComponent<PlayerController>();
+
+        danceUI = gameManager.GetUIComponent<UIDanceController>();
+        if (danceUI == null)
+        {
+            Debug.LogError("No dance ui attached to " + this);
+        }
+        else 
+        {
+            danceUI.UpdateCharge(charge);
+        }
+
+
     }
 
     public void Trigger()
     {
         playerController.DisableOtherAbilities<Dance>();
+
+        var main = danceParticles.main;
+        main.startSpeed = particleDefaultSpeed + (charge * speedMultiplier);
+        danceParticles.Emit(Mathf.FloorToInt(charge * particleDefaultAmount));
+        gameManager.PlaySound(danceSound);
+
         playerController.Animate("dance");
-        float radius = charge * maxSphereWidth / maxCharge;
-        Debug.Log("Looking for enemies");
+
+        float radius = Mathf.Max(charge * maxSphereWidth / maxCharge, minSphereWidth);
         Collider[] hits =Physics.OverlapSphere(this.transform.position, radius);
         foreach (Collider hit in hits) 
         {
@@ -49,12 +101,14 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
         }
         SendActionToGameManager();
         this.charge = minCharge;
+        danceUI.UpdateCharge(charge);
         this.enabled = false; //Deactivate after use;
     }
 
     public void Charge(int amount) 
     {
-        this.charge += Mathf.Max(Mathf.Min(charge + amount, maxCharge),minCharge);
+        this.charge = Mathf.Max(Mathf.Min(charge + amount, maxCharge),minCharge);
+        danceUI.UpdateCharge(charge);
     }
 
     public void SendActionToGameManager()

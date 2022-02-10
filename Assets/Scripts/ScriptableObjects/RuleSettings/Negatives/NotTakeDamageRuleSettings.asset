@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c166b2f1ac8778b49848006f16938980, type: 3}
   m_Name: NotTakeDamageRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
+  durationType: 1
   durationMod: 1
   appliedActions: 0c000000
   ruleRelatedObjects:

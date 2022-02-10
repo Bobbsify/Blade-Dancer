@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f856bf1cb9707df48b3590e3f862849c, type: 3}
   m_Name: ReachRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
-  durationMod: 1
+  durationType: 1
+  durationMod: 5
   appliedActions: 0d000000
   ruleRelatedObjects:
   - name: EnemyMoving

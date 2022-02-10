@@ -2,10 +2,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UIDialogueController : MonoBehaviour
 {
+
+    [SerializeField]
+    [Range(0.01f,1.0f)]
+    private float dialogueSpeed = 0.01f;
+
+    [Header("Dialogue Sound")]
+
+    [SerializeField]
+    private SoundQueueManager sqm;
+
+    [SerializeField]
+    private AudioClip defaultSpeakingSound;
+
+    [Header("UI")]
     [SerializeField]
     private Image ImageToShow;
 
@@ -15,23 +30,73 @@ public class UIDialogueController : MonoBehaviour
     [SerializeField]
     private Text DialogueText;
 
-    [SerializeField]
-    private GameObject UIdialogue;
+    private char[] totalDialogue;
+    private int pointInDialogue = 0;
 
-    public void SetDialogue(Dialogue dialogue)
+    private SoundPacket speakingSound;
+
+    private void OnValidate()
     {
-        UIdialogue.SetActive(true);
+        if (sqm == null) 
+        {
+            
+            GameObject gameManager = GameObject.Find("GameManager");
+            if (gameManager != null) 
+            {
+                sqm = gameManager.GetComponent<SoundQueueManager>();
+            }
+        }
+    }
+
+    public void SetDialogue(Dialogue dialogue, AudioClip voice = null)
+    {
+        StopAllCoroutines();
+        EndTelling();
+
+        AudioClip speakingAudio = dialogue.GetVoice().GetAudio() != null ? dialogue.GetVoice().GetAudio() : voice != null ? voice : defaultSpeakingSound;
+        speakingSound = new SoundPacket(speakingAudio, Vector3.zero, SoundType.Loop, OutputType.Sfx);
+        sqm.AddSound(speakingSound);    //Add new sound
+
+        gameObject.SetActive(true);
 
         ImageToShow.sprite = dialogue.GetPicture();
 
         NameToShow.text = dialogue.GetName();
 
-        DialogueText.text = dialogue.GetLine();
+        totalDialogue = dialogue.GetLine().ToCharArray();
+        DialogueText.text = "";
+        StartCoroutine(TellDialogue());
     }
 
-    internal void EndDialogue()
+    public void EndDialogue(UnityEvent events)
     {
-        UIdialogue.SetActive(false);
-        Debug.LogError("END OF DIALOGUE");
+        EndTelling();
+        StopAllCoroutines();
+        gameObject.SetActive(false);
+        events.Invoke();
+    }
+
+    private IEnumerator TellDialogue() 
+    {
+        DialogueText.text += totalDialogue[pointInDialogue];
+        ++pointInDialogue;
+        if (pointInDialogue == totalDialogue.Length)
+        {
+            EndTelling();
+        }
+        else { 
+            yield return new WaitForSeconds(dialogueSpeed);
+            StartCoroutine(TellDialogue());
+        }
+    }
+
+    private void EndTelling()
+    {
+        pointInDialogue = 0;
+
+        if (speakingSound != null)
+        {
+            sqm.RemoveSound(speakingSound); //Remove previous sound
+        }
     }
 }

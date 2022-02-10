@@ -18,11 +18,14 @@ public class EnemyAttackMelee : FSMState
 	[SerializeField]
 	private int damage;
 
-	private bool isPlayerDamageable;
+	public bool isPlayerDamageable;
 
 	private PlayerController playerController;
 
 	private float reactionTime;
+
+	[SerializeField]
+	private float continueToDamage;
 
 	private void OnValidate()
 	{
@@ -31,7 +34,7 @@ public class EnemyAttackMelee : FSMState
 
     private void Start()
     {
-		isPlayerDamageable = false;
+		isPlayerDamageable = true;
     }
     private void Update()
 	{
@@ -63,6 +66,7 @@ public class EnemyAttackMelee : FSMState
         {
 			isPlayerDamageable = true;
 			this.playerController = other.GetComponentInChildren<PlayerController>();
+			StartCoroutine(DamagePlayerIfStillInContact());
 		}
     }
 
@@ -71,14 +75,28 @@ public class EnemyAttackMelee : FSMState
 		if (other.GetComponentInChildren<PlayerController>() != null)
 		{
 			isPlayerDamageable = false;
+			StopAllCoroutines();
 		}
 	}
+	public void NotDamageOnEndStage()
+    {
+		this.isPlayerDamageable = false;
+		this.StopAllCoroutines();
+    }
 
     private void Attack()
 	{
 		if (isPlayerDamageable == true)
         {
 			playerController.TakeDamage(damage);
+			isPlayerDamageable = false;
 		}
 	}
+
+	private IEnumerator DamagePlayerIfStillInContact()
+    {
+		yield return new WaitForSeconds(continueToDamage);
+		isPlayerDamageable = true;
+		StartCoroutine(DamagePlayerIfStillInContact());
+    }
 }

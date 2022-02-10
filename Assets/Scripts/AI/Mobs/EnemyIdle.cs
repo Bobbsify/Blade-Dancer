@@ -6,22 +6,29 @@ public class EnemyIdle : FSMState
 	private float activationDistance = 3f;
 
 	[SerializeField]
-	private EnemyChase stateChase;
+	private FSMState nextState;
+	
+	[SerializeField]
+	private bool force = true;
 
 	private GameObject target;
 
 	private string pg = "Player";
 
+
 	private void OnValidate()
 	{
-		this.stateChase = this.GetComponentInChildren<EnemyChase>();
+		if (this.nextState == null) 
+		{ 
+			this.nextState = this.GetComponentInChildren<FSMState>();
+		}
 	}
 
 	private void Update()
 	{
-		if (this.CheckDistance())
+		if (this.CheckDistance() && !force)
 		{
-			this.fsm.ChangeState(this.stateChase);
+			this.fsm.ChangeState(this.nextState);
 			return;
 		}
 	}
@@ -35,6 +42,11 @@ public class EnemyIdle : FSMState
 		var distance = Vector3.Distance(pos, targetPos);
 
 		return distance >= this.activationDistance;
+	}
+
+	public void ForceIdle(bool state) 
+	{
+		this.force = state;
 	}
 
 	public override string ToString()

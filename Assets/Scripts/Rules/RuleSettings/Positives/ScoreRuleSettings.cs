@@ -25,7 +25,7 @@ public class ScoreRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        ScoreRule returnedRule = new ScoreRule(AllRules.Score, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        ScoreRule returnedRule = new ScoreRule(AllRules.Segna, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

@@ -435,7 +435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8613225852285713245
 RectTransform:
   m_ObjectHideFlags: 0
@@ -531,6 +531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f22310f38ef00042821c179372cb70a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dialogueSpeed: 0.01
+  sqm: {fileID: 0}
+  defaultSpeakingSound: {fileID: 8300000, guid: 192902f10044fcf478199ad7b2eb645e,
+    type: 3}
   ImageToShow: {fileID: 335906930915696675}
   NameToShow: {fileID: 1597908403715332412}
   DialogueText: {fileID: 4287827438068241915}

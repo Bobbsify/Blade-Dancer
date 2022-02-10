@@ -12,6 +12,9 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
     private bool startStreak = false;
 
     [SerializeField]
+    private SoundPacket buttonClickSound;
+
+    [SerializeField]
     private UnityEvent otherButtonEvents;
 
     private GameObject player;
@@ -20,6 +23,7 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
 
     public void ReceiveInputInteract()
     {
+        if (this.enabled) { 
             player = GameObject.FindGameObjectWithTag("Player");
             Vector3 playerDistance = player.transform.position - transform.position;
             if (playerDistance.magnitude <= distanceToTrigger) 
@@ -29,8 +33,10 @@ public class ButtonTrigger : MonoBehaviour, IInputReceiverInteract, IGameEntity
                     player.GetComponent<PlayerController>().DisableAllAbilities();
                     gameManager.StartStreak();
                 }
+                gameManager.PlaySound(buttonClickSound);
                 otherButtonEvents.Invoke();
             }
+        }
     }
 
     private void OnDrawGizmosSelected()

@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44633bce544921b4ea838a90f5816630, type: 3}
   m_Name: BreakRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
-  durationMod: 1
+  durationType: 1
+  durationMod: 4
   appliedActions: 07000000
   ruleRelatedObjects:
   - name: BreakbaleObject
     ruleObjPrefab: {fileID: 5159879823635364758, guid: 9630146113b014536a57f4e8dee629b3,
       type: 3}
-    pos: 0
+    pos: 1
   mutuallyExclusives: 07000000150000000f000000

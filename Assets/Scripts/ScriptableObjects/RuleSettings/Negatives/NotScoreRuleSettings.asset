@@ -12,16 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61bda3e9121c16a4bbb3ddfc5d07140d, type: 3}
   m_Name: NotScoreRuleSettings
   m_EditorClassIdentifier: 
-  durationType: 0
+  durationType: 1
   durationMod: 1
   appliedActions: 0a000000
   ruleRelatedObjects:
   - name: Ball
     ruleObjPrefab: {fileID: 1766524116523848119, guid: a81f181353b564db7882fcf2b5a5db9c,
       type: 3}
-    pos: 0
+    pos: 1
   - name: Goal
     ruleObjPrefab: {fileID: 3395232647765131754, guid: 2bae4766c579442578463eb2b2b08081,
       type: 3}
-    pos: 5
+    pos: 6
   mutuallyExclusives: 0a000000180000000e000000

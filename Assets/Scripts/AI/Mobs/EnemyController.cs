@@ -4,16 +4,21 @@ using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(FSM))]
-public class EnemyController : MonoBehaviour, IEnemy
+public class EnemyController : MonoBehaviour, IEnemy, IGameEntity
 {
     [SerializeField]
     private float maxHealth = 1;
+
+    [SerializeField]
+    private SoundPacket deathSound;
 
     private float currentHealth;
 
     private Animator animator;
 
     private FSM stateMachine;
+
+    private GameManager gameManager;
 
     private void Start()
     {
@@ -37,8 +42,17 @@ public class EnemyController : MonoBehaviour, IEnemy
         Destroy(gameObject);
     }
 
+    public void SetProjectilesRoot(Transform projectilesRoot) 
+    {
+        if (TryGetComponent(out EnemyAttackRanged rangedAttack))
+        { 
+            rangedAttack.SetProjectilesRoot(projectilesRoot);
+        }
+    }
+
     private void Die() 
     {
+        gameManager.PlaySound(deathSound);
         stateMachine.DisalbeStates();
         animator.SetTrigger("death");
     }
@@ -63,8 +77,35 @@ public class EnemyController : MonoBehaviour, IEnemy
     {
         if (TryGetComponent(out EnemyDance dance))
         {
-            Debug.Log("Do a lil' dance");
             stateMachine.ChangeState(dance);
         }
+    }
+
+    public void Go()
+    {
+        if (TryGetComponent(out EnemyIdle idle))
+        {
+            stateMachine.ChangeState(idle);
+            idle.ForceIdle(false);
+        }
+    }
+
+    public void Stop()
+    {
+        if (TryGetComponent(out EnemyIdle idle))
+        {
+            stateMachine.ChangeState(idle);
+            idle.ForceIdle(true);
+        }
+
+        if(TryGetComponent(out EnemyAttackMelee enemyAttackMelee))
+        {
+            enemyAttackMelee.NotDamageOnEndStage();
+        }
+    }
+
+    public void Init(GameManager gameManager)
+    {
+        this.gameManager = gameManager;
     }
 }

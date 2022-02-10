@@ -11,20 +11,20 @@ public class SoundPacket
     private AudioClip audio;
 
     [SerializeField]
-    private Transform playPos;
+    private Vector3 playPos;
 
     [SerializeField]
     private SoundType audioType;
 
     [SerializeField]
-    private float playDelay;
+    private OutputType outputType;
 
-    public SoundPacket(AudioClip audio, Transform playPos, SoundType audioType, float playDelay = 0)
+    public SoundPacket(AudioClip audio, Vector3 playPos, SoundType audioType, OutputType outputType)
     {
         this.audio = audio;
         this.playPos = playPos;
         this.audioType = audioType;
-        this.playDelay = playDelay;
+        this.outputType = outputType;
     }
 
 
@@ -33,7 +33,7 @@ public class SoundPacket
         return audio;
     }
 
-    public Transform GetPlayPosition()
+    public Vector3 GetPlayPosition()
     {
         return playPos;
     }
@@ -43,9 +43,25 @@ public class SoundPacket
         return audioType;
     }
 
-    public float GetDelay()
+    public OutputType GetOutputType()
     {
-        return playDelay;
+        return outputType;
+    }
+
+    public override bool Equals(object obj)
+    {
+        if (obj.GetType().Equals(this.GetType()))
+        {
+            SoundPacket convertedObj = (SoundPacket)obj;
+            return convertedObj.audio == this.audio
+                && convertedObj.audioType == this.audioType
+                && convertedObj.GetOutputType() == this.outputType
+                && convertedObj.GetPlayPosition() == this.playPos;
+        }
+        else 
+        {
+            return false;
+        }
     }
 
 }
@@ -54,4 +70,11 @@ public enum SoundType
     Loop,
     PlayOnce,
     ReplayAfterSeconds
+}
+
+public enum OutputType
+{
+    Master,
+    Music,
+    Sfx
 }
