@@ -22,13 +22,14 @@ public class VolumeManager : MonoBehaviour
     {
         TryGetComponent(out volume);
         mixer.audioMixer.GetFloat(mixer.name+"Volume", out currentVolume);
-        volume.value = currentVolume;
+        // ( (x - -80) / (0 - -80) ) * (1 - 0.0001) + 0.0001 --> Conversione lineare per il nuovo range
+        volume.value = (float)((currentVolume - -80) / (0 - -80) * (1 - 0.0001) + 0.0001);
     }
 
     public void ChangeVolume(float value) 
     {
         currentVolume = value;
-        mixer.audioMixer.SetFloat(mixer.name + "Volume", currentVolume);
+        mixer.audioMixer.SetFloat(mixer.name + "Volume", Mathf.Log10(currentVolume) * 20);
         gameObjectButton.GetComponent<Animator>().SetTrigger("Highlighted");
     }
 
