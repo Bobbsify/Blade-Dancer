@@ -15,12 +15,14 @@ public class DeHiglightSelected : MonoBehaviour
     public void OnPointerEnter()
     {
         EventSystem.current.SetSelectedGameObject(null);
+        DeHilight = true;
     }
 
     public void OnPointerExit()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(ButtonToshow);
+        DeHilight = false;
 
         if (EventSystem.current.currentSelectedGameObject == null)
         {
@@ -29,11 +31,21 @@ public class DeHiglightSelected : MonoBehaviour
         }
     }
 
-    /* private void Start()
-     {
-         DeHilight = true;
-     }
+    private void Start()
+    {
+        DeHilight = false;
+    }
 
+    private void Update()
+    {
+        if (EventSystem.current.currentSelectedGameObject == null && DeHilight == false)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(ButtonToshow);
+        }
+    }
+    
+    /*
      void Update()
      {
          if (Input.GetAxisRaw("Mouse X") != 0 || Input.GetAxisRaw("Mouse Y") != 0)
