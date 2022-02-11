@@ -1476,7 +1476,7 @@ MonoBehaviour:
     audioType: 0
     outputType: 1
   fadeToBlack: {fileID: 511583434}
-  fadeAmount: 0.01
+  fadeAmount: 0.03
   HUDAnimator: {fileID: 2147415104}
   cheerManager: {fileID: 341461291}
   healthController: {fileID: 134483441}

@@ -7,6 +7,13 @@ public class PhysicsMovement : MonoBehaviour, IAbility, IInputReceiverMove, IGam
 
 	private GameManager gameManager;
 
+	private Animator anim;
+
+	private void Awake()
+    {
+		TryGetComponent(out anim);    
+    }
+
     private void Move(Vector3 direction)
 	{
 		Vector3 vel = direction * speed;

@@ -21,14 +21,14 @@ public class VolumeManager : MonoBehaviour
     private void Awake() 
     {
         TryGetComponent(out volume);
-        mixer.audioMixer.GetFloat(mixer.name+"Volume", out currentVolume);
-        volume.value = currentVolume;
+        volume.value = PlayerPrefs.GetFloat(mixer.name + "Volume", 1f);
     }
 
     public void ChangeVolume(float value) 
     {
         currentVolume = value;
-        mixer.audioMixer.SetFloat(mixer.name + "Volume", currentVolume);
+        mixer.audioMixer.SetFloat(mixer.name + "Volume", Mathf.Log10(currentVolume) * 20);
+        PlayerPrefs.SetFloat(mixer.name + "Volume",volume.value);
         gameObjectButton.GetComponent<Animator>().SetTrigger("Highlighted");
     }
 
