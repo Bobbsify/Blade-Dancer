@@ -31,9 +31,12 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
     private Transform projectilesRoot;
 
+    private Animator anim;
+
     private void Start()
     {
         this.canShoot = true;
+        TryGetComponent(out anim);
     }
     public IEnumerator CooldownShoot()
     {
@@ -44,6 +47,7 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
     {
         Quaternion rotation = GetRotationToShootAt();
         objSpawnPos.eulerAngles = new Vector3(0, rotation.eulerAngles.y, 0);
+        anim.SetFloat("rotation", rotation.eulerAngles.y / 360);
     }
 
     public void Trigger()

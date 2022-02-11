@@ -12,23 +12,30 @@ public class CheerController : MonoBehaviour
 
     private void OnValidate()
     {
-        if (cheerTexts.Count == 0) 
-        { 
-            cheerTexts.AddRange(GetComponentsInChildren<Text>(true));
-        }
+        GetCheers();
     }
 
     private void Awake()
     {
+        GetCheers();
         TryGetComponent(out anim);
     }
 
-    public void ExecuteCheer(string cheer) 
+    public void ExecuteCheer(string cheer)
     {
+        GetCheers();
         foreach (Text text in cheerTexts) 
         {
             text.text = cheer;
         }
         anim.SetTrigger("execute");
+    }
+
+    public void GetCheers() 
+    {
+        if (cheerTexts.Count == 0)
+        {
+            cheerTexts.AddRange(GetComponentsInChildren<Text>(true));
+        }
     }
 }
