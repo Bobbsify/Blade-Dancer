@@ -66,6 +66,11 @@ public class ProjectileController : MonoBehaviour
         this.projectileTeam = team;
     }
 
+    public Team GetTeam()
+    {
+        return this.projectileTeam;
+    }
+
     private IEnumerator LifeTime() 
     {
         yield return new WaitForSeconds(projectileLifetime);
