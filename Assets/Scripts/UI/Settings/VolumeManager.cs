@@ -31,12 +31,4 @@ public class VolumeManager : MonoBehaviour
         PlayerPrefs.SetFloat(mixer.name + "Volume",volume.value);
         gameObjectButton.GetComponent<Animator>().SetTrigger("Highlighted");
     }
-
-    private void Update()
-    {
-        if(Input.GetAxisRaw("Vertical") != 0)
-        {
-            gameObjectButton.GetComponent<Animator>().SetTrigger("Normal");
-        }
-    }
 }
