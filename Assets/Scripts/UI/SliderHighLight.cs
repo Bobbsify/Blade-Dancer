@@ -20,6 +20,10 @@ public class SliderHighLight : MonoBehaviour
         {
             gameObjectButton.GetComponent<Animator>().SetTrigger("Normal");
         }
+    }
 
+    public void onPointerEnter()
+    {
+        gameObjectButton.GetComponent<Animator>().SetTrigger("Normal");
     }
 }
