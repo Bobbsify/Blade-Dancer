@@ -52,7 +52,7 @@ TagManager:
   - name: Enemy
     uniqueID: 3382838899
     locked: 0
-  - name: GE
+  - name: Rule Object
     uniqueID: 2862300655
     locked: 0
   - name: NPCs
