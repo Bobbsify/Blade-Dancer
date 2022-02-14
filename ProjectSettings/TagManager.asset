@@ -40,6 +40,24 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Ground
+    uniqueID: 2525806325
+    locked: 0
+  - name: Dance Floor
+    uniqueID: 1130802287
+    locked: 0
+  - name: Decorations
+    uniqueID: 1856725201
+    locked: 0
+  - name: Enemy
+    uniqueID: 3382838899
+    locked: 0
+  - name: GE
+    uniqueID: 2862300655
+    locked: 0
+  - name: NPCs
+    uniqueID: 1201964261
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
