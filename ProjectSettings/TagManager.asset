@@ -18,8 +18,8 @@ TagManager:
   - EnemyFollowPlayer
   - Player
   - LeftAndRight
-  - 
-  - 
+  - Goal
+  - EnemyFlee
   - 
   - 
   - 
