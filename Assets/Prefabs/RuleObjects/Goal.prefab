@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2923801745263754657}
   - component: {fileID: 3210842613904079098}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PoleRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,7 +54,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1381883495037855275}
   - component: {fileID: 1094265275072258422}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 3395232647765131733}
   - component: {fileID: 3395232647765131729}
   - component: {fileID: 3395232647765131728}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Goal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -211,7 +211,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6484425854006605308}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Poles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -245,7 +245,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3642184263069641289}
   - component: {fileID: 680184154340432882}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -289,7 +289,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6930451028682728017}
   - component: {fileID: 9034150745926850036}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: PoleLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
