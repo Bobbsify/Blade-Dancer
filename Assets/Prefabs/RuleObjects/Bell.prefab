@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   sound:
-    audio: {fileID: 8300000, guid: 559e992273671c0438c8bca8cbfcebff, type: 3}
+    audio: {fileID: 8300000, guid: 8dcc1618183674647a82dbf2bc90083e, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 1
     outputType: 2
