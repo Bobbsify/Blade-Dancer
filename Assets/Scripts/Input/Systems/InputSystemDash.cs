@@ -50,7 +50,6 @@ public class InputSystemDash : MonoBehaviour, IInputEntity
 
     private void SendInput()
     {
-       
         if (Input.GetAxisRaw(this.dashAxisName) > 0f)
         {
             for (int i = 0; i < this.receivers.Length; i++)

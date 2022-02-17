@@ -204,7 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputType: 0
   searchRoot: {fileID: 1787614904}
-  danceAxisName: Fire3
+  danceAxisName: Jump
 --- !u!114 &16071989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputType: 1
   searchRoot: {fileID: 1787614904}
-  dashAxisName: Jump
+  dashAxisName: Fire3
 --- !u!114 &16071990
 MonoBehaviour:
   m_ObjectHideFlags: 0
