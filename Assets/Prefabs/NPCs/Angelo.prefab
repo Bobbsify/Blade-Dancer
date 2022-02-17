@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Angelo L'Angelo
   characterLine: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-  characterPortrait: {fileID: -590446102760096698, guid: e62308de27eaa10428e7583628444b2a,
+  characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Angelo L'Angelo
   characterLine: "ngelo l'angelo \xE8 il mio nome"
-  characterPortrait: {fileID: -590446102760096698, guid: e62308de27eaa10428e7583628444b2a,
+  characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}

@@ -47,7 +47,7 @@ MonoBehaviour:
   characterLine: "E io sono Angelo! L'Angelo! Il pi\xF9 famoso Angelo di tutto il
     paradiso! il pi\xF9 forte, il pi\xF9 emozionante, il pi\xF9 eloquente angelo
     di sempre!"
-  characterPortrait: {fileID: -590446102760096698, guid: e62308de27eaa10428e7583628444b2a,
+  characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 8300000, guid: 2024a5eca3967fc4ead8442662c59c21, type: 3}
@@ -1438,7 +1438,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Angelo
   characterLine: Dai! Forza! Dai! Prova!
-  characterPortrait: {fileID: -590446102760096698, guid: e62308de27eaa10428e7583628444b2a,
+  characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 8300000, guid: 2024a5eca3967fc4ead8442662c59c21, type: 3}
@@ -1492,7 +1492,7 @@ MonoBehaviour:
   characterName: Annohiath
   characterLine: ... Questa prova consiste nel completare, a ritmo di musica, una
     serie di "Regole" inviata direttamente dai nostri capi.
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: Per iniziare puoi premere il pulsante alla tua sinistra..
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -2056,7 +2056,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1769160971
-  m_SortingLayer: -4
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: bd43764b639ef924198367131cdcf16c, type: 3}
   m_Color: {r: 0.13725491, g: 0.14117648, b: 0.13725491, a: 1}
@@ -2650,7 +2650,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1856725201
-  m_SortingLayer: -3
+  m_SortingLayer: -4
   m_SortingOrder: 5
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -5413,7 +5413,7 @@ TilemapRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1769160971
-  m_SortingLayer: -4
+  m_SortingLayer: -6
   m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
@@ -5468,7 +5468,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: Io Sono Annohiath, l'addetto alla reception..
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -5615,7 +5615,7 @@ MonoBehaviour:
   characterLine: Per completare una stanza tutte le regole bianche devono essere
     completate. Alcune regole saranno rosa, quest'ultime invece, non devono essere
     seguite.
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -5833,7 +5833,7 @@ MonoBehaviour:
   characterName: ???
   characterLine: ... Bevenuto alla SPDDPDA o, Super Prova Definitiva Della Potenza
     Dell'Anima.
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -6061,7 +6061,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: ...
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -6231,7 +6231,7 @@ MonoBehaviour:
   characterName: Angelo
   characterLine: "Tra l'altro! Sapevi che gli angeli in media sono MOLTO pi\xF9 intelligenti
     dei demoni? E anche molto pi\xF9 belli!"
-  characterPortrait: {fileID: -590446102760096698, guid: e62308de27eaa10428e7583628444b2a,
+  characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 8300000, guid: 2024a5eca3967fc4ead8442662c59c21, type: 3}
