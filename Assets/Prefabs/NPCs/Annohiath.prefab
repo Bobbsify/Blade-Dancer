@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 1166514187397831531}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 9140143270680209527}
   m_RootOrder: 1
@@ -71,13 +71,13 @@ SpriteRenderer:
   m_SortingLayerID: 1201964261
   m_SortingLayer: -1
   m_SortingOrder: 10
-  m_Sprite: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  m_Sprite: {fileID: 3542127132570728493, guid: ef2fb8a8ed7333747afd852659c19ce6,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.16, y: 0.28}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: Ciao.. piacere....
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
@@ -288,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: Sono Annohiath, il receptionist della SPDDPDA...
-  characterPortrait: {fileID: -6204394149375907370, guid: 5f7c4329e8b74e24680fffce3eccd70f,
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
     audio: {fileID: 0}
