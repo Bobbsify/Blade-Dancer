@@ -1502,10 +1502,10 @@ MonoBehaviour:
   cheerThreshold: 50
   cheerChargingBonus: 2
   timesUpSound:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 56220d308d7840f4fb63fa3474055ce0, type: 3}
     playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
+    audioType: 1
+    outputType: 2
 --- !u!4 &2027274951
 Transform:
   m_ObjectHideFlags: 0
