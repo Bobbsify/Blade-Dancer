@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -199,7 +199,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &128720935
@@ -246,8 +246,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: Ah! Ma che maleducato non mi sono presentato..
+  characterLine: Ah! Ma che maleducato non mi sono presentato...
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 154814531}
 --- !u!1 &154814529
 GameObject:
@@ -293,9 +298,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Io sono Caronte autoproclamato assaggiatore di Whiskey, piacere
-    di fare la tua conoscenza
+  characterLine: Io sono Caronte, autoproclamato assaggiatore di Whiskey, piacere
+    di fare la tua conoscenza!
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 599221850}
 --- !u!1 &224891913
 GameObject:
@@ -341,8 +351,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Comunque non importa..
+  characterLine: Comunque non importa...
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1631201190}
 --- !u!1 &277534962
 GameObject:
@@ -564,8 +579,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Eccoci qua.. lo sportello della morte..
+  characterLine: Eccoci qua! Lo sportello della morte!
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 975172887}
 --- !u!1 &401331964
 GameObject:
@@ -645,7 +665,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &471316825
@@ -692,8 +712,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Non mi sembra ti abbiano tagliato prima di morire ahah
+  characterLine: Non mi sembra ti abbiano tagliato la lingua prima di morire.
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 224891915}
 --- !u!1 &537506555
 GameObject:
@@ -739,8 +764,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: "Ormai \xE8 da ore che siamo in viaggio, siamo quasi arrivati"
+  characterLine: "Ormai \xE8 da ore che siamo in viaggio, siamo quasi arrivati."
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 128720937}
 --- !u!1 &584591727
 GameObject:
@@ -838,8 +868,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: E tu sei.. beh, morto preparando pancake.. ahahah
+  characterLine: E tu sei, beh, morto preparando pancake... ahahah.
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1618239860}
 --- !u!1 &679443401
 GameObject:
@@ -885,8 +920,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: ... Ciao
+  characterLine: Ciao.
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 0}
 --- !u!1 &749869460
 GameObject:
@@ -934,6 +974,11 @@ MonoBehaviour:
   characterName: Caronte
   characterLine: ...
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1513773082}
 --- !u!1 &791707139
 GameObject:
@@ -965,9 +1010,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Mh? Come faccio a saperlo? beh dopotutto ti sono venuto a prendere,
-    noi sappiamo il luogo, l'ora e poi vediamo il tutto accadere
+  characterLine: Mh? Come faccio a saperlo? Beh, dopotutto sono venuto a prenderti,
+    noi sappiamo il luogo, l'ora e vediamo il tutto accadere.
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 810392427}
 --- !u!4 &791707141
 Transform:
@@ -1028,8 +1078,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Caronte
   characterLine: "Almeno, questo da quando \xE8 in vigore il nuovo sistema, poi non
-    ne so molto, sono decentemente nuovo da queste parti.."
+    ne so molto, sono nuovo da queste parti."
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1755547198}
 --- !u!1 &852534403
 GameObject:
@@ -1204,8 +1259,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Prego, puoi scendere dalla macchina
+  characterLine: Prego, puoi scendere dalla macchina.
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 0}
 --- !u!1 &979733900
 GameObject:
@@ -1365,7 +1425,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1222001044
@@ -1446,7 +1506,7 @@ SpriteRenderer:
   m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1278738569
@@ -1554,8 +1614,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: Ah! Quindi sei sveglio..
+  characterLine: Ah! Quindi sei sveglio!
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 537506557}
 --- !u!1 &1397825397
 GameObject:
@@ -1803,6 +1868,11 @@ MonoBehaviour:
   characterName: Caronte
   characterLine: Oh, siamo arrivati!
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 0}
 --- !u!1 &1594732980
 GameObject:
@@ -1882,6 +1952,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 0
   currentHealth: 0
+  invincibilityDuration: 0.5
+  playerDamage:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  playerDie:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  playerFall:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  playerLand:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
 --- !u!95 &1602344800
 Animator:
   serializedVersion: 3
@@ -1958,8 +2049,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Che morte ridicola..
+  characterLine: Che morte ridicola...
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 791707140}
 --- !u!1 &1631201188
 GameObject:
@@ -2008,6 +2104,11 @@ MonoBehaviour:
   characterLine: "Ehi, non per metterti fretta ma hai gi\xE0 scelto se andrai in
     paradiso o all'inferno?"
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1895653805}
 --- !u!1 &1632389527
 GameObject:
@@ -2055,6 +2156,11 @@ MonoBehaviour:
   characterName: Caronte
   characterLine: Non sei di molte parole eh?
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 471316827}
 --- !u!1 &1668644229
 GameObject:
@@ -2286,6 +2392,11 @@ MonoBehaviour:
   characterName: Caronte
   characterLine: ...
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1767567138}
 --- !u!1 &1767567136
 GameObject:
@@ -2333,6 +2444,11 @@ MonoBehaviour:
   characterName: Caronte
   characterLine: ...
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 1632389529}
 --- !u!1 &1781378430
 GameObject:
@@ -2516,8 +2632,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: Cerca solo di non farti abbindolare da quelli la, per il tuo bene
+  characterLine: Cerca solo di non farti abbindolare da quelli la, per il tuo bene.
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
+  voiceOverride:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
   nextDialogue: {fileID: 749869462}
 --- !u!1001 &1978544567
 PrefabInstance:
