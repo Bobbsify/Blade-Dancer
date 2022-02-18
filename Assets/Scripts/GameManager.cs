@@ -519,5 +519,22 @@ public class GameManager : MonoBehaviour
     {
         mainCamera.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z);
     }
-    
+
+    internal void AskForTimerStart()
+    {
+        if (!timer.IsGoing() && currentStreak != null) 
+        { 
+            timer.StartTimer();
+        }
+    }
+
+    internal void AskForTimerStop()
+    {
+        if (timer.IsGoing() && currentStreak != null)
+        {
+            timer.StopTimer();
+        }
+    }
+
+
 }

@@ -12,6 +12,8 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     private int minCharge = 1;
     [SerializeField]
     private int maxCharge = 5;
+    [SerializeField]
+    private float danceDuration = 1f;
 
     [Header("Dance Ability Area Defining")]
     [SerializeField]
@@ -99,7 +101,7 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
                 enemy.Dance();
             }
         }
-        SendActionToGameManager();
+        StartCoroutine(DanceRoutine());
         this.charge = minCharge;
         danceUI.UpdateCharge(charge);
         this.enabled = false; //Deactivate after use;
@@ -114,6 +116,14 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     public void SendActionToGameManager()
     {
         this.gameManager.ActionEventTrigger(Actions.Dance);
+    }
+
+    private IEnumerator DanceRoutine()
+    {
+        gameManager.AskForTimerStop();
+        yield return new WaitForSeconds(danceDuration);
+        gameManager.AskForTimerStart();
+        SendActionToGameManager();
     }
 
     void IInputReceiverDance.ReceiveInputDance()
