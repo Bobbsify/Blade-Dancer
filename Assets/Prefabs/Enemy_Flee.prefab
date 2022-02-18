@@ -4961,7 +4961,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7251394527796283650}
-  - component: {fileID: 7251394527796283655}
   - component: {fileID: 7251394527796283654}
   - component: {fileID: -4049630656755785450}
   - component: {fileID: 1720986811016011097}
@@ -4970,6 +4969,7 @@ GameObject:
   - component: {fileID: 7251394527796283675}
   - component: {fileID: 8311623136659962207}
   - component: {fileID: 3030171392430779592}
+  - component: {fileID: 688641169}
   m_Layer: 8
   m_Name: Enemy_Flee
   m_TagString: Untagged
@@ -4995,19 +4995,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &7251394527796283655
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7251394527796283674}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &7251394527796283654
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5149,6 +5136,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   danceDuration: 2
   danceSpeed: 0.5
+--- !u!135 &688641169
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7251394527796283674}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.66572654
+  m_Center: {x: 0, y: 0, z: 0.038490534}
 --- !u!1 &7251394528346421223
 GameObject:
   m_ObjectHideFlags: 0
