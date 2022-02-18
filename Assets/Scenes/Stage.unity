@@ -1481,7 +1481,7 @@ MonoBehaviour:
   HUDAnimator: {fileID: 2147415104}
   cheerManager: {fileID: 341461291}
   healthController: {fileID: 134483441}
-  endless: 1
+  endless: 0
   firstRun: 1
   customRunEnabled: 0
   streaksCompleted: 1
