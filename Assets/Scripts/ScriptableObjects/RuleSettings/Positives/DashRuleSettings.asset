@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: DashRuleSettings
   m_EditorClassIdentifier: 
   durationType: 0
-  durationMod: 1
+  durationMod: 1.6
   appliedActions: 02000000
   ruleRelatedObjects: []
   mutuallyExclusives: 02000000100000000e000000
-  durationModDivider: 3
   minAmount: 1
   maxAmount: 6
+  extraTime: 1
+  coolDownTime: 0.6
