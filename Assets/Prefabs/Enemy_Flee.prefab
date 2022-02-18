@@ -5134,7 +5134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c1f32236f35d8b47bfb90f21c076fb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  danceDuration: 2
+  danceDuration: 6
   danceSpeed: 0.5
 --- !u!135 &688641169
 SphereCollider:
