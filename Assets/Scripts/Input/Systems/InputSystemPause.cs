@@ -20,6 +20,8 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
     [SerializeField]
     private string pauseAxisName;
 
+    private bool canPause = true;
+
     private IInputReceiverPause[] receivers;
 
     private void OnValidate()
@@ -53,7 +55,7 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
 
     private void SendInput()
     {
-        if (Input.GetButtonUp(pauseAxisName) && this.enabled)
+        if (Input.GetButtonUp(pauseAxisName) && canPause)
         {
             for (int i = 0; i < this.receivers.Length; i++)
             {
@@ -64,6 +66,6 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
     }
     public void ToggleInput(bool state)
     {
-        this.enabled = state;
+        this.canPause = state;
     }
 }

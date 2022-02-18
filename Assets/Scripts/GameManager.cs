@@ -253,7 +253,7 @@ public class GameManager : MonoBehaviour
         streakMusic = streakMusicSelector.GetMusic();
         PlaySound(streakMusic, true);
 
-        this.inputManager.DisableInput<InputSystemPause>();
+        this.inputManager.DisablePause();
        //Destroy(startingRoom);
         GenerateNewStreak();
         nextStage = currentStreak.GetCurrentStage();
@@ -464,7 +464,7 @@ public class GameManager : MonoBehaviour
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
         RemoveProjectiles();
         PlayerDamageTrigger();
-        this.inputManager.EnableInput<InputSystemPause>();
+        this.inputManager.EnablePause();
         ResetCamera();
     }
 

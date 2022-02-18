@@ -8,36 +8,30 @@ public class InputManager : MonoBehaviour, IInputManager
 	[SerializeField]
 	private GameObject searchRoot;
 
-	private IInputEntity[] receivers;
+	private IInputEntity[] inputSenders;
 
 	private void Start()
 	{
-		this.receivers = this.searchRoot.GetComponentsInChildren<IInputEntity>(true);
+		this.inputSenders = GetComponentsInChildren<IInputEntity>(true);
 	}
 	public GameObject GetRoot()
 	{
 		return this.searchRoot;
 	}
 
-	public void DisableInput<T>() where T : IInputEntity
+	public void EnablePause()
 	{
-		foreach (IInputEntity receiver in receivers)
+		if (TryGetComponent(out InputSystemPause pause))
 		{
-			if (receiver.GetType() is T) 
-			{
-				receiver.ToggleInput(false);
-			}
+			pause.ToggleInput(true);
 		}
 	}
 
-	public void EnableInput<T>() where T : IInputEntity
+	public void DisablePause()
 	{
-		foreach (IInputEntity receiver in receivers)
+		if (TryGetComponent(out InputSystemPause pause))
 		{
-			if (receiver.GetType() is T)
-			{
-				receiver.ToggleInput(true);
-			}
+			pause.ToggleInput(false);
 		}
 	}
 
