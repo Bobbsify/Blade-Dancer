@@ -44,13 +44,17 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
     private void Update()
     {
         if (this.inputType == InputType.Update)
+        {
             this.SendInput();
+        }   
     }
 
     private void FixedUpdate()
     {
         if (this.inputType == InputType.FixedUpdate)
+        {
             this.SendInput();
+        } 
     }
 
     private void SendInput()
@@ -64,6 +68,7 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
             }
         }
     }
+
     public void ToggleInput(bool state)
     {
         this.canPause = state;

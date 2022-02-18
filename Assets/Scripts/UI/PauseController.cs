@@ -36,6 +36,10 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     [SerializeField]
     public GameObject controlsButton;
 
+    [SerializeField]
+    private string pauseBackName;
+
+
     private CursorSetter cursorSetter;
 
     private GameObject player;
@@ -51,6 +55,15 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
         abilities = player.GetComponentsInChildren<IAbility>(true);
         interactManager = GameObject.Find("InputManager").GetComponentInChildren<InputSystemInteract>();
     }
+
+    private void Update()
+    {
+        if (Input.GetButtonUp(pauseBackName))
+        {
+            BackInputPause();
+        }
+    }
+
     public void Continue()
     {
         pauseMenu.SetActive(false);
@@ -108,6 +121,25 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
         controls.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(controlsButton);
+    }
+
+    public void BackInputPause()
+    {
+        if (settingMenu.activeSelf)
+        {
+            homePage.SetActive(true);
+            settingMenu.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(optionClosedButton);
+        }
+
+        if (controls.activeSelf)
+        {
+            settingMenu.SetActive(true);
+            controls.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(optionsFirstButton);
+        }
     }
 
     public void ReceiveInputPause()
