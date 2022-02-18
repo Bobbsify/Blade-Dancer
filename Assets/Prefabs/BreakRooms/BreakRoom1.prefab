@@ -1752,7 +1752,7 @@ MonoBehaviour:
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
-  nextDialogue: {fileID: 7911884419840458321}
+  nextDialogue: {fileID: 0}
 --- !u!1 &2479388763241119572
 GameObject:
   m_ObjectHideFlags: 0
@@ -2106,6 +2106,8 @@ Transform:
   - {fileID: 377034799641984076}
   - {fileID: 6479534692970275723}
   - {fileID: 8216910615661667581}
+  - {fileID: 7785652532965667083}
+  - {fileID: 5005185137447238504}
   m_Father: {fileID: 4739224641705818604}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5730,6 +5732,60 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
+--- !u!1 &4424746299688875102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5005185137447238504}
+  - component: {fileID: 3109058727562647118}
+  m_Layer: 0
+  m_Name: Line6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5005185137447238504
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424746299688875102}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3399406460005872303}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3109058727562647118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4424746299688875102}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Daniel Danse
+  characterLine: Ora forza, smamma. Ho dedicato fin troppo tempo ad un inetto come
+    te!
+  characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  nextDialogue: {fileID: 0}
 --- !u!1 &4458382116180079931
 GameObject:
   m_ObjectHideFlags: 0
@@ -5783,6 +5839,61 @@ MonoBehaviour:
     audioType: 0
     outputType: 0
   nextDialogue: {fileID: 6432177791447832076}
+--- !u!1 &4647794774106219239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7785652532965667083}
+  - component: {fileID: 5048162150152645894}
+  m_Layer: 0
+  m_Name: Line5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7785652532965667083
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647794774106219239}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3399406460005872303}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5048162150152645894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4647794774106219239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Daniel Danse
+  characterLine: Queste anime chiuse qui da eoni ormai sono suscettibili alla danza
+    di cui io sono gran maestro! Non hanno speranze contro un professionista come
+    me.
+  characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  nextDialogue: {fileID: 3109058727562647118}
 --- !u!1 &5064898409264601709
 GameObject:
   m_ObjectHideFlags: 0
@@ -6211,7 +6322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
   characterLine: Beh che t'aspetti? Qualche tipo di elogio? Non sei mica un ballerino
-    come me.. Forza! Smamma.
+    come me.
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6219,7 +6330,7 @@ MonoBehaviour:
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
-  nextDialogue: {fileID: 0}
+  nextDialogue: {fileID: 5048162150152645894}
 --- !u!1 &8327236606558725733
 GameObject:
   m_ObjectHideFlags: 0
