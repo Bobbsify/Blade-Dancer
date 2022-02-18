@@ -18,6 +18,10 @@ public class TimerManager : MonoBehaviour, IGameEntity
     [SerializeField]
     private int cheerChargingBonus = 2;
 
+    [Header("Sound")]
+    [SerializeField]
+    private SoundPacket timesUpSound;
+
     private GameManager gameManager;
 
     private float maxTime;
@@ -39,6 +43,7 @@ public class TimerManager : MonoBehaviour, IGameEntity
             if (currentTime <= 0) 
             {
                 doTimer = false;
+                gameManager.PlaySound(timesUpSound);
                 gameManager.KillPlayer();
             }
         }
