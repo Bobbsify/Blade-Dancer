@@ -4281,7 +4281,6 @@ MonoBehaviour:
   - ASSURDO
   - ALLUCINANTE
   - BOMBASTICO
-  - GALVANIZZANTE
   cheerSounds:
   - audio: {fileID: 8300000, guid: e3b6cf7dca16a5741a9c53cd551487cc, type: 3}
     playPos: {x: 0, y: 0, z: 0}
@@ -6655,6 +6654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9092505181373489284}
   - component: {fileID: 2386669542698342887}
+  - component: {fileID: 4850483759797430647}
   m_Layer: 0
   m_Name: Dance
   m_TagString: Untagged
@@ -6704,6 +6704,25 @@ MonoBehaviour:
   - {fileID: 5172077977447839520}
   - {fileID: 4464472256336156467}
   - {fileID: 6466709099129769957}
+--- !u!95 &4850483759797430647
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8101475451833696713}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8f5103c649d9671418d1fb4f9093010f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8106891528968328012
 GameObject:
   m_ObjectHideFlags: 0

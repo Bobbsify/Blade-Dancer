@@ -9931,9 +9931,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af8c21d4cac2b4702ac7011fb28d3f9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charge: 5
+  charge: 1
   minCharge: 1
   maxCharge: 5
+  danceDuration: 1
   minSphereWidth: 1
   maxSphereWidth: 10
   danceParticles: {fileID: 6342513850383887989}

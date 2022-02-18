@@ -1242,6 +1242,31 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 932930734}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1628839169 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8101475451833696713, guid: 25956f7ff032eb64fbc76915aada8d2b,
+    type: 3}
+  m_PrefabInstance: {fileID: 134483437}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1628839170
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628839169}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1637311533 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6020665748079672166, guid: 5a49ca99676c3104da1f2bd452235ac2,
@@ -1500,6 +1525,11 @@ MonoBehaviour:
   timerText: {fileID: 134483440}
   cheerThreshold: 50
   cheerChargingBonus: 2
+  timesUpSound:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
 --- !u!4 &2027274951
 Transform:
   m_ObjectHideFlags: 0
