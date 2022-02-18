@@ -1141,6 +1141,7 @@ MonoBehaviour:
   optionsFirstButton: {fileID: 932930739}
   optionClosedButton: {fileID: 702196010}
   controlsButton: {fileID: 53735811}
+  pauseBackName: Tab
 --- !u!114 &1461939163
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,6 +1501,11 @@ MonoBehaviour:
   timerText: {fileID: 134483440}
   cheerThreshold: 50
   cheerChargingBonus: 2
+  timesUpSound:
+    audio: {fileID: 0}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
 --- !u!4 &2027274951
 Transform:
   m_ObjectHideFlags: 0
