@@ -2101,8 +2101,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Caronte
-  characterLine: "Ehi, non per metterti fretta ma hai gi\xE0 scelto se andrai in
-    paradiso o all'inferno?"
+  characterLine: "Ehi, non \xE8 per metterti fretta ma hai gi\xE0 scelto se andrai
+    in paradiso o all'inferno?"
   characterPortrait: {fileID: 21300000, guid: 94621dcf2b51da24ab7047e4237f98eb, type: 3}
   voiceOverride:
     audio: {fileID: 0}
