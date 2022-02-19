@@ -44,8 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Angelo
-  characterLine: "Ce l'ha fatta!! Vedi! non \xE8 stato cos\xEC difficile! Hai proprio
-    la stoffa di diventare un gran bell'angelo!"
+  characterLine: "Ce l'ha fatta!! Vedi! Non \xE8 stato cos\xEC difficile! Hai proprio
+    la stoffa per diventare un gran bell'angelo!"
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1437,7 +1437,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Angelo
   characterLine: "Esatto! Bravissimo! Sisi! Continua cos\xEC e diventerai un angelo
-    in men che non si dica!!"
+    in men che non si dica!"
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1534,7 +1534,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: Congratualzioni nell'aver completato la prima serie di stanze
+  characterLine: Congratulazioni nell'aver completato la prima serie di stanze...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1647,7 +1647,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: "Non \xE8 da tutti arrivare fin qui.."
+  characterLine: "Non \xE8 da tutti arrivare fin qui..."
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1744,7 +1744,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: ... Ad ogni modo, quando vuoi proseguire premi nuovamente il bottone
+  characterLine: ... Ad ogni modo, quando vuoi proseguire premi nuovamente il bottone...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
