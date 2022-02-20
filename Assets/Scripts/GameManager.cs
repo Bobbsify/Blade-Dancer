@@ -105,6 +105,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private HealthController healthController;
 
+    [SerializeField]
+    private GameObject pauseIcon;
+
     [Header("Debug")]
     [SerializeField]
     [Tooltip("Never leaves the first break room")]
@@ -253,8 +256,11 @@ public class GameManager : MonoBehaviour
         streakMusic = streakMusicSelector.GetMusic();
         PlaySound(streakMusic, true);
 
+        //Pause disable
         this.inputManager.DisablePause();
-       //Destroy(startingRoom);
+        this.pauseIcon.SetActive(true);
+
+        //Destroy(startingRoom);
         GenerateNewStreak();
         nextStage = currentStreak.GetCurrentStage();
 
@@ -447,6 +453,10 @@ public class GameManager : MonoBehaviour
         PlaySound(breakRoomMusic, true);
         StopSound(streakMusic, true);
 
+        //Pause enable
+        this.inputManager.EnablePause();
+        this.pauseIcon.SetActive(false);
+
         //End Streak
         Destroy(currentArena);
         firstRun = false;
@@ -464,7 +474,6 @@ public class GameManager : MonoBehaviour
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
         RemoveProjectiles();
         PlayerDamageTrigger();
-        this.inputManager.EnablePause();
         ResetCamera();
     }
 
