@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Angelo
   characterLine: "E io sono Angelo! L'Angelo! Il pi\xF9 famoso Angelo di tutto il
-    paradiso! il pi\xF9 forte, il pi\xF9 emozionante, il pi\xF9 eloquente angelo
+    paradiso! Il pi\xF9 forte, il pi\xF9 emozionante, il pi\xF9 eloquente angelo
     di sempre!"
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: ... Questa prova consiste nel completare, a ritmo di musica, una
-    serie di "Regole" inviata direttamente dai nostri capi.
+    serie di "Regole" inviate direttamente dai nostri capi.
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1604,7 +1604,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: Per iniziare puoi premere il pulsante alla tua sinistra..
+  characterLine: Per iniziare puoi premere il pulsante alla tua sinistra...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5466,7 +5466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: Io Sono Annohiath, l'addetto alla reception..
+  characterLine: Io sono Annohiath, l'addetto alla reception...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5830,7 +5830,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: ... Bevenuto alla SPDDPDA o, Super Prova Definitiva Della Potenza
+  characterLine: ... Benvenuto alla SPDDPDA, la Super Prova Definitiva Della Potenza
     Dell'Anima.
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -6228,8 +6228,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Angelo
-  characterLine: "Tra l'altro! Sapevi che gli angeli in media sono MOLTO pi\xF9 intelligenti
-    dei demoni? E anche molto pi\xF9 belli!"
+  characterLine: "Tra l'altro lo sapevi che gli angeli in media sono MOLTO pi\xF9
+    intelligenti dei demoni? E anche molto pi\xF9 belli!"
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
