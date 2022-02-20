@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: ShootRuleSettings
   m_EditorClassIdentifier: 
   durationType: 0
-  durationMod: 1
+  durationMod: 2
   appliedActions: 01000000
   ruleRelatedObjects: []
   mutuallyExclusives: 010000000f000000
-  durationModDivider: 3
-  minAmount: 1
+  minAmount: 2
   maxAmount: 6
+  coolDownShoot: 0.5
+  extraTime: 1

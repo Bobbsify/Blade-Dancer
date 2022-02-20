@@ -8,6 +8,8 @@ public class UIDanceController : MonoBehaviour
     [SerializeField]
     public List<Image> chargeBackgrounds = new List<Image>();
 
+    private Animator anim;
+
     private Color whiteColor = new Color(0.95311f, 0.95311f, 0.95311f);
     private Color purpleColor = new Color(0.56078f, 0.35294f, 0.85882f);
 
@@ -27,6 +29,8 @@ public class UIDanceController : MonoBehaviour
     private void Start()
     {
         maxCharge = chargeBackgrounds.Count;
+        TryGetComponent(out anim);
+        anim.SetInteger("charge", 1);
     }
 
     public void UpdateCharge(int charge) 
@@ -39,5 +43,6 @@ public class UIDanceController : MonoBehaviour
         {
             chargeBackgrounds[i].color = purpleColor;
         }
+        anim.SetInteger("charge", charge);
     }
 }

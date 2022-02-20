@@ -140,6 +140,16 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(optionsFirstButton);
         }
+
+        if (homePage.activeSelf)
+        {
+            pauseMenu.SetActive(false);
+            cursorSetter.SetCursor(CursorType.Game);
+            Time.timeScale = 1f;
+            pause = false;
+            EnableAllAbilities();
+            interactManager.enabled = true;
+        }
     }
 
     public void ReceiveInputPause()
