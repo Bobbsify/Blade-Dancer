@@ -2065,7 +2065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: Ma guarda te! Un perdente! Era un po' che non se ne vedevano..
+  characterLine: Ma guarda te! Un perdente! Era da un po' che non se ne vedevano...
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5886,7 +5886,7 @@ MonoBehaviour:
   characterName: Daniel Danse
   characterLine: Queste anime chiuse qui da eoni ormai sono suscettibili alla danza
     di cui io sono gran maestro! Non hanno speranze contro un professionista come
-    me.
+    me!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6248,8 +6248,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Vabb\xE8 ora forza, smamma. Ho dedicato fin troppo tempo ad un
-    inetto come te!"
+  characterLine: "Vabb\xE8, ora smamma. Ho dedicato fin troppo tempo ad un inetto
+    come te!"
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6376,8 +6376,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Beh che t'aspetti? Qualche tipo di elogio? Non sei mica un ballerino
-    come me.
+  characterLine: Beh, che t'aspetti? Qualche tipo di elogio? Non sei mica un ballerino
+    come me!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
