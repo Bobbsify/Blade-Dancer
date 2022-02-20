@@ -2108,6 +2108,7 @@ Transform:
   - {fileID: 8216910615661667581}
   - {fileID: 7785652532965667083}
   - {fileID: 5005185137447238504}
+  - {fileID: 7550476974362397747}
   m_Father: {fileID: 4739224641705818604}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5776,8 +5777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Ora forza, smamma. Ho dedicato fin troppo tempo ad un inetto come
-    te!
+  characterLine: "Tra l'altro quando ballo \xE8 come se il tempo si rallentasse o
+    si fermasse... questo posto \xE8 proprio strano."
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5785,7 +5786,7 @@ MonoBehaviour:
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
-  nextDialogue: {fileID: 0}
+  nextDialogue: {fileID: 7838729872927227210}
 --- !u!1 &4458382116180079931
 GameObject:
   m_ObjectHideFlags: 0
@@ -6203,6 +6204,60 @@ MonoBehaviour:
     audioType: 0
     outputType: 0
   nextDialogue: {fileID: 7046399084672598093}
+--- !u!1 &6605742480892504226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7550476974362397747}
+  - component: {fileID: 7838729872927227210}
+  m_Layer: 0
+  m_Name: Line7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7550476974362397747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6605742480892504226}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3399406460005872303}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7838729872927227210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6605742480892504226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Daniel Danse
+  characterLine: "Vabb\xE8 ora forza, smamma. Ho dedicato fin troppo tempo ad un
+    inetto come te!"
+  characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  nextDialogue: {fileID: 0}
 --- !u!1 &6617403617262221822
 GameObject:
   m_ObjectHideFlags: 0
