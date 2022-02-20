@@ -84,6 +84,7 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     public void Trigger()
     {
         playerController.DisableOtherAbilities<Dance>();
+        gameManager.ShakeCamera();
 
         var main = danceParticles.main;
         main.startSpeed = particleDefaultSpeed + (charge * speedMultiplier);

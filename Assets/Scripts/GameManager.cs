@@ -108,6 +108,11 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject pauseIcon;
 
+    [Header("Camera")]
+
+    [SerializeField]
+    private CameraController cameraController;
+
     [Header("Debug")]
     [SerializeField]
     [Tooltip("Never leaves the first break room")]
@@ -153,8 +158,6 @@ public class GameManager : MonoBehaviour
 
     //Other
 
-    private GameObject mainCamera;
-
     private bool tookDamage = false;
 
     private void OnValidate()
@@ -185,7 +188,6 @@ public class GameManager : MonoBehaviour
 		this.GeneratePlayerPawn();
         PlayerPawn.GetComponent<Shoot>().SetProjectilesRoot(this.projectilesRoot);
         streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules.getAll()), this);
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 	}
 
 	private void Start()
@@ -241,6 +243,11 @@ public class GameManager : MonoBehaviour
     {
         playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
         GenerateNewStreak();
+    }
+
+    public void ShakeCamera()
+    {
+        cameraController.StartShake();
     }
 
     #region StreakManagement
@@ -526,7 +533,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetCamera() 
     {
-        mainCamera.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z);
+        cameraController.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z);
     }
 
     internal void AskForTimerStart()
