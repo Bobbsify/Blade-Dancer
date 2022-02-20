@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Ma i miei amici me llaman Paco
+  characterLine: Ma i miei amici me llaman Paco!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: "Ah, hai gi\xE0 incontrato Paco? \xE8 un nostro collega fa le pulizie,
-    \xE8 un tipo a posto tutto sommato"
+  characterLine: "Ah, hai gi\xE0 incontrato Paco?  \xC8 un nostro collega che si
+    occupa delle pulizie, \xE8 un tipo a posto..."
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -181,9 +181,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Ah! Da quant'\xE8 che sei qui pivello! Uh, se hai sentito ci\xF2
-    che mormoravo intendevo che beh questa prova \xE8 pesante per un pivello come
-    te! Io che sono un esperto me la cavo benissimo"
+  characterLine: "AH! Da quant'\xE8 che sei qui pivello! Uh, se hai sentito ci\xF2
+    che mormoravo intendevo che, beh, questa prova \xE8 pesante per un pivello come
+    te! Io che sono un esperto me la cavo benissimo!"
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1682,8 +1682,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: "Angelo \xE8 in pausa e finalmente ho un po di pace, ma tu fortunatamente
-    sei qui"
+  characterLine: "Angelo \xE8 in pausa e finalmente ho un po' di pace, ma tu fortunatamente
+    sei qui!"
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2081,7 +2081,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Noterai come io ti stia bloccando la via immagino..
+  characterLine: Noterai come io ti stia bloccando la via...
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2217,8 +2217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: "Sai, almeno mi dai del lavoro da fare, ho regole da compilare,
-    statistiche da segnalare e senza contendenti beh.. \xE8 estremamente noioso questo
-    lavoro"
+    statistiche da segnalare e senza contendenti beh... \xE8 estremamente noioso
+    questo lavoro..."
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2772,7 +2772,7 @@ SpriteRenderer:
   m_Size: {x: 0.89, y: 1.06}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &3920557604866505167
@@ -6320,7 +6320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Paco
   characterLine: Quindi mi dispiace ma visto che le prossime stanze estan lerce,
-    no puedo farti andare avanti
+    no puedo farti pasar...
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6563,7 +6563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Chalchutotolin
-  characterLine: Ciao sono Chalchutotolin
+  characterLine: Ciao, sono Chalchutotolin.
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6779,7 +6779,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: Eccoti finalmente! Hai completato un'altra serie, complimenti!
+  characterLine: Eccoti, finalmente! Hai completato un'altra serie, complimenti!
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6982,7 +6982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: "Mi disipace, appena avr\xF2 finito te lo far\xF2 sapere"
+  characterLine: "Mi dispiace, appena avr\xF2 finito te lo far\xF2 sapere."
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7338,7 +7338,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: Beh, buona fortuna con la prossima Serie!
+  characterLine: Beh, buona fortuna con la prossima serie!
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7425,7 +7425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Paco
   characterLine: "E questo \xE8 perch\xE8 ho una mansione da fare, tenere pulito
-    questo posto"
+    questo posto!"
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
