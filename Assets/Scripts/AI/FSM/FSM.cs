@@ -86,6 +86,7 @@ public class FSM : MonoBehaviour,IGameEntity
             {
 				if (this.canBeKilled == true)
 				{
+					this.gameObject.GetComponent<Collider>().enabled = false;
 					SendActionToGameManager();
 					canBeKilled = false;
 				}
