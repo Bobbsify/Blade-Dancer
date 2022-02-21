@@ -125,6 +125,16 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
 
     public void BackInputPause()
     {
+        if (homePage.activeSelf)
+        {
+            pauseMenu.SetActive(false);
+            cursorSetter.SetCursor(CursorType.Game);
+            Time.timeScale = 1f;
+            pause = false;
+            EnableAllAbilities();
+            interactManager.enabled = true;
+        }
+
         if (settingMenu.activeSelf)
         {
             homePage.SetActive(true);
@@ -139,17 +149,7 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
             controls.SetActive(false);
             EventSystem.current.SetSelectedGameObject(null);
             EventSystem.current.SetSelectedGameObject(optionsFirstButton);
-        }
-
-        if (homePage.activeSelf)
-        {
-            pauseMenu.SetActive(false);
-            cursorSetter.SetCursor(CursorType.Game);
-            Time.timeScale = 1f;
-            pause = false;
-            EnableAllAbilities();
-            interactManager.enabled = true;
-        }
+        }     
     }
 
     public void ReceiveInputPause()
