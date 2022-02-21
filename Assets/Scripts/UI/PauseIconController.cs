@@ -37,9 +37,9 @@ public class PauseIconController : MonoBehaviour
         for(int i = 0; i < flashes; i++)
         { 
             pauseIcon.enabled = true;
-            yield return new WaitForSeconds(flashDuration / 2);
+            yield return new WaitForSeconds(flashDuration/2);
             pauseIcon.enabled = false;
-            yield return new WaitForSeconds(flashDuration / 2);
+            yield return new WaitForSeconds(flashDuration/2);
         }
         isInTransition = false;
     }

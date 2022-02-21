@@ -62,7 +62,7 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
 
     private void SendInput()
     {
-        if (Input.GetButtonUp(pauseAxisName) && canPause)
+        if (Input.GetButtonUp(pauseAxisName))
         {
             if (canPause)
             {
