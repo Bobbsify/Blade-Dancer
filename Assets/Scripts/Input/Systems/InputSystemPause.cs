@@ -20,6 +20,9 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
     [SerializeField]
     private string pauseAxisName;
 
+    [SerializeField]
+    private PauseIconController iconController;
+
     private bool canPause = true;
 
     private IInputReceiverPause[] receivers;
@@ -33,6 +36,11 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
             {
                 this.searchRoot = manager.GetRoot();
             }
+        }
+
+        if (iconController == null) 
+        {
+            iconController = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<PauseIconController>(true);
         }
     }
 
@@ -59,12 +67,19 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
 
     private void SendInput()
     {
-        if (Input.GetButtonUp(pauseAxisName) && canPause)
+        if (Input.GetButtonUp(pauseAxisName))
         {
-            for (int i = 0; i < this.receivers.Length; i++)
+            if (canPause)
             {
-                IInputReceiverPause receiver = this.receivers[i];
-                receiver.ReceiveInputPause();
+                for (int i = 0; i < this.receivers.Length; i++)
+                {
+                    IInputReceiverPause receiver = this.receivers[i];
+                    receiver.ReceiveInputPause();
+                }
+            }
+            else 
+            {
+                iconController.ExecutePause();
             }
         }
     }
