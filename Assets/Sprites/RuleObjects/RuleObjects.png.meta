@@ -138,10 +138,10 @@ TextureImporter:
       name: Ball
       rect:
         serializedVersion: 2
-        x: 0
-        y: 200
-        width: 8
-        height: 8
+        x: 3
+        y: 178
+        width: 25
+        height: 25
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -159,10 +159,10 @@ TextureImporter:
       name: Pot1
       rect:
         serializedVersion: 2
-        x: 16
-        y: 197
-        width: 7
-        height: 11
+        x: 32
+        y: 192
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -180,10 +180,10 @@ TextureImporter:
       name: Pot2
       rect:
         serializedVersion: 2
-        x: 32
-        y: 197
-        width: 7
-        height: 11
+        x: 48
+        y: 192
+        width: 11
+        height: 16
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -201,10 +201,10 @@ TextureImporter:
       name: Pot3
       rect:
         serializedVersion: 2
-        x: 48
-        y: 201
-        width: 7
-        height: 7
+        x: 64
+        y: 198
+        width: 11
+        height: 10
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -222,10 +222,10 @@ TextureImporter:
       name: Gong
       rect:
         serializedVersion: 2
-        x: 64
-        y: 197
-        width: 13
-        height: 11
+        x: 80
+        y: 194
+        width: 16
+        height: 14
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,7 +244,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 180
+        y: 164
         width: 12
         height: 12
       alignment: 0
@@ -265,7 +265,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 18
-        y: 180
+        y: 164
         width: 8
         height: 12
       alignment: 0
@@ -286,7 +286,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 36
-        y: 180
+        y: 164
         width: 4
         height: 12
       alignment: 0
@@ -307,7 +307,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 50
-        y: 180
+        y: 164
         width: 8
         height: 12
       alignment: 0
@@ -328,7 +328,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 146
+        y: 130
         width: 19
         height: 30
       alignment: 0
@@ -349,7 +349,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 32
-        y: 157
+        y: 141
         width: 12
         height: 19
       alignment: 0
@@ -370,7 +370,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 96
-        y: 156
+        y: 140
         width: 53
         height: 20
       alignment: 0
@@ -391,7 +391,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 48
-        y: 157
+        y: 141
         width: 12
         height: 19
       alignment: 0
@@ -412,7 +412,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 64
-        y: 157
+        y: 141
         width: 12
         height: 19
       alignment: 0
@@ -433,7 +433,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 80
-        y: 157
+        y: 141
         width: 12
         height: 19
       alignment: 0
@@ -454,11 +454,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 5
-        y: 16
+        y: 0
         width: 6
         height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
