@@ -6319,8 +6319,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Quindi mi dispiace ma visto che le prossime stanze estan lerce,
-    no puedo farti pasar...
+  characterLine: Quindi mi dispiace ma visto che le prossime stanze estan sucias,
+    no puedes pasar...
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6563,7 +6563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Chalchutotolin
-  characterLine: Ciao, sono Chalchutotolin.
+  characterLine: Hola, me llamo Chalchutotolin.
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6982,7 +6982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: "Mi dispiace, appena avr\xF2 finito te lo far\xF2 sapere."
+  characterLine: "Lo lamento mucho, appena avr\xF2 finito te lo far\xF2 sapere."
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
