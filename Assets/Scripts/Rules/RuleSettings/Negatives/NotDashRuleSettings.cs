@@ -16,7 +16,7 @@ public class NotDashRuleSettings : RuleSetting
     private int minAmount = 1;
 
     [SerializeField]
-    [Range(3, 6)]
+    [Range(1, 6)]
     private int maxAmount = 6;
 
     private int targetAmountOfDashes;

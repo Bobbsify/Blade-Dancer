@@ -11,7 +11,7 @@ public class NotShootRuleSettings : RuleSetting
     private int minAmount = 0;
 
     [SerializeField]
-    [Range(4, 6)]
+    [Range(1, 6)]
     private int maxAmount = 6;
 
     private int amountNotToShoot = 1;
