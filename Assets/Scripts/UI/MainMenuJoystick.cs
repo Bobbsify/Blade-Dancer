@@ -27,11 +27,41 @@ public class MainMenuJoystick : MonoBehaviour
     [SerializeField]
     public GameObject controls;
 
+    [SerializeField]
+    private string pauseBackName;
+
     // Start is called before the first frame update
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(firstButton);
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonUp(pauseBackName))
+        {
+            BackInputPause();
+        }
+    }
+
+    public void BackInputPause()
+    {
+        if (settingPage.activeSelf)
+        {
+            homePage.SetActive(true);
+            settingPage.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(firstButton);
+        }
+
+        if (controls.activeSelf)
+        {
+            settingPage.SetActive(true);
+            controls.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(secondButton);
+        }
     }
 
     public void GotoSettings()
