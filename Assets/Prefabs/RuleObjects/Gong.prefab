@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 4072430416109815655}
   - component: {fileID: 340473853}
   m_Layer: 0
-  m_Name: Bell
+  m_Name: Gong
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,5 +207,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6358166, y: 0.95, z: 0.5728334}
+  m_Size: {x: 1.0013201, y: 0.95, z: 0.87519574}
   m_Center: {x: 0, y: 0, z: 0}
