@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8299556376e294c86ded9601ed381e, type: 3}
   m_Name: NotRingRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 2163215807850382571, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 04000000

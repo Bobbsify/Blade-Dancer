@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83cece5fd9b92dd4795256b458359b99, type: 3}
   m_Name: RightRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 1449994755788299897, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 06000000

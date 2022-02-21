@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1981c3a8d0a6ed6448163c00c8faa2d0, type: 3}
   m_Name: NotGatherRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 8431360858914318947, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 08000000

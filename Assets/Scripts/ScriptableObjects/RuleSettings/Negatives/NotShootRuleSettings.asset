@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7199b8e8f75a1a4d9c4b5a469a0fc06, type: 3}
   m_Name: NotShootRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 6971354487199299862, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 01000000
