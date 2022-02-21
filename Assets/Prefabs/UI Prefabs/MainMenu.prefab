@@ -87,7 +87,7 @@ Animator:
   m_GameObject: {fileID: 1135711090526484982}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ddefed58bb3146748a39c8a5b3038f50, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -5572,6 +5572,7 @@ MonoBehaviour:
   settingPage: {fileID: 8983944468778147363}
   homePage: {fileID: 8983944469632895593}
   controls: {fileID: 8983944469812333951}
+  pauseBackName: Tab
 --- !u!1 &6638283956977840836
 GameObject:
   m_ObjectHideFlags: 0
