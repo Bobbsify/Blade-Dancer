@@ -12,6 +12,9 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
     }
 
     [SerializeField]
+    private PauseIconController pauseIconController;
+
+    [SerializeField]
     private InputType inputType = InputType.FixedUpdate;
 
     [SerializeField]
@@ -61,10 +64,17 @@ public class InputSystemPause : MonoBehaviour, IInputEntity
     {
         if (Input.GetButtonUp(pauseAxisName) && canPause)
         {
-            for (int i = 0; i < this.receivers.Length; i++)
+            if (canPause)
             {
-                IInputReceiverPause receiver = this.receivers[i];
-                receiver.ReceiveInputPause();
+                for (int i = 0; i < this.receivers.Length; i++)
+                {
+                    IInputReceiverPause receiver = this.receivers[i];
+                    receiver.ReceiveInputPause();
+                }
+            }
+            else 
+            {
+                pauseIconController.ExecuteFlash();
             }
         }
     }
