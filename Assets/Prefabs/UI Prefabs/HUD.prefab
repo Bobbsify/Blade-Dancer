@@ -900,6 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 810111121407511144}
+  ruleIcon: {fileID: 834479469741246849}
   completed: {fileID: 810111121874336045}
   ruleScore: {fileID: 4565023840773179293}
 --- !u!95 &6018290673402126245
@@ -1010,6 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 3622563737601109381}
+  ruleIcon: {fileID: 2018558831963525076}
   completed: {fileID: 647662147280018419}
   ruleScore: {fileID: 1433832335558911438}
 --- !u!95 &4261819371791043893
@@ -1120,6 +1122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 7343541721615807073}
+  ruleIcon: {fileID: 957495344056980973}
   completed: {fileID: 6912634912141803794}
   ruleScore: {fileID: 2164448189284689810}
 --- !u!95 &8257628235334937920
@@ -1619,6 +1622,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 939600290579421739}
+  ruleIcon: {fileID: 6907979365653327028}
   completed: {fileID: 5886287585510257967}
   ruleScore: {fileID: 1079487757922995902}
 --- !u!95 &1808871207784514764
@@ -2081,6 +2085,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 308886217202650575}
+  ruleIcon: {fileID: 1254781392194776781}
   completed: {fileID: 8494469264115303795}
   ruleScore: {fileID: 3013587101192660433}
 --- !u!95 &7214690813322290375
@@ -2697,6 +2702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 1915655378737597949}
+  ruleIcon: {fileID: 8813373999957393694}
   completed: {fileID: 4245008287546945910}
   ruleScore: {fileID: 5063863032536423255}
 --- !u!95 &4652291185875975547
@@ -3147,6 +3153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 97978862949324865}
+  ruleIcon: {fileID: 8103165388495977808}
   completed: {fileID: 7463751492097324710}
   ruleScore: {fileID: 206394998893822735}
 --- !u!95 &3387273075872339926
@@ -5708,19 +5715,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleAnimators:
+  - {fileID: 8257628235334937920}
+  - {fileID: 5211602866613910655}
+  - {fileID: 8835918988665811506}
+  - {fileID: 4525977767126910877}
   - {fileID: 6018290673402126245}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7214690813322290375}
   ruleContainerManagers:
+  - {fileID: 7435603164041959830}
+  - {fileID: 981551928990727511}
+  - {fileID: 7378957272661415392}
+  - {fileID: 809030611139236947}
   - {fileID: 109029521350491226}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2392978333988984991}
 --- !u!1 &6164085452775311664
 GameObject:
   m_ObjectHideFlags: 0
@@ -6356,6 +6363,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 8071474932505602886}
+  ruleIcon: {fileID: 7454534553527133527}
   completed: {fileID: 8721406976327867858}
   ruleScore: {fileID: 8080839497262196309}
 --- !u!95 &8835918988665811506
@@ -6733,6 +6741,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 7150230426772872284}
+  ruleIcon: {fileID: 6219934237110310279}
   completed: {fileID: 8255144008876897638}
   ruleScore: {fileID: 1042337564891618537}
 --- !u!95 &7289933378370982011
@@ -6972,19 +6981,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleAnimators:
+  - {fileID: 4652291185875975547}
+  - {fileID: 1808871207784514764}
+  - {fileID: 3387273075872339926}
+  - {fileID: 4261819371791043893}
   - {fileID: 7289933378370982011}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   ruleContainerManagers:
+  - {fileID: 2740478129484071543}
+  - {fileID: 416304019490483677}
+  - {fileID: 3909303589847101780}
+  - {fileID: 6859176566146920857}
   - {fileID: 4991971226757647570}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &7674705102454605602
 GameObject:
   m_ObjectHideFlags: 0
@@ -8051,6 +8058,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 1987954317894780494}
+  ruleIcon: {fileID: 4234754408503816112}
   completed: {fileID: 6674743613658740533}
   ruleScore: {fileID: 2468090692356658290}
 --- !u!95 &4525977767126910877
@@ -8276,6 +8284,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ruleName: {fileID: 6832893526394592544}
+  ruleIcon: {fileID: 4303732718824937325}
   completed: {fileID: 8880613501714727708}
   ruleScore: {fileID: 5680750793991274551}
 --- !u!95 &5211602866613910655
