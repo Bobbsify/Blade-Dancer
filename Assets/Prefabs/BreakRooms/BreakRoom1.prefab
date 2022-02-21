@@ -5777,8 +5777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Tra l'altro quando ballo \xE8 come se il tempo si rallentasse o
-    si fermasse... questo posto \xE8 proprio strano."
+  characterLine: "Tra l'altro quando ballo \xE8 come se il tempo rallentasse o si
+    fermasse... questo posto \xE8 proprio strano."
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:

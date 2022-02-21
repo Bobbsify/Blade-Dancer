@@ -20,4 +20,4 @@ MonoBehaviour:
   ruleRelatedObjects: []
   mutuallyExclusives: 02000000100000000e000000
   minAmount: 1
-  maxAmount: 6
+  maxAmount: 1
