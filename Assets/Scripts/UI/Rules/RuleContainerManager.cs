@@ -75,10 +75,12 @@ public class RuleContainerManager : MonoBehaviour
         if (packet.IsReverse())
         {
             ruleName.color = reverseRuleColor;
+            ruleIcon.color = reverseRuleColor;
         }
         else
         {
             ruleName.color = normalRuleColor;
+            ruleIcon.color = normalRuleColor;
         }
 
 
@@ -104,12 +106,14 @@ public class RuleContainerManager : MonoBehaviour
     private void EnableComponents()
     {
         ruleName.gameObject.SetActive(true);
+        ruleIcon.gameObject.SetActive(true);
         ruleScore.gameObject.SetActive(true);
     }
 
     private void DisableComponents()
     {
         ruleName.gameObject.SetActive(false);
+        ruleIcon.gameObject.SetActive(false);
         ruleScore.gameObject.SetActive(false);
         completed.gameObject.SetActive(false);
     }
