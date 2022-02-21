@@ -105,6 +105,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private HealthController healthController;
 
+    [SerializeField]
+    private GameObject pauseIcon;
+
     [Header("Camera")]
 
     [SerializeField]
@@ -262,6 +265,7 @@ public class GameManager : MonoBehaviour
 
         //Pause disable
         this.inputManager.DisablePause();
+        this.pauseIcon.SetActive(true);
 
         //Destroy(startingRoom);
         GenerateNewStreak();
@@ -458,6 +462,7 @@ public class GameManager : MonoBehaviour
 
         //Pause enable
         this.inputManager.EnablePause();
+        this.pauseIcon.SetActive(false);
 
         //End Streak
         Destroy(currentArena);
