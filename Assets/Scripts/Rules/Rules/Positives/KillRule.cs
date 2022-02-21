@@ -8,9 +8,10 @@ public class KillRule : Rule
     private int amountToKill;
     private int amountKilled = 0;
 
-    public KillRule(AllRules ruleName, int amountToKill, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public KillRule(AllRules ruleName, Sprite icon, int amountToKill, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(durationMod);
         this.amountToKill = amountToKill;
         this.appliedActions = appliedActions;
@@ -43,7 +44,7 @@ public class KillRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountKilled, amountToKill, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, RuleIcon, amountKilled, amountToKill, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()

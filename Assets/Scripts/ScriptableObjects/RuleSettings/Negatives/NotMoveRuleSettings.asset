@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7de28c09e686f8e45b5eff26e4a45e15, type: 3}
   m_Name: NotMoveRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: -7642930149755065466, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 0000000002000000

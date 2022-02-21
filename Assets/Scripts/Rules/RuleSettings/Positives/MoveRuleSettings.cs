@@ -40,7 +40,7 @@ public class MoveRuleSettings : RuleSetting
     {
         durationOfMove = UnityEngine.Random.Range(minDuration,maxDuration);
         durationMod = durationType == DurationModType.FixedAmount ? durationMod : durationModFormula;
-        MoveRule ruleReturned = new MoveRule(AllRules.Muoviti, durationOfMove, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        MoveRule ruleReturned = new MoveRule(AllRules.Muoviti, ruleIcon, durationOfMove, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return ruleReturned;
     }
 }

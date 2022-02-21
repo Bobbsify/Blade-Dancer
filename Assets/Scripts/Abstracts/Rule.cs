@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Rule : IRule
 {
@@ -10,6 +11,9 @@ public abstract class Rule : IRule
     private DurationModType DurationModType { get; set; }
     
     private float durationModifier; // modificatore che definisce la quantità in secondi di cui deve aumentare la durata in presenza di questa regola
+
+    [SerializeField]
+    protected Sprite RuleIcon { get; set; }
 
     [Header("Rule Functionality Tweaking")]
     [SerializeField]
@@ -40,7 +44,7 @@ public abstract class Rule : IRule
 
     public virtual RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, IsReverse() ? (IsRuleComplete() ? 0 : 1) : (IsRuleComplete() ? 1 : 0), 1, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, RuleIcon, IsReverse() ? (IsRuleComplete() ? 0 : 1) : (IsRuleComplete() ? 1 : 0), 1, this.IsRuleComplete(),IsReverse());
     }
 
     public virtual List<RuleObject> GetRuleRelatedObjects()
@@ -56,6 +60,11 @@ public abstract class Rule : IRule
     public virtual AllRules GetRuleName()
     {
         return this.RuleName;
+    }
+
+    public virtual Sprite GetRuleIcon()
+    {
+        return this.RuleIcon;
     }
 
     public virtual AllRules GetPureRuleName()

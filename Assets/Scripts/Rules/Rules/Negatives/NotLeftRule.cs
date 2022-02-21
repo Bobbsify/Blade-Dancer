@@ -7,9 +7,10 @@ public class NotLeftRule : Rule
 {
     private bool right = true;
 
-    public NotLeftRule(AllRules ruleName, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public NotLeftRule(AllRules ruleName, Sprite icon, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(durationMod);
         this.appliedActions = appliedActions;
         this.mutuallyExclusives = mutuallyExclusives;

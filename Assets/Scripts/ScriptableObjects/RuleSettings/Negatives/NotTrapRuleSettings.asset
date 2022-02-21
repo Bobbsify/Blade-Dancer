@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ea81af8872eb24babdd5602cc3d3a7, type: 3}
   m_Name: NotTrapRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: -7219094590398536106, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 0b000000

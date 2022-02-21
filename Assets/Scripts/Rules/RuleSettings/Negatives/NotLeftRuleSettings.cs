@@ -25,7 +25,7 @@ public class NotLeftRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotLeftRule returnedRule = new NotLeftRule(AllRules.NotSinistra, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotLeftRule returnedRule = new NotLeftRule(AllRules.NotSinistra, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

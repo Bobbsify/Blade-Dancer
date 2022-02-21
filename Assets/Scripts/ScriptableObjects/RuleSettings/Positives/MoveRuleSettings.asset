@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe354e0438fbd934b8dbd97045cc2133, type: 3}
   m_Name: MoveRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: -7642930149755065466, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 0
   durationMod: 4
   appliedActions: 00000000
@@ -19,3 +21,4 @@ MonoBehaviour:
   mutuallyExclusives: 000000000e000000
   minDuration: 2
   maxDuration: 5
+  extraTime: 1

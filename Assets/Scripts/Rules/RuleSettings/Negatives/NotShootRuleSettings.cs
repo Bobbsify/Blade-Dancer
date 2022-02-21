@@ -41,7 +41,7 @@ public class NotShootRuleSettings : RuleSetting
             durationModFormula = 0f;
             durationMod = durationModFormula;
         }
-        NotShootRule returnedRule = new NotShootRule(AllRules.NotSpara, amountNotToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotShootRule returnedRule = new NotShootRule(AllRules.NotSpara, ruleIcon, amountNotToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

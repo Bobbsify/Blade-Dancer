@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fa4d10bbde5b6b41aefc3a1caab185e, type: 3}
   m_Name: NotRightRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 1449994755788299897, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 06000000

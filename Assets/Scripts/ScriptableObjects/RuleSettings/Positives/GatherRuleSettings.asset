@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d23e025648d5aae47a271615f2ba87f9, type: 3}
   m_Name: GatherRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 8431360858914318947, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 0
   durationMod: 0
   appliedActions: 08000000

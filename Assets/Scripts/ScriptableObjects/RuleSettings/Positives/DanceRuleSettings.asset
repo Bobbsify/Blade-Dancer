@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0c9300638fc5bf458d39ec741f34638, type: 3}
   m_Name: DanceRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: -5063558086944670945, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 2
   appliedActions: 03000000

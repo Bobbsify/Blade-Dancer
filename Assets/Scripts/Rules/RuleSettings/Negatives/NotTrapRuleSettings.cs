@@ -25,7 +25,7 @@ public class NotTrapRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotTrapRule returnedRule = new NotTrapRule(AllRules.NotCattura, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotTrapRule returnedRule = new NotTrapRule(AllRules.NotCattura, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

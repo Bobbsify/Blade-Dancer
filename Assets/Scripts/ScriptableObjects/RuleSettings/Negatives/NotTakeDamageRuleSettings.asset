@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c166b2f1ac8778b49848006f16938980, type: 3}
   m_Name: NotTakeDamageRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 7995220358864634532, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 0c000000

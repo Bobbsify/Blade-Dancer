@@ -6492,8 +6492,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Io sono Daniel, Daniel Danse, e tu non sarai mai alla mia altezza!
-    ahahahahahahah!
+  characterLine: IO SONO DANIEL, DANIEL DANSE, E TU NON SARAI MAI ALLA MIA ALTEZZA!
+    AHAHAHAHAHAHAHAH!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:

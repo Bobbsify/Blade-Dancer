@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4274a23103dcd4f8636f73436a3850, type: 3}
   m_Name: ShootRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 6971354487199299862, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 0
   durationMod: 2
   appliedActions: 01000000

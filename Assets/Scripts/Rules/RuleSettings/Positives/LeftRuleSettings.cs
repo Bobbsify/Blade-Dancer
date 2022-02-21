@@ -25,7 +25,7 @@ public class LeftRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        LeftRule returnedRule = new LeftRule(AllRules.Sinistra, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        LeftRule returnedRule = new LeftRule(AllRules.Sinistra, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

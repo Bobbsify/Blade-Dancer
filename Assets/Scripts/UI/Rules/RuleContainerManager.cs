@@ -10,6 +10,9 @@ public class RuleContainerManager : MonoBehaviour
     private Text ruleName;
 
     [SerializeField]
+    private Image ruleIcon;
+
+    [SerializeField]
     private Image completed;
 
     [SerializeField]
@@ -20,11 +23,6 @@ public class RuleContainerManager : MonoBehaviour
     
 
     private AllRules currentRule;
-    private float maxAmount = 1;
-
-    private const string tickContainerName = "TICK";
-    private const string nameContainerName = "NAME";
-    private const string scoreContainerName = "SCORE";
 
     private void OnValidate()
     {
@@ -37,9 +35,21 @@ public class RuleContainerManager : MonoBehaviour
             ruleScore = GetComponentInChildren<Slider>();
         }
 
-        if (completed == null) 
+        if (completed == null)
         {
             completed = GetComponentInChildren<Image>();
+        }
+
+        if (ruleIcon == null)
+        {
+            foreach (Image i in GetComponentsInChildren<Image>()) 
+            {
+                if (i != completed) 
+                {
+                    ruleIcon = i;
+                    break;
+                }
+            }
         }
     }
 
@@ -58,7 +68,8 @@ public class RuleContainerManager : MonoBehaviour
         //SetupSlider
         ruleScore.maxValue = packet.GetMaxScore();
         ruleScore.minValue = 0;
-        
+
+        ruleIcon.sprite = packet.GetIcon();
 
         this.currentRule = packet.GetName();
         if (packet.IsReverse())

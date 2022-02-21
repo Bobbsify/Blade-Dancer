@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class RuleSetting : ScriptableObject
 {
+    [Header("Rule looks settings")]
+    [SerializeField]
+    protected Sprite ruleIcon;
+
     [Header("Rule Duration Settings")]
     [SerializeField]
     protected DurationModType durationType;

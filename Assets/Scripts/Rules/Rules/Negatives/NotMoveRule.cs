@@ -8,9 +8,10 @@ public class NotMoveRule : Rule
 {
     bool hasNotMoved = true;
 
-    public NotMoveRule(AllRules ruleName, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public NotMoveRule(AllRules ruleName, Sprite icon, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         this.SetDurationMod(durationMod);
         this.appliedActions = appliedActions;
         this.mutuallyExclusives = mutuallyExclusives;
@@ -31,7 +32,7 @@ public class NotMoveRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, IsRuleComplete() ? 0 : 1, 1, this.IsRuleComplete(),IsReverse()) ;
+        return new RulePacket(this.RuleName, GetRuleIcon(), IsRuleComplete() ? 0 : 1, 1, this.IsRuleComplete(),IsReverse()) ;
     }
 
     public override bool IsRuleComplete()
