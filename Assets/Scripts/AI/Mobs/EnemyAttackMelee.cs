@@ -44,6 +44,7 @@ public class EnemyAttackMelee : FSMState
 		{
 			this.Attack();
 			this.fsm.ChangeState(this.stateChase);
+			StopAllCoroutines();
 			return;
 		}
 	}
