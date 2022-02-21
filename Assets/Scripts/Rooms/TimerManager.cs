@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TimerManager : MonoBehaviour, IGameEntity
 {
     [SerializeField]
-    private Text timerText;
+    private List<Slider> timer;
 
     [Header("Cheer")]
     [SerializeField]
@@ -36,10 +36,10 @@ public class TimerManager : MonoBehaviour, IGameEntity
         if (doTimer) {         
             currentTime -= Time.deltaTime;
             float truncatedTime = (float)Math.Round((currentTime) * 100f) / 100f;
-            string textToAdd = truncatedTime.ToString().Replace(',', ':');
-            if (textToAdd.Length == 3) textToAdd += "0";
-            if (textToAdd.Length == 1) textToAdd += ":00";
-            timerText.text = textToAdd;
+            foreach (Slider slider in timer) 
+            {
+                slider.value = truncatedTime;
+            }
             if (currentTime <= 0) 
             {
                 doTimer = false;
@@ -54,10 +54,12 @@ public class TimerManager : MonoBehaviour, IGameEntity
         maxTime = amount;
         currentTime = amount;
         float truncatedTime = (float)Math.Round((currentTime) * 100f) / 100f;
-        string textToAdd = truncatedTime.ToString().Replace(',', ':');
-        if (textToAdd.Length == 3) textToAdd += "0";
-        if (textToAdd.Length == 1) textToAdd += ":00";
-        timerText.text = textToAdd;
+        foreach (Slider slider in timer) 
+        {
+            slider.maxValue = amount;
+            slider.value = amount;
+            slider.minValue = 0;
+        }
     }
 
     public void StopTimer()
@@ -74,7 +76,10 @@ public class TimerManager : MonoBehaviour, IGameEntity
     {
         doTimer = false;
         currentTime = 0;
-        timerText.text = "00:00";
+        foreach (Slider slider in timer) 
+        {
+            slider.value = slider.maxValue;
+        }
     }
     public int GetCheer()
     {
