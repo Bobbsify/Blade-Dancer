@@ -113,6 +113,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private CameraController cameraController;
 
+    [SerializeField]
+    private float zCameraOffset = 0.8f;
+
     [Header("Debug")]
     [SerializeField]
     [Tooltip("Never leaves the first break room")]
@@ -533,7 +536,7 @@ public class GameManager : MonoBehaviour
 
     private void ResetCamera() 
     {
-        cameraController.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z);
+        cameraController.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z + zCameraOffset); 
     }
 
     internal void AskForTimerStart()
