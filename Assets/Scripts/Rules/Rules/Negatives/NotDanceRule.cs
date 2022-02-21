@@ -9,9 +9,10 @@ public class NotDanceRule : Rule
 
     private bool complete = true;
 
-    public NotDanceRule(AllRules ruleName, float duration, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public NotDanceRule(AllRules ruleName, Sprite icon, float duration, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(duration);
         this.appliedActions = appliedActions;
         this.mutuallyExclusives = mutuallyExclusives;

@@ -8,9 +8,10 @@ public class GatherRule : Rule
     private int amountToGather;
     private int amountGathered = 0;
 
-    public GatherRule(AllRules ruleName, int amountToGather, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public GatherRule(AllRules ruleName, Sprite icon, int amountToGather, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(durationMod);
         this.amountToGather = amountToGather;
         this.appliedActions = appliedActions;
@@ -43,7 +44,7 @@ public class GatherRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountGathered, amountToGather, this.IsRuleComplete(), IsReverse());
+        return new RulePacket(this.RuleName, RuleIcon, amountGathered, amountToGather, this.IsRuleComplete(), IsReverse());
     }
 
     public override bool IsRuleComplete()

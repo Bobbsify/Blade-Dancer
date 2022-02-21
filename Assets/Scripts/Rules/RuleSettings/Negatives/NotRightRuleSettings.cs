@@ -25,7 +25,7 @@ public class NotRightRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotRightRule returnedRule = new NotRightRule(AllRules.NotDestra, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotRightRule returnedRule = new NotRightRule(AllRules.NotDestra, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

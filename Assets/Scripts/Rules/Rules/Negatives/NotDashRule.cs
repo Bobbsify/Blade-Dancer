@@ -8,9 +8,10 @@ public class NotDashRule : Rule
     private int targetAmountOfDashes = 3;
     private float dashAmount = 0;
 
-    public NotDashRule(AllRules ruleName, int targetAmountOfDashes, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public NotDashRule(AllRules ruleName, Sprite icon, int targetAmountOfDashes, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         this.targetAmountOfDashes = targetAmountOfDashes;
         this.SetDurationMod(durationMod);
         this.appliedActions = appliedActions;
@@ -31,7 +32,7 @@ public class NotDashRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, dashAmount, targetAmountOfDashes, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, GetRuleIcon(), dashAmount, targetAmountOfDashes, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()

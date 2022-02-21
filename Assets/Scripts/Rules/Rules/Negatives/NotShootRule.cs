@@ -8,9 +8,10 @@ public class NotShootRule : Rule
     private int amountNotToShoot = 3;
     private float amountShot = 0;
 
-    public NotShootRule(AllRules ruleName, int amountNotToShoot, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public NotShootRule(AllRules ruleName, Sprite icon, int amountNotToShoot, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(durationMod);
         this.amountNotToShoot = amountNotToShoot;
         this.appliedActions = appliedActions;
@@ -31,7 +32,7 @@ public class NotShootRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountShot, amountNotToShoot, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, GetRuleIcon(), amountShot, amountNotToShoot, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool IsRuleComplete()

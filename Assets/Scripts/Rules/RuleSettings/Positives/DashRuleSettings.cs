@@ -49,7 +49,7 @@ public class DashRuleSettings : RuleSetting
         targetAmountOfDashes = UnityEngine.Random.Range(minAmount, maxAmount);
         durationModFormula = (float)(targetAmountOfDashes * coolDownTime) + extraTime;
         durationMod = durationModFormula;
-        DashRule ruleReturned = new DashRule(AllRules.Scatta, targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        DashRule ruleReturned = new DashRule(AllRules.Scatta, ruleIcon, targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return ruleReturned;
     }
 }

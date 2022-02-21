@@ -7,9 +7,10 @@ public class ReachRule : Rule
 {
     private bool reached = false;
 
-    public ReachRule(AllRules ruleName, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public ReachRule(AllRules ruleName, Sprite icon, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(durationMod);
         this.appliedActions = appliedActions;
         this.mutuallyExclusives = mutuallyExclusives;

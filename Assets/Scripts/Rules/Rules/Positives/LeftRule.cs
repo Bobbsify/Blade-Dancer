@@ -7,9 +7,10 @@ public class LeftRule : Rule
 {
     private bool left = false;
 
-    public LeftRule(AllRules ruleName, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public LeftRule(AllRules ruleName, Sprite icon, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(durationMod);
         this.appliedActions = appliedActions;
         this.mutuallyExclusives = mutuallyExclusives;

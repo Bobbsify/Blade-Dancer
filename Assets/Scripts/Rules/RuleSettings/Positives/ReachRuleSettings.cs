@@ -25,7 +25,7 @@ public class ReachRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        ReachRule returnedRule = new ReachRule(AllRules.Raggiungi, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        ReachRule returnedRule = new ReachRule(AllRules.Raggiungi, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }
