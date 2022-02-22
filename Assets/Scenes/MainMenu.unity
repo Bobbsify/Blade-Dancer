@@ -625,16 +625,6 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: ddefed58bb3146748a39c8a5b3038f50, type: 2}
-    - target: {fileID: 3259933017394875255, guid: 578661c34ec61ff40938ca4670bfde92,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1427611679}
-    - target: {fileID: 3760776844982061738, guid: 578661c34ec61ff40938ca4670bfde92,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1427611679}
     - target: {fileID: 4186866983906405282, guid: 578661c34ec61ff40938ca4670bfde92,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -643,26 +633,6 @@ PrefabInstance:
     - target: {fileID: 4186866984335880908, guid: 578661c34ec61ff40938ca4670bfde92,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1427611679}
-    - target: {fileID: 5563532796958797639, guid: 578661c34ec61ff40938ca4670bfde92,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1427611679}
-    - target: {fileID: 5563532797798779098, guid: 578661c34ec61ff40938ca4670bfde92,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1427611679}
-    - target: {fileID: 5589115746115495827, guid: 578661c34ec61ff40938ca4670bfde92,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 1427611679}
-    - target: {fileID: 6230101880757842838, guid: 578661c34ec61ff40938ca4670bfde92,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
       objectReference: {fileID: 1427611679}
     - target: {fileID: 6638283956898666766, guid: 578661c34ec61ff40938ca4670bfde92,
