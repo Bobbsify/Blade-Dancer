@@ -13,9 +13,6 @@ public class MainMenuJoystick : MonoBehaviour
     public GameObject secondButton;
 
     [SerializeField]
-    public GameObject thirdButton;
-
-    [SerializeField]
     public GameObject MusicButton;
 
     [SerializeField]
@@ -86,8 +83,6 @@ public class MainMenuJoystick : MonoBehaviour
     {
         controls.SetActive(true);
         settingPage.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(thirdButton);
     }
 
     public void GoBackToSettings()
