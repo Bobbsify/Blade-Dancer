@@ -106,8 +106,11 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void RulesCompleted()
     {
-        uiRulesManager.StageCompleted();
-        gameManagerObject.EndOfStage();
+        if (gameManagerObject.PlayerPawn.GetComponent<PlayerController>().GetHealth() > 0) 
+        {
+            uiRulesManager.StageCompleted();
+            gameManagerObject.EndOfStage();
+        }
     }
 
     void IGameEntity.Init(GameManager gameManager)
