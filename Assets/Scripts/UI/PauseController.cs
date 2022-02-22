@@ -34,9 +34,6 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public GameObject optionClosedButton;
 
     [SerializeField]
-    public GameObject controlsButton;
-
-    [SerializeField]
     private string pauseBackName;
 
 
@@ -119,8 +116,6 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     {
         settingMenu.SetActive(false);
         controls.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(controlsButton);
     }
 
     public void BackInputPause()
