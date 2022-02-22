@@ -86,7 +86,7 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
 
     }
 
-    public void SettingOption()
+    public void GoToOption()
     {
         settingMenu.SetActive(true);
         musics.SetActive(false);
