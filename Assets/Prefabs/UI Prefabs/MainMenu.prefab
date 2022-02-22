@@ -7046,8 +7046,20 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7799574070501705729, guid: 021668944089829479792366858cb162,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: 24300002, guid: f72785bbfeca96b4cb11a758d9d0e02b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 021668944089829479792366858cb162, type: 3}
+--- !u!1 &8829251347593946283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
+    type: 3}
+  m_PrefabInstance: {fileID: 4336986103033862296}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &3637995655731594029 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
@@ -7069,12 +7081,6 @@ GameObject:
 --- !u!224 &8829251347764302393 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5095784167619349153, guid: 021668944089829479792366858cb162,
-    type: 3}
-  m_PrefabInstance: {fileID: 4336986103033862296}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8829251347593946283 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
     type: 3}
   m_PrefabInstance: {fileID: 4336986103033862296}
   m_PrefabAsset: {fileID: 0}
@@ -7266,16 +7272,16 @@ PrefabInstance:
       objectReference: {fileID: 3881397042491823525}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 021668944089829479792366858cb162, type: 3}
---- !u!114 &8278093040163525956 stripped
+--- !u!114 &8983944469771678693 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
+  m_CorrespondingSourceObject: {fileID: 2003811604, guid: 021668944089829479792366858cb162,
     type: 3}
   m_PrefabInstance: {fileID: 8983944467949866737}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: e64f989eaf7334de8bc8ca048bfa9511, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &4186866983595017296 stripped
@@ -7290,16 +7296,16 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8983944467949866737}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8983944469771678693 stripped
+--- !u!114 &8278093040163525956 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2003811604, guid: 021668944089829479792366858cb162,
+  m_CorrespondingSourceObject: {fileID: 1030427283928144821, guid: 021668944089829479792366858cb162,
     type: 3}
   m_PrefabInstance: {fileID: 8983944467949866737}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e64f989eaf7334de8bc8ca048bfa9511, type: 3}
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &8983944468314064783
@@ -7745,6 +7751,12 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 7799574070501705729, guid: 021668944089829479792366858cb162,
+        type: 3}
+      propertyPath: mixer
+      value: 
+      objectReference: {fileID: -1242301498137307266, guid: f72785bbfeca96b4cb11a758d9d0e02b,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 021668944089829479792366858cb162, type: 3}
 --- !u!114 &8278093040594144298 stripped
