@@ -7732,7 +7732,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 967987562}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.15, z: 0}
+  m_LocalPosition: {x: 0, y: 0.2, z: 0}
   m_LocalScale: {x: 0.03, y: 0.03, z: 1}
   m_Children: []
   m_Father: {fileID: 1071976270}
@@ -7868,7 +7868,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1071976269}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 18.07, y: -10.68, z: 6.7}
+  m_LocalPosition: {x: 10.41, y: -10.68, z: 5.8}
   m_LocalScale: {x: 8, y: 8, z: 1}
   m_Children:
   - {fileID: 967987563}
@@ -8510,7 +8510,7 @@ MonoBehaviour:
   - {fileID: 3920557604866505167, guid: eb5a621f40d28e14d907b35df288f548, type: 3}
   currentBreakroom: 0
   breakRoomMusic:
-    audio: {fileID: 8300000, guid: d3eb5dfe960bd164d90be86c11dfd6bb, type: 3}
+    audio: {fileID: 0}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 1
