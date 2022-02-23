@@ -5113,7 +5113,7 @@ MonoBehaviour:
   minReactionTime: 1
   maxReactionTime: 2
   stateChase: {fileID: 7251394527796283675}
-  projectilePrefab: {fileID: 2770950395779395584, guid: d6633142315fe214f82d5404072be6b4,
+  projectilePrefab: {fileID: 2770950395779395584, guid: 5f81d62f57b197947ae223b91b686152,
     type: 3}
   objSpawnPos: {fileID: 7251394528346421220}
   ChaseDistance: 5
@@ -5147,7 +5147,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.66572654
+  m_Radius: 0.5325812
   m_Center: {x: 0, y: 0, z: 0.038490534}
 --- !u!1 &7251394528346421223
 GameObject:
