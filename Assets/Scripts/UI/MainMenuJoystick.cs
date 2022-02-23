@@ -52,18 +52,17 @@ public class MainMenuJoystick : MonoBehaviour
     {
         if (settingPage.activeSelf)
         {
-            homePage.SetActive(true);
-            settingPage.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
+            GoBackToMenu();
         }
 
         if (controls.activeSelf)
         {
-            settingPage.SetActive(true);
-            controls.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(settingsFirstButton);
+            GoBackToSettings();
+        }
+
+        if (controlsNewGame.activeSelf)
+        {
+            GoBackToMenu();
         }
     }
 
@@ -77,10 +76,11 @@ public class MainMenuJoystick : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(settingsFirstButton);
     }
 
-    public void GotoBackToMenu()
+    public void GoBackToMenu()
     {
         homePage.SetActive(true);
         settingPage.SetActive(false);
+        controlsNewGame.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
     }
