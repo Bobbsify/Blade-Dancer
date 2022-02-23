@@ -1527,8 +1527,8 @@ MonoBehaviour:
   officeSprite: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   carPosition: {fileID: 1502114184}
-  distanceSpawned: {x: -30, y: 0, z: 0}
-  slowTime: 5
+  distanceSpawned: {x: -50, y: 0, z: 0}
+  slowTime: 1
   itemsToMove:
   - {fileID: 1079737827}
   - {fileID: 564557569}
