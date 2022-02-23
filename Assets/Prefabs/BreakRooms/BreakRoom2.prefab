@@ -1682,8 +1682,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: "Angelo \xE8 in pausa e finalmente ho un po' di pace, ma tu fortunatamente
-    sei qui!"
+  characterLine: "Angelo \xE8 in pausa e finalmente ho un po' di pace, e per fortuna
+    tu sei qui!"
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2301,7 +2301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "... Questa dannata prova \xE8 pi\xF9 pesante di quel che pensassi"
+  characterLine: "... Questa dannata prova \xE8 pi\xF9 pesante di quel che pensassi."
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6173,7 +6173,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Buona fortuna con la prossima serie! Scarsone!
+  characterLine: Buona fortuna con la prossima serie! SCARSONE!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:

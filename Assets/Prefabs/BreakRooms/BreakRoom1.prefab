@@ -6377,7 +6377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
   characterLine: Beh, che t'aspetti? Qualche tipo di elogio? Non sei mica un ballerino
-    come me!
+    eccezionale come me!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
