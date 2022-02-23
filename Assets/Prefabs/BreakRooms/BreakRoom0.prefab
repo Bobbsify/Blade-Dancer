@@ -1491,7 +1491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Annohiath
   characterLine: ... Questa prova consiste nel completare, a ritmo di musica, una
-    serie di "Regole" inviate direttamente dai nostri capi.
+    serie di "Regole" inviate direttamente dai nostri capi...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5613,7 +5613,7 @@ MonoBehaviour:
   characterName: Annohiath
   characterLine: Per completare una stanza tutte le regole bianche devono essere
     completate. Alcune regole saranno rosa, quest'ultime invece, non devono essere
-    seguite.
+    seguite...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5831,7 +5831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: ???
   characterLine: ... Benvenuto alla SPDDPDA, la Super Prova Definitiva Della Potenza
-    Dell'Anima.
+    Dell'Anima...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6229,7 +6229,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Angelo
   characterLine: "Tra l'altro lo sapevi che gli angeli in media sono MOLTO pi\xF9
-    intelligenti dei demoni? E anche molto pi\xF9 belli!"
+    intelligenti dei demoni?! E anche molto pi\xF9 belli!"
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
