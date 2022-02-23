@@ -25,6 +25,9 @@ public class MainMenuJoystick : MonoBehaviour
     public GameObject controls;
 
     [SerializeField]
+    public GameObject controlsNewGame;
+
+    [SerializeField]
     private string pauseBackName;
 
     // Start is called before the first frame update
@@ -83,6 +86,12 @@ public class MainMenuJoystick : MonoBehaviour
     {
         controls.SetActive(true);
         settingPage.SetActive(false);
+    }
+
+    public void GoToControlsNewGame()
+    {
+        controlsNewGame.SetActive(true);
+        homePage.SetActive(false);
     }
 
     public void GoBackToSettings()
