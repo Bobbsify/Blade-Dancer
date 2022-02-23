@@ -7,10 +7,13 @@ using UnityEngine.UI;
 public class MainMenuJoystick : MonoBehaviour
 {
     [SerializeField]
-    public GameObject firstButton;
+    public GameObject mainMenuFirstButton;
 
     [SerializeField]
-    public GameObject secondButton;
+    public GameObject settingsFirstButton;
+
+    [SerializeField]
+    public GameObject controlsNewGameFirstButton;
 
     [SerializeField]
     public GameObject MusicButton;
@@ -34,7 +37,7 @@ public class MainMenuJoystick : MonoBehaviour
     void Start()
     {
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstButton);
+        EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
     }
 
     private void Update()
@@ -52,7 +55,7 @@ public class MainMenuJoystick : MonoBehaviour
             homePage.SetActive(true);
             settingPage.SetActive(false);
             EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(firstButton);
+            EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
         }
 
         if (controls.activeSelf)
@@ -60,7 +63,7 @@ public class MainMenuJoystick : MonoBehaviour
             settingPage.SetActive(true);
             controls.SetActive(false);
             EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(secondButton);
+            EventSystem.current.SetSelectedGameObject(settingsFirstButton);
         }
     }
 
@@ -71,7 +74,7 @@ public class MainMenuJoystick : MonoBehaviour
         homePage.SetActive(false);
         MusicButton.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(secondButton);
+        EventSystem.current.SetSelectedGameObject(settingsFirstButton);
     }
 
     public void GotoBackToMenu()
@@ -79,7 +82,7 @@ public class MainMenuJoystick : MonoBehaviour
         homePage.SetActive(true);
         settingPage.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(firstButton);
+        EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
     }
 
     public void GoToControls()
@@ -92,6 +95,8 @@ public class MainMenuJoystick : MonoBehaviour
     {
         controlsNewGame.SetActive(true);
         homePage.SetActive(false);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(controlsNewGameFirstButton);
     }
 
     public void GoBackToSettings()
@@ -99,7 +104,7 @@ public class MainMenuJoystick : MonoBehaviour
         settingPage.SetActive(true);
         controls.SetActive(false);
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(secondButton);
+        EventSystem.current.SetSelectedGameObject(settingsFirstButton);
     }
 
 }
