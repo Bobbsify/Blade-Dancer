@@ -25,6 +25,10 @@ public class UIDanceController : MonoBehaviour
             }
         }
     }
+    private void Awake()
+    {
+        TryGetComponent(out anim);
+    }
 
     private void Start()
     {
