@@ -5,9 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 {
-    private bool canShoot;
-
     [Header("Shooting settings")]
+    [SerializeField]
+    private bool canShoot = true;
+
     [SerializeField]
     private float shootCooldown;
 
@@ -35,7 +36,6 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
     private void Start()
     {
-        this.canShoot = true;
         TryGetComponent(out anim);
     }
     public IEnumerator CooldownShoot()
