@@ -1713,12 +1713,12 @@ TextureImporter:
       name: RoomTiles_67
       rect:
         serializedVersion: 2
-        x: 160
-        y: 112
+        x: 112
+        y: 96
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1734,8 +1734,29 @@ TextureImporter:
       name: RoomTiles_68
       rect:
         serializedVersion: 2
-        x: 176
-        y: 112
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 189b1fc3aa09aa0b0800000000000000
+      internalID: -5716597716152108671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTiles_69
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
         width: 16
         height: 16
       alignment: 0
@@ -1745,8 +1766,50 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 189b1fc3aa09aa0b0800000000000000
-      internalID: -5716597716152108671
+      spriteID: 9efe8572f8173cfa0800000000000000
+      internalID: -5781652636959182871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTiles_70
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c57e301d3dea46f60800000000000000
+      internalID: 8026732660649092956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RoomTiles_71
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc57d3e6fe9eafe30800000000000000
+      internalID: 4538196789085173196
       vertices: []
       indices: 
       edges: []

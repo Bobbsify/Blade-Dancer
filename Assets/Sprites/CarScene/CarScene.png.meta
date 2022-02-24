@@ -17,6 +17,9 @@ TextureImporter:
   - first:
       213: 8066933107797390250
     second: Light
+  - first:
+      213: 8870253942431275537
+    second: Building
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -189,8 +192,8 @@ TextureImporter:
       name: Light
       rect:
         serializedVersion: 2
-        x: 224
-        y: 51
+        x: 64
+        y: 3
         width: 68
         height: 157
       alignment: 0
@@ -202,6 +205,27 @@ TextureImporter:
       bones: []
       spriteID: aa3f91dcbe083ff60800000000000000
       internalID: 8066933107797390250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Building
+      rect:
+        serializedVersion: 2
+        x: 217
+        y: 0
+        width: 519
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11adf1ac6f8791b70800000000000000
+      internalID: 8870253942431275537
       vertices: []
       indices: 
       edges: []
