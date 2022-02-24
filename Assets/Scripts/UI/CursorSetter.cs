@@ -14,6 +14,9 @@ public class CursorSetter : MonoBehaviour
     [SerializeField]
     private CursorType defaultCursorType = CursorType.Menu;
 
+    [SerializeField]
+    private Vector2 defaultHotspot = new Vector2(16,16);
+
     private Dictionary<CursorType, Texture2D> cursors = new Dictionary<CursorType, Texture2D>();
 
     private void Awake()
@@ -35,7 +38,8 @@ public class CursorSetter : MonoBehaviour
 
     public void SetCursor(CursorType cursorType)
     {
-        Cursor.SetCursor(cursors[cursorType], Vector3.zero, CursorMode.Auto);
+        Cursor.SetCursor(cursors[cursorType], defaultHotspot, CursorMode.Auto);
+        
     }
 }
 
