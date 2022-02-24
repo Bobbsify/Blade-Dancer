@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -239,7 +239,7 @@ GameObject:
   - component: {fileID: 167043049}
   - component: {fileID: 167043050}
   m_Layer: 0
-  m_Name: StreetLight (8)
+  m_Name: StreetLight5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -298,7 +298,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: -2
   m_Sprite: {fileID: 1932018065476744181, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -793,7 +793,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: -2
   m_Sprite: {fileID: 1932018065476744181, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1069,7 +1069,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 18
+  m_SortingOrder: -1
   m_Sprite: {fileID: 8066933107797390250, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1302,7 +1302,7 @@ GameObject:
   - component: {fileID: 877684229}
   - component: {fileID: 877684230}
   m_Layer: 0
-  m_Name: StreetLight (6)
+  m_Name: StreetLight4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1361,7 +1361,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: -2
   m_Sprite: {fileID: 1932018065476744181, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1385,7 +1385,7 @@ GameObject:
   - component: {fileID: 888811424}
   - component: {fileID: 888811425}
   m_Layer: 0
-  m_Name: StreetLight (2)
+  m_Name: StreetLight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1444,7 +1444,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: -2
   m_Sprite: {fileID: 1932018065476744181, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1524,10 +1524,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8a233a3231fa342ad6e2d93dfd3b93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  officeSprite: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
+  officeSprite: {fileID: 8870253942431275537, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   carPosition: {fileID: 1502114184}
-  distanceSpawned: {x: -50, y: 0, z: 0}
+  distanceSpawned: {x: -50, y: 6.5, z: 0}
   slowTime: 1
   itemsToMove:
   - {fileID: 1079737827}
@@ -1601,7 +1601,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 18
+  m_SortingOrder: -1
   m_Sprite: {fileID: 8066933107797390250, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1736,7 +1736,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 18
+  m_SortingOrder: -1
   m_Sprite: {fileID: 8066933107797390250, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2124,7 +2124,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 18
+  m_SortingOrder: -1
   m_Sprite: {fileID: 8066933107797390250, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10366,7 +10366,7 @@ GameObject:
   - component: {fileID: 1601185486}
   - component: {fileID: 1601185487}
   m_Layer: 0
-  m_Name: StreetLight (4)
+  m_Name: StreetLight3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10425,7 +10425,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 15
+  m_SortingOrder: -2
   m_Sprite: {fileID: 1932018065476744181, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -10828,7 +10828,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 18
+  m_SortingOrder: -1
   m_Sprite: {fileID: 8066933107797390250, guid: 4ff40717a2e5bc241b3f5b4ba55c3f2a,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

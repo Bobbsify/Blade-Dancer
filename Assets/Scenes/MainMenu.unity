@@ -413,6 +413,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9a61bb4b9c0110b4d8fe7b94d3cec7f4, type: 3}
   cursorSpritesType: 00000000
   defaultCursorType: 0
+  defaultHotspot: {x: 4, y: 0}
 --- !u!1 &1427611677
 GameObject:
   m_ObjectHideFlags: 0

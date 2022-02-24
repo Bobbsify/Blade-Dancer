@@ -641,6 +641,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 2841d4bbe0f84e94f88053be788bd48d, type: 3}
   cursorSpritesType: 0000000001000000
   defaultCursorType: 1
+  defaultHotspot: {x: 4, y: 0}
 --- !u!114 &269591766 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 369434283, guid: 25956f7ff032eb64fbc76915aada8d2b,
