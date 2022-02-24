@@ -8104,7 +8104,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 9a61bb4b9c0110b4d8fe7b94d3cec7f4, type: 3}
   - {fileID: 2800000, guid: 2841d4bbe0f84e94f88053be788bd48d, type: 3}
   cursorSpritesType: 0000000001000000
-  defaultCursorType: 1
+  defaultCursorType: 0
 --- !u!1 &1479370606
 GameObject:
   m_ObjectHideFlags: 0
@@ -8148,7 +8148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08ca465628d6acf4ca0349913230fb4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManagerObject: {fileID: 2027274949}
+  gameManagerObject: {fileID: 0}
   uiRulesManager: {fileID: 369434282}
 --- !u!1 &1513149077
 GameObject:
@@ -8488,7 +8488,7 @@ MonoBehaviour:
   inputReceiversTransform: {fileID: 1787614905}
   projectilesRoot: {fileID: 321017109}
   spawnPoint: {fileID: 1672778060}
-  playerPrefab: {fileID: 8797037534487982121, guid: 522626dacc4a0fa4f968d852d6dacfc9,
+  playerPrefab: {fileID: 8797037534487982121, guid: d8e6992670e844c47b54bbe30ec15dff,
     type: 3}
   playerFall:
     audio: {fileID: 8300000, guid: 74f07fae10cd33f4fb83c5b258964a19, type: 3}
