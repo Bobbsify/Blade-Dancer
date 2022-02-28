@@ -1490,8 +1490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: ... Questa prova consiste nel completare, a ritmo di musica, una
-    serie di "Regole" inviate direttamente dai nostri capi...
+  characterLine: ... Questa prova consiste nel completare una serie di "Regole" inviate
+    direttamente dai nostri capi...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6548,12 +6548,12 @@ PrefabInstance:
     - target: {fileID: 410895850871870024, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 1.94
       objectReference: {fileID: 0}
     - target: {fileID: 410895850871870024, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 410895850871870024, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
@@ -6594,6 +6594,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e6fae3c30ca344b100cf200eda7ff, type: 3}
