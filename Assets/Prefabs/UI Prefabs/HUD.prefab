@@ -4063,10 +4063,10 @@ MonoBehaviour:
   possibleCheers:
   - WOW
   - FANTASTICO
-  - STRAVAGANTE
+  - PAZZESCO
   - INCREDIBILE
-  - ASSURDO
-  - ALLUCINANTE
+  - STREPITOSO
+  - FENOMENALE
   - BOMBASTICO
   cheerSounds:
   - audio: {fileID: 8300000, guid: e3b6cf7dca16a5741a9c53cd551487cc, type: 3}
