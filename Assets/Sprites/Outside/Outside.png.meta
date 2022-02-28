@@ -16,7 +16,7 @@ TextureImporter:
     second: Puddle
   - first:
       213: 1264864224959347237
-    second: Crowd3
+    second: Window
   - first:
       213: 4759472290128152135
     second: Crowd4
@@ -184,6 +184,27 @@ TextureImporter:
       bones: []
       spriteID: ce0aadcb2242d7de0800000000000000
       internalID: -1333870183015866132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Window
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 132
+        width: 48
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52a3dc1af43bd8110800000000000000
+      internalID: 1264864224959347237
       vertices: []
       indices: 
       edges: []
