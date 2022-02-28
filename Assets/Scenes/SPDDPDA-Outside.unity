@@ -347,59 +347,6 @@ MonoBehaviour:
   inputType: 0
   searchRoot: {fileID: 1461939160}
   pauseAxisName: Pause
---- !u!1 &16135340
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 16135341}
-  - component: {fileID: 16135342}
-  m_Layer: 0
-  m_Name: Line1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &16135341
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16135340}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.4, y: 0, z: 4.9700003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1412972450}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &16135342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 16135340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: ...
-  characterLine: 'Il cartello recita le seguenti parole:'
-  characterPortrait: {fileID: 2807314771408455767, guid: ef2fb8a8ed7333747afd852659c19ce6,
-    type: 3}
-  voiceOverride:
-    audio: {fileID: 0}
-    playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
-  nextDialogue: {fileID: 1631311417}
 --- !u!1 &23508718
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,59 +1173,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1 &196179441
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 196179442}
-  - component: {fileID: 196179443}
-  m_Layer: 0
-  m_Name: Line1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &196179442
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196179441}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1666561379}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &196179443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 196179441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: ...
-  characterLine: 'Il cartello recita le seguenti parole:'
-  characterPortrait: {fileID: 2807314771408455767, guid: ef2fb8a8ed7333747afd852659c19ce6,
-    type: 3}
-  voiceOverride:
-    audio: {fileID: 0}
-    playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
-  nextDialogue: {fileID: 1068312333}
 --- !u!1 &205169420
 GameObject:
   m_ObjectHideFlags: 0
@@ -11568,7 +11462,7 @@ GameObject:
   - component: {fileID: 1068312332}
   - component: {fileID: 1068312333}
   m_Layer: 0
-  m_Name: Line2
+  m_Name: Line1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11586,7 +11480,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1666561379}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1068312333
 MonoBehaviour:
@@ -12777,59 +12671,6 @@ MonoBehaviour:
     audioType: 0
     outputType: 0
   nextDialogue: {fileID: 0}
---- !u!1 &1326056303
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1326056304}
-  - component: {fileID: 1326056305}
-  m_Layer: 0
-  m_Name: Line3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1326056304
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326056303}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 10.4, y: 0, z: 4.9700003}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1412972450}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1326056305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1326056303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: ...
-  characterLine: 253 Miliardi di anni di questa cacofonia non li sopporterei.
-  characterPortrait: {fileID: 2807314771408455767, guid: ef2fb8a8ed7333747afd852659c19ce6,
-    type: 3}
-  voiceOverride:
-    audio: {fileID: 0}
-    playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
-  nextDialogue: {fileID: 0}
 --- !u!1 &1335538428
 GameObject:
   m_ObjectHideFlags: 0
@@ -13240,9 +13081,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 16135341}
   - {fileID: 1631311416}
-  - {fileID: 1326056304}
   m_Father: {fileID: 506504093}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -13261,9 +13100,8 @@ MonoBehaviour:
   dialogueUI: {fileID: 0}
   distanceToTrigger: 2
   voice: {fileID: 0}
-  startingDialogue: {fileID: 16135342}
+  startingDialogue: {fileID: 1631311417}
   dialogues:
-  - {fileID: 16135342}
   - {fileID: 1631311417}
   endOfDialogueEvents:
     m_PersistentCalls:
@@ -14323,7 +14161,7 @@ GameObject:
   - component: {fileID: 1631311416}
   - component: {fileID: 1631311417}
   m_Layer: 0
-  m_Name: Line2
+  m_Name: Line1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14341,7 +14179,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1412972450}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1631311417
 MonoBehaviour:
@@ -14365,7 +14203,7 @@ MonoBehaviour:
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
-  nextDialogue: {fileID: 1326056305}
+  nextDialogue: {fileID: 0}
 --- !u!1 &1658176555
 GameObject:
   m_ObjectHideFlags: 0
@@ -14448,7 +14286,6 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 196179442}
   - {fileID: 1068312332}
   m_Father: {fileID: 637541225}
   m_RootOrder: 0
@@ -14467,10 +14304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
   distanceToTrigger: 2
-  voice: {fileID: 8300000, guid: 192902f10044fcf478199ad7b2eb645e, type: 3}
-  startingDialogue: {fileID: 196179443}
+  voice: {fileID: 0}
+  startingDialogue: {fileID: 1068312333}
   dialogues:
-  - {fileID: 196179443}
   - {fileID: 1068312333}
   endOfDialogueEvents:
     m_PersistentCalls:
@@ -16219,7 +16055,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ...
-  characterLine: Una folla di anime blocca la via.
+  characterLine: Una folla di anime da cui proviene una terrificante cacofonia mi
+    blocca la via.
   characterPortrait: {fileID: 2807314771408455767, guid: ef2fb8a8ed7333747afd852659c19ce6,
     type: 3}
   voiceOverride:
