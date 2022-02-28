@@ -13,7 +13,7 @@ TextureImporter:
     second: Crowd1
   - first:
       213: -1333870183015866132
-    second: Crowd2
+    second: Puddle
   - first:
       213: 1264864224959347237
     second: Crowd3
@@ -82,7 +82,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -94,7 +94,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -151,9 +151,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 144
+        y: 134
         width: 64
-        height: 16
+        height: 26
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -168,13 +168,13 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Crowd2
+      name: Puddle
       rect:
         serializedVersion: 2
-        x: 0
-        y: 112
-        width: 64
-        height: 19
+        x: 85
+        y: 134
+        width: 52
+        height: 23
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -184,48 +184,6 @@ TextureImporter:
       bones: []
       spriteID: ce0aadcb2242d7de0800000000000000
       internalID: -1333870183015866132
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crowd3
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 80
-        width: 64
-        height: 17
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 52a3dc1af43bd8110800000000000000
-      internalID: 1264864224959347237
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Crowd4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 46
-        width: 64
-        height: 18
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7464763c4da0d0240800000000000000
-      internalID: 4759472290128152135
       vertices: []
       indices: 
       edges: []
