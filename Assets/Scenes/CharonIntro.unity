@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2189,6 +2189,20 @@ MonoBehaviour:
   dialogues:
   - {fileID: 392516380}
   - {fileID: 975172887}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1405332013}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   endOfDialogueEvents:
     m_PersistentCalls:
       m_Calls:
@@ -2215,6 +2229,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1668644229}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1405332013}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -11780,6 +11805,9 @@ MonoBehaviour:
   startingDialogue: {fileID: 679443403}
   dialogues:
   - {fileID: 679443403}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
   endOfDialogueEvents:
     m_PersistentCalls:
       m_Calls:
@@ -11918,6 +11946,20 @@ MonoBehaviour:
   - {fileID: 1631201190}
   - {fileID: 1895653805}
   - {fileID: 749869462}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1405332013}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   endOfDialogueEvents:
     m_PersistentCalls:
       m_Calls:
@@ -11975,6 +12017,17 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1405332013}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!224 &8613225853538355946 stripped
 RectTransform:
