@@ -22,6 +22,10 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
     [SerializeField]
     private List<Dialogue> dialogues = new List<Dialogue>();
 
+    [Header("Events")]
+    [SerializeField]
+    UnityEvent startOfDialogueEvents;
+
     [SerializeField]
     UnityEvent endOfDialogueEvents;
 
@@ -76,6 +80,7 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
                 isInDialogue = true;
                 dialogueUI.SetDialogue(startingDialogue, voice);
                 nextDialogue = startingDialogue.GetNextDialogue();
+                startOfDialogueEvents.Invoke();
             }
         }
     }
