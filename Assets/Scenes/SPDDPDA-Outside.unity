@@ -13302,6 +13302,9 @@ MonoBehaviour:
   startingDialogue: {fileID: 1631311417}
   dialogues:
   - {fileID: 1631311417}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
   endOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -14589,6 +14592,9 @@ MonoBehaviour:
   startingDialogue: {fileID: 1068312333}
   dialogues:
   - {fileID: 1068312333}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
   endOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
@@ -16480,6 +16486,9 @@ MonoBehaviour:
   dialogues:
   - {fileID: 4122059913190936655}
   - {fileID: 0}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
   endOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
