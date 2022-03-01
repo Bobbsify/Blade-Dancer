@@ -104,6 +104,7 @@ MonoBehaviour:
   - {fileID: 2972560279195800838}
   onControllerOff:
   - {fileID: 466873539292236469}
+  debugState: off
 --- !u!1 &466873539292236469
 GameObject:
   m_ObjectHideFlags: 0
@@ -130,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 466873539292236469}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 62219240767449317}
   m_RootOrder: 0
@@ -171,8 +172,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1686411577
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -8154498446710104070, guid: 27f02e044d3b5434eab73544483ae330,
     type: 3}
@@ -285,8 +286,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1686411577
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -562897046965174287, guid: 7f53431ca54df9d44ad4d373434084fa,
     type: 3}

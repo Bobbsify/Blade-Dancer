@@ -8831,21 +8831,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 410895850871870024, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 410895850871870024, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.03
-      objectReference: {fileID: 0}
-    - target: {fileID: 410895850871870024, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 410895850871870024, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
-        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -8902,17 +8887,22 @@ PrefabInstance:
     - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
       propertyPath: m_Size.x
-      value: 7
+      value: 0.34621212
       objectReference: {fileID: 0}
     - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
       propertyPath: m_Size.y
-      value: 7
+      value: 0.18661965
       objectReference: {fileID: 0}
     - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
       propertyPath: m_Center.y
-      value: -6
+      value: -0.27346602
+      objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.9999998
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e6fae3c30ca344b100cf200eda7ff, type: 3}
@@ -11728,7 +11718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e25559d90b7994192bce62f4f0a15e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToTrigger: 1.6
+  distanceToTrigger: 3
   startStreak: 0
   buttonClickSound:
     audio: {fileID: 8300000, guid: a5c2c282842733a48a99630d4868ee18, type: 3}
