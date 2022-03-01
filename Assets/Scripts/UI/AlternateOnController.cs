@@ -9,6 +9,9 @@ public class AlternateOnController : MonoBehaviour
     [SerializeField]
     private List<GameObject> onControllerOff;
 
+    [SerializeField]
+    private string debugState = "off";
+
     private void Awake()
     {
         ControllerOff();
@@ -19,10 +22,12 @@ public class AlternateOnController : MonoBehaviour
         if (Input.GetJoystickNames().Length == 0)
         {
             ControllerOff();
+            debugState = "off";
         }
         else 
         {
             ControllerOn();
+            debugState = "on";
         }
     }
 
