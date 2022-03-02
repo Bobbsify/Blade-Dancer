@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -137,6 +137,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &273110450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 273110448, guid: c772a03894277bd4da4ba8b106d3bbd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1178733920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273110446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f6ea4d8f6c91c49950c07154e7a29b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!224 &273110451 stripped
@@ -519,6 +531,11 @@ PrefabInstance:
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnPointerExit
       objectReference: {fileID: 0}
+    - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
+        type: 3}
+      propertyPath: m_Text
+      value: Modalita' infinita
+      objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Name
@@ -529,6 +546,16 @@ PrefabInstance:
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 1149212929}
+    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 273110450}
+    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Execute
+      objectReference: {fileID: 0}
     - target: {fileID: 3087399255480174163, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -637,6 +664,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 1149212931, guid: c772a03894277bd4da4ba8b106d3bbd7, type: 3}
     - {fileID: 273110452, guid: c772a03894277bd4da4ba8b106d3bbd7, type: 3}
+    - {fileID: 1149212927, guid: c772a03894277bd4da4ba8b106d3bbd7, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c772a03894277bd4da4ba8b106d3bbd7, type: 3}
 --- !u!1 &1205821281
 GameObject:
