@@ -22,6 +22,9 @@ public class MainMenuJoystick : MonoBehaviour
     public GameObject settingPage;
 
     [SerializeField]
+    public GameObject creditsPage;
+
+    [SerializeField]
     public GameObject homePage;
 
     [SerializeField]
@@ -64,6 +67,11 @@ public class MainMenuJoystick : MonoBehaviour
         {
             GoBackToMenu();
         }
+
+        if (creditsPage.activeSelf)
+        {
+            GoBackToMain();
+        }
     }
 
     public void GotoSettings()
@@ -74,6 +82,22 @@ public class MainMenuJoystick : MonoBehaviour
         MusicButton.SetActive(true);
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(settingsFirstButton);
+    }
+
+    public void GotoCredits()
+    {
+        creditsPage.SetActive(true);
+        settingPage.SetActive(false);
+        homePage.SetActive(false);
+    }
+
+    public void GoBackToMain()
+    {
+        creditsPage.SetActive(false);
+        settingPage.SetActive(false);
+        homePage.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(null);
+        EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
     }
 
     public void GoBackToMenu()
