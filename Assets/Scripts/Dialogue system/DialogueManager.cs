@@ -48,39 +48,40 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
 
     }
 
-    private void Start()
+    private void Awake()
     {
         dialogueUI = GameObject.FindGameObjectWithTag("UI").GetComponentInChildren<UIDialogueController>(true);
     }
 
     public void ReceiveInputInteract()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        Vector3 playerDistance = player.transform.position - transform.position;
-        if (playerDistance.magnitude <= distanceToTrigger)
-        {
-
-            if (isInDialogue)
+        if (this.isActiveAndEnabled) { 
+            player = GameObject.FindGameObjectWithTag("Player");
+            Vector3 playerDistance = player.transform.position - transform.position;
+            if (playerDistance.magnitude <= distanceToTrigger)
             {
+                    if (isInDialogue)
+                    {
 
-                if (nextDialogue == null)
-                {
-                    isInDialogue = false;
-                    dialogueUI.EndDialogue(endOfDialogueEvents);
-                    player.GetComponent<PlayerController>().EnableAllAbilities();
-                    return;
-                }
+                        if (nextDialogue == null)
+                        {
+                            isInDialogue = false;
+                            dialogueUI.EndDialogue(endOfDialogueEvents);
+                            player.GetComponent<PlayerController>().EnableAllAbilities();
+                            return;
+                        }
 
-                dialogueUI.SetDialogue(nextDialogue,voice);
-                nextDialogue = nextDialogue.GetNextDialogue();
-            }
-            else
-            {
-                player.GetComponent<PlayerController>().DisableAllAbilities();
-                isInDialogue = true;
-                dialogueUI.SetDialogue(startingDialogue, voice);
-                nextDialogue = startingDialogue.GetNextDialogue();
-                startOfDialogueEvents.Invoke();
+                        dialogueUI.SetDialogue(nextDialogue,voice);
+                        nextDialogue = nextDialogue.GetNextDialogue();
+                    }
+                    else
+                    {
+                        player.GetComponent<PlayerController>().DisableAllAbilities();
+                        isInDialogue = true;
+                        dialogueUI.SetDialogue(startingDialogue, voice);
+                        nextDialogue = startingDialogue.GetNextDialogue();
+                        startOfDialogueEvents.Invoke();
+                    }
             }
         }
     }
