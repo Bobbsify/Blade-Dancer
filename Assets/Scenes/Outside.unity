@@ -14469,7 +14469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Cartello
   characterLine: '"Da questo punto altri 253 Milioni di anni di attesa stimati per
-    arrivare allo sportello"'
+    arrivare allo sportello."'
   characterPortrait: {fileID: 448871502345040690, guid: d62345294e376104d95b9ba505618596,
     type: 3}
   voiceOverride:
@@ -16475,7 +16475,7 @@ MonoBehaviour:
   startingDialogue: {fileID: 4122059913190936655}
   dialogues:
   - {fileID: 4122059913190936655}
-  - {fileID: 0}
+  - {fileID: 1273547790}
   startOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
