@@ -8736,9 +8736,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Non nelle condizioni in cui sono le prossime stanze, ho un lavoro
-    da fare io e non posso deludere Satana se voglio quella promozione a Postino
-    di Malattie
+  characterLine: Almeno non nelle condizioni in cui sono, ho un lavoro da fare e
+    non posso deludere Satana se voglio quella promozione a Postino di Malattie.
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
