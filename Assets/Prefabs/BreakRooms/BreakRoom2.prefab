@@ -5031,8 +5031,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Angelo
-  characterLine: "Incoraggiare le anime a venire in paradiso non \xE8 un lavoro mica
-    facile, soprattutto quando sei rinchiuso 24 ore su 24 con un demone al tuo fianco."
+  characterLine: "Incoraggiare le anime a venire in paradiso non \xE8 un lavoro facile,
+    soprattutto quando sei rinchiuso 24 ore su 24 con un demone al tuo fianco."
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5705,7 +5705,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: "... Ti ignorer\xF2 come al solito..."
+  characterLine: "... Ti ignorer\xF2, come al solito..."
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
