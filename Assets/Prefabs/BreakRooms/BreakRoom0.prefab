@@ -2025,7 +2025,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -2108,7 +2108,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -2191,7 +2191,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -6411,7 +6411,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -6558,7 +6558,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -6861,7 +6861,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -7325,7 +7325,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
