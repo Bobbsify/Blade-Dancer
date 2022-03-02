@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: "Davvero, quell'Angelo \xE8 estremamente logorroico ed uforico,
+  characterLine: "Davvero, quell'Angelo \xE8 estremamente logorroico ed euforico,
     almeno tu mi doni un po' di silenzio..."
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
