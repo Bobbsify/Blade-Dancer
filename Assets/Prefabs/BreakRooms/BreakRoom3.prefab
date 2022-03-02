@@ -48,7 +48,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 601c6aa4d9a628e4bae77801a9b230d1, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -83,6 +83,62 @@ Transform:
   m_Father: {fileID: 8290913903418602552}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &223457315715688129
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6548923831273304919}
+  - component: {fileID: 3206191834897191196}
+  m_Layer: 0
+  m_Name: DialoguesExhausted
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &6548923831273304919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223457315715688129}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7213795648552651796}
+  m_Father: {fileID: 4739224641705818604}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3206191834897191196
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 223457315715688129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ae1d079b99bbe4ebf23cf6fa200e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 0}
+  distanceToTrigger: 2.5
+  voice: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
+  startingDialogue: {fileID: 2090118405663439241}
+  dialogues:
+  - {fileID: 2090118405663439241}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  endOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &231930162436631985
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,16 +183,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: "Davvero, \xE8 estremamente logorroico ed uforico quell'Angelo,
-    almeno tu mi doni un po' di silenzio."
+  characterLine: "Davvero, quell'Angelo \xE8 estremamente logorroico ed uforico,
+    almeno tu mi doni un po' di silenzio..."
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
-  nextDialogue: {fileID: 7755325612484136186}
+  nextDialogue: {fileID: 0}
 --- !u!1 &355431879533772379
 GameObject:
   m_ObjectHideFlags: 0
@@ -191,7 +247,7 @@ MonoBehaviour:
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
-  nextDialogue: {fileID: 8711655163757743663}
+  nextDialogue: {fileID: 0}
 --- !u!1 &381958637885855358
 GameObject:
   m_ObjectHideFlags: 0
@@ -1549,6 +1605,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &531997875820693154
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7213795648552651796}
+  - component: {fileID: 2090118405663439241}
+  m_Layer: 0
+  m_Name: Line1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7213795648552651796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531997875820693154}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6548923831273304919}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090118405663439241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531997875820693154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Daniel Danse
+  characterLine: Buona fortuna con la prossima serie! Scarsone!
+  characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  nextDialogue: {fileID: 0}
 --- !u!1 &578092813065060020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1579,6 +1688,7 @@ Transform:
   - {fileID: 3709392942899528610}
   - {fileID: 6484351385078458244}
   - {fileID: 6484351385746841562}
+  - {fileID: 4212994340551633205}
   m_Father: {fileID: 7182841431805519303}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3925,7 +4035,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -4960,12 +5070,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: "Per\xF2 ascolta, le prossime stanze estan sucias, non posso farti
-    andare avanti."
+  characterLine: Le prossime stanze estan sucias, non posso farti andare avanti...
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 601c6aa4d9a628e4bae77801a9b230d1, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -5102,7 +5211,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -5219,6 +5328,62 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &3351379266774255383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4212994340551633205}
+  - component: {fileID: 4043602679121359837}
+  m_Layer: 0
+  m_Name: DialoguesExhausted
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &4212994340551633205
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3351379266774255383}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1592115419396608747}
+  m_Father: {fileID: 3969094741755614361}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4043602679121359837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3351379266774255383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ae1d079b99bbe4ebf23cf6fa200e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueUI: {fileID: 0}
+  distanceToTrigger: 6
+  voice: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
+  startingDialogue: {fileID: 8225718913238525102}
+  dialogues:
+  - {fileID: 8225718913238525102}
+  startOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  endOfDialogueEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3399406459797239491
 GameObject:
   m_ObjectHideFlags: 0
@@ -5302,7 +5467,6 @@ Transform:
   m_Children:
   - {fileID: 3399406459797239488}
   - {fileID: 6298746181748574782}
-  - {fileID: 7835598437841216298}
   m_Father: {fileID: 4739224641705818604}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5324,13 +5488,35 @@ MonoBehaviour:
   startingDialogue: {fileID: 3399406459797239489}
   dialogues:
   - {fileID: 3399406459797239489}
-  - {fileID: 0}
+  - {fileID: 4907865928617674673}
   startOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
   endOfDialogueEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3399406460005872302}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 223457315715688129}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &3399406461216361200
 GameObject:
   m_ObjectHideFlags: 0
@@ -6559,59 +6745,6 @@ TilemapRenderer:
   m_Mode: 0
   m_DetectChunkCullingBounds: 0
   m_MaskInteraction: 0
---- !u!1 &4192310728385101860
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7835598437841216298}
-  - component: {fileID: 8711655163757743663}
-  m_Layer: 0
-  m_Name: Line3
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7835598437841216298
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4192310728385101860}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3399406460005872303}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8711655163757743663
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4192310728385101860}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Daniel Danse
-  characterLine: Buona fortuna con la prossima serie! SCARSONE!
-  characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
-    type: 3}
-  voiceOverride:
-    audio: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
-    playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
-  nextDialogue: {fileID: 0}
 --- !u!1 &4310904887815108934
 GameObject:
   m_ObjectHideFlags: 0
@@ -7591,7 +7724,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 601c6aa4d9a628e4bae77801a9b230d1, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -7837,7 +7970,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 601c6aa4d9a628e4bae77801a9b230d1, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -7976,7 +8109,6 @@ Transform:
   - {fileID: 6939152780231687828}
   - {fileID: 6896147286063340475}
   - {fileID: 2376642284716119922}
-  - {fileID: 5313351429992996301}
   m_Father: {fileID: 3969094741755614361}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8001,13 +8133,34 @@ MonoBehaviour:
   - {fileID: 3022921122503310936}
   - {fileID: 2694416371157487990}
   - {fileID: 6808410835140345230}
-  - {fileID: 7755325612484136186}
   startOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
   endOfDialogueEvents:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6484351385746841563}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3351379266774255383}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &6484351385959668662
 GameObject:
   m_ObjectHideFlags: 0
@@ -8056,11 +8209,65 @@ MonoBehaviour:
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
   nextDialogue: {fileID: 3022921122503310936}
+--- !u!1 &6565952952073053889
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1592115419396608747}
+  - component: {fileID: 8225718913238525102}
+  m_Layer: 0
+  m_Name: Line1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1592115419396608747
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6565952952073053889}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4212994340551633205}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8225718913238525102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6565952952073053889}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Annohiath
+  characterLine: Non voglio trattenerti ulteriormente, buona fortuna con la prossima
+    serie!
+  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
+    type: 3}
+  voiceOverride:
+    audio: {fileID: 8300000, guid: 0c969e8ce75fdd6449c0a2fba055727c, type: 3}
+    playPos: {x: 0, y: 0, z: 0}
+    audioType: 0
+    outputType: 0
+  nextDialogue: {fileID: 0}
 --- !u!1 &6617403617262221822
 GameObject:
   m_ObjectHideFlags: 0
@@ -8255,11 +8462,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: "Lo lamento mucho, appena avr\xF2 finito te lo far\xF2 sapere."
+  characterLine: "Lo lamento mucho, appena avr\xF2 finito te lo far\xF2 sapere!"
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 601c6aa4d9a628e4bae77801a9b230d1, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
@@ -8451,60 +8658,6 @@ Transform:
   m_Father: {fileID: 3920557604866505164}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &9065250410491601723
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5313351429992996301}
-  - component: {fileID: 7755325612484136186}
-  m_Layer: 0
-  m_Name: Line5
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5313351429992996301
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9065250410491601723}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6484351385746841562}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7755325612484136186
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9065250410491601723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Beh, non voglio trattenerti ulteriormente, buona fortuna con la
-    prossima serie!
-  characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
-    type: 3}
-  voiceOverride:
-    audio: {fileID: 0}
-    playPos: {x: 0, y: 0, z: 0}
-    audioType: 0
-    outputType: 0
-  nextDialogue: {fileID: 0}
 --- !u!1 &9139449926581949377
 GameObject:
   m_ObjectHideFlags: 0
@@ -8535,6 +8688,7 @@ Transform:
   - {fileID: 7538528205903349737}
   - {fileID: 3399406461216361201}
   - {fileID: 3399406460005872303}
+  - {fileID: 6548923831273304919}
   m_Father: {fileID: 7182841431805519303}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -8588,7 +8742,7 @@ MonoBehaviour:
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
-    audio: {fileID: 0}
+    audio: {fileID: 8300000, guid: 601c6aa4d9a628e4bae77801a9b230d1, type: 3}
     playPos: {x: 0, y: 0, z: 0}
     audioType: 0
     outputType: 0
