@@ -2104,7 +2104,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Annohiath
-  characterLine: Buona Fortuna..
+  characterLine: ... Buona Fortuna...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6776,7 +6776,14 @@ MonoBehaviour:
   startingDialogue: {fileID: 6484351385959668660}
   dialogues:
   - {fileID: 6484351385959668660}
+  - {fileID: 7046399084672598093}
   - {fileID: 6432177791447832076}
+  - {fileID: 5322964243508395412}
+  - {fileID: 6613499020227007381}
+  - {fileID: 9129165285644300420}
+  - {fileID: 6237533611487748525}
+  - {fileID: 988725935958691503}
+  - {fileID: 7911884419840458321}
   startOfDialogueEvents:
     m_PersistentCalls:
       m_Calls: []
