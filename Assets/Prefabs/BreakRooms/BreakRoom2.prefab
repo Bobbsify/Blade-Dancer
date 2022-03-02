@@ -9112,7 +9112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Ah, ten cuidado, no pises dove ho appena pulito, altrimenti beh...
+  characterLine: Ah, cuidado, non passare dove ho appena pulito, altrimenti beh...
     entiendes?
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
