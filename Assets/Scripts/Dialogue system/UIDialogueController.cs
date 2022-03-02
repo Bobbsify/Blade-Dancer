@@ -78,7 +78,8 @@ public class UIDialogueController : MonoBehaviour
 
     private IEnumerator TellDialogue() 
     {
-        DialogueText.text += totalDialogue[pointInDialogue];
+        string nextText = totalDialogue[pointInDialogue] == '<' ? GetMarkupText() : ""+totalDialogue[pointInDialogue];
+        DialogueText.text += nextText;
         ++pointInDialogue;
         if (pointInDialogue == totalDialogue.Length)
         {
@@ -88,6 +89,26 @@ public class UIDialogueController : MonoBehaviour
             yield return new WaitForSeconds(dialogueSpeed);
             StartCoroutine(TellDialogue());
         }
+    }
+
+    private string GetMarkupText() 
+    {
+        bool foundDash = false;
+        string markupText = "";
+        for (int i = pointInDialogue; i < totalDialogue.Length; i++) 
+        {
+            markupText += totalDialogue[i];
+            if (totalDialogue[i] == '/' && !foundDash) 
+            {
+                foundDash = true;
+            }
+            if (foundDash && totalDialogue[i] == '>') //Exit
+            {
+                pointInDialogue += i - pointInDialogue;
+                break;
+            }
+        }
+        return markupText;
     }
 
     private void EndTelling()
