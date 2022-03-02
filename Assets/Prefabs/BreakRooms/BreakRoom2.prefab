@@ -5262,7 +5262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "... Questa dannata prova \xE8 pi\xF9 pesante di quel che pensassi."
+  characterLine: "... Questa dannata prova \xE8 pi\xF9 pesante di quel che pensassi..."
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:

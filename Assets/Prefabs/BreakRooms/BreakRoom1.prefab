@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Angelo
-  characterLine: "Ce l'ha fatta!! Vedi! Non \xE8 stato cos\xEC difficile! Hai proprio
+  characterLine: "Ce l'ha fatta! Vedi! Non \xE8 stato cos\xEC difficile! Hai proprio
     la stoffa per diventare un gran bell'angelo!"
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
