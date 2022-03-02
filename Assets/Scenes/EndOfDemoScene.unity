@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.3587269, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -139,25 +139,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &273110448
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 273110446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f6ea4d8f6c91c49950c07154e7a29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneMoveType: 0
 --- !u!224 &273110451 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3087399255480174163, guid: c772a03894277bd4da4ba8b106d3bbd7,
     type: 3}
   m_PrefabInstance: {fileID: 1178733920}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &273110452 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 273110452, guid: c772a03894277bd4da4ba8b106d3bbd7,
+    type: 3}
+  m_PrefabInstance: {fileID: 1178733920}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273110446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe2f14d6c3a1146d584e48d7a58f716a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &340306545
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -165,11 +164,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 388854609684961844}
     m_Modifications:
-    - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
-      propertyPath: m_Text
-      value: Torna al menu principale
-      objectReference: {fileID: 0}
+    - target: {fileID: 1149212931, guid: c772a03894277bd4da4ba8b106d3bbd7, type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 273110452}
+    - target: {fileID: 1149212931, guid: c772a03894277bd4da4ba8b106d3bbd7, type: 3}
+      propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 273110452}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Name
@@ -177,24 +179,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
       objectReference: {fileID: 273110447}
-    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1149212927}
-    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Execute
-      objectReference: {fileID: 0}
     - target: {fileID: 3087399255480174163, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -368,38 +355,19 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!1 &1149212925 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
-    type: 3}
-  m_PrefabInstance: {fileID: 340306545}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &1149212926 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3087399255480174163, guid: c772a03894277bd4da4ba8b106d3bbd7,
     type: 3}
   m_PrefabInstance: {fileID: 340306545}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1149212927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149212925}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f6ea4d8f6c91c49950c07154e7a29b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneMoveType: 3
 --- !u!114 &1149212929 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
     type: 3}
   m_PrefabInstance: {fileID: 340306545}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1149212925}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -495,11 +463,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 388854609684961844}
     m_Modifications:
-    - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
-      propertyPath: m_Text
-      value: Modalita' infinita
-      objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Name
@@ -507,24 +470,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
-      propertyPath: m_Navigation.m_Mode
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
       propertyPath: m_Navigation.m_SelectOnDown
       value: 
       objectReference: {fileID: 1149212929}
-    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 273110448}
-    - target: {fileID: 3087399254619795663, guid: c772a03894277bd4da4ba8b106d3bbd7,
-        type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Execute
-      objectReference: {fileID: 0}
     - target: {fileID: 3087399255480174163, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Pivot.x
@@ -2232,6 +2180,7 @@ MonoBehaviour:
   - {fileID: 2799917388956263870}
   onControllerOff:
   - {fileID: 8005647459434191380}
+  debugState: off
 --- !u!224 &3306275071651272654
 RectTransform:
   m_ObjectHideFlags: 0
