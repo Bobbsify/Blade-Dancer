@@ -99,6 +99,11 @@ public class TimerManager : MonoBehaviour, IGameEntity
 
     public bool IsGoing()
     {
-        return doTimer || dance;
+        return doTimer;
+    }
+
+    public bool IsDanceStopped() 
+    {
+        return this.dance;
     }
 }

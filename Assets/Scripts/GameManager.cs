@@ -221,7 +221,7 @@ public class GameManager : MonoBehaviour
 
     public void ActionEventTrigger(Actions action)
     {
-        if (currentStreak != null && timer.IsGoing())
+        if (currentStreak != null && (timer.IsGoing() || timer.IsDanceStopped()))
         {
             if (action.Equals(Actions.TakeDamage) && ruleManager.IsCurrentlyRule(AllRules.Danneggiati) && !tookDamage)
             {
