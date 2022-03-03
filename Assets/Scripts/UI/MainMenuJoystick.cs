@@ -41,6 +41,11 @@ public class MainMenuJoystick : MonoBehaviour
     {
         EventSystem.current.SetSelectedGameObject(null);
         EventSystem.current.SetSelectedGameObject(mainMenuFirstButton);
+
+        foreach (VolumeManager volume in GetComponentsInChildren<VolumeManager>()) 
+        {
+            volume.SetupVolume();
+        }
     }
 
     private void Update()
