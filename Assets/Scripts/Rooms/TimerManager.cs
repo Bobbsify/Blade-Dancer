@@ -30,6 +30,8 @@ public class TimerManager : MonoBehaviour, IGameEntity
 
     private bool doTimer = false;
 
+    private bool dance = false;
+
     // Update is called once per frame
     void Update()
     {
@@ -62,14 +64,18 @@ public class TimerManager : MonoBehaviour, IGameEntity
         }
     }
 
-    public void StopTimer()
+    public void StopTimer(bool dance = false)
     {
         doTimer = false;
+        this.dance = dance;
     }
 
-    public void StartTimer()
+    public void StartTimer(bool dance = false)
     {
         doTimer = true;
+        if (dance) { 
+            this.dance = false;
+        }
     }
 
     public void ResetTimer()
@@ -93,6 +99,6 @@ public class TimerManager : MonoBehaviour, IGameEntity
 
     public bool IsGoing()
     {
-        return doTimer;
+        return doTimer || dance;
     }
 }

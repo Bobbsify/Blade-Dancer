@@ -245,6 +245,7 @@ public class GameManager : MonoBehaviour
     public void KillPlayer()
     {
         playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
+        ruleManager.SetNewRuleset(new List<Rule>());
         GenerateNewStreak();
     }
 
@@ -543,7 +544,7 @@ public class GameManager : MonoBehaviour
     {
         if (!timer.IsGoing() && currentStreak != null) 
         { 
-            timer.StartTimer();
+            timer.StartTimer(true);
         }
     }
 
@@ -551,7 +552,7 @@ public class GameManager : MonoBehaviour
     {
         if (timer.IsGoing() && currentStreak != null)
         {
-            timer.StopTimer();
+            timer.StopTimer(true);
         }
     }
 
