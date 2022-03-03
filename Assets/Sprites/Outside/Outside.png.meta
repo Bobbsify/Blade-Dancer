@@ -19,7 +19,10 @@ TextureImporter:
     second: Window
   - first:
       213: 4759472290128152135
-    second: Crowd4
+    second: Puddle2
+  - first:
+      213: 8355156498468931865
+    second: Plant
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -197,7 +200,7 @@ TextureImporter:
         width: 48
         height: 76
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -205,6 +208,48 @@ TextureImporter:
       bones: []
       spriteID: 52a3dc1af43bd8110800000000000000
       internalID: 1264864224959347237
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Puddle2
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 113
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7464763c4da0d0240800000000000000
+      internalID: 4759472290128152135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Plant
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 96
+        width: 16
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 919890e519a73f370800000000000000
+      internalID: 8355156498468931865
       vertices: []
       indices: 
       edges: []

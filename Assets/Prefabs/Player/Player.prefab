@@ -9889,7 +9889,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a47f5a6a6a37a46cda92b3b7ba7d20e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashForce: 11
+  dashForce: 27
+  dashStopTime: 0.2
   dashCooldown: 0.6
   dashSound:
     audio: {fileID: 8300000, guid: 72e6bb5a3451c9e40bc3ad4d0452ad02, type: 3}

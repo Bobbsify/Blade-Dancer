@@ -650,7 +650,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleziona
+  m_Text: Indietro
 --- !u!1 &2523672701822514859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4250894858201227942
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1925,6 +1925,7 @@ MonoBehaviour:
   - {fileID: 1582971670142744792}
   onControllerOff:
   - {fileID: 6644308831405164402}
+  debugState: off
 --- !u!1 &9042392510592332743
 GameObject:
   m_ObjectHideFlags: 0
