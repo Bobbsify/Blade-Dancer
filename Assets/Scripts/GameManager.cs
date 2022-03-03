@@ -223,11 +223,6 @@ public class GameManager : MonoBehaviour
     {
         if (currentStreak != null && (timer.IsGoing() || timer.IsDanceStopped()))
         {
-            if (action.Equals(Actions.TakeDamage) && ruleManager.IsCurrentlyRule(AllRules.Danneggiati) && !tookDamage)
-            {
-                tookDamage = true;
-                playerCtrl.TakeDamage(-1); //Heal player on first instance of damage
-            }
             ruleManager.ApplyRule(action);
         }
     }
@@ -419,6 +414,10 @@ public class GameManager : MonoBehaviour
 
             //Setup new Arena
             ruleManager.SetNewRuleset(stage.GetRules());
+            if (ruleManager.IsCurrentlyRule(AllRules.Danneggiati)) 
+            {
+                playerCtrl.DivineShield();
+            }
             InitEntities(currentArena);
             PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
 
