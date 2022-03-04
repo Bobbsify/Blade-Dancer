@@ -163,6 +163,8 @@ public class GameManager : MonoBehaviour
 
     private bool tookDamage = false;
 
+    private bool playerIsBeingKilled = false;
+
     private void OnValidate()
     {
         if (cheerManager == null) 
@@ -239,9 +241,12 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer()
     {
-        playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
-        ruleManager.SetNewRuleset(new List<Rule>());
-        GenerateNewStreak();
+        if (!playerIsBeingKilled) {
+            playerIsBeingKilled = true;
+            playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
+            ruleManager.SetNewRuleset(new List<Rule>());
+            GenerateNewStreak();
+        }
     }
 
     public void ShakeCamera()
@@ -389,6 +394,7 @@ public class GameManager : MonoBehaviour
         StreakEnded();
         firstRun = fr;
         playerCtrl.EnableAllAbilities();
+        playerIsBeingKilled = false;
         ruleManager.SetNewRuleset(new List<Rule>()); //Empty rules
         RemoveProjectiles();
     }
