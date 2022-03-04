@@ -38,16 +38,9 @@ public class InputManager : MonoBehaviour, IInputManager
 		}
 	}
 
-	public void IsControllerConnected()
+	public void IsControllerOn()
 	{
-		if (Input.GetJoystickNames() != null)
-		{
-			isPlayerUsingController = true;
-		}
-		else
-		{
-			isPlayerUsingController = false;
-		}
+		isPlayerUsingController = true;
 	}
 
 	void IInputManager.SetupInput(bool enabled)
