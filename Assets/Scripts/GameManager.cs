@@ -131,6 +131,9 @@ public class GameManager : MonoBehaviour
     private int streaksCompleted = 1;
 
     [SerializeField]
+    private bool isPlayerUsingController;
+
+    [SerializeField]
     [Tooltip("Specificare le regole che usciranno durante i prossimi 10 stage")]
     private AllRules[] customRun = new AllRules[6];
 
@@ -338,6 +341,18 @@ public class GameManager : MonoBehaviour
     public void PlayerLanded()
     {
         StartStage();
+    }
+
+    public void IsControllerConnected()
+    {
+       if(Input.GetJoystickNames() != null)
+        {
+            isPlayerUsingController = true;
+        }
+        else
+        {
+            isPlayerUsingController = false;
+        }
     }
 
 
