@@ -38,9 +38,9 @@ public class InputManager : MonoBehaviour, IInputManager
 		}
 	}
 
-	public void IsControllerOn()
+	public bool IsControllerOn()
 	{
-		isPlayerUsingController = true;
+		return isPlayerUsingController;
 	}
 
 	void IInputManager.SetupInput(bool enabled)
