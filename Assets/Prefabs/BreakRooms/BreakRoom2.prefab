@@ -7014,6 +7014,7 @@ GameObject:
   - component: {fileID: 489309833549333039}
   - component: {fileID: 6731340903251916993}
   - component: {fileID: 9077298096777985580}
+  - component: {fileID: 374295529437766317}
   m_Layer: 0
   m_Name: StarStreakButton
   m_TagString: Untagged
@@ -7120,6 +7121,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &374295529437766317
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4310904887815108934}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.875, y: 1.6250004, z: 2}
+  m_Center: {x: 0, y: 0.00000023841858, z: 0.0000009536743}
 --- !u!1 &4626086361061389721
 GameObject:
   m_ObjectHideFlags: 0

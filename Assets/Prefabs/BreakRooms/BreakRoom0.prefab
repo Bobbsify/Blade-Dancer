@@ -7342,6 +7342,7 @@ GameObject:
   - component: {fileID: 8848316814638692299}
   - component: {fileID: 8848316814638692301}
   - component: {fileID: 8848316814638692298}
+  - component: {fileID: 2665043729924356514}
   m_Layer: 0
   m_Name: StarStreakButton
   m_TagString: Untagged
@@ -7448,6 +7449,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &2665043729924356514
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8848316814638692296}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.875, y: 1.6250004, z: 2}
+  m_Center: {x: 0, y: 0.00000023841858, z: 0.0000009536743}
 --- !u!1 &8900842585433168799
 GameObject:
   m_ObjectHideFlags: 0
@@ -7730,6 +7744,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Interaction
+      objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870025, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e6fae3c30ca344b100cf200eda7ff, type: 3}
