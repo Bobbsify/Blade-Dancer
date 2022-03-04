@@ -10,6 +10,23 @@ public class EnemyDance : FSMState
     [SerializeField]
     private float danceSpeed = 0.5f;
 
+    [SerializeField]
+    private int charge = 1;
+
+    [SerializeField]
+    private ParticleSystem danceParticles;
+
+    [SerializeField]
+    [Range(0.1f, 5.0f)]
+    private float speedMultiplier = 1.5f;
+
+    [SerializeField]
+    private float particleDefaultSpeed;
+
+    [SerializeField]
+    [Range(4, 20)]
+    private float particleDefaultAmount = 4;
+
     private EnemyIdle stateIdle;
 
     private GameObject target;
@@ -20,6 +37,15 @@ public class EnemyDance : FSMState
     {
         if(stateIdle == null)
         TryGetComponent(out stateIdle);
+
+        if (danceParticles == null)
+        {
+            danceParticles = transform.Find("DanceParticles").GetComponent<ParticleSystem>();
+        }
+        else
+        {
+            particleDefaultSpeed = danceParticles.main.startSpeed.constant;
+        }
     }
 
     private void OnEnable()
@@ -38,6 +64,9 @@ public class EnemyDance : FSMState
     private IEnumerator DoDance() 
     {
         this.transform.localScale = new Vector3(this.transform.localScale.x * -1, this.transform.localScale.y, this.transform.localScale.z);
+        var main = danceParticles.main;
+        main.startSpeed = particleDefaultSpeed + (charge * speedMultiplier);
+        danceParticles.Emit(Mathf.FloorToInt(charge * particleDefaultAmount));
         yield return new WaitForSeconds(danceSpeed);
         if (danceTime >= danceDuration)
         {
