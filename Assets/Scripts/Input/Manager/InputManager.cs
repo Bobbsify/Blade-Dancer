@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour, IInputManager
 		{
 			Cursor.lockState = CursorLockMode.Locked;
         }
-	  else if(Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+	  else if(Input.GetKey(KeyCode.Mouse0) || Input.GetKey(KeyCode.Mouse1) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.Escape))
         {
 			Cursor.lockState = CursorLockMode.None;
         }
