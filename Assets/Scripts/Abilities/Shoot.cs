@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -99,7 +100,7 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
         Vector3 worldPosition = new Vector3(horizontalInput, 0, -verticalInput); //-vertical input necessary
 
-        if (worldPosition == Vector3.zero || Input.GetJoystickNames().Length == 0) //No input through the joystick axis 
+        if (worldPosition == Vector3.zero) //No input through the joystick axis 
         {
             Vector3 mousePos = Input.mousePosition;
             Vector3 screenPos = Camera.main.WorldToScreenPoint(objSpawnPos.position);
@@ -109,6 +110,11 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
         }
 
         return Quaternion.LookRotation(worldPosition,Vector3.forward);
+    }
+
+    public void CanShoot(bool state)
+    {
+        this.canShoot = state;
     }
 
     public void SetProjectilesRoot(Transform projectilesRoot) 

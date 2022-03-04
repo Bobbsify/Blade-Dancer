@@ -30,10 +30,12 @@ public class UIDialogueController : MonoBehaviour
     [SerializeField]
     private Text DialogueText;
 
-    private char[] totalDialogue;
+    private string totalDialogue;
     private int pointInDialogue = 0;
 
     private SoundPacket speakingSound;
+
+    private bool isTelling = false;
 
     private void OnValidate()
     {
@@ -63,8 +65,9 @@ public class UIDialogueController : MonoBehaviour
 
         NameToShow.text = dialogue.GetName();
 
-        totalDialogue = dialogue.GetLine().ToCharArray();
+        totalDialogue = dialogue.GetLine();
         DialogueText.text = "";
+        isTelling = true;
         StartCoroutine(TellDialogue());
     }
 
@@ -74,6 +77,11 @@ public class UIDialogueController : MonoBehaviour
         StopAllCoroutines();
         gameObject.SetActive(false);
         events.Invoke();
+    }
+
+    public bool IsTelling()
+    {
+        return this.isTelling;
     }
 
     private IEnumerator TellDialogue() 
@@ -89,6 +97,14 @@ public class UIDialogueController : MonoBehaviour
             yield return new WaitForSeconds(dialogueSpeed);
             StartCoroutine(TellDialogue());
         }
+    }
+
+    public void FillDialogue()
+    {
+        StopAllCoroutines();
+        EndTelling();
+
+        DialogueText.text = totalDialogue;
     }
 
     private string GetMarkupText() 
@@ -114,6 +130,7 @@ public class UIDialogueController : MonoBehaviour
     private void EndTelling()
     {
         pointInDialogue = 0;
+        isTelling = false;
 
         if (speakingSound != null)
         {

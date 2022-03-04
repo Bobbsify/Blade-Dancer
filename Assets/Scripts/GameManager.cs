@@ -271,6 +271,7 @@ public class GameManager : MonoBehaviour
         nextStage = currentStreak.GetCurrentStage();
 
         //Do animation
+        playerCtrl.ToggleShooting(true);
         playerCtrl.DisableAllAbilities();
         currentArena.GetComponent<RoomController>().DoEndOfStage();
 
@@ -482,6 +483,7 @@ public class GameManager : MonoBehaviour
 
         streaksCompleted++;
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
+        playerCtrl.ToggleShooting(false);
         RemoveProjectiles();
         PlayerDamageTrigger();
         ResetCamera();

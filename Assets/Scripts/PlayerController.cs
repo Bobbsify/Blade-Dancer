@@ -227,4 +227,12 @@ public class PlayerController : MonoBehaviour, IGameEntity
     {
         divineShield = true;
     }
+
+    public void ToggleShooting(bool state)
+    {
+        if(TryGetComponent(out Shoot shoot))
+        {
+            shoot.CanShoot(state);
+        }
+    }
 }

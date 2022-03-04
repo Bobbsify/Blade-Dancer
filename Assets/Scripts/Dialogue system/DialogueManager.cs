@@ -63,16 +63,24 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
                     if (isInDialogue)
                     {
 
-                        if (nextDialogue == null)
+                        if (dialogueUI.IsTelling()) 
                         {
-                            isInDialogue = false;
-                            dialogueUI.EndDialogue(endOfDialogueEvents);
-                            player.GetComponent<PlayerController>().EnableAllAbilities();
-                            return;
+                            dialogueUI.FillDialogue();
+                        }
+                        else
+                        {
+                            if (nextDialogue == null)
+                            {
+                                isInDialogue = false;
+                                dialogueUI.EndDialogue(endOfDialogueEvents);
+                                player.GetComponent<PlayerController>().EnableAllAbilities();
+                                return;
+                            }
+
+                            dialogueUI.SetDialogue(nextDialogue,voice);
+                            nextDialogue = nextDialogue.GetNextDialogue();
                         }
 
-                        dialogueUI.SetDialogue(nextDialogue,voice);
-                        nextDialogue = nextDialogue.GetNextDialogue();
                     }
                     else
                     {
