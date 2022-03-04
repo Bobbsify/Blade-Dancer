@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
     public void FallAnimationCompleted()
     {
         DisableAllAbilities();
+        this.divineShield = false;
         gameManager.PlayerHasFallen();
     }
 
