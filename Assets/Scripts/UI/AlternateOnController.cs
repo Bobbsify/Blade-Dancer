@@ -19,15 +19,15 @@ public class AlternateOnController : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetJoystickNames().Length == 0)
-        {
-            ControllerOff();
-            debugState = "off";
-        }
-        else 
+        if (Cursor.lockState == CursorLockMode.Locked)
         {
             ControllerOn();
             debugState = "on";
+        }
+        else
+        {
+            ControllerOff();
+            debugState = "off";
         }
     }
 

@@ -95,13 +95,19 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
     private Quaternion GetRotationToShootAt()
     {
-        float horizontalInput = Input.GetAxis(horizontalLeftJoyName);
-        float verticalInput = Input.GetAxis(verticalLeftJoyName);
+        if (Cursor.lockState == CursorLockMode.Locked) {
+            
+            //Controller
+            float horizontalInput = Input.GetAxis(horizontalLeftJoyName);
+            float verticalInput = Input.GetAxis(verticalLeftJoyName);
 
-        Vector3 worldPosition = new Vector3(horizontalInput, 0, -verticalInput); //-vertical input necessary
+            Vector3 worldPosition = new Vector3(horizontalInput, 0, -verticalInput); //-vertical input necessary
 
-        if (worldPosition == Vector3.zero) //No input through the joystick axis 
+            return Quaternion.LookRotation(worldPosition, Vector3.forward);
+        }
+        else
         {
+            //Mouse And Keyboard
             Vector3 mousePos = Input.mousePosition;
             Vector3 screenPos = Camera.main.WorldToScreenPoint(objSpawnPos.position);
             Vector3 dir = mousePos - screenPos; //Find direction vector between the mouse and the objspawner
@@ -109,7 +115,6 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
             return Quaternion.AngleAxis(angle, Vector3.up);
         }
 
-        return Quaternion.LookRotation(worldPosition,Vector3.forward);
     }
 
     public void CanShoot(bool state)
