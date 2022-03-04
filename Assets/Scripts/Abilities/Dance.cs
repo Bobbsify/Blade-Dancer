@@ -27,6 +27,9 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     private ParticleSystem danceParticles;
 
     [SerializeField]
+    private ParticleSystem danceAreaParticles;
+
+    [SerializeField]
     [Range(0.1f,5.0f)]
     private float speedMultiplier = 1.5f;
 
@@ -89,11 +92,18 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
         var main = danceParticles.main;
         main.startSpeed = particleDefaultSpeed + (charge * speedMultiplier);
         danceParticles.Emit(Mathf.FloorToInt(charge * particleDefaultAmount));
+
+        float radius = Mathf.Max(charge * maxSphereWidth / maxCharge, minSphereWidth);
+
+        var mainArea = danceAreaParticles.sizeOverLifetime;
+        var AreaSize = mainArea.size;
+        AreaSize.constantMax = radius;
+        danceAreaParticles.Emit(1);
+
         gameManager.PlaySound(danceSound);
 
         playerController.Animate("dance");
 
-        float radius = Mathf.Max(charge * maxSphereWidth / maxCharge, minSphereWidth);
         Collider[] hits =Physics.OverlapSphere(this.transform.position, radius);
         foreach (Collider hit in hits) 
         {
