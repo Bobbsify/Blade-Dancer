@@ -8,6 +8,9 @@ public class InputManager : MonoBehaviour, IInputManager
 	[SerializeField]
 	private GameObject searchRoot;
 
+	[SerializeField]
+	private bool isPlayerUsingController;
+
 	private IInputEntity[] inputSenders;
 
 	private void Start()
@@ -32,6 +35,18 @@ public class InputManager : MonoBehaviour, IInputManager
 		if (TryGetComponent(out InputSystemPause pause))
 		{
 			pause.ToggleInput(false);
+		}
+	}
+
+	public void IsControllerConnected()
+	{
+		if (Input.GetJoystickNames() != null)
+		{
+			isPlayerUsingController = true;
+		}
+		else
+		{
+			isPlayerUsingController = false;
 		}
 	}
 
