@@ -95,9 +95,9 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
 
         float radius = Mathf.Max(charge * maxSphereWidth / maxCharge, minSphereWidth);
 
-        var mainArea = danceAreaParticles.sizeOverLifetime;
-        var AreaSize = mainArea.size;
-        AreaSize.constantMax = radius;
+        var mainArea = danceAreaParticles.main;
+        mainArea.startSize = radius * 8;
+
         danceAreaParticles.Emit(1);
 
         gameManager.PlaySound(danceSound);
