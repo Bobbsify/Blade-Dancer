@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
             if (canTakeDamage || amount == this.maxHealth)
             {
                 currentHealth = divineShield && (amount != this.maxHealth) ? currentHealth : Mathf.Min(Mathf.Max(0, currentHealth - amount), maxHealth);
+                divineShield = false;
                 canTakeDamage = false;
                 if (currentHealth == 0)
                 {

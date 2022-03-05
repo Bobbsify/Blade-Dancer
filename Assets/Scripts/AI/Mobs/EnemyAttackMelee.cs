@@ -87,7 +87,7 @@ public class EnemyAttackMelee : FSMState
 
     private void Attack()
 	{
-		if (isPlayerDamageable == true)
+		if (isPlayerDamageable == true && playerController != null)
         {
 			playerController.TakeDamage(damage);
 			isPlayerDamageable = false;
