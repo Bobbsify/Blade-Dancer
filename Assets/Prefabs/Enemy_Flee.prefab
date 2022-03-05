@@ -9722,7 +9722,7 @@ GameObject:
   - component: {fileID: 7251394527796283675}
   - component: {fileID: 8311623136659962207}
   - component: {fileID: 3030171392430779592}
-  - component: {fileID: 688641169}
+  - component: {fileID: 4485982893454318994}
   m_Layer: 8
   m_Name: Enemy_Flee
   m_TagString: Untagged
@@ -9895,8 +9895,8 @@ MonoBehaviour:
   speedMultiplier: 1.5
   particleDefaultSpeed: 3
   particleDefaultAmount: 4
---- !u!135 &688641169
-SphereCollider:
+--- !u!65 &4485982893454318994
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -9906,8 +9906,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5325812
-  m_Center: {x: 0, y: 0, z: 0.038490534}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7251394528346421223
 GameObject:
   m_ObjectHideFlags: 0
