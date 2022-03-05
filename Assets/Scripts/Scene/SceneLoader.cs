@@ -23,6 +23,7 @@ public class SceneLoader : MonoBehaviour
                 SceneManager.LoadScene(nextScene);
                 break;
         }
+        Time.timeScale = 1;
     }
 
     
