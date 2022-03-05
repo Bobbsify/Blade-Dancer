@@ -5,7 +5,10 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(Rigidbody))]
 public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, IInputReceiverMove
-{ 
+{
+    [SerializeField]
+    private bool canDash;
+
     [SerializeField]
     private float dashForce = 11.0f;
 
@@ -17,8 +20,6 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
 
     [SerializeField]
     private SoundPacket dashSound;
-
-    private bool canDash;
 
     private GameManager gameManager;
 
@@ -49,7 +50,7 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
 
     public void Trigger()
     {
-        if (this.canDash && lastDirection != Vector3.zero)
+        if ((this.canDash && this.enabled) && lastDirection != Vector3.zero)
         {
             canDash = false;
             this.rigidBody.AddForce(lastDirection * dashForce, ForceMode.Impulse);
