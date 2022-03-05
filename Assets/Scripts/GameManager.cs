@@ -105,6 +105,17 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private HealthController healthController;
 
+    [SerializeField]
+    private GameObject pauseIcon;
+
+    [Header("Camera")]
+
+    [SerializeField]
+    private CameraController cameraController;
+
+    [SerializeField]
+    private float zCameraOffset = 0.8f;
+
     [Header("Debug")]
     [SerializeField]
     [Tooltip("Never leaves the first break room")]
@@ -150,9 +161,9 @@ public class GameManager : MonoBehaviour
 
     //Other
 
-    private GameObject mainCamera;
-
     private bool tookDamage = false;
+
+    private bool playerIsBeingKilled = false;
 
     private void OnValidate()
     {
@@ -182,7 +193,6 @@ public class GameManager : MonoBehaviour
 		this.GeneratePlayerPawn();
         PlayerPawn.GetComponent<Shoot>().SetProjectilesRoot(this.projectilesRoot);
         streakFactory = new StreakFactory(defaultRoomsPrefabs, new RuleFactory(allRules.getAll()), this);
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
 	}
 
 	private void Start()
@@ -213,13 +223,8 @@ public class GameManager : MonoBehaviour
 
     public void ActionEventTrigger(Actions action)
     {
-        if (currentStreak != null && timer.IsGoing())
+        if (currentStreak != null && (timer.IsGoing() || timer.IsDanceStopped()))
         {
-            if (action.Equals(Actions.TakeDamage) && ruleManager.IsCurrentlyRule(AllRules.Danneggiati) && !tookDamage)
-            {
-                tookDamage = true;
-                playerCtrl.TakeDamage(-1); //Heal player on first instance of damage
-            }
             ruleManager.ApplyRule(action);
         }
     }
@@ -236,8 +241,17 @@ public class GameManager : MonoBehaviour
 
     public void KillPlayer()
     {
-        playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
-        GenerateNewStreak();
+        if (!playerIsBeingKilled) {
+            playerIsBeingKilled = true;
+            playerCtrl.TakeDamage(playerCtrl.GetMaxHealth());
+            ruleManager.SetNewRuleset(new List<Rule>());
+            GenerateNewStreak();
+        }
+    }
+
+    public void ShakeCamera()
+    {
+        cameraController.StartShake();
     }
 
     #region StreakManagement
@@ -253,12 +267,16 @@ public class GameManager : MonoBehaviour
         streakMusic = streakMusicSelector.GetMusic();
         PlaySound(streakMusic, true);
 
-        this.inputManager.DisableInput<InputSystemPause>();
-       //Destroy(startingRoom);
+        //Pause disable
+        this.inputManager.DisablePause();
+        this.pauseIcon.SetActive(true);
+
+        //Destroy(startingRoom);
         GenerateNewStreak();
         nextStage = currentStreak.GetCurrentStage();
 
         //Do animation
+        playerCtrl.ToggleShooting(true);
         playerCtrl.DisableAllAbilities();
         currentArena.GetComponent<RoomController>().DoEndOfStage();
 
@@ -327,7 +345,6 @@ public class GameManager : MonoBehaviour
         StartStage();
     }
 
-
     private void RemoveProjectiles()
     {
         foreach (Transform t in projectilesRoot) 
@@ -377,36 +394,44 @@ public class GameManager : MonoBehaviour
         StreakEnded();
         firstRun = fr;
         playerCtrl.EnableAllAbilities();
+        playerIsBeingKilled = false;
         ruleManager.SetNewRuleset(new List<Rule>()); //Empty rules
         RemoveProjectiles();
     }
 
     private void GoToNextStage(Stage stage)
     {
-        timer.SetTimer(stage.GetRulesTime());
-        currentArena = Instantiate(stage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
-        RoomController room = currentArena.GetComponent<RoomController>();
+        if (playerCtrl.GetHealth() > 0) { 
+            timer.SetTimer(stage.GetRulesTime());
+            currentArena = Instantiate(stage.GetRoom(), RoomPosition(), Quaternion.identity, stagesRoot.transform);
+            RoomController room = currentArena.GetComponent<RoomController>();
         
-        //Create Rule Objects
+            //Create Rule Objects
 
-        Dictionary<Vector3, Vector3> spacesOccupied = new Dictionary<Vector3, Vector3>(); //Position --> Collider width
-        foreach (RuleObject objToSpawn in stage.GetRuleRelatedObjectsToSpawn()) 
-        {
-            GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
-            Collider col = instantiated.GetComponentInChildren<Collider>();
-            spacesOccupied.Add(instantiated.transform.position,
-                col == null  || col.isTrigger ? new Vector3(1, 1, 1) : col.bounds.extents);
+            Dictionary<Vector3, Vector3> spacesOccupied = new Dictionary<Vector3, Vector3>(); //Position --> Collider width
+            foreach (RuleObject objToSpawn in stage.GetRuleRelatedObjectsToSpawn()) 
+            {
+                GameObject instantiated = Instantiate(objToSpawn.GetRuleObj(), room.GetPos(objToSpawn.GetPositionType(),spacesOccupied), Quaternion.identity, currentArena.transform);
+                Collider col = instantiated.GetComponentInChildren<Collider>();
+                //spacesOccupied.Add(instantiated.transform.position,
+                //col == null  || col.isTrigger ? new Vector3(1, 1, 1) : col.bounds.extents);
+                spacesOccupied.Add(instantiated.transform.position, new Vector3(1.5f, 1.5f, 1.5f));
+            }
+
+            //Setup new Arena
+            ruleManager.SetNewRuleset(stage.GetRules());
+            if (ruleManager.IsCurrentlyRule(AllRules.Danneggiati)) 
+            {
+                playerCtrl.DivineShield();
+            }
+            InitEntities(currentArena);
+            PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
+
+            //Screen Go to Next Arena
+            HUDAnimator.SetBool("active", true);
+            ResetCamera();
+            StartCoroutine(ReverseFade());
         }
-
-        //Setup new Arena
-        ruleManager.SetNewRuleset(stage.GetRules());
-        InitEntities(currentArena);
-        PlayerPawn.transform.position -= new Vector3(0, roomUnderminingValue, 0);
-
-        //Screen Go to Next Arena
-        HUDAnimator.SetBool("active", true);
-        ResetCamera();
-        StartCoroutine(ReverseFade());
     }
 
     private Vector3 RoomPosition()
@@ -444,6 +469,10 @@ public class GameManager : MonoBehaviour
         PlaySound(breakRoomMusic, true);
         StopSound(streakMusic, true);
 
+        //Pause enable
+        this.inputManager.EnablePause();
+        this.pauseIcon.SetActive(false);
+
         //End Streak
         Destroy(currentArena);
         firstRun = false;
@@ -459,9 +488,9 @@ public class GameManager : MonoBehaviour
 
         streaksCompleted++;
         playerCtrl.TakeDamage(-playerCtrl.GetMaxHealth());
+        playerCtrl.ToggleShooting(false);
         RemoveProjectiles();
         PlayerDamageTrigger();
-        this.inputManager.EnableInput<InputSystemPause>();
         ResetCamera();
     }
 
@@ -514,7 +543,24 @@ public class GameManager : MonoBehaviour
 
     private void ResetCamera() 
     {
-        mainCamera.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z);
+        cameraController.transform.position = new Vector3(PlayerPawn.transform.position.x, PlayerPawn.transform.position.y + 10, PlayerPawn.transform.position.z + zCameraOffset); 
     }
-    
+
+    internal void AskForTimerStart()
+    {
+        if (!timer.IsGoing() && currentStreak != null) 
+        { 
+            timer.StartTimer(true);
+        }
+    }
+
+    internal void AskForTimerStop()
+    {
+        if (timer.IsGoing() && currentStreak != null)
+        {
+            timer.StopTimer(true);
+        }
+    }
+
+
 }

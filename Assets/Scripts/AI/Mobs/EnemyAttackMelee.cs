@@ -44,6 +44,7 @@ public class EnemyAttackMelee : FSMState
 		{
 			this.Attack();
 			this.fsm.ChangeState(this.stateChase);
+			StopAllCoroutines();
 			return;
 		}
 	}
@@ -86,7 +87,7 @@ public class EnemyAttackMelee : FSMState
 
     private void Attack()
 	{
-		if (isPlayerDamageable == true)
+		if (isPlayerDamageable == true && playerController != null)
         {
 			playerController.TakeDamage(damage);
 			isPlayerDamageable = false;

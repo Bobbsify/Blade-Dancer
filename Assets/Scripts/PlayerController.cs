@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -43,6 +44,8 @@ public class PlayerController : MonoBehaviour, IGameEntity
 
     private bool canTakeDamage = true;
 
+    private bool divineShield = false;
+
     private void OnValidate()
     {
         this.animPlayer = this.gameObject.GetComponentInChildren<Animator>(true);
@@ -66,7 +69,8 @@ public class PlayerController : MonoBehaviour, IGameEntity
         {
             if (canTakeDamage || amount == this.maxHealth)
             {
-                currentHealth = Mathf.Min(Mathf.Max(0, currentHealth - amount), maxHealth);
+                currentHealth = divineShield && (amount != this.maxHealth) ? currentHealth : Mathf.Min(Mathf.Max(0, currentHealth - amount), maxHealth);
+                divineShield = false;
                 canTakeDamage = false;
                 if (currentHealth == 0)
                 {
@@ -109,6 +113,7 @@ public class PlayerController : MonoBehaviour, IGameEntity
     public void FallAnimationCompleted()
     {
         DisableAllAbilities();
+        this.divineShield = false;
         gameManager.PlayerHasFallen();
     }
 
@@ -218,5 +223,18 @@ public class PlayerController : MonoBehaviour, IGameEntity
     public void Init(GameManager gameManager)
     {
         this.gameManager = gameManager;
+    }
+
+    public void DivineShield()
+    {
+        divineShield = true;
+    }
+
+    public void ToggleShooting(bool state)
+    {
+        if(TryGetComponent(out Shoot shoot))
+        {
+            shoot.CanShoot(state);
+        }
     }
 }

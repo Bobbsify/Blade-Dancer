@@ -12,6 +12,8 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     private int minCharge = 1;
     [SerializeField]
     private int maxCharge = 5;
+    [SerializeField]
+    private float danceDuration = 1f;
 
     [Header("Dance Ability Area Defining")]
     [SerializeField]
@@ -23,6 +25,9 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
 
     [SerializeField]
     private ParticleSystem danceParticles;
+
+    [SerializeField]
+    private ParticleSystem danceAreaParticles;
 
     [SerializeField]
     [Range(0.1f,5.0f)]
@@ -82,15 +87,23 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     public void Trigger()
     {
         playerController.DisableOtherAbilities<Dance>();
+        gameManager.ShakeCamera();
 
         var main = danceParticles.main;
         main.startSpeed = particleDefaultSpeed + (charge * speedMultiplier);
         danceParticles.Emit(Mathf.FloorToInt(charge * particleDefaultAmount));
+
+        float radius = Mathf.Max(charge * maxSphereWidth / maxCharge, minSphereWidth);
+
+        var mainArea = danceAreaParticles.main;
+        mainArea.startSize = radius * 8;
+
+        danceAreaParticles.Emit(1);
+
         gameManager.PlaySound(danceSound);
 
         playerController.Animate("dance");
 
-        float radius = Mathf.Max(charge * maxSphereWidth / maxCharge, minSphereWidth);
         Collider[] hits =Physics.OverlapSphere(this.transform.position, radius);
         foreach (Collider hit in hits) 
         {
@@ -99,7 +112,7 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
                 enemy.Dance();
             }
         }
-        SendActionToGameManager();
+        StartCoroutine(DanceRoutine());
         this.charge = minCharge;
         danceUI.UpdateCharge(charge);
         this.enabled = false; //Deactivate after use;
@@ -114,6 +127,14 @@ public class Dance : MonoBehaviour, IAbility, IInputReceiverDance, IGameEntity
     public void SendActionToGameManager()
     {
         this.gameManager.ActionEventTrigger(Actions.Dance);
+    }
+
+    private IEnumerator DanceRoutine()
+    {
+        gameManager.AskForTimerStop();
+        yield return new WaitForSeconds(danceDuration);
+        gameManager.AskForTimerStart();
+        SendActionToGameManager();
     }
 
     void IInputReceiverDance.ReceiveInputDance()

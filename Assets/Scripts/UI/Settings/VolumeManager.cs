@@ -17,26 +17,19 @@ public class VolumeManager : MonoBehaviour
     private GameObject gameObjectButton;
 
     private float currentVolume;
-
-    private void Awake() 
+    public void ChangeVolume(float value)
     {
         TryGetComponent(out volume);
-        mixer.audioMixer.GetFloat(mixer.name+"Volume", out currentVolume);
-        volume.value = currentVolume;
-    }
-
-    public void ChangeVolume(float value) 
-    {
         currentVolume = value;
-        mixer.audioMixer.SetFloat(mixer.name + "Volume", currentVolume);
+        mixer.audioMixer.SetFloat(mixer.name + "Volume", Mathf.Log10(currentVolume) * 20);
+        PlayerPrefs.SetFloat(mixer.name + "Volume",volume.value);
         gameObjectButton.GetComponent<Animator>().SetTrigger("Highlighted");
     }
 
-    private void Update()
+    public void SetupVolume()
     {
-        if(Input.GetAxisRaw("Vertical") != 0)
-        {
-            gameObjectButton.GetComponent<Animator>().SetTrigger("Normal");
-        }
+        TryGetComponent(out volume);
+        volume.value = PlayerPrefs.GetFloat(mixer.name + "Volume", volume.value);
+        ChangeVolume(volume.value);
     }
 }

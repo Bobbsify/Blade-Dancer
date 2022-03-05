@@ -34,7 +34,8 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public GameObject optionClosedButton;
 
     [SerializeField]
-    public GameObject controlsButton;
+    private string pauseBackName;
+
 
     private CursorSetter cursorSetter;
 
@@ -51,6 +52,15 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
         abilities = player.GetComponentsInChildren<IAbility>(true);
         interactManager = GameObject.Find("InputManager").GetComponentInChildren<InputSystemInteract>();
     }
+
+    private void Update()
+    {
+        if (Input.GetButtonUp(pauseBackName))
+        {
+            BackInputPause();
+        }
+    }
+
     public void Continue()
     {
         pauseMenu.SetActive(false);
@@ -76,7 +86,7 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
 
     }
 
-    public void SettingOption()
+    public void GoToOption()
     {
         settingMenu.SetActive(true);
         musics.SetActive(false);
@@ -106,8 +116,35 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     {
         settingMenu.SetActive(false);
         controls.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(controlsButton);
+    }
+
+    public void BackInputPause()
+    {
+        if (homePage.activeSelf)
+        {
+            pauseMenu.SetActive(false);
+            cursorSetter.SetCursor(CursorType.Game);
+            Time.timeScale = 1f;
+            pause = false;
+            EnableAllAbilities();
+            interactManager.enabled = true;
+        }
+
+        if (settingMenu.activeSelf)
+        {
+            homePage.SetActive(true);
+            settingMenu.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(optionClosedButton);
+        }
+
+        if (controls.activeSelf)
+        {
+            settingMenu.SetActive(true);
+            controls.SetActive(false);
+            EventSystem.current.SetSelectedGameObject(null);
+            EventSystem.current.SetSelectedGameObject(optionsFirstButton);
+        }     
     }
 
     public void ReceiveInputPause()

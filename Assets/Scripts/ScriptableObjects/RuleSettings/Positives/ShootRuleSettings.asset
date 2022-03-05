@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba4274a23103dcd4f8636f73436a3850, type: 3}
   m_Name: ShootRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 6971354487199299862, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 0
-  durationMod: 1
+  durationMod: 2
   appliedActions: 01000000
   ruleRelatedObjects: []
   mutuallyExclusives: 010000000f000000
-  durationModDivider: 3
-  minAmount: 1
+  minAmount: 2
   maxAmount: 6
+  coolDownShoot: 0.5
+  extraTime: 1

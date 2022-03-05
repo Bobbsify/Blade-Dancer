@@ -12,11 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df226a94eb4604a4c81279d34245d97f, type: 3}
   m_Name: DashRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 1029272156547883478, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 0
-  durationMod: 1
+  durationMod: 1.6
   appliedActions: 02000000
   ruleRelatedObjects: []
   mutuallyExclusives: 02000000100000000e000000
-  durationModDivider: 3
-  minAmount: 1
+  minAmount: 2
   maxAmount: 6
+  extraTime: 1
+  coolDownTime: 0.6

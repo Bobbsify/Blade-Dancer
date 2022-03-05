@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FSM : MonoBehaviour, IGameEntity
+public class FSM : MonoBehaviour,IGameEntity
 {
 	[Header("Debug")]
 
@@ -24,6 +24,8 @@ public class FSM : MonoBehaviour, IGameEntity
 	private bool canBeKilled;
 
 	private FSMState currentState;
+
+	private Team team;
 
 	private void OnValidate()
 	{
@@ -73,15 +75,21 @@ public class FSM : MonoBehaviour, IGameEntity
 		this.currentState = initialState;
 		this.currentState.OnStateEnter();
 	}
-
+	 
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.GetComponentInChildren<ProjectileController>() != null)
 		{
-			if (this.canBeKilled == true)
-			{
-				SendActionToGameManager();
-				canBeKilled = false;
+			team = other.GetComponentInChildren<ProjectileController>().GetTeam();
+
+			if(team == Team.Player)
+            {
+				if (this.canBeKilled == true)
+				{
+					this.gameObject.GetComponent<Collider>().enabled = false;
+					SendActionToGameManager();
+					canBeKilled = false;
+				}
 			}
 		}
 	}

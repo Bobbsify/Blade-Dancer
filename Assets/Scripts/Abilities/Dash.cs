@@ -5,17 +5,21 @@ using UnityEngine;
 [RequireComponent(typeof(PlayerController))]
 [RequireComponent(typeof(Rigidbody))]
 public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, IInputReceiverMove
-{ 
+{
     [SerializeField]
-    private float dashForce;
+    private bool canDash;
+
+    [SerializeField]
+    private float dashForce = 11.0f;
+
+    [SerializeField]
+    private float dashStopTime = 0.2f;
 
     [SerializeField]
     private float dashCooldown;
 
     [SerializeField]
     private SoundPacket dashSound;
-
-    private bool canDash;
 
     private GameManager gameManager;
 
@@ -33,7 +37,12 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
         canDash = true;
     }
 
-    public IEnumerator CooldownDash()
+    private IEnumerator StopDash() 
+    {
+        yield return new WaitForSeconds(dashStopTime);
+        this.rigidBody.Sleep();
+    }
+    private IEnumerator CooldownDash()
     {
         yield return new WaitForSeconds(this.dashCooldown);
         this.canDash = true;
@@ -41,10 +50,11 @@ public class Dash : MonoBehaviour, IAbility, IGameEntity, IInputReceiverDash, II
 
     public void Trigger()
     {
-        if (this.canDash && lastDirection != Vector3.zero)
+        if ((this.canDash && this.enabled) && lastDirection != Vector3.zero)
         {
             canDash = false;
-            this.rigidBody.AddForce(lastDirection * dashForce,ForceMode.Impulse);
+            this.rigidBody.AddForce(lastDirection * dashForce, ForceMode.Impulse);
+            StartCoroutine(StopDash());
             SendActionToGameManager();
             gameManager.PlaySound(dashSound);
             StartCoroutine(CooldownDash());

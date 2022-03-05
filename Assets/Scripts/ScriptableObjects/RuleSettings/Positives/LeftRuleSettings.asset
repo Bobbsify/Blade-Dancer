@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f0c2d06aa2394246b95758bb4d9db52, type: 3}
   m_Name: LeftRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 7513512916134281763, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 1
   durationMod: 1
   appliedActions: 05000000

@@ -12,6 +12,15 @@ EditorBuildSettings:
     path: Assets/Scenes/CharonIntro.unity
     guid: 1cc5f60e72b6c104e88b39e998fc6368
   - enabled: 1
+    path: Assets/Scenes/Outside.unity
+    guid: 8a34da4519d88b444963a8eced2a9f49
+  - enabled: 1
     path: Assets/Scenes/Stage.unity
     guid: e2ff5a2b01653724e8f37a39d256666e
+  - enabled: 1
+    path: Assets/Scenes/EndOfDemoScene.unity
+    guid: 08a0bd91523eac84f809804193964a72
+  - enabled: 1
+    path: Assets/Scenes/EndlessScene.unity
+    guid: 2b108ff4b221fd544b35fa09dde933e8
   m_configObjects: {}

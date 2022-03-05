@@ -49,7 +49,7 @@ public class ShootRuleSettings : RuleSetting
         amountToShoot = UnityEngine.Random.Range(minAmount, maxAmount);
         durationModFormula = (amountToShoot * coolDownShoot) + extraTime;
         durationMod = durationModFormula;
-        ShootRule ruleReturned = new ShootRule(AllRules.Spara, amountToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        ShootRule ruleReturned = new ShootRule(AllRules.Spara, ruleIcon, amountToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return ruleReturned;
     }
 }

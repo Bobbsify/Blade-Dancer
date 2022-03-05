@@ -8,9 +8,10 @@ public class NotKillRule : Rule
     private int amountNotToKill;
     private int amountKilled = 0;
 
-    public NotKillRule(AllRules ruleName, int amountNotToKill, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public NotKillRule(AllRules ruleName, Sprite icon, int amountNotToKill, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         SetDurationMod(durationMod);
         this.amountNotToKill = amountNotToKill;
         this.appliedActions = appliedActions;
@@ -31,7 +32,7 @@ public class NotKillRule : Rule
     }
     public override RulePacket ToPacket()
     {
-        return new RulePacket(this.RuleName, amountKilled, amountNotToKill, this.IsRuleComplete(),IsReverse());
+        return new RulePacket(this.RuleName, GetRuleIcon(), amountKilled, amountNotToKill, this.IsRuleComplete(),IsReverse());
     }
 
     public override bool CheckAction(Actions executedAction)

@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour, IEnemy, IGameEntity
         }
     }
 
-    public void DestroyEnemy() 
+    public void DeleteEnemy() 
     {
         Destroy(gameObject);
     }

@@ -25,7 +25,7 @@ public class NotDanceRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotDanceRule returnedRule = new NotDanceRule(AllRules.NotBalla,durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotDanceRule returnedRule = new NotDanceRule(AllRules.NotBalla, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

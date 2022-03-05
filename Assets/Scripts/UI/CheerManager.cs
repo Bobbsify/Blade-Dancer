@@ -35,8 +35,9 @@ public class CheerManager : MonoBehaviour, IGameEntity
 
     public void ExecuteCheer()
     {
+        string randomCheer = possibleCheers[new System.Random().Next(0,possibleCheers.Count)];
         gameManager.PlaySound(cheerSounds[Random.Range(0, cheerSounds.Count)]);
-        cheerController.ExecuteCheer(possibleCheers[Random.Range(0, possibleCheers.Count)]);
+        cheerController.ExecuteCheer(randomCheer);
     }
 
     public void Init(GameManager gameManager)

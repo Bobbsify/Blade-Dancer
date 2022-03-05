@@ -25,7 +25,7 @@ public class BreakRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        BreakRule returnedRule = new BreakRule(AllRules.Rompi, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        BreakRule returnedRule = new BreakRule(AllRules.Rompi, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

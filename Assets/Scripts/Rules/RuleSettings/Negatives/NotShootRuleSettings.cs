@@ -11,7 +11,7 @@ public class NotShootRuleSettings : RuleSetting
     private int minAmount = 0;
 
     [SerializeField]
-    [Range(4, 6)]
+    [Range(1, 6)]
     private int maxAmount = 6;
 
     private int amountNotToShoot = 1;
@@ -41,7 +41,7 @@ public class NotShootRuleSettings : RuleSetting
             durationModFormula = 0f;
             durationMod = durationModFormula;
         }
-        NotShootRule returnedRule = new NotShootRule(AllRules.NotSpara, amountNotToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotShootRule returnedRule = new NotShootRule(AllRules.NotSpara, ruleIcon, amountNotToShoot, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

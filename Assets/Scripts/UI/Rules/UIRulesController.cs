@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 /* STRUTTURALA IN 3 COMPONENTI -- RuleContainerManager, UIRulesController e RuleManager
  * Rule Manager ha aggiornamenti sulle regole e li manda a UIRulesController, RuleeContainerManager si occupa della gestione della regola
@@ -114,14 +115,16 @@ public class UIRulesController : MonoBehaviour
 public class RulePacket
 {
     private AllRules ruleName;
+    private Sprite icon;
     private float score;
     private float maxScore;
     private bool isReverse;
     private bool completed;
 
-    public RulePacket(AllRules rule, float score, float maxScore, bool completed,bool reverse)
+    public RulePacket(AllRules rule,Sprite icon, float score, float maxScore, bool completed,bool reverse)
     {
         this.ruleName = rule;
+        this.icon = icon;
         this.score = score;
         this.maxScore = maxScore;
         this.isReverse = reverse;
@@ -129,6 +132,7 @@ public class RulePacket
     }
 
     public AllRules GetName() { return this.ruleName; }
+    public Sprite GetIcon() { return this.icon; }
     public float GetScore() { return this.score; }
     public float GetMaxScore() { return this.maxScore; }
     public bool GetCompleted() { return this.completed; }

@@ -1,13 +1,15 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(PlayerController))]
 public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 {
-    private bool canShoot;
-
     [Header("Shooting settings")]
+    [SerializeField]
+    private bool canShoot = true;
+
     [SerializeField]
     private float shootCooldown;
 
@@ -31,9 +33,11 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
     private Transform projectilesRoot;
 
+    private Animator anim;
+
     private void Start()
     {
-        this.canShoot = true;
+        TryGetComponent(out anim);
     }
     public IEnumerator CooldownShoot()
     {
@@ -44,6 +48,7 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
     {
         Quaternion rotation = GetRotationToShootAt();
         objSpawnPos.eulerAngles = new Vector3(0, rotation.eulerAngles.y, 0);
+        anim.SetFloat("rotation", rotation.eulerAngles.y / 360);
     }
 
     public void Trigger()
@@ -90,13 +95,19 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
 
     private Quaternion GetRotationToShootAt()
     {
-        float horizontalInput = Input.GetAxis(horizontalLeftJoyName);
-        float verticalInput = Input.GetAxis(verticalLeftJoyName);
+        if (Cursor.lockState == CursorLockMode.Locked) {
+            
+            //Controller
+            float horizontalInput = Input.GetAxis(horizontalLeftJoyName);
+            float verticalInput = Input.GetAxis(verticalLeftJoyName);
 
-        Vector3 worldPosition = new Vector3(horizontalInput, 0, -verticalInput); //-vertical input necessary
+            Vector3 worldPosition = new Vector3(horizontalInput, 0, -verticalInput); //-vertical input necessary
 
-        if (worldPosition == Vector3.zero) //No input through the joystick axis 
+            return Quaternion.LookRotation(worldPosition, Vector3.forward);
+        }
+        else
         {
+            //Mouse And Keyboard
             Vector3 mousePos = Input.mousePosition;
             Vector3 screenPos = Camera.main.WorldToScreenPoint(objSpawnPos.position);
             Vector3 dir = mousePos - screenPos; //Find direction vector between the mouse and the objspawner
@@ -104,7 +115,11 @@ public class Shoot : MonoBehaviour, IAbility, IInputReceiverShoot, IGameEntity
             return Quaternion.AngleAxis(angle, Vector3.up);
         }
 
-        return Quaternion.LookRotation(worldPosition,Vector3.forward);
+    }
+
+    public void CanShoot(bool state)
+    {
+        this.canShoot = state;
     }
 
     public void SetProjectilesRoot(Transform projectilesRoot) 

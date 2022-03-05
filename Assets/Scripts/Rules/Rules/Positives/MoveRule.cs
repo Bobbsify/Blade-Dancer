@@ -8,9 +8,10 @@ public class MoveRule : Rule
     private int durationOfMove = 3;
     private float moveTimer = 0.0f;
 
-    public MoveRule(AllRules ruleName, int durationOfMove, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
+    public MoveRule(AllRules ruleName, Sprite icon, int durationOfMove, float durationMod, List<Actions> appliedActions, List<AllRules> mutuallyExclusives, List<RuleObject> ruleRelatedObjects)
     {
         this.RuleName = ruleName;
+        this.RuleIcon = icon;
         this.SetDurationMod(durationMod);
         this.durationOfMove = durationOfMove;
         this.appliedActions = appliedActions;
@@ -35,7 +36,7 @@ public class MoveRule : Rule
     {
         float time = moveTimer;
         float truncatedTime = (float)Math.Round(time * 100f) / 100f;
-        return new RulePacket(this.RuleName, Mathf.Max(truncatedTime,0), durationOfMove, this.IsRuleComplete(), IsReverse());
+        return new RulePacket(this.RuleName, RuleIcon, Mathf.Max(truncatedTime,0), durationOfMove, this.IsRuleComplete(), IsReverse());
     }
 
     public override bool IsRuleComplete()

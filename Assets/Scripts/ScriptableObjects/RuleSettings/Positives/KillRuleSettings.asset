@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3e8eaf9cf60e942851d0ed5f63bb4e, type: 3}
   m_Name: KillRuleSettings
   m_EditorClassIdentifier: 
+  ruleIcon: {fileID: 1123777561320904109, guid: ee29a1b44fc1b94439eab6e570bd244f,
+    type: 3}
   durationType: 0
   durationMod: 0
   appliedActions: 09000000
@@ -24,7 +26,7 @@ MonoBehaviour:
     ruleObjPrefab: {fileID: 7251394527796283674, guid: aef94e6b2e54b4ebfbf3ca9cd9936f1a,
       type: 3}
     pos: 0
-  mutuallyExclusives: 010000000900000017000000
+  mutuallyExclusives: 0100000009000000170000000f000000
   durationModMultiplier: 2
   minAmountOfEnemies: 1
   maxAmountOfEnemies: 7

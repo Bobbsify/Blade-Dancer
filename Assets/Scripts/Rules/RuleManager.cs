@@ -78,7 +78,7 @@ public class RuleManager : MonoBehaviour, IGameEntity
             RulePacket update = r.ToPacket();
             if (r.IsReverse()) 
             {
-                update = new RulePacket(r.GetPureRuleName(), update.GetScore(), update.GetMaxScore(), update.GetCompleted(),update.IsReverse());
+                update = new RulePacket(r.GetPureRuleName(), r.GetRuleIcon(), update.GetScore(), update.GetMaxScore(), update.GetCompleted(),update.IsReverse());
             }
             updates.Add(update);
         }
@@ -106,8 +106,11 @@ public class RuleManager : MonoBehaviour, IGameEntity
 
     private void RulesCompleted()
     {
-        uiRulesManager.StageCompleted();
-        gameManagerObject.EndOfStage();
+        if (gameManagerObject.PlayerPawn.GetComponent<PlayerController>().GetHealth() > 0) 
+        {
+            uiRulesManager.StageCompleted();
+            gameManagerObject.EndOfStage();
+        }
     }
 
     void IGameEntity.Init(GameManager gameManager)

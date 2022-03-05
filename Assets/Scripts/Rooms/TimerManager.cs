@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class TimerManager : MonoBehaviour, IGameEntity
 {
     [SerializeField]
-    private Text timerText;
+    private List<Slider> timer;
 
     [Header("Cheer")]
     [SerializeField]
@@ -18,6 +18,10 @@ public class TimerManager : MonoBehaviour, IGameEntity
     [SerializeField]
     private int cheerChargingBonus = 2;
 
+    [Header("Sound")]
+    [SerializeField]
+    private SoundPacket timesUpSound;
+
     private GameManager gameManager;
 
     private float maxTime;
@@ -26,19 +30,22 @@ public class TimerManager : MonoBehaviour, IGameEntity
 
     private bool doTimer = false;
 
+    private bool dance = false;
+
     // Update is called once per frame
     void Update()
     {
         if (doTimer) {         
             currentTime -= Time.deltaTime;
             float truncatedTime = (float)Math.Round((currentTime) * 100f) / 100f;
-            string textToAdd = truncatedTime.ToString().Replace(',', ':');
-            if (textToAdd.Length == 3) textToAdd += "0";
-            if (textToAdd.Length == 1) textToAdd += ":00";
-            timerText.text = textToAdd;
+            foreach (Slider slider in timer) 
+            {
+                slider.value = truncatedTime;
+            }
             if (currentTime <= 0) 
             {
                 doTimer = false;
+                gameManager.PlaySound(timesUpSound);
                 gameManager.KillPlayer();
             }
         }
@@ -49,27 +56,36 @@ public class TimerManager : MonoBehaviour, IGameEntity
         maxTime = amount;
         currentTime = amount;
         float truncatedTime = (float)Math.Round((currentTime) * 100f) / 100f;
-        string textToAdd = truncatedTime.ToString().Replace(',', ':');
-        if (textToAdd.Length == 3) textToAdd += "0";
-        if (textToAdd.Length == 1) textToAdd += ":00";
-        timerText.text = textToAdd;
+        foreach (Slider slider in timer) 
+        {
+            slider.maxValue = amount;
+            slider.value = amount;
+            slider.minValue = 0;
+        }
     }
 
-    public void StopTimer()
+    public void StopTimer(bool dance = false)
     {
         doTimer = false;
+        this.dance = dance;
     }
 
-    public void StartTimer()
+    public void StartTimer(bool dance = false)
     {
         doTimer = true;
+        if (dance) { 
+            this.dance = false;
+        }
     }
 
     public void ResetTimer()
     {
         doTimer = false;
         currentTime = 0;
-        timerText.text = "00:00";
+        foreach (Slider slider in timer) 
+        {
+            slider.value = slider.maxValue;
+        }
     }
     public int GetCheer()
     {
@@ -84,5 +100,10 @@ public class TimerManager : MonoBehaviour, IGameEntity
     public bool IsGoing()
     {
         return doTimer;
+    }
+
+    public bool IsDanceStopped() 
+    {
+        return this.dance;
     }
 }

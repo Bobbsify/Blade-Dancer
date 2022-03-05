@@ -16,7 +16,7 @@ public class NotDashRuleSettings : RuleSetting
     private int minAmount = 1;
 
     [SerializeField]
-    [Range(3, 6)]
+    [Range(1, 6)]
     private int maxAmount = 6;
 
     private int targetAmountOfDashes;
@@ -46,7 +46,7 @@ public class NotDashRuleSettings : RuleSetting
             durationModFormula = 0f;
             durationMod = durationModFormula;
         }
-        NotDashRule returnedRule = new NotDashRule(AllRules.NotScatta,targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotDashRule returnedRule = new NotDashRule(AllRules.NotScatta, ruleIcon, targetAmountOfDashes, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }

@@ -30,10 +30,12 @@ public class UIDialogueController : MonoBehaviour
     [SerializeField]
     private Text DialogueText;
 
-    private char[] totalDialogue;
+    private string totalDialogue;
     private int pointInDialogue = 0;
 
     private SoundPacket speakingSound;
+
+    private bool isTelling = false;
 
     private void OnValidate()
     {
@@ -63,8 +65,9 @@ public class UIDialogueController : MonoBehaviour
 
         NameToShow.text = dialogue.GetName();
 
-        totalDialogue = dialogue.GetLine().ToCharArray();
+        totalDialogue = dialogue.GetLine();
         DialogueText.text = "";
+        isTelling = true;
         StartCoroutine(TellDialogue());
     }
 
@@ -76,9 +79,15 @@ public class UIDialogueController : MonoBehaviour
         events.Invoke();
     }
 
+    public bool IsTelling()
+    {
+        return this.isTelling;
+    }
+
     private IEnumerator TellDialogue() 
     {
-        DialogueText.text += totalDialogue[pointInDialogue];
+        string nextText = totalDialogue[pointInDialogue] == '<' ? GetMarkupText() : ""+totalDialogue[pointInDialogue];
+        DialogueText.text += nextText;
         ++pointInDialogue;
         if (pointInDialogue == totalDialogue.Length)
         {
@@ -90,9 +99,38 @@ public class UIDialogueController : MonoBehaviour
         }
     }
 
+    public void FillDialogue()
+    {
+        StopAllCoroutines();
+        EndTelling();
+
+        DialogueText.text = totalDialogue;
+    }
+
+    private string GetMarkupText() 
+    {
+        bool foundDash = false;
+        string markupText = "";
+        for (int i = pointInDialogue; i < totalDialogue.Length; i++) 
+        {
+            markupText += totalDialogue[i];
+            if (totalDialogue[i] == '/' && !foundDash) 
+            {
+                foundDash = true;
+            }
+            if (foundDash && totalDialogue[i] == '>') //Exit
+            {
+                pointInDialogue += i - pointInDialogue;
+                break;
+            }
+        }
+        return markupText;
+    }
+
     private void EndTelling()
     {
         pointInDialogue = 0;
+        isTelling = false;
 
         if (speakingSound != null)
         {

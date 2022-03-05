@@ -25,7 +25,7 @@ public class NotMoveRuleSettings : RuleSetting
 
     public override Rule GetRule()
     {
-        NotMoveRule returnedRule = new NotMoveRule(AllRules.NotMuoviti, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
+        NotMoveRule returnedRule = new NotMoveRule(AllRules.NotMuoviti, ruleIcon, durationMod, appliedActions, mutuallyExclusives, ruleRelatedObjects);
         return returnedRule;
     }
 }
