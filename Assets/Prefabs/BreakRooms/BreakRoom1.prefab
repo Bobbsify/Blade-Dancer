@@ -4729,7 +4729,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
-  distanceToTrigger: 2.5
+  distanceToTrigger: 3
   voice: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
   startingDialogue: {fileID: 3399406459797239489}
   dialogues:
@@ -7368,7 +7368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
-  distanceToTrigger: 2.5
+  distanceToTrigger: 3
   voice: {fileID: 8300000, guid: 8b5368c0552188040aa1b818828102d0, type: 3}
   startingDialogue: {fileID: 1788832573660080029}
   dialogues:
@@ -8422,8 +8422,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
+      propertyPath: m_Size.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
       propertyPath: m_Size.y
-      value: 6.5
+      value: 4.9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e6fae3c30ca344b100cf200eda7ff, type: 3}
