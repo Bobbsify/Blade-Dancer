@@ -58,7 +58,7 @@ public class DialogueManager : MonoBehaviour, IInputReceiverInteract
         if (this.isActiveAndEnabled) { 
             player = GameObject.FindGameObjectWithTag("Player");
             Vector3 playerDistance = player.transform.position - transform.position;
-            if (playerDistance.magnitude <= distanceToTrigger)
+            if (playerDistance.magnitude/2 <= distanceToTrigger)
             {
                     if (isInDialogue)
                     {
