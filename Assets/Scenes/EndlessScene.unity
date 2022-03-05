@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4366756, g: 0.48427135, b: 0.56452316, a: 1}
+  m_IndirectSpecularColor: {r: 0.4366757, g: 0.48427194, b: 0.5645252, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1893,6 +1893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchRoot: {fileID: 830524557}
+  isPlayerUsingController: 0
 --- !u!114 &1767611567 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2020563749068189426, guid: 25956f7ff032eb64fbc76915aada8d2b,
@@ -2048,9 +2049,7 @@ MonoBehaviour:
   maxDifficulty: 6
   difficultyIncreaseMod: 0.15
   breakRooms:
-  - {fileID: 3920557604866505167, guid: 3e58502907722bf46a284ac033deac24, type: 3}
-  - {fileID: 3920557604866505167, guid: e2e3bad0bd5220a4b916d43816abd0a5, type: 3}
-  - {fileID: 3920557604866505167, guid: eb5a621f40d28e14d907b35df288f548, type: 3}
+  - {fileID: 3920557604866505167, guid: a67977186140b564485e5c2268635d65, type: 3}
   currentBreakroom: 0
   breakRoomMusic:
     audio: {fileID: 8300000, guid: d3eb5dfe960bd164d90be86c11dfd6bb, type: 3}

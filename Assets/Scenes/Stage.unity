@@ -249,6 +249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchRoot: {fileID: 1787614904}
+  isPlayerUsingController: 0
 --- !u!114 &16071992
 MonoBehaviour:
   m_ObjectHideFlags: 0
