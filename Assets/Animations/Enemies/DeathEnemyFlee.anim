@@ -309,7 +309,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 2
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -321,7 +321,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Enabled
     path: 
-    classID: 135
+    classID: 65
     script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -377,7 +377,7 @@ AnimationClip:
       path: 0
       attribute: 3305885265
       script: {fileID: 0}
-      typeID: 135
+      typeID: 65
       customType: 0
       isPPtrCurve: 0
     - serializedVersion: 2
@@ -708,7 +708,7 @@ AnimationClip:
         outWeight: 0
       - serializedVersion: 3
         time: 2
-        value: 1
+        value: 0
         inSlope: Infinity
         outSlope: Infinity
         tangentMode: 103
@@ -720,7 +720,7 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: m_Enabled
     path: 
-    classID: 135
+    classID: 65
     script: {fileID: 0}
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
