@@ -2068,7 +2068,7 @@ MonoBehaviour:
   firstRun: 0
   customRunEnabled: 0
   streaksCompleted: 4
-  customRun: 0c00000003000000
+  customRun: 09000000
 --- !u!4 &1812789882
 Transform:
   m_ObjectHideFlags: 0
