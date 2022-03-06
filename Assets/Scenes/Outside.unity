@@ -331,7 +331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   searchRoot: {fileID: 1787614904}
-  isPlayerUsingController: 0
 --- !u!114 &16071992
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8808,7 +8807,7 @@ PrefabInstance:
     - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
         type: 3}
       propertyPath: m_Size.y
-      value: 4
+      value: 2.7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e6fae3c30ca344b100cf200eda7ff, type: 3}
@@ -9060,6 +9059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 506504093}
+  - component: {fileID: 506504094}
   m_Layer: 0
   m_Name: TimeSign
   m_TagString: Untagged
@@ -9082,6 +9082,19 @@ Transform:
   m_Father: {fileID: 6331069588928290658}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &506504094
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 506504092}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.1345477, y: 1, z: 1.0159302}
+  m_Center: {x: -0.031858683, y: 0, z: 0.2946949}
 --- !u!1 &509120324
 GameObject:
   m_ObjectHideFlags: 0
@@ -13685,7 +13698,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
-  distanceToTrigger: 2
+  distanceToTrigger: 4
   voice: {fileID: 0}
   startingDialogue: {fileID: 1631311417}
   dialogues:
@@ -14650,6 +14663,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interaction
       objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e6fae3c30ca344b100cf200eda7ff, type: 3}
 --- !u!4 &1557118649 stripped
@@ -15126,7 +15149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
-  distanceToTrigger: 2
+  distanceToTrigger: 3.5
   voice: {fileID: 0}
   startingDialogue: {fileID: 1068312333}
   dialogues:
@@ -17326,6 +17349,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Interaction
       objectReference: {fileID: 0}
+    - target: {fileID: 410895850871870026, guid: 6d4e6fae3c30ca344b100cf200eda7ff,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d4e6fae3c30ca344b100cf200eda7ff, type: 3}
 --- !u!1 &4122059913190936653
@@ -17428,7 +17456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueUI: {fileID: 0}
-  distanceToTrigger: 2
+  distanceToTrigger: 3.2
   voice: {fileID: 0}
   startingDialogue: {fileID: 4122059913190936655}
   dialogues:
