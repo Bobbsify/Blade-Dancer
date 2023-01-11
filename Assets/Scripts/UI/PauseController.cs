@@ -16,13 +16,10 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     private GameObject homePage;
 
     [SerializeField]
-    private GameObject settingMenu;
+    private GameObject[] hiddenElements;
 
     [SerializeField]
-    private GameObject controls;
-
-    [SerializeField]
-    private GameObject musics;
+    private GameObject[] shownElements;
 
     [SerializeField]
     public GameObject pausedFirstButton;
@@ -47,10 +44,12 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
 
     private void Start()
     {
+        Debug.Log("start");
         cursorSetter = GameObject.FindGameObjectWithTag("UI").GetComponent<CursorSetter>();
         player = GameObject.FindGameObjectWithTag("Player");
         abilities = player.GetComponentsInChildren<IAbility>(true);
         interactManager = GameObject.Find("InputManager").GetComponentInChildren<InputSystemInteract>();
+        pauseMenu.SetActive(false);
     }
 
     private void Update()
@@ -73,49 +72,33 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
     public void Pause()
     {
         pauseMenu.SetActive(true);
-        controls.SetActive(false);
-        settingMenu.SetActive(false);
+
+        //Show elements that are supposed to be shown and vice versa
+        foreach (GameObject uiElement in hiddenElements)
+        {
+            uiElement.SetActive(false);
+        }
+        foreach (GameObject uiElement in shownElements)
+        {
+            uiElement.SetActive(true);
+        }
+        //...
+
         homePage.SetActive(true);
-        cursorSetter.SetCursor(CursorType.Menu);
+        try
+        {
+            cursorSetter.SetCursor(CursorType.Menu);
+        }
+        catch (System.Exception e)
+        {
+            Debug.LogError("Could not find cursorSetter");
+        }
         Time.timeScale = 0f;
         pause = true;
         EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(pausedFirstButton);
         DisableAllAbilities();
         interactManager.enabled = false;
 
-    }
-
-    public void GoToOption()
-    {
-        settingMenu.SetActive(true);
-        musics.SetActive(false);
-        homePage.SetActive(false);
-        musics.SetActive(true);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(optionsFirstButton);
-    }
-
-    public void BackFromSettings()
-    {
-        homePage.SetActive(true);
-        settingMenu.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(optionClosedButton);
-    }
-
-    public void BackFromControls()
-    { 
-        settingMenu.SetActive(true);
-        controls.SetActive(false);
-        EventSystem.current.SetSelectedGameObject(null);
-        EventSystem.current.SetSelectedGameObject(optionsFirstButton);
-    }
-
-    public void GoToControls()
-    {
-        settingMenu.SetActive(false);
-        controls.SetActive(true);
     }
 
     public void BackInputPause()
@@ -129,22 +112,6 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
             EnableAllAbilities();
             interactManager.enabled = true;
         }
-
-        if (settingMenu.activeSelf)
-        {
-            homePage.SetActive(true);
-            settingMenu.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(optionClosedButton);
-        }
-
-        if (controls.activeSelf)
-        {
-            settingMenu.SetActive(true);
-            controls.SetActive(false);
-            EventSystem.current.SetSelectedGameObject(null);
-            EventSystem.current.SetSelectedGameObject(optionsFirstButton);
-        }     
     }
 
     public void ReceiveInputPause()
@@ -161,17 +128,23 @@ public class PauseController : MonoBehaviour, IInputReceiverPause
 
     public void DisableAllAbilities()
     {
-        foreach (IAbility ability in abilities)
-        {
-            ability.Disable();
+        if (abilities.Length > 0)
+        { 
+            foreach (IAbility ability in abilities)
+            {
+                ability.Disable();
+            }
         }
     }
 
     public void EnableAllAbilities()
     {
-        foreach (IAbility ability in abilities)
+        if (abilities.Length > 0)
         {
-            ability.Enable();
+            foreach (IAbility ability in abilities)
+            {
+                ability.Enable();
+            }
         }
     }
 }
