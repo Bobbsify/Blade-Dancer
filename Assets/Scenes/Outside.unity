@@ -11998,9 +11998,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Cartello
-  characterLine: '"Da questa parte per l''SPDDPDA, l''iperveloce e iperrischiosa
-    coda per l''altro mondo!"'
+  characterName: Sign
+  characterLine: '"This way for "S.P.D.D.P.D.A.", The super fast and super risky
+    queue to the afterlife!"'
   characterPortrait: {fileID: 8085076639356686101, guid: d62345294e376104d95b9ba505618596,
     type: 3}
   voiceOverride:
@@ -13200,7 +13200,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ...
-  characterLine: Per quanto cerchi di farmi strada non riesco a passare.
+  characterLine: No matter how much I struggle, I can't get through.
   characterPortrait: {fileID: 2807314771408455767, guid: ef2fb8a8ed7333747afd852659c19ce6,
     type: 3}
   voiceOverride:
@@ -14994,9 +14994,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Cartello
-  characterLine: '"Da questo punto altri 253 Milioni di anni di attesa stimati per
-    arrivare allo sportello."'
+  characterName: Sign
+  characterLine: '"From this point, estimated time before getting to the desk: [253
+    Billion] years"'
   characterPortrait: {fileID: 448871502345040690, guid: d62345294e376104d95b9ba505618596,
     type: 3}
   voiceOverride:
@@ -17445,8 +17445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ...
-  characterLine: Una folla di anime da cui proviene una terrificante cacofonia mi
-    blocca la via.
+  characterLine: A huge crowd of souls, whose cacophony is both terrifying and deafening,
+    blocks the way.
   characterPortrait: {fileID: 2807314771408455767, guid: ef2fb8a8ed7333747afd852659c19ce6,
     type: 3}
   voiceOverride:
