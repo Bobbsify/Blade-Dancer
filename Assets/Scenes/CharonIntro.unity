@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: Ah! Ma che maleducato non mi sono presentato...
+  characterLine: Oh! But where are my manners!
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -217,9 +217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Io sono Caronte, autoproclamato assaggiatore di Whiskey, piacere
-    di fare la tua conoscenza!
+  characterName: Charon
+  characterLine: Name's Charon, self proclaimed whiskey connoisseur
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -398,8 +397,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Comunque non importa...
+  characterName: Charon
+  characterLine: ...
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -678,8 +677,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Eccoci qua! Lo sportello della morte!
+  characterName: Charon
+  characterLine: We have reached finally reached "The Death Desk"
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -763,8 +762,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Non mi sembra ti abbiano tagliato la lingua prima di morire.
+  characterName: Charon
+  characterLine: I thought you suffocated didn't know they cut your tongue in the
+    process
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -900,7 +900,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: "Ormai \xE8 da ore che siamo in viaggio, siamo quasi arrivati."
+  characterLine: We've been traveling for HOURS, we're almost there!
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -987,8 +987,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: E tu sei, beh, morto preparando pancake... ahahah.
+  characterName: Charon
+  characterLine: And you are... dead, ahah!
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1040,8 +1040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Ciao.
+  characterName: Charon
+  characterLine: Goodbye, and Good Luck.
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1175,8 +1175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: ...
+  characterName: Charon
+  characterLine: 'Remember: It''s yours to make and their op-'
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1296,9 +1296,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Mh? Come faccio a saperlo? Beh, dopotutto sono venuto a prenderti,
-    noi sappiamo il luogo, l'ora e vediamo il tutto accadere.
+  characterName: Charon
+  characterLine: Mh? How do I know this? Well, I came to get you. They tell us a
+    time and a place and our job is to get there before everything unfolds.
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1364,9 +1364,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: "Almeno, questo da quando \xE8 in vigore il nuovo sistema, poi non
-    ne so molto, sono nuovo da queste parti."
+  characterName: Charon
+  characterLine: ' At least, that''s how they told me the new system works. I don''t
+    really know much, kinda new here.'
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1789,8 +1789,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Prego, puoi scendere dalla macchina.
+  characterName: Charon
+  characterLine: Go ahead, get off the car whenever you're ready
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2260,7 +2260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: Ah! Quindi sei sveglio!
+  characterLine: Oh? You're finally awake!
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2726,8 +2726,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Oh, siamo arrivati!
+  characterName: Charon
+  characterLine: -Oh! We're here!
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -12981,8 +12981,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Che morte ridicola...
+  characterName: Charon
+  characterLine: '"Pancake Suffocation". Sounds as ridiculous as it looked.'
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -13034,9 +13034,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: "Ehi, non \xE8 per metterti fretta ma hai gi\xE0 scelto se andrai
-    in paradiso o all'inferno?"
+  characterName: Charon
+  characterLine: ... Anyway, have you chosen whether to go to even or hell yet?
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -13088,8 +13087,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Non sei di molte parole eh?
+  characterName: Charon
+  characterLine: You don't talk much, uh?
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -13348,7 +13347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
+  characterName: Charon
   characterLine: ...
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -13401,7 +13400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
+  characterName: Charon
   characterLine: ...
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -13793,8 +13792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Caronte
-  characterLine: Cerca solo di non farti abbindolare da quelli la, per il tuo bene.
+  characterName: Charon
+  characterLine: 'Let me give you some advice: Don''t let those... "things" influence
+    your decision.'
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
