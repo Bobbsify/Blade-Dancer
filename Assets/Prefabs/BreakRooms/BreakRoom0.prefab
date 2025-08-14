@@ -43,10 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: "E io sono Angelo! L'Angelo! Il pi\xF9 famoso Angelo di tutto il
-    paradiso! Il pi\xF9 forte, il pi\xF9 emozionante, il pi\xF9 eloquente angelo
-    di sempre!"
+  characterName: Angel
+  characterLine: And I'm Angel! THE Angel! The most Famous Angel of heaven! The strongest,
+    most eloquent and outstanding angel ever!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1438,8 +1437,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: Dai! Forza! Dai! Prova!
+  characterName: Angel
+  characterLine: Come on! Let's go!!!! Go for it! Give it a shot!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2020,9 +2019,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: ... Questa prova consiste nel completare una serie di "Regole" inviate
-    direttamente dai nostri capi...
+  characterName: Bo' Red
+  characterLine: ... As I was saying, this trial consists of completing a series
+    of "Rules" sent directly from our bosses
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2104,8 +2103,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: ... Buona Fortuna...
+  characterName: Bo' Red
+  characterLine: ... Good Luck.
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -2187,8 +2186,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Per iniziare puoi premere il pulsante alla tua sinistra...
+  characterName: Bo' Red
+  characterLine: To start, please press the button on your left
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6407,8 +6406,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Io sono Annohiath, l'addetto alla reception...
+  characterName: Bo' Red
+  characterLine: I'm Bo' Red. This establishment's receptionist...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6552,10 +6551,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Per completare una stanza tutte le regole bianche devono essere
-    completate. Alcune regole saranno rosa, quest'ultime invece, non devono essere
-    seguite...
+  characterName: Bo' Red
+  characterLine: You'll be facing a series of rooms. In each room, complete all WHITE
+    rules to advance to the next. Some rules will be PINK, the latter MUSTN'T be
+    followed or else, you'll fail the trial
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6607,8 +6606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: Non hai bisogno di fortuna! Ce la farai sicuramente!
+  characterName: Angel
+  characterLine: You don't need LUCK! You'll definitely make it!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6857,8 +6856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: ... Benvenuto alla SPDDPDA, la Super Prova Definitiva Della Potenza
-    Dell'Anima...
+  characterLine: ... Welcome to the S.P.D.D.P.D.A. the Super Painful Dance Dungeon
+    Purposed for Divine Aptitude
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7321,7 +7320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo' Red
   characterLine: ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -7505,9 +7504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: "Tra l'altro lo sapevi che gli angeli in media sono MOLTO pi\xF9
-    intelligenti dei demoni?! E anche molto pi\xF9 belli!"
+  characterName: Angel
+  characterLine: OH! OH! Did you know? Angels, on average, are WAAAY smarter than
+    demons?! AAaaaand much more HANDSOoooOME!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
