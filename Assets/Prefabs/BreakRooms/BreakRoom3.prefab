@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Noterai come io ti stia bloccando la via...
+  characterLine: As you can see I'm blocking your way
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -182,9 +182,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: "Davvero, quell'Angelo \xE8 estremamente logorroico ed euforico,
-    almeno tu mi doni un po' di silenzio..."
+  characterName: Bo'Red
+  characterLine: Truly, that Angel is extremely idiosyncratic and euphoric all the
+    time, at least you're kind enough to gift me with some silence
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -237,9 +237,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "AH! Da quant'\xE8 che sei qui pivello! Uh, se hai sentito ci\xF2
-    che mormoravo intendevo che, beh, questa prova \xE8 pesante per un pivello come
-    te! Io che sono un esperto me la cavo benissimo!"
+  characterLine: AH?! How long have you been here rookie?! Uhm, if you happened to
+    hear anything I was saying I was well, contemplating the fact that this trial
+    is HARD FOR A ROOKIE LIKE YOU AHAH! I am an EXPERT, it's a breeze for me!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1649,7 +1649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Buona fortuna con la prossima serie! Scarsone!
+  characterLine: Good Luck with the next set! Newbie!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4031,7 +4031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo'Red
   characterLine: "Angelo \xE8 in pausa e finalmente ho un po' di pace, e per fortuna
     tu sei qui!"
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
@@ -5072,7 +5072,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Le prossime stanze estan sucias, non posso farti andare avanti...
+  characterLine: The next rooms estan sucias, I can't let you through...
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5206,10 +5206,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: "Sai, almeno mi dai del lavoro da fare, ho regole da compilare,
-    statistiche da segnalare e senza contendenti beh... \xE8 estremamente noioso
-    questo lavoro..."
+  characterName: Bo'Red
+  characterLine: You know... At least you give me some work to do! I have to compile
+    rules and do statistics and reports that well, without contestants... you know,
+    I get really bored
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5430,7 +5430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "... Questa dannata prova \xE8 pi\xF9 pesante di quel che pensassi..."
+  characterLine: This damn... trial... is... harder than I thought...
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7722,7 +7722,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Quindi mi dispiace ma, no puedes pasar...
+  characterLine: ' So... I''m sorry but, no puedes pasar...'
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7968,7 +7968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Amigo! Ben tornato!
+  characterLine: Amigo! Welcome Back!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8206,8 +8206,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Eccoti, finalmente! Hai completato un'altra serie, complimenti!
+  characterName: Bo'Red
+  characterLine: Ah! There you are! You completed yet another trial, congratulations!
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8259,9 +8259,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Non voglio trattenerti ulteriormente, buona fortuna con la prossima
-    serie!
+  characterName: Bo'Red
+  characterLine: Don't wanna keep you waiting, good luck with the next set!
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8464,7 +8463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: "Lo lamento mucho, appena avr\xF2 finito te lo far\xF2 sapere!"
+  characterLine: Lo lamento mucho, as soon as I'm done I'll let you know!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8739,8 +8738,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Almeno non nelle condizioni in cui sono, ho un lavoro da fare e
-    non posso deludere Satana se voglio quella promozione a Postino di Malattie.
+  characterLine: I have work to do and I cannot disappoint Satan! I can't wait for
+    that promotion to "Disease Mailman"
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
