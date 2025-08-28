@@ -239,7 +239,7 @@ MonoBehaviour:
   characterName: Daniel Danse
   characterLine: AH?! How long have you been here rookie?! Uhm, if you happened to
     hear anything I was saying I was well, contemplating the fact that this trial
-    is HARD FOR A ROOKIE LIKE YOU AHAH! I am an EXPERT, it's a breeze for me!
+    is HARD FOR A ROOKIE LIKE YOU AHAH! I am an EXPERT!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4032,8 +4032,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Bo'Red
-  characterLine: "Angelo \xE8 in pausa e finalmente ho un po' di pace, e per fortuna
-    tu sei qui!"
+  characterLine: Angel is finally on break. My mind can rest a bit and... luckily,
+    you're here!
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
