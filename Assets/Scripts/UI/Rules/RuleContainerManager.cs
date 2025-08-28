@@ -18,6 +18,8 @@ public class RuleContainerManager : MonoBehaviour
     [SerializeField]
     private Slider ruleScore;
 
+    private Dictionary<AllRules,string> localizationNames = new Dictionary<AllRules, string>{{AllRules.Muoviti,"Move"},{AllRules.Spara,"Shoot"},{AllRules.Scatta,"Dash"},{AllRules.Balla,"Dance"},{AllRules.Suona,"Ring"},{AllRules.Sinistra,"Left"},{AllRules.Destra,"Right"},{AllRules.Rompi,"Break"},{AllRules.Raccogli,"Pick Up"},{AllRules.Uccidi,"Kill"},{AllRules.Segna,"Goal"},{AllRules.Cattura,"Imprison"},{AllRules.Danneggiati,"Take Damage"},{AllRules.Raggiungi,"Reach"},{AllRules.NotMuoviti,"Move"},{AllRules.NotSpara,"Shoot"},{AllRules.NotScatta,"Dash"},{AllRules.NotBalla,"Dance"},{AllRules.NotSuona,"Ring"},{AllRules.NotSinistra,"Left"},{AllRules.NotDestra,"Right"},{AllRules.NotRompi,"Break"},{AllRules.NotRaccogli,"Pick Up"},{AllRules.NotUccidi,"Kill"},{AllRules.NotSegna,"Goal"},{AllRules.NotCattura,"Imprison"},{AllRules.NotDanneggiati,"Take Damage"},{AllRules.NotRaggiungi,"Reach"}};
+
     private Color normalRuleColor = new Color(0.95311f, 0.95311f, 0.95311f);
     private Color reverseRuleColor = new Color(0.92941f, 0.24314f, 0.60392f);
     
@@ -120,7 +122,7 @@ public class RuleContainerManager : MonoBehaviour
 
     private void UpdateInformation(RulePacket packet)
     {
-        ruleName.text = packet.GetName().ToString();
+        ruleName.text = localizationNames[packet.GetName()];
         ruleScore.value = packet.GetScore(); 
         //If complete hide score
         completed.gameObject.SetActive(!packet.IsReverse() && packet.GetCompleted());
