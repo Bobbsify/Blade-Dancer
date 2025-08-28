@@ -342,7 +342,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Chiudi menu
+  m_Text: Close Menu
 --- !u!1 &1724126544976504503
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,9 +420,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Chiudi menu
-
-'
+  m_Text: Close Menu
 --- !u!1 &1740733759902894143
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +648,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Indietro
+  m_Text: Back
 --- !u!1 &2523672701822514859
 GameObject:
   m_ObjectHideFlags: 0
@@ -952,7 +950,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Su
+  m_Text: Up
 --- !u!1 &4866475324455462363
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,7 +1065,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleziona
+  m_Text: Select
 --- !u!1 &5230272141244811206
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,7 +1180,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gi\xF9"
+  m_Text: Down
 --- !u!1 &6401434922190238557
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1335,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Su
+  m_Text: Up
 --- !u!1 &6844333292019152113
 GameObject:
   m_ObjectHideFlags: 0
@@ -1490,7 +1488,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleziona
+  m_Text: Select
 --- !u!1 &7210100117270473194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1718,7 +1716,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gi\xF9"
+  m_Text: Down
 --- !u!1 &7789342110314484817
 GameObject:
   m_ObjectHideFlags: 0
@@ -1870,7 +1868,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Indietro
+  m_Text: Back
 --- !u!1 &8969030417966491044
 GameObject:
   m_ObjectHideFlags: 0

@@ -252,7 +252,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleziona
+  m_Text: Select
 --- !u!1 &1311389349603688033
 GameObject:
   m_ObjectHideFlags: 0
@@ -442,7 +442,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Su
+  m_Text: Up
 --- !u!1 &1644334082195393102
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +559,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gi\xF9"
+  m_Text: Down
 --- !u!1 &2083292919093606006
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,7 +815,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Crediti
+  m_Text: Credits
 --- !u!1 &2790506399013619909
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,7 +1010,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleziona
+  m_Text: Select
 --- !u!1 &3219238330722834767
 GameObject:
   m_ObjectHideFlags: 0
@@ -1088,7 +1088,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Gi\xF9"
+  m_Text: Down
 --- !u!114 &101335935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1425,7 +1425,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Indietro
+  m_Text: Back
 --- !u!114 &1748970541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1725,7 +1725,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Game Designer e Developer
+  m_Text: 'Game Designer, Developer
 
     Game Designer e Developer
 
@@ -2124,7 +2124,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Seleziona
+  m_Text: Select
 --- !u!1 &6395514632494011014
 GameObject:
   m_ObjectHideFlags: 0
@@ -2277,7 +2277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Impostazioni
+  m_Text: Settings
 --- !u!1 &6638283955945439455
 GameObject:
   m_ObjectHideFlags: 0
@@ -2741,7 +2741,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Alessandro De Santis\nAntonio Filasieno\nMauro Nardone\nMatteo Perini\n\nChipzel
-    \n\nEffetti sonori di Freesound.com"
+    \n\nSound Effects from Freesound.com"
 --- !u!1 &7629494129517230999
 GameObject:
   m_ObjectHideFlags: 0
@@ -3351,7 +3351,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Su
+  m_Text: Up
 --- !u!114 &1115261093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3494,7 +3494,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Comandi
+  m_Text: Controls
 --- !u!1 &8983944468778147363
 GameObject:
   m_ObjectHideFlags: 0
@@ -4064,7 +4064,7 @@ PrefabInstance:
     - target: {fileID: 3573820155205400011, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
       propertyPath: m_Text
-      value: Crediti
+      value: Credits
       objectReference: {fileID: 0}
     - target: {fileID: 3573820156991528532, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
@@ -4250,7 +4250,7 @@ PrefabInstance:
     - target: {fileID: 3573820155205400011, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
       propertyPath: m_Text
-      value: Nuova Partita
+      value: New Game
       objectReference: {fileID: 0}
     - target: {fileID: 3573820156991528532, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
@@ -4381,7 +4381,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Comandi
+      value: Controls
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -4738,7 +4738,7 @@ PrefabInstance:
     - target: {fileID: 5095784168335909182, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Text
-      value: Volume Generale
+      value: Master Volume
       objectReference: {fileID: 0}
     - target: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
         type: 3}
@@ -4839,7 +4839,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Continua
+      value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -5146,6 +5146,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5095784168335909182, guid: 021668944089829479792366858cb162,
+        type: 3}
+      propertyPath: m_Text
+      value: Music
+      objectReference: {fileID: 0}
     - target: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Name
@@ -5264,7 +5269,7 @@ PrefabInstance:
     - target: {fileID: 3573820155205400011, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
       propertyPath: m_Text
-      value: Esci dal gioco
+      value: Quit Game
       objectReference: {fileID: 0}
     - target: {fileID: 3573820156991528532, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
@@ -5585,7 +5590,7 @@ PrefabInstance:
     - target: {fileID: 5095784168335909182, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Text
-      value: Effetti Sonori
+      value: Sound Effects
       objectReference: {fileID: 0}
     - target: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
         type: 3}
@@ -5756,7 +5761,7 @@ PrefabInstance:
     - target: {fileID: 3573820155205400011, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
       propertyPath: m_Text
-      value: Impostazioni
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 3573820156991528532, guid: f337ae3f0cd05c04893821802a9eac9b,
         type: 3}
