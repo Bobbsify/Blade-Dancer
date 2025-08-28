@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Ma i miei amici me llaman Paco!
+  characterLine: But my friends me llaman Paco!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -127,8 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Mh? Perch\xE8 all'inferno? Perch\xE8 l\xEC hanno delle disco da
-    urlo! Un demone in coda mi ha dato dei volantini e sembra veramente una figata!"
+  characterLine: '"Why Hell?" you might ask. Well because they have INCREDIBLE DISCOS
+    over there! A demon in the queue gave me flyers and they look BADASS!'
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1639,9 +1639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: Non vedo l'ora di continuare quel film con l'orco che si innamora
-    della principessa!
+  characterName: Angel
+  characterLine: I can't wait to continue that movie with the ogre that falls in
+    love with the princess!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -1693,7 +1693,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo'Red
   characterLine: ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -4201,7 +4201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Smamma, perdente!
+  characterLine: Piss off, perdente!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5031,9 +5031,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: "Incoraggiare le anime a venire in paradiso non \xE8 un lavoro facile,
-    soprattutto quando sei rinchiuso 24 ore su 24 con un demone al tuo fianco."
+  characterName: Angel
+  characterLine: Pushing souls to come to heaven isn't an easy job! Especially when
+    you're stuck 24/7 with a demon at your side.
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5144,7 +5144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Soy l'addetto alle pulizie della SPDDPDA!
+  characterLine: Soy SPDDPDA's cleaner!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5469,8 +5469,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Un tipo forte come me pu\xF2 prendersela comoda, se le cose sono
-    cos\xEC facili sar\xF2 all'inferno in men che non si dica! AHAHAHAHAHAH!"
+  characterLine: A strong guy like me can take it slow, if things are this easy I'll
+    be in hell in no time! ahahahah!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -5705,8 +5705,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: "... Ti ignorer\xF2, come al solito..."
+  characterName: Bo'Red
+  characterLine: ... I'll just stick to ignoring you...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6940,8 +6940,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: Congratulazioni!
+  characterName: Angel
+  characterLine: Congratulations!!!!!!!!!!!!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6994,7 +6994,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Ma tu non capiresti mai, non sei un figo come me!
+  characterLine: But you'll never understand, you're not as cool as I am!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7985,9 +7985,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: "Il fatto che tu sia arrivato fin qui testimonia ancora di pi\xF9
-    quanto saresti un ottimo angelo!"
+  characterName: Angel
+  characterLine: The fact that you've come thus far is a testimony to the fact that
+    you'd be a great angel!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8230,7 +8230,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Buena suerte con la prova!
+  characterLine: Buena suerte for the trial!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8283,7 +8283,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Ma Satana fu abbastanza clemente da darmi questo lavoro.
+  characterLine: But Satan was kind enough to let me work here!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8335,7 +8335,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo'Red
   characterLine: ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -8894,8 +8894,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Un'altra serie completata per il nostro campione...
+  characterName: Bo'Red
+  characterLine: Another set completed from our champion...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -9021,7 +9021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo'Red
   characterLine: ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -9074,8 +9074,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: ... Angelo, quando hai la pausa?
+  characterName: Bo'Red
+  characterLine: ... Angel, When's your break?
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -9128,8 +9128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Ah, cuidado, non passare dove ho appena pulito, altrimenti beh...
-    entiendes?
+  characterLine: Ah, cuidado, do not walk on where I just cleaned, unless you want
+    to... well, entiendes?
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -9181,8 +9181,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: Mh? Oh! E' quasi la mia ora, tra non molto fortunatamente!
+  characterName: Angel
+  characterLine: Mh? Oh! It's almost time, in a bit!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -9339,8 +9339,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Paco
-  characterLine: Persi il mio lavoro in Mexico diversi anni fa quando arrivarono
-    esos malditos conquistadores!
+  characterLine: I lost my job in Mexico maaany years ago when esos maleditos conquistadores
+    came to my country!
   characterPortrait: {fileID: -474185689548329570, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
