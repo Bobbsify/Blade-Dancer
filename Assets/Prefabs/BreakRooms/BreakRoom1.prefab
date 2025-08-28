@@ -43,9 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: "Ce l'ha fatta! Vedi! Non \xE8 stato cos\xEC difficile! Hai proprio
-    la stoffa per diventare un gran bell'angelo!"
+  characterName: Angel
+  characterLine: You did it! See?! It wasn't that hard! You've really got what it
+    takes to become a beeeeautiful angel!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4087,9 +4087,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: "Forza! Continua cos\xEC! Sei un campione! Sei fenomenale! Sei spettacolare!
-    Sei fortissimo!"
+  characterName: Angel
+  characterLine: Come on! Keep at it! You're a champion! You're phenomenal! You're
+    spectacular! You're suuuuper strong!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4176,9 +4176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Angelo
-  characterLine: "Esatto! Bravissimo! Sisi! Continua cos\xEC e diventerai un angelo
-    in men che non si dica!"
+  characterName: Angel
+  characterLine: EEEXACTLY! You're great! Yes! Keep going and you'll become an angel
+    in an heartbeat!
   characterPortrait: {fileID: -8751688827422289363, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4274,8 +4274,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: Congratulazioni nell'aver completato la prima serie di stanze...
+  characterName: Bo'Red
+  characterLine: Congratulations, you completed the first set of rooms
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4387,8 +4387,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: "Non \xE8 da tutti arrivare fin qui..."
+  characterName: Bo'Red
+  characterLine: Not many people reach this point...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4484,8 +4484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: ... Ad ogni modo, quando vuoi proseguire premi nuovamente il bottone...
+  characterName: Bo'Red
+  characterLine: ...Anyway, When you're ready to proceed press the button again.
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -4669,7 +4669,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: ???
-  characterLine: Ma guarda te! Un perdente! Era da un po' che non se ne vedevano...
+  characterLine: Would you look at that? A loser! 'Been a while since I last saw
+    one!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6006,7 +6007,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo'Red
   characterLine: ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -6060,8 +6061,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Tra l'altro quando ballo \xE8 come se <color=#ED3E9A>il tempo rallentasse
-    o si fermasse...</color> questo posto \xE8 proprio strano."
+  characterLine: Also, weird thing, when you dance it's like <color=#ED3E9A>time
+    either stops or slows down</color>... what a strange place.
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -6113,7 +6114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo'Red
   characterLine: Oh?
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -6263,9 +6264,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Queste anime chiuse qui da eoni ormai sono <color=#ED3E9A>suscettibili
-    alla danza</color> di cui io sono gran maestro! Non hanno speranze contro un
-    professionista come me!
+  characterLine: These souls have been stuck here for eons now and are <color=#ED3E9A>susceptible
+    to dancing</color> of which I... am an expert. They stand no chance against a
+    professional like me!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7423,8 +7424,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Devo affinare i miei eccelsi passi di danza! Quest\xE0 prova sar\xE0
-    una passeggiata!"
+  characterLine: Gotta refine my incredible dance moves! This trial will be a cakewalk
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7476,8 +7476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
-  characterLine: ... Buona fortuna...
+  characterName: Bo'Red
+  characterLine: ... Good Luck ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7723,7 +7723,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo' Red
   characterLine: ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
@@ -7777,8 +7777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: "Vabb\xE8, ora smamma. Ho dedicato fin troppo tempo ad un inetto
-    come te!"
+  characterLine: Well, now SCRAM! I dedicated WAY too much of my precious time on
+    an insignificant rookie like yourself.
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -7905,8 +7905,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: Beh, che t'aspetti? Qualche tipo di elogio? Non sei mica un ballerino
-    eccezionale come me!
+  characterLine: Well, Watcha waitin' for? Some kind of... praise? You're no dancer
+    unlike my exceptional self!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8163,8 +8163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Daniel Danse
-  characterLine: IO SONO DANIEL, DANIEL DANSE, E TU NON SARAI MAI ALLA MIA ALTEZZA!
-    AHAHAHAHAHAHAHAH!
+  characterLine: Name's Daniel, Daniel Danse and you'll NEVER GET ON MY LEVEL! Ahahahahahahah!
   characterPortrait: {fileID: -4913342889332950253, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
@@ -8255,7 +8254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58d49dffc4934e40b6d17b23ad300be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Annohiath
+  characterName: Bo'Red
   characterLine: ...
   characterPortrait: {fileID: -8833594690357231483, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
