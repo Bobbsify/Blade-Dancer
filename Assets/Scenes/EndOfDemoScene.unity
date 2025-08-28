@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -171,6 +171,11 @@ PrefabInstance:
     - target: {fileID: 1149212931, guid: c772a03894277bd4da4ba8b106d3bbd7, type: 3}
       propertyPath: m_Delegates.Array.data[1].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
+        type: 3}
+      propertyPath: m_Text
+      value: Back To Main Menu
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -534,7 +539,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Modalita' infinita
+      value: Play Endless Mode
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -957,7 +962,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fine della demo
+  m_Text: End Of Demo
 --- !u!222 &1825460257
 CanvasRenderer:
   m_ObjectHideFlags: 0
