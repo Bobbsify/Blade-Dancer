@@ -678,7 +678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Charon
-  characterLine: We have reached finally reached "The Death Desk"
+  characterLine: We have finally reached "The Death Desk"
   characterPortrait: {fileID: 3987762376965911512, guid: defcab35af2b7694484dd40befca116d,
     type: 3}
   voiceOverride:
