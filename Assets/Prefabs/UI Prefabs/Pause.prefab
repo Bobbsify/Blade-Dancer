@@ -655,7 +655,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Comandi
+  m_Text: Controls
 --- !u!1 &6020665747011987514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1371,7 +1371,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pausa
+  m_Text: Pause
 --- !u!1 &8304424863440798271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,7 +1449,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Impostazioni
+  m_Text: Settings
 --- !u!114 &485128787
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1715,7 +1715,7 @@ PrefabInstance:
     - target: {fileID: 5095784168335909182, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Text
-      value: Effetti Sonori
+      value: Sound Effects
       objectReference: {fileID: 0}
     - target: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
         type: 3}
@@ -1979,7 +1979,7 @@ PrefabInstance:
     - target: {fileID: 5095784168335909182, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Text
-      value: Musica
+      value: Music
       objectReference: {fileID: 0}
     - target: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
         type: 3}
@@ -2238,7 +2238,7 @@ PrefabInstance:
     - target: {fileID: 5095784168335909182, guid: 021668944089829479792366858cb162,
         type: 3}
       propertyPath: m_Text
-      value: Volume Generale
+      value: Master Volume
       objectReference: {fileID: 0}
     - target: {fileID: 5095784168489122867, guid: 021668944089829479792366858cb162,
         type: 3}
@@ -2432,7 +2432,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Impostazioni
+      value: Settings
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -2640,7 +2640,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Continua
+      value: Resume
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -2816,7 +2816,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Arrenditi
+      value: Give Up
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
@@ -3007,7 +3007,7 @@ PrefabInstance:
     - target: {fileID: 3087399254428872140, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
       propertyPath: m_Text
-      value: Comandi
+      value: Controls
       objectReference: {fileID: 0}
     - target: {fileID: 3087399254619795649, guid: c772a03894277bd4da4ba8b106d3bbd7,
         type: 3}
