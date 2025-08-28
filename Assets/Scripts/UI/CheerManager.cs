@@ -21,10 +21,10 @@ public class CheerManager : MonoBehaviour, IGameEntity
         if (possibleCheers.Count == 0)
         {
             possibleCheers.Add("WOW");
-            possibleCheers.Add("FANTASTICO");
-            possibleCheers.Add("STRAVAGANTE");
-            possibleCheers.Add("INCREDIBILE");
-            possibleCheers.Add("AAAAAAAAAAAA");
+            possibleCheers.Add("FANTASTIC");
+            possibleCheers.Add("ABSURD");
+            possibleCheers.Add("INCREDIBLE");
+            possibleCheers.Add("WOOOAH");
         }
 
         if (cheerController == null)
